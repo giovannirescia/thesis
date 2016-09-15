@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ivy-report.xsl"?>
+<ivy-report version="1.0">
+	<info
+		organisation="prueba"
+		module="prueba_2.11"
+		revision="1.0"
+		conf="test-internal"
+		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
+		date="20160907142930"/>
+	<dependencies>
+		<module organisation="org.slf4j" name="slf4j-api">
+			<revision name="1.7.11" status="release" pubdate="20150326111016" resolver="public" artresolver="public" homepage="http://www.slf4j.org" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master, runtime(*), master(compile), compile(*)" position="9">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="successful" details="" size="2661" time="681" location="/Users/giovannirescia/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.11.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.slf4j/slf4j-api/ivy-1.7.11.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.11/slf4j-api-1.7.11.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="1.7.10" rev-constraint-default="1.7.10" rev-constraint-dynamic="1.7.10" callerrev="4.2.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.5.0"/>
+				<caller organisation="org.slf4j" name="jcl-over-slf4j" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.7.7"/>
+				<caller organisation="prueba" name="prueba_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.7.11" rev-constraint-default="1.7.11" rev-constraint-dynamic="1.7.11" callerrev="1.0"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-util" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="slf4j-api" type="jar" ext="jar" status="successful" details="" size="32126" time="1335" location="/Users/giovannirescia/.ivy2/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.7.11.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.11/slf4j-api-1.7.11.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="1.7.10" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.11"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="1.7.10" rev-constraint-default="1.7.10" rev-constraint-dynamic="1.7.10" callerrev="4.2.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.5.0"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-util" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="2.7.16"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.7.7" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="1.7.11"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.5.0"/>
+				<caller organisation="org.slf4j" name="jcl-over-slf4j" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="1.7.7"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="1.6.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), default(compile)" position="-1">
+				<evicted-by rev="1.7.11"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="1.7.10" rev-constraint-default="1.7.10" rev-constraint-dynamic="1.7.10" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-util" conf="compile, runtime" rev="1.6.1" rev-constraint-default="1.6.1" rev-constraint-dynamic="1.6.1" callerrev="2.7.16"/>
+				<caller organisation="prueba" name="prueba_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.7.11" rev-constraint-default="1.7.11" rev-constraint-dynamic="1.7.11" callerrev="1.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.phenoscape" name="scowl_2.11">
+			<revision name="1.1" status="release" pubdate="20160321115747" resolver="Phenoscape Maven repository" artresolver="Phenoscape Maven repository" homepage="" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="1">
+				<metadata-artifact status="successful" details="" size="1389" time="3838" location="/Users/giovannirescia/.ivy2/cache/org.phenoscape/scowl_2.11/ivy-1.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.phenoscape/scowl_2.11/ivy-1.1.xml.original" origin-is-local="false" origin-location="http://phenoscape.svn.sourceforge.net/svnroot/phenoscape/trunk/maven/repository/org/phenoscape/scowl_2.11/1.1/scowl_2.11-1.1.pom"/>
+				<caller organisation="prueba" name="prueba_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="1.1" rev-constraint-default="1.1" rev-constraint-dynamic="1.1" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scowl_2.11" type="jar" ext="jar" status="successful" details="" size="332665" time="6028" location="/Users/giovannirescia/.ivy2/cache/org.phenoscape/scowl_2.11/jars/scowl_2.11-1.1.jar">
+						<origin-location is-local="false" location="http://phenoscape.svn.sourceforge.net/svnroot/phenoscape/trunk/maven/repository/org/phenoscape/scowl_2.11/1.1/scowl_2.11-1.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sourceforge.owlapi" name="owlapi-distribution">
+			<revision name="4.2.1" status="release" pubdate="20160305214641" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="2">
+				<license name="Apache License Version 2.0, January 2004" url="http://www.apache.org/licenses/"/>
+				<license name="GNU LGPL Version 3.0" url="http://www.gnu.org/licenses/lgpl.txt"/>
+				<metadata-artifact status="successful" details="" size="12579" time="723" location="/Users/giovannirescia/.ivy2/cache/net.sourceforge.owlapi/owlapi-distribution/ivy-4.2.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/net.sourceforge.owlapi/owlapi-distribution/ivy-4.2.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sourceforge/owlapi/owlapi-distribution/4.2.1/owlapi-distribution-4.2.1.pom"/>
+				<caller organisation="org.phenoscape" name="scowl_2.11" conf="default, compile, runtime, master" rev="4.2.1" rev-constraint-default="4.2.1" rev-constraint-dynamic="4.2.1" callerrev="1.1"/>
+				<artifacts>
+					<artifact name="owlapi-distribution" type="bundle" ext="jar" status="successful" details="" size="2917517" time="5208" location="/Users/giovannirescia/.ivy2/cache/net.sourceforge.owlapi/owlapi-distribution/bundles/owlapi-distribution-4.2.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/sourceforge/owlapi/owlapi-distribution/4.2.1/owlapi-distribution-4.2.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.code.findbugs" name="jsr305">
+			<revision name="2.0.1" status="release" pubdate="20120729191759" resolver="public" artresolver="public" homepage="http://findbugs.sourceforge.net/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="40">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="965" time="628" location="/Users/giovannirescia/.ivy2/cache/com.google.code.findbugs/jsr305/ivy-2.0.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.google.code.findbugs/jsr305/ivy-2.0.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.0.1" rev-constraint-default="2.0.1" rev-constraint-dynamic="2.0.1" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="jsr305" type="jar" ext="jar" status="successful" details="" size="31866" time="824" location="/Users/giovannirescia/.ivy2/cache/com.google.code.findbugs/jsr305/jars/jsr305-2.0.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.inject.extensions" name="guice-multibindings">
+			<revision name="4.0" status="release" pubdate="20150428173539" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="39">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="547" time="663" location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-multibindings/ivy-4.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-multibindings/ivy-4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/inject/extensions/guice-multibindings/4.0/guice-multibindings-4.0.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="4.0" rev-constraint-default="4.0" rev-constraint-dynamic="4.0" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="guice-multibindings" type="jar" ext="jar" status="successful" details="" size="81388" time="1209" location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-multibindings/jars/guice-multibindings-4.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/inject/extensions/guice-multibindings/4.0/guice-multibindings-4.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.inject.extensions" name="guice-assistedinject">
+			<revision name="4.0" status="release" pubdate="20150428173500" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="38">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="549" time="644" location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/ivy-4.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/ivy-4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="4.0" rev-constraint-default="4.0" rev-constraint-dynamic="4.0" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="guice-assistedinject" type="jar" ext="jar" status="successful" details="" size="43425" time="964" location="/Users/giovannirescia/.ivy2/cache/com.google.inject.extensions/guice-assistedinject/jars/guice-assistedinject-4.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/inject/extensions/guice-assistedinject/4.0/guice-assistedinject-4.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.inject" name="guice">
+			<revision name="4.0" status="release" pubdate="20150428173326" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="35">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="10633" time="630" location="/Users/giovannirescia/.ivy2/cache/com.google.inject/guice/ivy-4.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.google.inject/guice/ivy-4.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/inject/guice/4.0/guice-4.0.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="4.0" rev-constraint-default="4.0" rev-constraint-dynamic="4.0" callerrev="4.2.1"/>
+				<caller organisation="com.google.inject.extensions" name="guice-assistedinject" conf="compile, runtime" rev="4.0" rev-constraint-default="4.0" rev-constraint-dynamic="4.0" callerrev="4.0"/>
+				<caller organisation="com.google.inject.extensions" name="guice-multibindings" conf="compile, runtime" rev="4.0" rev-constraint-default="4.0" rev-constraint-dynamic="4.0" callerrev="4.0"/>
+				<artifacts>
+					<artifact name="guice" type="jar" ext="jar" status="successful" details="" size="668235" time="5647" location="/Users/giovannirescia/.ivy2/cache/com.google.inject/guice/jars/guice-4.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/inject/guice/4.0/guice-4.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="aopalliance" name="aopalliance">
+			<revision name="1.0" status="release" pubdate="20070226194340" resolver="public" artresolver="public" homepage="http://aopalliance.sourceforge.net" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="37">
+				<license name="Public Domain"/>
+				<metadata-artifact status="successful" details="" size="363" time="634" location="/Users/giovannirescia/.ivy2/cache/aopalliance/aopalliance/ivy-1.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/aopalliance/aopalliance/ivy-1.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.pom"/>
+				<caller organisation="com.google.inject" name="guice" conf="compile, runtime" rev="1.0" rev-constraint-default="1.0" rev-constraint-dynamic="1.0" callerrev="4.0"/>
+				<artifacts>
+					<artifact name="aopalliance" type="jar" ext="jar" status="successful" details="" size="4467" time="652" location="/Users/giovannirescia/.ivy2/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="javax.inject" name="javax.inject">
+			<revision name="1" status="release" pubdate="20091013203500" resolver="public" artresolver="public" homepage="http://code.google.com/p/atinject/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="36">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="612" time="633" location="/Users/giovannirescia/.ivy2/cache/javax.inject/javax.inject/ivy-1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/javax.inject/javax.inject/ivy-1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.pom"/>
+				<caller organisation="com.google.inject" name="guice" conf="compile, runtime" rev="1" rev-constraint-default="1" rev-constraint-dynamic="1" callerrev="4.0"/>
+				<artifacts>
+					<artifact name="javax.inject" type="jar" ext="jar" status="successful" details="" size="2497" time="650" location="/Users/giovannirescia/.ivy2/cache/javax.inject/javax.inject/jars/javax.inject-1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/javax/inject/javax.inject/1/javax.inject-1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.google.guava" name="guava">
+			<revision name="18.0" status="release" pubdate="20140825154834" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="34">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="5666" time="647" location="/Users/giovannirescia/.ivy2/cache/com.google.guava/guava/ivy-18.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.google.guava/guava/ivy-18.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.pom"/>
+				<caller organisation="com.google.inject" name="guice" conf="compile, runtime" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="4.0"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="18.0" rev-constraint-default="18.0" rev-constraint-dynamic="18.0" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="guava" type="bundle" ext="jar" status="successful" details="" size="2256213" time="13440" location="/Users/giovannirescia/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/google/guava/guava/18.0/guava-18.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="16.0.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="18.0"/>
+				<caller organisation="com.google.inject" name="guice" conf="compile, runtime" rev="16.0.1" rev-constraint-default="16.0.1" rev-constraint-dynamic="16.0.1" callerrev="4.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="net.sf.trove4j" name="trove4j">
+			<revision name="3.0.3" status="release" pubdate="20120604000433" resolver="public" artresolver="public" homepage="http://trove4j.sf.net" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="33">
+				<license name="GNU Lesser General Public License 2.1" url="http://www.gnu.org/licenses/lgpl-2.1.txt"/>
+				<metadata-artifact status="successful" details="" size="1442" time="648" location="/Users/giovannirescia/.ivy2/cache/net.sf.trove4j/trove4j/ivy-3.0.3.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/net.sf.trove4j/trove4j/ivy-3.0.3.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="3.0.3" rev-constraint-default="3.0.3" rev-constraint-dynamic="3.0.3" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="trove4j" type="jar" ext="jar" status="successful" details="" size="2523218" time="9788" location="/Users/giovannirescia/.ivy2/cache/net.sf.trove4j/trove4j/jars/trove4j-3.0.3.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/net/sf/trove4j/trove4j/3.0.3/trove4j-3.0.3.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.semarglproject" name="semargl-sesame">
+			<revision name="0.6.1" status="release" pubdate="20130916073506" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="29">
+				<license name="Apache Public License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="4646" time="654" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-sesame/ivy-0.6.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-sesame/ivy-0.6.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/semarglproject/semargl-sesame/0.6.1/semargl-sesame-0.6.1.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="semargl-sesame" type="jar" ext="jar" status="successful" details="" size="10102" time="666" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-sesame/jars/semargl-sesame-0.6.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/semarglproject/semargl-sesame/0.6.1/semargl-sesame-0.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.semarglproject" name="semargl-rdfa">
+			<revision name="0.6.1" status="release" pubdate="20130916073203" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="31">
+				<license name="Apache Public License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="3872" time="685" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdfa/ivy-0.6.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdfa/ivy-0.6.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/semarglproject/semargl-rdfa/0.6.1/semargl-rdfa-0.6.1.pom"/>
+				<caller organisation="org.semarglproject" name="semargl-sesame" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="0.6.1"/>
+				<artifacts>
+					<artifact name="semargl-rdfa" type="jar" ext="jar" status="successful" details="" size="34994" time="812" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdfa/jars/semargl-rdfa-0.6.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/semarglproject/semargl-rdfa/0.6.1/semargl-rdfa-0.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.semarglproject" name="semargl-rdf">
+			<revision name="0.6.1" status="release" pubdate="20130916073115" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="32">
+				<license name="Apache Public License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="4512" time="666" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdf/ivy-0.6.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdf/ivy-0.6.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/semarglproject/semargl-rdf/0.6.1/semargl-rdf-0.6.1.pom"/>
+				<caller organisation="org.semarglproject" name="semargl-rdfa" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="0.6.1"/>
+				<artifacts>
+					<artifact name="semargl-rdf" type="jar" ext="jar" status="successful" details="" size="24728" time="670" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-rdf/jars/semargl-rdf-0.6.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/semarglproject/semargl-rdf/0.6.1/semargl-rdf-0.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.semarglproject" name="semargl-core">
+			<revision name="0.6.1" status="release" pubdate="20130916073034" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="30">
+				<license name="Apache Public License 2.0" url="http://www.apache.org/licenses/LICENSE-2.0"/>
+				<metadata-artifact status="successful" details="" size="3260" time="632" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-core/ivy-0.6.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-core/ivy-0.6.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/semarglproject/semargl-core/0.6.1/semargl-core-0.6.1.pom"/>
+				<caller organisation="org.semarglproject" name="semargl-rdf" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="0.6.1"/>
+				<caller organisation="org.semarglproject" name="semargl-rdfa" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="0.6.1"/>
+				<caller organisation="org.semarglproject" name="semargl-sesame" conf="compile, runtime" rev="0.6.1" rev-constraint-default="0.6.1" rev-constraint-dynamic="0.6.1" callerrev="0.6.1"/>
+				<artifacts>
+					<artifact name="semargl-core" type="jar" ext="jar" status="successful" details="" size="21786" time="683" location="/Users/giovannirescia/.ivy2/cache/org.semarglproject/semargl-core/jars/semargl-core-0.6.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/semarglproject/semargl-core/0.6.1/semargl-core-0.6.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.jsonld-java" name="jsonld-java-sesame">
+			<revision name="0.5.0" status="release" pubdate="20140713215609" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="23">
+				<license name="Revised BSD License" url="https://raw.github.com/jsonld-java/jsonld-java/master/LICENCE"/>
+				<metadata-artifact status="successful" details="" size="1805" time="671" location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java-sesame/ivy-0.5.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java-sesame/ivy-0.5.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/jsonld-java/jsonld-java-sesame/0.5.0/jsonld-java-sesame-0.5.0.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="0.5.0" rev-constraint-default="0.5.0" rev-constraint-dynamic="0.5.0" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="jsonld-java-sesame" type="jar" ext="jar" status="successful" details="" size="13774" time="687" location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java-sesame/jars/jsonld-java-sesame-0.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/jsonld-java/jsonld-java-sesame/0.5.0/jsonld-java-sesame-0.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.github.jsonld-java" name="jsonld-java">
+			<revision name="0.5.0" status="release" pubdate="20140713215538" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="24">
+				<license name="Revised BSD License" url="https://raw.github.com/jsonld-java/jsonld-java/master/LICENCE"/>
+				<metadata-artifact status="successful" details="" size="2236" time="671" location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java/ivy-0.5.0.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java/ivy-0.5.0.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/github/jsonld-java/jsonld-java/0.5.0/jsonld-java-0.5.0.pom"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java-sesame" conf="compile, runtime" rev="0.5.0" rev-constraint-default="0.5.0" rev-constraint-dynamic="0.5.0" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="jsonld-java" type="jar" ext="jar" status="successful" details="" size="118779" time="1195" location="/Users/giovannirescia/.ivy2/cache/com.github.jsonld-java/jsonld-java/jars/jsonld-java-0.5.0.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/github/jsonld-java/jsonld-java/0.5.0/jsonld-java-0.5.0.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.slf4j" name="jcl-over-slf4j">
+			<revision name="1.7.7" status="release" pubdate="20140404081411" resolver="public" artresolver="public" homepage="http://www.slf4j.org" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="41">
+				<license name="MIT License" url="http://www.opensource.org/licenses/mit-license.php"/>
+				<metadata-artifact status="successful" details="" size="1854" time="628" location="/Users/giovannirescia/.ivy2/cache/org.slf4j/jcl-over-slf4j/ivy-1.7.7.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.slf4j/jcl-over-slf4j/ivy-1.7.7.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.pom"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="1.7.7" rev-constraint-default="1.7.7" rev-constraint-dynamic="1.7.7" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="jcl-over-slf4j" type="jar" ext="jar" status="successful" details="" size="16519" time="681" location="/Users/giovannirescia/.ivy2/cache/org.slf4j/jcl-over-slf4j/jars/jcl-over-slf4j-1.7.7.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpclient-cache">
+			<revision name="4.2.5" status="release" pubdate="20130419133040" resolver="public" artresolver="public" homepage="http://hc.apache.org/httpcomponents-client" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="25">
+				<license name="Apache License" url="LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="6620" time="716" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient-cache/ivy-4.2.5.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient-cache/ivy-4.2.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient-cache/4.2.5/httpclient-cache-4.2.5.pom"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="4.2.5" rev-constraint-default="4.2.5" rev-constraint-dynamic="4.2.5" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="httpclient-cache" type="jar" ext="jar" status="successful" details="" size="115625" time="1188" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient-cache/jars/httpclient-cache-4.2.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient-cache/4.2.5/httpclient-cache-4.2.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpclient">
+			<revision name="4.2.5" status="release" pubdate="20130419132959" resolver="public" artresolver="public" homepage="http://hc.apache.org/httpcomponents-client" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="26">
+				<license name="Apache License" url="LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="5911" time="666" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient/ivy-4.2.5.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient/ivy-4.2.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.pom"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="4.2.5" rev-constraint-default="4.2.5" rev-constraint-dynamic="4.2.5" callerrev="0.5.0"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient-cache" conf="compile, runtime" rev="4.2.5" rev-constraint-default="4.2.5" rev-constraint-dynamic="4.2.5" callerrev="4.2.5"/>
+				<artifacts>
+					<artifact name="httpclient" type="jar" ext="jar" status="successful" details="" size="433368" time="2833" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.2.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpclient/4.2.5/httpclient-4.2.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-codec" name="commons-codec">
+			<revision name="1.6" status="release" pubdate="20111202233826" resolver="public" artresolver="public" homepage="http://commons.apache.org/codec/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="28">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="11157" time="671" location="/Users/giovannirescia/.ivy2/cache/commons-codec/commons-codec/ivy-1.6.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/commons-codec/commons-codec/ivy-1.6.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.pom"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="1.6" rev-constraint-default="1.6" rev-constraint-dynamic="1.6" callerrev="4.2.5"/>
+				<artifacts>
+					<artifact name="commons-codec" type="jar" ext="jar" status="successful" details="" size="232771" time="2222" location="/Users/giovannirescia/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.6.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.apache.httpcomponents" name="httpcore">
+			<revision name="4.2.4" status="release" pubdate="20130320131221" resolver="public" artresolver="public" homepage="http://hc.apache.org/httpcomponents-core-ga" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="27">
+				<license name="Apache License" url="LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="5684" time="624" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpcore/ivy-4.2.4.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpcore/ivy-4.2.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.pom"/>
+				<caller organisation="org.apache.httpcomponents" name="httpclient" conf="compile, runtime" rev="4.2.4" rev-constraint-default="4.2.4" rev-constraint-dynamic="4.2.4" callerrev="4.2.5"/>
+				<artifacts>
+					<artifact name="httpcore" type="jar" ext="jar" status="successful" details="" size="227275" time="1779" location="/Users/giovannirescia/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.2.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.2.4/httpcore-4.2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-trig">
+			<revision name="2.7.16" status="release" pubdate="20150611194218" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="22">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1588" time="677" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trig/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trig/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-trig/2.7.16/sesame-rio-trig-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-trig" type="jar" ext="jar" status="successful" details="" size="7417" time="687" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trig/jars/sesame-rio-trig-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-trig/2.7.16/sesame-rio-trig-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-trix">
+			<revision name="2.7.16" status="release" pubdate="20150611194203" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="21">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1532" time="734" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trix/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trix/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-trix/2.7.16/sesame-rio-trix-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-trix" type="jar" ext="jar" status="successful" details="" size="11831" time="693" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-trix/jars/sesame-rio-trix-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-trix/2.7.16/sesame-rio-trix-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-rdfxml">
+			<revision name="2.7.16" status="release" pubdate="20150611194148" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="20">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1540" time="1514" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfxml/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfxml/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-rdfxml/2.7.16/sesame-rio-rdfxml-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-rdfxml" type="jar" ext="jar" status="successful" details="" size="37726" time="726" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfxml/jars/sesame-rio-rdfxml-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-rdfxml/2.7.16/sesame-rio-rdfxml-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-rdfjson">
+			<revision name="2.7.16" status="release" pubdate="20150611194133" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="19">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1664" time="5482" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfjson/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfjson/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-rdfjson/2.7.16/sesame-rio-rdfjson-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-rdfjson" type="jar" ext="jar" status="successful" details="" size="12970" time="732" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-rdfjson/jars/sesame-rio-rdfjson-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-rdfjson/2.7.16/sesame-rio-rdfjson-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-nquads">
+			<revision name="2.7.16" status="release" pubdate="20150611194118" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="17">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1548" time="2284" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-nquads/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-nquads/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-nquads/2.7.16/sesame-rio-nquads-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-nquads" type="jar" ext="jar" status="successful" details="" size="7447" time="699" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-nquads/jars/sesame-rio-nquads-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-nquads/2.7.16/sesame-rio-nquads-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-ntriples">
+			<revision name="2.7.16" status="release" pubdate="20150611194058" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="18">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1393" time="9785" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-ntriples/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-ntriples/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-ntriples/2.7.16/sesame-rio-ntriples-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="sesame-rio-ntriples" type="jar" ext="jar" status="successful" details="" size="15446" time="819" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-ntriples/jars/sesame-rio-ntriples-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-ntriples/2.7.16/sesame-rio-ntriples-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-n3">
+			<revision name="2.7.16" status="release" pubdate="20150611194035" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="14">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1432" time="692" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-n3/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-n3/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-n3/2.7.16/sesame-rio-n3-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-n3" type="jar" ext="jar" status="successful" details="" size="4580" time="679" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-n3/jars/sesame-rio-n3-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-n3/2.7.16/sesame-rio-n3-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-turtle">
+			<revision name="2.7.16" status="release" pubdate="20150611194011" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="15">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1654" time="1020" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-turtle/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-turtle/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-turtle/2.7.16/sesame-rio-turtle-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-n3" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="sesame-rio-turtle" type="jar" ext="jar" status="successful" details="" size="22424" time="864" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-turtle/jars/sesame-rio-turtle-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-turtle/2.7.16/sesame-rio-turtle-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="commons-io" name="commons-io">
+			<revision name="2.4" status="release" pubdate="20120612192206" resolver="public" artresolver="public" homepage="http://commons.apache.org/io/" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="16">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="10166" time="991" location="/Users/giovannirescia/.ivy2/cache/commons-io/commons-io/ivy-2.4.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/commons-io/commons-io/ivy-2.4.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-ntriples" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.4" rev-constraint-default="2.4" rev-constraint-dynamic="2.4" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="commons-io" type="jar" ext="jar" status="successful" details="" size="185140" time="1784" location="/Users/giovannirescia/.ivy2/cache/commons-io/commons-io/jars/commons-io-2.4.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-binary">
+			<revision name="2.7.16" status="release" pubdate="20150611193954" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="13">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1063" time="666" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-binary/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-binary/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-binary/2.7.16/sesame-rio-binary-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="sesame-rio-binary" type="jar" ext="jar" status="successful" details="" size="11627" time="742" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-binary/jars/sesame-rio-binary-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-binary/2.7.16/sesame-rio-binary-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-datatypes">
+			<revision name="2.7.16" status="release" pubdate="20150611193933" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="12">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1038" time="709" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-datatypes/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-datatypes/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-datatypes/2.7.16/sesame-rio-datatypes-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-ntriples" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-n3" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="sesame-rio-datatypes" type="jar" ext="jar" status="successful" details="" size="8665" time="704" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-datatypes/jars/sesame-rio-datatypes-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-datatypes/2.7.16/sesame-rio-datatypes-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-languages">
+			<revision name="2.7.16" status="release" pubdate="20150611193906" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="11">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="1038" time="659" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-languages/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-languages/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-languages/2.7.16/sesame-rio-languages-2.7.16.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-ntriples" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-n3" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="sesame-rio-languages" type="jar" ext="jar" status="successful" details="" size="3587" time="678" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-languages/jars/sesame-rio-languages-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-languages/2.7.16/sesame-rio-languages-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-rio-api">
+			<revision name="2.7.16" status="release" pubdate="20150611193840" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="10">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="934" time="656" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-api/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-api/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.16/sesame-rio-api-2.7.16.pom"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-datatypes" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-ntriples" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-languages" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.semarglproject" name="semargl-sesame" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="0.6.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-n3" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-binary" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java-sesame" conf="compile, runtime" rev="2.7.12" rev-constraint-default="2.7.12" rev-constraint-dynamic="2.7.12" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="sesame-rio-api" type="jar" ext="jar" status="successful" details="" size="55758" time="743" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-rio-api/jars/sesame-rio-api-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-rio-api/2.7.16/sesame-rio-api-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.7.5" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.7.16"/>
+				<caller organisation="org.semarglproject" name="semargl-sesame" conf="compile, runtime" rev="2.7.5" rev-constraint-default="2.7.5" rev-constraint-dynamic="2.7.5" callerrev="0.6.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.7.12" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.7.16"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java-sesame" conf="compile, runtime" rev="2.7.12" rev-constraint-default="2.7.12" rev-constraint-dynamic="2.7.12" callerrev="0.5.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-model">
+			<revision name="2.7.16" status="release" pubdate="20150611193812" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="7">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="807" time="675" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-model/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-model/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-model/2.7.16/sesame-model-2.7.16.pom"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-datatypes" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-ntriples" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-languages" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-nquads" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-n3" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-binary" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="4.2.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-api" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java-sesame" conf="compile, runtime" rev="2.7.12" rev-constraint-default="2.7.12" rev-constraint-dynamic="2.7.12" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="sesame-model" type="jar" ext="jar" status="successful" details="" size="166715" time="1081" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-model/jars/sesame-model-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-model/2.7.16/sesame-model-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.7.12" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.7.16"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java-sesame" conf="compile, runtime" rev="2.7.12" rev-constraint-default="2.7.12" rev-constraint-dynamic="2.7.12" callerrev="0.5.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.openrdf.sesame" name="sesame-util">
+			<revision name="2.7.16" status="release" pubdate="20150611193751" resolver="public" artresolver="public" homepage="" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="8">
+				<license name="Aduna BSD license" url="https://bitbucket.org/openrdf/sesame/src/master/core/LICENSE.txt"/>
+				<metadata-artifact status="successful" details="" size="760" time="688" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-util/ivy-2.7.16.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-util/ivy-2.7.16.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-util/2.7.16/sesame-util-2.7.16.pom"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-binary" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-turtle" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trig" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-api" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-model" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-trix" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfxml" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-datatypes" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-languages" conf="compile, runtime" rev="2.7.16" rev-constraint-default="2.7.16" rev-constraint-dynamic="2.7.16" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="sesame-util" type="jar" ext="jar" status="successful" details="" size="80759" time="1844" location="/Users/giovannirescia/.ivy2/cache/org.openrdf.sesame/sesame-util/jars/sesame-util-2.7.16.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/openrdf/sesame/sesame-util/2.7.16/sesame-util-2.7.16.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.tukaani" name="xz">
+			<revision name="1.5" status="release" pubdate="20140308083924" resolver="public" artresolver="public" homepage="http://tukaani.org/xz/java.html" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="6">
+				<license name="Public Domain"/>
+				<metadata-artifact status="successful" details="" size="1904" time="629" location="/Users/giovannirescia/.ivy2/cache/org.tukaani/xz/ivy-1.5.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.tukaani/xz/ivy-1.5.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/tukaani/xz/1.5/xz-1.5.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="1.5" rev-constraint-default="1.5" rev-constraint-dynamic="1.5" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="xz" type="jar" ext="jar" status="successful" details="" size="99555" time="897" location="/Users/giovannirescia/.ivy2/cache/org.tukaani/xz/jars/xz-1.5.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/tukaani/xz/1.5/xz-1.5.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-annotations">
+			<revision name="2.5.1" status="release" pubdate="20150206210513" resolver="public" artresolver="public" homepage="http://github.com/FasterXML/jackson" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="5">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="1217" time="657" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.5.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/ivy-2.5.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.1/jackson-annotations-2.5.1.pom"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.1"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.5.1" rev-constraint-default="2.5.1" rev-constraint-dynamic="2.5.1" callerrev="4.2.1"/>
+				<artifacts>
+					<artifact name="jackson-annotations" type="bundle" ext="jar" status="successful" details="" size="39817" time="840" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-annotations/bundles/jackson-annotations-2.5.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-annotations/2.5.1/jackson-annotations-2.5.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.5.0" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.5.1"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.5.0" rev-constraint-default="2.5.0" rev-constraint-dynamic="2.5.0" callerrev="2.5.1"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.5.1" rev-constraint-default="2.5.1" rev-constraint-dynamic="2.5.1" callerrev="4.2.1"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-databind">
+			<revision name="2.5.1" status="release" pubdate="20150206211045" resolver="public" artresolver="public" homepage="http://github.com/FasterXML/jackson" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="4">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="5859" time="650" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.5.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/ivy-2.5.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.1/jackson-databind-2.5.1.pom"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.5.1" rev-constraint-default="2.5.1" rev-constraint-dynamic="2.5.1" callerrev="4.2.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.5.0"/>
+				<artifacts>
+					<artifact name="jackson-databind" type="bundle" ext="jar" status="successful" details="" size="1138921" time="2948" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-databind/bundles/jackson-databind-2.5.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.5.1/jackson-databind-2.5.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.3.3" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.5.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.5.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="com.fasterxml.jackson.core" name="jackson-core">
+			<revision name="2.5.1" status="release" pubdate="20150206210604" resolver="public" artresolver="public" homepage="https://github.com/FasterXML/jackson" downloaded="true" searched="true" default="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="3">
+				<license name="The Apache Software License, Version 2.0" url="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+				<metadata-artifact status="successful" details="" size="4771" time="638" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.5.1.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/ivy-2.5.1.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.pom"/>
+				<caller organisation="com.fasterxml.jackson.core" name="jackson-databind" conf="compile, runtime" rev="2.5.1" rev-constraint-default="2.5.1" rev-constraint-dynamic="2.5.1" callerrev="2.5.1"/>
+				<caller organisation="net.sourceforge.owlapi" name="owlapi-distribution" conf="compile, runtime" rev="2.5.1" rev-constraint-default="2.5.1" rev-constraint-dynamic="2.5.1" callerrev="4.2.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.5.0"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="2.7.16"/>
+				<artifacts>
+					<artifact name="jackson-core" type="bundle" ext="jar" status="successful" details="" size="229860" time="1093" location="/Users/giovannirescia/.ivy2/cache/com.fasterxml.jackson.core/jackson-core/bundles/jackson-core-2.5.1.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.5.1/jackson-core-2.5.1.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+			<revision name="2.3.3" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.5.1"/>
+				<caller organisation="com.github.jsonld-java" name="jsonld-java" conf="compile, runtime" rev="2.3.3" rev-constraint-default="2.3.3" rev-constraint-dynamic="2.3.3" callerrev="0.5.0"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+			<revision name="2.2.1" evicted="latest-revision" evicted-reason="" downloaded="false" searched="false" conf="compile, runtime(*), master(compile), runtime, compile(*), master" position="-1">
+				<evicted-by rev="2.5.1"/>
+				<caller organisation="org.openrdf.sesame" name="sesame-rio-rdfjson" conf="compile, runtime" rev="2.2.1" rev-constraint-default="2.2.1" rev-constraint-dynamic="2.2.1" callerrev="2.7.16"/>
+				<artifacts>
+				</artifacts>
+			</revision>
+		</module>
+		<module organisation="org.scala-lang" name="scala-library">
+			<revision name="2.11.8" status="release" pubdate="20160304122633" resolver="public" artresolver="public" homepage="http://www.scala-lang.org/" extra-info.apiURL="http://www.scala-lang.org/api/2.11.8/" downloaded="true" searched="true" default="false" conf="default, compile, runtime(*), master(compile), runtime, default(compile), compile(*), master" position="0">
+				<license name="BSD 3-Clause" url="http://www.scala-lang.org/license.html"/>
+				<metadata-artifact status="successful" details="" size="1426" time="685" location="/Users/giovannirescia/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.8.xml" searched="true" original-local-location="/Users/giovannirescia/.ivy2/cache/org.scala-lang/scala-library/ivy-2.11.8.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.pom"/>
+				<caller organisation="org.phenoscape" name="scowl_2.11" conf="default, compile, runtime, master" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="1.1"/>
+				<caller organisation="prueba" name="prueba_2.11" conf="test, compile, provided, test-internal, runtime, optional" rev="2.11.8" rev-constraint-default="2.11.8" rev-constraint-dynamic="2.11.8" callerrev="1.0"/>
+				<artifacts>
+					<artifact name="scala-library" type="jar" ext="jar" status="successful" details="" size="5744974" time="32499" location="/Users/giovannirescia/.ivy2/cache/org.scala-lang/scala-library/jars/scala-library-2.11.8.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.11.8/scala-library-2.11.8.jar"/>
+					</artifact>
+				</artifacts>
+			</revision>
+		</module>
+	</dependencies>
+</ivy-report>

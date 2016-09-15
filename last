@@ -1,0 +1,34 @@
+:load lastone
+familyontology.getAxioms(b.getAxiomType)
+def mypm2(given: Any):Tuple2[scala.collection.immutable.Set[org.semanticweb.owlapi.model.OWLAnnotation], scala.collection.immutable.Set[_ <: org.semanticweb.owlapi.model.OWLClassExpression]] = given match{
+case EquivalentClasses(x) => x}
+val ps = familyontology.getAxioms(b.getAxiomType)
+ps
+ps.size
+ps.foreach{mypm2}
+ps.foreach(i=>println(mypm2(i))
+
+)
+ps.foreach(i=>println(mypm2(i).toString)
+)
+ps.foreach(i=>println(mypm2(i).toString))
+ps.foreach(i=>println(mypm2(i).toString+"\n\n"+"----------------------------------------------------------------------------------------------------------"))
+ps.foreach(i=>println(mypm2(i).toString+"\n\n"+"----------------------------------------------------------------------------------------------------------"))
+var lps = ps.toList
+lps(1)
+lps(2)
+mypm2(lps(2))
+var k = mypm2(lps(2))
+k._2
+var k2=k._2
+k2
+k2.toList
+k2.size
+k2.toList
+k2.toList.size
+k2.toList
+k2.toList(1)
+k2.toList(1)
+var k3 = k2.toList(1)
+k3
+k3.getNestedClassExpressions

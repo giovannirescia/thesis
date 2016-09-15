@@ -1,0 +1,35 @@
+import org.phenoscape.scowl._
+import org.semanticweb.owlapi.apibinding.OWLManager
+import org.semanticweb.owlapi.model.{OWLAxiom, OWLClassExpression}
+import org.semanticweb.owlapi.model.parameters.Imports
+
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+
+val hasParent = ObjectProperty("http://www.co-ode.org/roberts/family-tree.owl#hasParent")
+
+val isParentOf = ObjectProperty("http://www.co-ode.org/roberts/family-tree.owl#isParentOf")
+
+val manager = OWLManager.createOWLOntologyManager()
+val ontology = manager.createOntology()
+
+val PartOf = ObjectProperty("http://example.org/part_of")
+val HasPart = ObjectProperty("http://example.org/has_part")
+val DevelopsFrom = ObjectProperty("http://example.org/develops_from")
+val Eye = Class("http://example.org/eye")
+val Head = Class("http://example.org/head")
+val Tail = Class("http://example.org/tail")
+
+
+manager.addAxiom(ontology, Eye SubClassOf (PartOf some Head))
+manager.addAxiom(ontology, Eye SubClassOf (not(PartOf some Tail)))
+val a = ontology.getClassesInSignature()
+
+val gcis = for {
+  term <- a
+}
+  yield {
+  (not(HasPart some term)) SubClassOf (not(HasPart some (DevelopsFrom some term)))
+}
+manager.addAxioms(ontology, gcis)
+
