@@ -1,0 +1,14 @@
+let p1 = Prop (PropSymbol 1)
+let p2 = Prop (PropSymbol 2)
+let p3 = Prop (PropSymbol 3)
+let f1 = Neg(Box (RelSymbol 1) (Box (RelSymbol 1) p1))
+let ba = Box (RelSymbol 1) p1
+let db = Neg (Box (RelSymbol 1) p2)
+let f2=(Neg (Box (RelSymbol 1) (Box (RelSymbol 1) db)))
+let f3=(Box (RelSymbol 1) (Neg (Box (RelSymbol 1) ba)))
+let f4=(Box (RelSymbol 1) (Box (RelSymbol 1) ba))
+let f = f1 :|: f2 :|: f3 :|: f4
+
+
+fromList [(2,fromList [(1,fromList [fromList [1,0]])]),(3,fromList [(1,fromList [fromList [0,0,0],fromList [0,1,0]]),(2,fromList [fromList [1,0,1]])])]
+fromList [(2,fromList [(1,fromList [fromList [1,0]])]),(3,fromList [(1,fromList [fromList [0,0,0],fromList [0,1,0]]),(2,fromList [fromList [1,0,1]])])]

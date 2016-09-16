@@ -1,0 +1,6 @@
+begin
+P1 v P2 v [R1](P3 v -P4 v P5 v -P6);
+-[R1]-P2;
+[R1](P1 v -P2) v P3 v -[R1][R1]P3;
+[R1][R1][R1]-P3
+end
