@@ -4,8 +4,9 @@ import scala.collection.JavaConversions._
 import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
 
 import org.semanticweb.owlapi.functional.renderer.OWLFunctionalSyntaxRenderer
-import demo.Peperoni
-import demo.LabelMaker.renderManchesterSyntax
+import renders.Peperoni
+import renders.LabelMaker.renderManchesterSyntax
+import renders.FunctionalRenderer.{renderFuncSyn => renderizador}
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.AxiomType._
 val file = new File("/Users/giovannirescia/family_example.owl")
@@ -25,3 +26,5 @@ val writer = new StringWriter()
 var w = f.render(ontology, writer)
 f.render(ontology, FuncSynTarget)
 ManchSynTarget.close()
+
+renderizador(ontology, "averahora")
