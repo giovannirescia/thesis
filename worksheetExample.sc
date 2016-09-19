@@ -18,31 +18,26 @@ import org.semanticweb.owlapi.model.OWLAxiomVisitor
 import org.semanticweb.owlapi.model.OWLOntologySetProvider
 import org.semanticweb.owlapi.util.AnnotationValueShortFormProvider
 import org.semanticweb.owlapi.functional.renderer._
-// https://wiki.csc.calpoly.edu/OntologyTutorial/wiki/IntroductionToOntologiesWithProtege
+
 val file = new File("/Users/giovannirescia/family_example.owl")
 
 val manager = OWLManager.createOWLOntologyManager
 val ontology = manager.loadOntologyFromOntologyDocument(file)
 
-// Traemos todos los axiomas que son de tipo Equivalencia de clases
-
 val eqclax = ontology.getAxioms(EQUIVALENT_CLASSES)
 
- 
-
-object LabelMaker {
+object LabelMaker{
 
   /**
-   * @param axiom Axiom to render
-   * @param context Ontoloyy provider, e.g. OWLOntologyManager
-   * @param ontology
-   * @return
-   */
-  def renderManchesterSyntax(axiom: OWLAxiom, context: OWLOntologySetProvider, ontology: OWLOntology): String = {
+    * @param axiom Axiom to render
+    * @param context Ontoloyy provider, e.g. OWLOntologyManager
+    * @return
+    */
+  def renderManchesterSyntax(axiom: OWLAxiom, context: OWLOntologySetProvider): String = {
     val writer = new StringWriter()
     val rdfsLabel = OWLManager.getOWLDataFactory.getRDFSLabel
     val labelProvider = new AnnotationValueShortFormProvider(List(rdfsLabel).asJava, new HashMap(), context)
-    val renderer = new FunctionalSyntaxObjectRenderer(ontology, writer)
+    val renderer = new ManchesterOWLSyntaxObjectRenderer(writer, labelProvider)
     axiom.accept(renderer: OWLAxiomVisitor)
     writer.close()
     writer.toString
@@ -51,6 +46,7 @@ object LabelMaker {
 }
 
 
-for (ax <- eqclax) LabelMaker.renderManchesterSyntax(ax, manager, ontology)
+var x = OWLManager.getOWLDataFactory.getRDFSLabel
+List(x).asJava
 
-val axioms = ontology.getAxioms()
+//for (ax <- eqclax) println(LabelMaker.renderManchesterSyntax(ax, manager))
