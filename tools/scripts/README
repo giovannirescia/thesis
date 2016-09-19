@@ -1,0 +1,96 @@
+KCNF-CONVERTER
+
+Compile:
+1) Go to the src folder and execute:
+   make
+2) This will compile kcnf-converter and put the resulting 
+   executable in the bin folder.
+
+Run:
+1) To convert to kcnf just one file, use the executable in
+   the bin folder as this:
+
+       ./to_kcnf <file>
+
+   This will output the kcnf version of the formula to the 
+   standard output.
+
+2) To convert to kcnf the contents of a folder, use the bash
+   script, specifying the input folder and the output folder:
+
+       ./to_kcnf.sh <in_folder> <out_folder>
+
+BLISS-GENERATOR
+
+Compile:
+1) Go to the src folder and execute:
+
+        make
+
+2) This will compile bliss-generator and put the resulting 
+   executable in the bin folder.
+
+3) Compile the bliss tool, then put the resulting executable
+   in the bin folder.
+
+Run:
+1) To generate the bliss graph for just one formula, use the executable in
+   the bin folder as this:
+
+       ./to_bliss <file>
+
+   This will output the graph of the formula to the 
+   standard output.
+
+2) To generate graphs for the contents of a folder, use the bash
+   script, specifying the input folder and the output folder:
+
+       ./to_bliss.sh <in_folder> <out_folder>
+
+   This will output a .bliss file for each formula in the input folder.
+
+3) To calculate the simmetries for a particular graph you can use the
+   bliss executable in the bin folder:
+         ./bliss <bliss_file>
+
+   This will output the symmetries information to the standar output.
+
+4) To calculate the simmetries for a set of .bliss files use the bash
+   script, specifying the folder where all the .bliss files are and the
+   output folder:
+        
+        ./exec_bliss.sh <in_folder> <out_folder>
+
+   For each input graph the script will generate .bliss file with the same
+   graph plus all the symmetries information. 
+   With the contents of the output folder you can execute the script 
+   src/bliss_proccess.py to generate the .symm files and extract statistics.
+   The .symm files contain the symmetries translated to literals of the original
+   formula.
+
+
+SCRIPTS
+
+1)kcnf-to-bliss.sh
+
+   This scripts concentrate the whole proccess of translating a formula 
+   to kcnf, generate the bliss graphs, calculate the symmetries and 
+   generate the symmetries file for htab.
+
+   The script can be executed with the following options:
+     Folder Options:
+          -d: source folder
+          -o: output folder
+     Process Options: 
+          no options: execute the whole process
+          -b: execute the process: to bliss -> execute bliss -> get stats
+          -e: execute the process: execute bliss -> get stats
+          -s: execute the process: get stats
+ 
+2)pack_benchmark.sh
+   Given a folder of kcnf formulas and a folder of .symm files, generates
+   a tar file containing the kcnf formula and the corresponding .symm file.
+
+  
+   
+        

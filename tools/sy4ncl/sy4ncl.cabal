@@ -1,0 +1,32 @@
+name:           sy4ncl
+version:        0.1
+cabal-version:  >= 1.2
+build-type:     Simple
+author:         ezequiel
+
+executable sy4ncl
+  hs-source-dirs:  src
+  build-depends:   
+                   base >= 4,
+                   containers,
+                   hylolib,
+                   cmdargs,
+                   mtl,
+                   filepath,
+                   bytestring
+  ghc-options:     -O2 -Wall -rtsopts
+  other-modules:   
+                   Sy4NCL.BMLGraph,
+                   Sy4NCL.BlissWriter,
+                   Sy4NCL.CommandLine,
+                   Sy4NCL.Graph,
+                   Sy4NCL.Main,
+                   Sy4NCL.Utils,
+                   Sy4NCL.StatsWriter,
+                   Sy4NCL.MappingWriter
+  extensions:      
+                   BangPatterns, 
+                   DeriveDataTypeable, 
+                   ScopedTypeVariables
+  main-is:         sy4ncl.hs
+

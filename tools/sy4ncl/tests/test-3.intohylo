@@ -1,0 +1,4 @@
+begin
+P1 v -P2;
+-P2 v P3 v P1
+end
