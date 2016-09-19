@@ -1,7 +1,9 @@
 import org.semanticweb.owlapi.model.{OWLAxiom, OWLClassExpression}
-import scala.collection.JavaConversions._
-import java.io.File
 
+import scala.collection.JavaConversions._
+import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
+
+import org.semanticweb.owlapi.functional.renderer.OWLFunctionalSyntaxRenderer
 import demo.Peperoni
 import demo.LabelMaker.renderManchesterSyntax
 import org.semanticweb.owlapi.apibinding.OWLManager
@@ -14,5 +16,12 @@ val ontology = manager.loadOntologyFromOntologyDocument(file)
 val eqclax = ontology.getAxioms(EQUIVALENT_CLASSES)
 
 val hello = new Peperoni
+val FuncSynTarget = new FileOutputStream("/Users/giovannirescia/coding/tesis/output/FunctionalSyntaxOutput.txt")
+val ManchSynTarget = new PrintWriter(new File("/Users/giovannirescia/coding/tesis/output/ManchesterSyntaxOutput.txt"))
+for (ax <- eqclax) ManchSynTarget.write(renderManchesterSyntax(ax, manager)+"\n")
 
-for (ax <- eqclax) println(renderManchesterSyntax(ax, manager)+"\n")
+var f = new OWLFunctionalSyntaxRenderer
+val writer = new StringWriter()
+var w = f.render(ontology, writer)
+f.render(ontology, FuncSynTarget)
+ManchSynTarget.close()
