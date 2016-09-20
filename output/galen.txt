@@ -1,0 +1,201 @@
+Prefix(:=<https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#>)
+Prefix(owl:=<http://www.w3.org/2002/07/owl#>)
+Prefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)
+Prefix(xml:=<http://www.w3.org/XML/1998/namespace>)
+Prefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)
+Prefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)
+Prefix(owl2xml:=<http://www.w3.org/2006/12/owl2-xml#>)
+Prefix(family_example:=<https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#>)
+
+
+Ontology(<https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl>
+Annotation(owl:versionInfo "A simple example ontology by Emily Schwarz based on the generations ontology http://www.owl-ontologies.com/generations.owl created by Matthew Horridge.
+It uses a simple class hierarchy, with Gender and Person as the two subclasses of Thing; Person has Parent, Mother, Father, OffSpring, Daughter, and Sun as subclasses. 
+Object properties are hasGender, hasParent, hasChild, and hasSibling. 
+Relations between persons are defined through equivalence classes: 
+\"Son EquivalentTo Person and (hasParent some Person) and (hasGender value MaleGender)\".
+The only data property used is FullName; obviously this should be expanded to deal with real genealogies.
+Two individuals (instances) are defined for Gender (FemaleGender, MaleGender), and a few for Person. The latter may have relationships with other people, specified via property assertions such as \"Dave hasChild Bob\". 
+(Description expanded by Franz J. Kurfess, Jan. 23, 2011). "^^xsd:string)
+
+Declaration(Class(:Daughter))
+Declaration(Class(:Father))
+Declaration(Class(:Gender))
+Declaration(Class(:Mother))
+Declaration(Class(:OffSpring))
+Declaration(Class(:Parent))
+Declaration(Class(:Person))
+Declaration(Class(:Son))
+Declaration(Class(owl:Thing))
+Declaration(ObjectProperty(:hasChild))
+Declaration(ObjectProperty(:hasGender))
+Declaration(ObjectProperty(:hasParent))
+Declaration(ObjectProperty(:hasSibling))
+Declaration(DataProperty(:fullName))
+Declaration(NamedIndividual(:Anne))
+Declaration(NamedIndividual(:Bob))
+Declaration(NamedIndividual(:FemaleGender))
+Declaration(NamedIndividual(:Jane))
+Declaration(NamedIndividual(:MaleGender))
+Declaration(NamedIndividual(:Mary))
+Declaration(NamedIndividual(:Sue))
+Declaration(NamedIndividual(:Tom))
+Declaration(NamedIndividual(:Dave))
+Declaration(NamedIndividual(:Jim))
+Declaration(NamedIndividual(:Scott))
+Declaration(AnnotationProperty(owl:versionInfo))
+
+############################
+#   Object Properties
+############################
+
+# Object Property: :hasChild (:hasChild)
+
+InverseObjectProperties(:hasChild :hasParent)
+
+# Object Property: :hasGender (:hasGender)
+
+FunctionalObjectProperty(:hasGender)
+ObjectPropertyDomain(:hasGender :Person)
+ObjectPropertyRange(:hasGender :Gender)
+
+# Object Property: :hasSibling (:hasSibling)
+
+SymmetricObjectProperty(:hasSibling)
+IrreflexiveObjectProperty(:hasSibling)
+ObjectPropertyDomain(:hasSibling :Person)
+ObjectPropertyRange(:hasSibling :Person)
+
+
+############################
+#   Data Properties
+############################
+
+# Data Property: :fullName (:fullName)
+
+DataPropertyDomain(:fullName :Person)
+DataPropertyRange(:fullName xsd:string)
+
+
+
+############################
+#   Classes
+############################
+
+# Class: :Daughter (:Daughter)
+
+EquivalentClasses(:Daughter ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasParent :Person) ObjectHasValue(:hasGender :FemaleGender)))
+SubClassOf(:Daughter :Person)
+
+# Class: :Father (:Father)
+
+EquivalentClasses(:Father ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasChild :Person) ObjectHasValue(:hasGender :MaleGender)))
+SubClassOf(:Father :Person)
+
+# Class: :Gender (:Gender)
+
+SubClassOf(:Gender owl:Thing)
+
+# Class: :Mother (:Mother)
+
+EquivalentClasses(:Mother ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasChild :Person) ObjectHasValue(:hasGender :FemaleGender)))
+SubClassOf(:Mother :Person)
+
+# Class: :OffSpring (:OffSpring)
+
+EquivalentClasses(:OffSpring ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasParent :Person)))
+SubClassOf(:OffSpring :Person)
+
+# Class: :Parent (:Parent)
+
+EquivalentClasses(:Parent ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasChild :Person)))
+SubClassOf(:Parent :Person)
+
+# Class: :Son (:Son)
+
+EquivalentClasses(:Son ObjectIntersectionOf(:Person ObjectSomeValuesFrom(:hasParent :Person) ObjectHasValue(:hasGender :MaleGender)))
+SubClassOf(:Son :Person)
+
+
+############################
+#   Named Individuals
+############################
+
+# Individual: :Anne (:Anne)
+
+ClassAssertion(:Person :Anne)
+ClassAssertion(owl:Thing :Anne)
+ObjectPropertyAssertion(:hasParent :Anne :Jane)
+ObjectPropertyAssertion(:hasSibling :Anne :Mary)
+ObjectPropertyAssertion(:hasSibling :Anne :Sue)
+ObjectPropertyAssertion(:hasSibling :Anne :Scott)
+
+# Individual: :Bob (:Bob)
+
+ClassAssertion(:Person :Bob)
+ClassAssertion(owl:Thing :Bob)
+
+# Individual: :FemaleGender (:FemaleGender)
+
+ClassAssertion(:Gender :FemaleGender)
+ClassAssertion(owl:Thing :FemaleGender)
+
+# Individual: :Jane (:Jane)
+
+ClassAssertion(:Person :Jane)
+ClassAssertion(owl:Thing :Jane)
+
+# Individual: :MaleGender (:MaleGender)
+
+ClassAssertion(:Gender :MaleGender)
+ClassAssertion(owl:Thing :MaleGender)
+
+# Individual: :Mary (:Mary)
+
+ClassAssertion(:Person :Mary)
+ClassAssertion(owl:Thing :Mary)
+ObjectPropertyAssertion(:hasGender :Mary :FemaleGender)
+ObjectPropertyAssertion(:hasParent :Mary :Bob)
+ObjectPropertyAssertion(:hasParent :Mary :Jane)
+ObjectPropertyAssertion(:hasSibling :Mary :Sue)
+DataPropertyAssertion(:fullName :Mary "Mary Smith"^^xsd:string)
+
+# Individual: :Sue (:Sue)
+
+ClassAssertion(:Person :Sue)
+ClassAssertion(owl:Thing :Sue)
+ObjectPropertyAssertion(:hasGender :Sue :FemaleGender)
+ObjectPropertyAssertion(:hasParent :Sue :Bob)
+ObjectPropertyAssertion(:hasParent :Sue :Jane)
+ObjectPropertyAssertion(:hasSibling :Sue :Mary)
+
+# Individual: :Tom (:Tom)
+
+ClassAssertion(owl:Thing :Tom)
+ObjectPropertyAssertion(:hasGender :Tom :MaleGender)
+ObjectPropertyAssertion(:hasParent :Tom :Mary)
+
+# Individual: :Dave (:Dave)
+
+ClassAssertion(:Person :Dave)
+ClassAssertion(owl:Thing :Dave)
+ObjectPropertyAssertion(:hasChild :Dave :Bob)
+
+# Individual: :Jim (:Jim)
+
+ClassAssertion(:Person :Jim)
+ClassAssertion(owl:Thing :Jim)
+ObjectPropertyAssertion(:hasParent :Jim :Mary)
+ObjectPropertyAssertion(:hasSibling :Jim :Tom)
+
+# Individual: :Scott (:Scott)
+
+ClassAssertion(:Person :Scott)
+ClassAssertion(owl:Thing :Scott)
+ObjectPropertyAssertion(:hasParent :Scott :Bob)
+ObjectPropertyAssertion(:hasParent :Scott :Jane)
+ObjectPropertyAssertion(:hasSibling :Scott :Mary)
+ObjectPropertyAssertion(:hasSibling :Scott :Sue)
+
+
+)
