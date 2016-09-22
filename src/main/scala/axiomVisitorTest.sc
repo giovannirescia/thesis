@@ -19,7 +19,7 @@ import renders.ManchesterRenderer.renderManchSyn
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.AxiomType._
 import org.semanticweb.owlapi.model.AxiomType.SUBCLASS_OF
-val file = new File("/Users/giovannirescia/family_example.owl")
+val file = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
 val manager = OWLManager.createOWLOntologyManager
 val ontology = manager.loadOntologyFromOntologyDocument(file)
 var eqclax = ontology.getAxioms(SUBCLASS_OF)
