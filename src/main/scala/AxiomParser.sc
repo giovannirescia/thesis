@@ -11,25 +11,41 @@ import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.AxiomType._
 import org.semanticweb.owlapi.model.AxiomType.DATA_PROPERTY_DOMAIN
 import org.semanticweb.owlapi.util.DefaultPrefixManager
-import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_INTERSECTION_OF,OBJECT_SOME_VALUES_FROM, OBJECT_HAS_VALUE}
+import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_INTERSECTION_OF,OBJECT_SOME_VALUES_FROM, OBJECT_HAS_VALUE, OBJECT_ALL_VALUES_FROM}
 val file = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
 val file2 = new File("/Users/giovannirescia/coding/tesis/ontologies/galen.owl")
+val file3 = new File("/Users/giovannirescia/coding/tesis/ontologies/dolce.owl")
+val file4 = new File("/Users/giovannirescia/coding/tesis/ontologies/wine_3.owl")
+
 val manager = OWLManager.createOWLOntologyManager
-val ontology = manager.loadOntologyFromOntologyDocument(file)
+val ontology = manager.loadOntologyFromOntologyDocument(file4)
 val factory = manager.getOWLDataFactory
 val equiv_class = ontology.getAxioms(EQUIVALENT_CLASSES)
-val sub_class = ontology.getAxioms(SUBCLASS_OF)
+val sub_class = ontology.getAxioms(SUBCLASS_OF).toList
+
 import renders.RendererManager._
 import renders.SubClassRenderer._
 import renders.LabelMaker.renderManchesterSyntax
 val tbox = ontology.getTBoxAxioms(Imports.EXCLUDED).toList
 //val l = tbox(14)
 val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/null.txt"),false))
+//
+val l = tbox(0)
 
+
+//
+//val (_, x, z) = matchClasses(l)
+//
+//val y = z.asInstanceOf[OWLObjectAllValuesFrom]
+//
+//y.getFiller
+//y.getProperty
 
 //simpleSubClass(l.asInstanceOf[OWLSubClassOfAxiom], writer)
-for (x <- tbox) writer.write(renderManchesterSyntax(x, manager)+"\n\n")
-render(tbox, "test_family_000")
+//for (x <- tbox) writer.write(renderManchesterSyntax(x, manager)+"\n\n")
+//
+//
+render(tbox, "test_wine_3_000")
 writer.close()
 
 //def pepe(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {

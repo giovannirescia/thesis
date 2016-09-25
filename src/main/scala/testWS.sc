@@ -3,7 +3,6 @@ import scala.collection.JavaConversions._
 import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
 import org.semanticweb.owlapi.model.parameters.Imports
 import org.semanticweb.owlapi.functional.renderer.OWLFunctionalSyntaxRenderer
-import renders.Peperoni
 import renders.LabelMaker.renderManchesterSyntax
 import renders.FunctionalRenderer.{renderFuncSyn => renderizador}
 import org.semanticweb.owlapi.apibinding.OWLManager
@@ -20,7 +19,6 @@ val eqclax = ontology.getAxioms(EQUIVALENT_CLASSES)
 val tbox = ontology.getTBoxAxioms(Imports.INCLUDED)
 var axiom = eqclax.head
 axiom.getAxiomType
-val hello = new Peperoni
 val FuncSynTarget = new FileOutputStream("/Users/giovannirescia/coding/tesis/output/FunctionalSyntaxOutput.txt")
 val FuncSynTarget2 = new FileOutputStream("/Users/giovannirescia/coding/tesis/output/FunctionalSyntaxOutput2.txt")
 

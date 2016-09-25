@@ -19,14 +19,18 @@ object RendererManager {
     var rend: Set[String] = Set.empty
     var i: Int = 0
     for (axiom <- axioms){
-      //writer.write("\n\n"+axiom.toString+"\n\n")
+      writer.write("\n\n"+i.toString+" " + axiom.toString+"\n\n")
       val axType = axiom.getAxiomType
       // SubClassOf Axiom Type
-
       if (axType == SUBCLASS_OF){
+
         writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
         // Class_A <= Class_B
-        simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom], writer)
+        try {
+          simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom], writer)
+        }catch{
+          case _: Throwable => println(i +": "+ axiom.toString)
+        }
         writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
         rend += axType.toString
 
@@ -34,6 +38,8 @@ object RendererManager {
       else if(axType == EQUIVALENT_CLASSES){
         writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
         equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom], writer)
+
+
         writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
         rend += axType.toString
 

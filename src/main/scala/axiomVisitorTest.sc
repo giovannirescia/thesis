@@ -12,7 +12,6 @@ import scala.collection.JavaConversions._
 import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
 
 import org.semanticweb.owlapi.functional.renderer.OWLFunctionalSyntaxRenderer
-import renders.Peperoni
 import renders.LabelMaker.renderManchesterSyntax
 import renders.FunctionalRenderer.{renderFuncSyn => renderizador}
 import renders.ManchesterRenderer.renderManchSyn
