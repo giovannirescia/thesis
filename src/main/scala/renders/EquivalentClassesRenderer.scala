@@ -23,10 +23,10 @@ object EquivalentClassesRenderer {
       val rhs = listExpr.get(1)
 
       // Class_A <= Class_B
-      subClass(lhs, rhs, writer)
+      subClass(lhs, rhs, writer, axiom)
       // 2227 : AND
       writer.write(" \u2227 ")
       // Class_B <= Class_A
-      subClass(rhs, lhs, writer)
+      subClass(rhs, lhs, writer, axiom)
   }
 }

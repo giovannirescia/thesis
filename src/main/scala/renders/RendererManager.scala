@@ -26,11 +26,8 @@ object RendererManager {
 
         writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
         // Class_A <= Class_B
-        try {
-          simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom], writer)
-        }catch{
-          case _: Throwable => println(i +": "+ axiom.toString)
-        }
+        simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom], writer)
+
         writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
         rend += axType.toString
 
@@ -67,6 +64,7 @@ object RendererManager {
       }
       else {
         notRend += axType.toString
+        writer.write("@!#"*40 + "\n\n")
       }
       i += 1
     }

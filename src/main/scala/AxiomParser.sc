@@ -12,26 +12,29 @@ import org.semanticweb.owlapi.model.AxiomType._
 import org.semanticweb.owlapi.model.AxiomType.DATA_PROPERTY_DOMAIN
 import org.semanticweb.owlapi.util.DefaultPrefixManager
 import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_INTERSECTION_OF,OBJECT_SOME_VALUES_FROM, OBJECT_HAS_VALUE, OBJECT_ALL_VALUES_FROM}
-val file = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
+val file1 = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
 val file2 = new File("/Users/giovannirescia/coding/tesis/ontologies/galen.owl")
 val file3 = new File("/Users/giovannirescia/coding/tesis/ontologies/dolce.owl")
 val file4 = new File("/Users/giovannirescia/coding/tesis/ontologies/wine_3.owl")
 
-val manager = OWLManager.createOWLOntologyManager
-val ontology = manager.loadOntologyFromOntologyDocument(file4)
-val factory = manager.getOWLDataFactory
-val equiv_class = ontology.getAxioms(EQUIVALENT_CLASSES)
-val sub_class = ontology.getAxioms(SUBCLASS_OF).toList
+val manager1 = OWLManager.createOWLOntologyManager
+val manager2 = OWLManager.createOWLOntologyManager
+val manager3 = OWLManager.createOWLOntologyManager
+val manager4 = OWLManager.createOWLOntologyManager
+
+//val ontology1 = manager.loadOntologyFromOntologyDocument(file1)
+//val factory = manager.getOWLDataFactory
+//val equiv_class = ontology.getAxioms(EQUIVALENT_CLASSES)
+//val sub_class = ontology.getAxioms(SUBCLASS_OF).toList
 
 import renders.RendererManager._
 import renders.SubClassRenderer._
 import renders.LabelMaker.renderManchesterSyntax
-val tbox = ontology.getTBoxAxioms(Imports.EXCLUDED).toList
+//val tbox = ontology.getTBoxAxioms(Imports.EXCLUDED).toList
 //val l = tbox(14)
 val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/null.txt"),false))
 //
-val l = tbox(0)
-
+//val l = tbox(740)
 
 //
 //val (_, x, z) = matchClasses(l)
@@ -45,7 +48,10 @@ val l = tbox(0)
 //for (x <- tbox) writer.write(renderManchesterSyntax(x, manager)+"\n\n")
 //
 //
-render(tbox, "test_wine_3_000")
+render(manager1.loadOntologyFromOntologyDocument(file1).getTBoxAxioms(Imports.EXCLUDED).toList, "test_family_002")
+render(manager2.loadOntologyFromOntologyDocument(file2).getTBoxAxioms(Imports.EXCLUDED).toList, "test_galen_002")
+render(manager3.loadOntologyFromOntologyDocument(file3).getTBoxAxioms(Imports.EXCLUDED).toList, "test_dolce_002")
+render(manager4.loadOntologyFromOntologyDocument(file4).getTBoxAxioms(Imports.EXCLUDED).toList, "test_win3_3_002")
 writer.close()
 
 //def pepe(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {

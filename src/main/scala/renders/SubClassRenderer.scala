@@ -18,7 +18,7 @@ object SubClassRenderer {
   def simpleSubClass(axiom: OWLSubClassOfAxiom, writer: PrintWriter): Unit = {
     val (_, x, y) = matchClasses(axiom)
 
-    subClass(x.asInstanceOf[OWLClassExpression], y.asInstanceOf[OWLClassExpression], writer)
+    subClass(x.asInstanceOf[OWLClassExpression], y.asInstanceOf[OWLClassExpression], writer, axiom)
 
 //    writer.write(" [ ")
 //    writer.write(x.asOWLClass().getIRI.getShortForm)
@@ -33,14 +33,15 @@ object SubClassRenderer {
     * @param lhs : Left Hand Side of a OWL Expression, type: OWL Expression
     * @param rhs : Right Hand Side of a OWL Expression, type: OWL Expression
     * @param writer : a writer to write stuff
+    * @param axiom: The axiom beign rendered (for debug)
     */
-  def subClass(lhs: OWLClassExpression, rhs: OWLClassExpression, writer: PrintWriter): Unit = {
+  def subClass(lhs: OWLClassExpression, rhs: OWLClassExpression, writer: PrintWriter, axiom: Any ): Unit = {
     writer.write(" [ ")
 
     if (!lhs.isAnonymous) {
       writer.write(lhs.asOWLClass().getIRI.getShortForm)
     }else{
-      inspect(lhs, writer)
+      inspect(lhs, writer, axiom)
     }
     // 2286: Subset ( <= )
     writer.write(" \u2286 ")
@@ -48,14 +49,14 @@ object SubClassRenderer {
       writer.write(rhs.asOWLClass().getIRI.getShortForm)
     }
     else{
-      inspect(rhs, writer)
+      inspect(rhs, writer, axiom)
     }
     writer.write(" ] ")
 
     //writer.write("\n")
   }
 
-  def inspect(exp: OWLClassExpression, writer: PrintWriter): Unit = {
+  def inspect(exp: OWLClassExpression, writer: PrintWriter, axiom: Any): Unit = {
     writer.write("(")
     val expType = exp.getClassExpressionType
     if (expType == OBJECT_EXACT_CARDINALITY){
@@ -81,7 +82,7 @@ object SubClassRenderer {
       if (!op.isAnonymous) {
         writer.write(op.asOWLClass().getIRI.getShortForm)
       } else{
-        inspect(op.asInstanceOf[OWLClassExpression], writer)
+        inspect(op.asInstanceOf[OWLClassExpression], writer, axiom)
       }
 
     }
@@ -93,14 +94,14 @@ object SubClassRenderer {
         writer.write("" + ysLhs.asOWLObjectProperty().getIRI.getShortForm)
       }
       else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer)
+        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
       }
       writer.write(" some ")
       if (!ysRhs.isAnonymous){
          writer.write(ysRhs.asOWLClass().getIRI.getShortForm + "")}
       else{
         writer.write("")
-        inspect(ysRhs, writer)
+        inspect(ysRhs, writer, axiom)
         writer.write("")
       }
     }else if (expType == OBJECT_ALL_VALUES_FROM) {
@@ -111,14 +112,14 @@ object SubClassRenderer {
         writer.write("" + ysLhs.asOWLObjectProperty().getIRI.getShortForm)
       }
       else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer)
+        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
       }
-      writer.write(" some ")
+      writer.write(" all ")
       if (!ysRhs.isAnonymous){
         writer.write(ysRhs.asOWLClass().getIRI.getShortForm + "")}
       else{
         writer.write("")
-        inspect(ysRhs, writer)
+        inspect(ysRhs, writer, axiom)
         writer.write("")
       }
     } else if (expType == OBJECT_HAS_VALUE){
@@ -128,13 +129,13 @@ object SubClassRenderer {
       if(!ysLhs.isAnonymous) {
         writer.write("" + ysLhs.asOWLObjectProperty().getIRI.getShortForm)
       }else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer)
+        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
       }
       writer.write(" value: ")
       if (!ysRhs.isAnonymous){
         writer.write(ysRhs.getIRI.getShortForm + "")
       }else{
-        inspect(ysRhs.asInstanceOf[OWLClassExpression], writer)
+        inspect(ysRhs.asInstanceOf[OWLClassExpression], writer, axiom)
       }
     }else if (expType == OBJECT_INTERSECTION_OF){
       val xs = matchIntersectionOf(exp)
@@ -151,11 +152,11 @@ object SubClassRenderer {
           // 2229: Intersection
           writer.write(" \u2229 ")
           if (x.getClassExpressionType == OBJECT_HAS_VALUE) {
-             inspect(x, writer)
+             inspect(x, writer, axiom)
           } else if (x.getClassExpressionType == OBJECT_SOME_VALUES_FROM) {
-             inspect(x, writer)
+             inspect(x, writer, axiom)
           }else if (x.getClassExpressionType == OBJECT_ALL_VALUES_FROM){
-            inspect(x, writer)
+            inspect(x, writer, axiom)
           }
 
         }
@@ -176,17 +177,21 @@ object SubClassRenderer {
           // 2229: Intersection
           writer.write(" \u222A ")
           if (x.getClassExpressionType == OBJECT_HAS_VALUE) {
-            inspect(x, writer)
+            inspect(x, writer, axiom)
           } else if (x.getClassExpressionType == OBJECT_SOME_VALUES_FROM) {
-            inspect(x, writer)
+            inspect(x, writer, axiom)
           }else if (x.getClassExpressionType == OBJECT_ALL_VALUES_FROM){
-            inspect(x, writer)
+            inspect(x, writer, axiom)
           }
 
         }
 
       }
     }else{
+      writer.write("@@@@"*20)
+      writer.write("\n\n Axiom: " + axiom.toString + "\n\n")
+      writer.write("Couldn't be written because of the expression: " + exp.toString + "\n\n")
+      writer.write("@@@@"*20)
       writer.close()
     }
     writer.write(")")
