@@ -145,24 +145,19 @@ object SubClassRenderer {
         writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
       }
       if (!xsRhs.isAnonymous) {
+        writer.write(" \u2229 ")
         writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
       }
       else {
         for (x <- xs.tail) {
           // 2229: Intersection
           writer.write(" \u2229 ")
-          if (x.getClassExpressionType == OBJECT_HAS_VALUE) {
-             inspect(x, writer, axiom)
-          } else if (x.getClassExpressionType == OBJECT_SOME_VALUES_FROM) {
-             inspect(x, writer, axiom)
-          }else if (x.getClassExpressionType == OBJECT_ALL_VALUES_FROM){
-            inspect(x, writer, axiom)
-          }
-
+          inspect(x, writer, axiom)
         }
 
       }
-    }else if (expType == OBJECT_UNION_OF){
+    } // TODO: NOT WORKING
+    else if (expType == OBJECT_UNION_OF){
       val xs = matchUnionOf(exp)
       val xsLhs = xs(0)
       val xsRhs = xs(1)
@@ -170,20 +165,14 @@ object SubClassRenderer {
         writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
       }
       if (!xsRhs.isAnonymous) {
+        writer.write(" \u222A ")
         writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
       }
       else {
         for (x <- xs.tail) {
           // 2229: Intersection
           writer.write(" \u222A ")
-          if (x.getClassExpressionType == OBJECT_HAS_VALUE) {
-            inspect(x, writer, axiom)
-          } else if (x.getClassExpressionType == OBJECT_SOME_VALUES_FROM) {
-            inspect(x, writer, axiom)
-          }else if (x.getClassExpressionType == OBJECT_ALL_VALUES_FROM){
-            inspect(x, writer, axiom)
-          }
-
+          inspect(x, writer, axiom)
         }
 
       }

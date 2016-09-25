@@ -51,7 +51,7 @@ val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovanniresc
 render(manager1.loadOntologyFromOntologyDocument(file1).getTBoxAxioms(Imports.EXCLUDED).toList, "test_family_002")
 render(manager2.loadOntologyFromOntologyDocument(file2).getTBoxAxioms(Imports.EXCLUDED).toList, "test_galen_002")
 render(manager3.loadOntologyFromOntologyDocument(file3).getTBoxAxioms(Imports.EXCLUDED).toList, "test_dolce_002")
-render(manager4.loadOntologyFromOntologyDocument(file4).getTBoxAxioms(Imports.EXCLUDED).toList, "test_win3_3_002")
+render(manager4.loadOntologyFromOntologyDocument(file4).getTBoxAxioms(Imports.EXCLUDED).toList, "test_wine_3_002")
 writer.close()
 
 //def pepe(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {

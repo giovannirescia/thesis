@@ -140,7 +140,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ Merlot ⊆ (Wine ∩ (madeFromGrape some __nom43) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom43) ∩ ) ⊆ Merlot ] 
+ [ Merlot ⊆ (Wine ∩ (madeFromGrape some __nom43) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom43) ∩ (1 madeFromGrape: Thing)) ⊆ Merlot ] 
 
 ------------------------------------------------------------
 
@@ -180,7 +180,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ WineDescriptor ⊆ (WineColorWineTaste) ]  ∧  [ (WineColorWineTaste) ⊆ WineDescriptor ] 
+ [ WineDescriptor ⊆ (WineColor ∪ WineTaste) ]  ∧  [ (WineColor ∪ WineTaste) ⊆ WineDescriptor ] 
 
 ------------------------------------------------------------
 
@@ -230,7 +230,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ Riesling ⊆ (Wine ∩ (madeFromGrape some __nom37) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom37) ∩ ) ⊆ Riesling ] 
+ [ Riesling ⊆ (Wine ∩ (madeFromGrape some __nom37) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom37) ∩ (1 madeFromGrape: Thing)) ⊆ Riesling ] 
 
 ------------------------------------------------------------
 
@@ -372,7 +372,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ Gamay ⊆ (Wine ∩ (madeFromGrape some __nom33) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom33) ∩ ) ⊆ Gamay ] 
+ [ Gamay ⊆ (Wine ∩ (madeFromGrape some __nom33) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom33) ∩ (1 madeFromGrape: Thing)) ⊆ Gamay ] 
 
 ------------------------------------------------------------
 
@@ -428,7 +428,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ RedBordeaux ⊆ (BordeauxRedWine) ]  ∧  [ (BordeauxRedWine) ⊆ RedBordeaux ] 
+ [ RedBordeaux ⊆ (Bordeaux ∩ RedWine) ]  ∧  [ (Bordeaux ∩ RedWine) ⊆ RedBordeaux ] 
 
 ------------------------------------------------------------
 
@@ -478,7 +478,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ Semillon ⊆ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ ) ]  ∧  [ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ ) ⊆ Semillon ] 
+ [ Semillon ⊆ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ (1 madeFromGrape: Thing)) ⊆ Semillon ] 
 
 ------------------------------------------------------------
 
@@ -498,7 +498,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ PinotNoir ⊆ (Wine ∩ (madeFromGrape some __nom39) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom39) ∩ ) ⊆ PinotNoir ] 
+ [ PinotNoir ⊆ (Wine ∩ (madeFromGrape some __nom39) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom39) ∩ (1 madeFromGrape: Thing)) ⊆ PinotNoir ] 
 
 ------------------------------------------------------------
 
@@ -528,7 +528,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ CabernetSauvignon ⊆ (Wine ∩ (madeFromGrape some __nom29) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom29) ∩ ) ⊆ CabernetSauvignon ] 
+ [ CabernetSauvignon ⊆ (Wine ∩ (madeFromGrape some __nom29) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom29) ∩ (1 madeFromGrape: Thing)) ⊆ CabernetSauvignon ] 
 
 ------------------------------------------------------------
 
@@ -558,7 +558,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ WhiteBordeaux ⊆ (BordeauxWhiteWine) ]  ∧  [ (BordeauxWhiteWine) ⊆ WhiteBordeaux ] 
+ [ WhiteBordeaux ⊆ (Bordeaux ∩ WhiteWine) ]  ∧  [ (Bordeaux ∩ WhiteWine) ⊆ WhiteBordeaux ] 
 
 ------------------------------------------------------------
 
@@ -674,7 +674,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ DryWhiteWine ⊆ (DryWineWhiteWine) ]  ∧  [ (DryWineWhiteWine) ⊆ DryWhiteWine ] 
+ [ DryWhiteWine ⊆ (DryWine ∩ WhiteWine) ]  ∧  [ (DryWine ∩ WhiteWine) ⊆ DryWhiteWine ] 
 
 ------------------------------------------------------------
 
@@ -950,7 +950,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ Chardonnay ⊆ (Wine ∩ (madeFromGrape some __nom24) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom24) ∩ ) ⊆ Chardonnay ] 
+ [ Chardonnay ⊆ (Wine ∩ (madeFromGrape some __nom24) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom24) ∩ (1 madeFromGrape: Thing)) ⊆ Chardonnay ] 
 
 ------------------------------------------------------------
 
@@ -986,7 +986,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ Meritage ⊆ (Wine ∩ (madeFromGrape all __nom8) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape all __nom8) ∩ ) ⊆ Meritage ] 
+ [ Meritage ⊆ (Wine ∩ (madeFromGrape all __nom8) ∩ (2 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape all __nom8) ∩ (2 madeFromGrape: Thing)) ⊆ Meritage ] 
 
 ------------------------------------------------------------
 
@@ -1006,7 +1006,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ CabernetFranc ⊆ (Wine ∩ (madeFromGrape some __nom3) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom3) ∩ ) ⊆ CabernetFranc ] 
+ [ CabernetFranc ⊆ (Wine ∩ (madeFromGrape some __nom3) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom3) ∩ (1 madeFromGrape: Thing)) ⊆ CabernetFranc ] 
 
 ------------------------------------------------------------
 
@@ -1052,7 +1052,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ CheninBlanc ⊆ (Wine ∩ (madeFromGrape some __nom34) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom34) ∩ ) ⊆ CheninBlanc ] 
+ [ CheninBlanc ⊆ (Wine ∩ (madeFromGrape some __nom34) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom34) ∩ (1 madeFromGrape: Thing)) ⊆ CheninBlanc ] 
 
 ------------------------------------------------------------
 
@@ -1382,7 +1382,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ DryRedWine ⊆ (DryWineRedWine) ]  ∧  [ (DryWineRedWine) ⊆ DryRedWine ] 
+ [ DryRedWine ⊆ (DryWine ∩ RedWine) ]  ∧  [ (DryWine ∩ RedWine) ⊆ DryRedWine ] 
 
 ------------------------------------------------------------
 
@@ -1392,7 +1392,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ WhiteBurgundy ⊆ (BurgundyWhiteWine) ]  ∧  [ (BurgundyWhiteWine) ⊆ WhiteBurgundy ] 
+ [ WhiteBurgundy ⊆ (Burgundy ∩ WhiteWine) ]  ∧  [ (Burgundy ∩ WhiteWine) ⊆ WhiteBurgundy ] 
 
 ------------------------------------------------------------
 
@@ -1442,7 +1442,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ PetiteSyrah ⊆ (Wine ∩ (madeFromGrape some __nom25) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom25) ∩ ) ⊆ PetiteSyrah ] 
+ [ PetiteSyrah ⊆ (Wine ∩ (madeFromGrape some __nom25) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom25) ∩ (1 madeFromGrape: Thing)) ⊆ PetiteSyrah ] 
 
 ------------------------------------------------------------
 
@@ -1462,7 +1462,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ PinotBlanc ⊆ (Wine ∩ (madeFromGrape some __nom21) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom21) ∩ ) ⊆ PinotBlanc ] 
+ [ PinotBlanc ⊆ (Wine ∩ (madeFromGrape some __nom21) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom21) ∩ (1 madeFromGrape: Thing)) ⊆ PinotBlanc ] 
 
 ------------------------------------------------------------
 
@@ -1472,7 +1472,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ RedBurgundy ⊆ (BurgundyRedWine) ]  ∧  [ (BurgundyRedWine) ⊆ RedBurgundy ] 
+ [ RedBurgundy ⊆ (Burgundy ∩ RedWine) ]  ∧  [ (Burgundy ∩ RedWine) ⊆ RedBurgundy ] 
 
 ------------------------------------------------------------
 
@@ -1482,7 +1482,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ Zinfandel ⊆ (Wine ∩ (madeFromGrape some __nom20) ∩ ) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom20) ∩ ) ⊆ Zinfandel ] 
+ [ Zinfandel ⊆ (Wine ∩ (madeFromGrape some __nom20) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (Wine ∩ (madeFromGrape some __nom20) ∩ (1 madeFromGrape: Thing)) ⊆ Zinfandel ] 
 
 ------------------------------------------------------------
 
@@ -1612,7 +1612,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ SauvignonBlanc ⊆ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ ) ]  ∧  [ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ ) ⊆ SauvignonBlanc ] 
+ [ SauvignonBlanc ⊆ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ (1 madeFromGrape: Thing)) ]  ∧  [ (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ (1 madeFromGrape: Thing)) ⊆ SauvignonBlanc ] 
 
 ------------------------------------------------------------
 
@@ -1738,7 +1738,7 @@ SubClassOf
 
 EquivalentClasses
 =================
- [ WhiteLoire ⊆ (LoireWhiteWine) ]  ∧  [ (LoireWhiteWine) ⊆ WhiteLoire ] 
+ [ WhiteLoire ⊆ (Loire ∩ WhiteWine) ]  ∧  [ (Loire ∩ WhiteWine) ⊆ WhiteLoire ] 
 
 ------------------------------------------------------------
 
@@ -1788,7 +1788,7 @@ EquivalentClasses
 
 EquivalentClasses
 =================
- [ IceWine ⊆ (DessertWineLateHarvest) ]  ∧  [ (DessertWineLateHarvest) ⊆ IceWine ] 
+ [ IceWine ⊆ (DessertWine ∩ LateHarvest) ]  ∧  [ (DessertWine ∩ LateHarvest) ⊆ IceWine ] 
 
 ------------------------------------------------------------
 
