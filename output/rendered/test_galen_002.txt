@@ -1990,21 +1990,21 @@ SubClassOf
 
 
 
-199 SubClassOf(<http://www.galen.com/ontology#discrete> <http://www.galen.com/ontology#CountabilityStatus>)
+199 SubClassOf(<http://www.galen.com/ontology#Effectiveness> <http://www.galen.com/ontology#ProcessFeature>)
 
 SubClassOf
 ==========
- [ discrete ⊆ CountabilityStatus ] 
+ [ Effectiveness ⊆ ProcessFeature ] 
 
 ------------------------------------------------------------
 
 
 
-200 SubClassOf(<http://www.galen.com/ontology#Effectiveness> <http://www.galen.com/ontology#ProcessFeature>)
+200 SubClassOf(<http://www.galen.com/ontology#discrete> <http://www.galen.com/ontology#CountabilityStatus>)
 
 SubClassOf
 ==========
- [ Effectiveness ⊆ ProcessFeature ] 
+ [ discrete ⊆ CountabilityStatus ] 
 
 ------------------------------------------------------------
 
@@ -3060,21 +3060,21 @@ A(<hasMedialLateralDisplacement>T → [hasMedialLateralDisplacement]T)
 
 
 
-306 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyStructure> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
+306 SubClassOf(<http://www.galen.com/ontology#Jejunum> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLinearDivision-inv> <http://www.galen.com/ontology#StomachToJejunum>))
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some (BodyStructure ∩ (hasAbnormalityStatus some normal)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
+ [ Jejunum ⊆ (hasLinearDivision-inv some StomachToJejunum) ] 
 
 ------------------------------------------------------------
 
 
 
-307 SubClassOf(<http://www.galen.com/ontology#Jejunum> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLinearDivision-inv> <http://www.galen.com/ontology#StomachToJejunum>))
+307 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyStructure> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
 
 SubClassOf
 ==========
- [ Jejunum ⊆ (hasLinearDivision-inv some StomachToJejunum) ] 
+ [ (absence ∩ (hasExistence-inv some (BodyStructure ∩ (hasAbnormalityStatus some normal)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
 
 ------------------------------------------------------------
 
@@ -3610,21 +3610,21 @@ SubClassOf
 
 
 
-361 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
+361 SubClassOf(<http://www.galen.com/ontology#AnastomoticBranch> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasBranch-inv> <http://www.galen.com/ontology#DorsalPancreaticArtery>))
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some (BodyProcess ∩ (hasPathologicalStatus some physiological)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
+ [ AnastomoticBranch ⊆ (hasBranch-inv some DorsalPancreaticArtery) ] 
 
 ------------------------------------------------------------
 
 
 
-362 SubClassOf(<http://www.galen.com/ontology#AnastomoticBranch> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasBranch-inv> <http://www.galen.com/ontology#DorsalPancreaticArtery>))
+362 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
 
 SubClassOf
 ==========
- [ AnastomoticBranch ⊆ (hasBranch-inv some DorsalPancreaticArtery) ] 
+ [ (absence ∩ (hasExistence-inv some (BodyProcess ∩ (hasPathologicalStatus some physiological)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
 
 ------------------------------------------------------------
 
@@ -4600,21 +4600,21 @@ SubClassOf
 
 
 
-460 SubClassOf(<http://www.galen.com/ontology#Treponema> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShape> ObjectIntersectionOf(<http://www.galen.com/ontology#Shape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#spiralling>))))
+460 SubClassOf(<http://www.galen.com/ontology#Campylobacter> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasFunction> <http://www.galen.com/ontology#AerobicMetabolicProcess>))
 
 SubClassOf
 ==========
- [ Treponema ⊆ (hasShape some (Shape ∩ (hasState some spiralling))) ] 
+ [ Campylobacter ⊆ (hasFunction some AerobicMetabolicProcess) ] 
 
 ------------------------------------------------------------
 
 
 
-461 SubClassOf(<http://www.galen.com/ontology#Campylobacter> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasFunction> <http://www.galen.com/ontology#AerobicMetabolicProcess>))
+461 SubClassOf(<http://www.galen.com/ontology#Treponema> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShape> ObjectIntersectionOf(<http://www.galen.com/ontology#Shape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#spiralling>))))
 
 SubClassOf
 ==========
- [ Campylobacter ⊆ (hasFunction some AerobicMetabolicProcess) ] 
+ [ Treponema ⊆ (hasShape some (Shape ∩ (hasState some spiralling))) ] 
 
 ------------------------------------------------------------
 
@@ -7410,17 +7410,7 @@ SubClassOf
 
 
 
-741 SubClassOf(<http://www.galen.com/ontology#TrigoneOfUrinaryBladder> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShapeAnalagousTo> ObjectIntersectionOf(<http://www.galen.com/ontology#AnatomicalShape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#laminar>))))
-
-SubClassOf
-==========
- [ TrigoneOfUrinaryBladder ⊆ (hasShapeAnalagousTo some (AnatomicalShape ∩ (hasState some laminar))) ] 
-
-------------------------------------------------------------
-
-
-
-742 SubClassOf(<http://www.galen.com/ontology#RightAtrium> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAlphaConnection-inv> <http://www.galen.com/ontology#ForamenOvale>))
+741 SubClassOf(<http://www.galen.com/ontology#RightAtrium> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAlphaConnection-inv> <http://www.galen.com/ontology#ForamenOvale>))
 
 SubClassOf
 ==========
@@ -7430,11 +7420,21 @@ SubClassOf
 
 
 
-743 SubClassOf(<http://www.galen.com/ontology#Vomiting> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasSpecificationLevel> <http://www.galen.com/ontology#uniquelySpecified>))
+742 SubClassOf(<http://www.galen.com/ontology#Vomiting> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasSpecificationLevel> <http://www.galen.com/ontology#uniquelySpecified>))
 
 SubClassOf
 ==========
  [ Vomiting ⊆ (hasSpecificationLevel some uniquelySpecified) ] 
+
+------------------------------------------------------------
+
+
+
+743 SubClassOf(<http://www.galen.com/ontology#TrigoneOfUrinaryBladder> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShapeAnalagousTo> ObjectIntersectionOf(<http://www.galen.com/ontology#AnatomicalShape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#laminar>))))
+
+SubClassOf
+==========
+ [ TrigoneOfUrinaryBladder ⊆ (hasShapeAnalagousTo some (AnatomicalShape ∩ (hasState some laminar))) ] 
 
 ------------------------------------------------------------
 
@@ -11670,21 +11670,21 @@ SubClassOf
 
 
 
-1167 SubClassOf(<http://www.galen.com/ontology#PosteriorWall> <http://www.galen.com/ontology#HeartWall>)
+1167 SubClassOf(<http://www.galen.com/ontology#TrypanosomaBruceiRhodesiense> <http://www.galen.com/ontology#Trypanosoma>)
 
 SubClassOf
 ==========
- [ PosteriorWall ⊆ HeartWall ] 
+ [ TrypanosomaBruceiRhodesiense ⊆ Trypanosoma ] 
 
 ------------------------------------------------------------
 
 
 
-1168 SubClassOf(<http://www.galen.com/ontology#TrypanosomaBruceiRhodesiense> <http://www.galen.com/ontology#Trypanosoma>)
+1168 SubClassOf(<http://www.galen.com/ontology#PosteriorWall> <http://www.galen.com/ontology#HeartWall>)
 
 SubClassOf
 ==========
- [ TrypanosomaBruceiRhodesiense ⊆ Trypanosoma ] 
+ [ PosteriorWall ⊆ HeartWall ] 
 
 ------------------------------------------------------------
 
@@ -16540,21 +16540,21 @@ SubClassOf
 
 
 
-1654 SubClassOf(<http://www.galen.com/ontology#Leishmania> <http://www.galen.com/ontology#Protozoa>)
+1654 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#GeneralisedSubstance> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> <http://www.galen.com/ontology#BodyProcess>) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
 
 SubClassOf
 ==========
- [ Leishmania ⊆ Protozoa ] 
+ [ (absence ∩ (hasExistence-inv some (GeneralisedSubstance ∩ (hasOutcome-inv some BodyProcess) ∩ (hasPathologicalStatus some physiological)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
 
 ------------------------------------------------------------
 
 
 
-1655 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#GeneralisedSubstance> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> <http://www.galen.com/ontology#BodyProcess>) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
+1655 SubClassOf(<http://www.galen.com/ontology#Leishmania> <http://www.galen.com/ontology#Protozoa>)
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some (GeneralisedSubstance ∩ (hasOutcome-inv some BodyProcess) ∩ (hasPathologicalStatus some physiological)))) ⊆ (hasAbnormalityStatus some nonNormal) ] 
+ [ Leishmania ⊆ Protozoa ] 
 
 ------------------------------------------------------------
 
@@ -16920,21 +16920,21 @@ SubClassOf
 
 
 
-1692 SubClassOf(<http://www.galen.com/ontology#SalmonellaGroupE2> <http://www.galen.com/ontology#Salmonella>)
+1692 SubClassOf(<http://www.galen.com/ontology#Liberating> <http://www.galen.com/ontology#LooseningProcedure>)
 
 SubClassOf
 ==========
- [ SalmonellaGroupE2 ⊆ Salmonella ] 
+ [ Liberating ⊆ LooseningProcedure ] 
 
 ------------------------------------------------------------
 
 
 
-1693 SubClassOf(<http://www.galen.com/ontology#Liberating> <http://www.galen.com/ontology#LooseningProcedure>)
+1693 SubClassOf(<http://www.galen.com/ontology#SalmonellaGroupE2> <http://www.galen.com/ontology#Salmonella>)
 
 SubClassOf
 ==========
- [ Liberating ⊆ LooseningProcedure ] 
+ [ SalmonellaGroupE2 ⊆ Salmonella ] 
 
 ------------------------------------------------------------
 
@@ -23060,21 +23060,21 @@ SubClassOf
 
 
 
-2306 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#Secretion> ObjectSomeValuesFrom(<http://www.galen.com/ontology#actsSpecificallyOn> <http://www.galen.com/ontology#Fibrinolysin>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasFunction-inv> <http://www.galen.com/ontology#StaphylococcusAureus>))
+2306 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>))
 
 SubClassOf
 ==========
- [ (Secretion ∩ (actsSpecificallyOn some Fibrinolysin)) ⊆ (hasFunction-inv some StaphylococcusAureus) ] 
+ [ (absence ∩ (hasExistence-inv some (BodyProcess ∩ (hasIntrinsicAbnormalityStatus some nonNormal)))) ⊆ (hasAbnormalityStatus some normal) ] 
 
 ------------------------------------------------------------
 
 
 
-2307 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>))
+2307 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#Secretion> ObjectSomeValuesFrom(<http://www.galen.com/ontology#actsSpecificallyOn> <http://www.galen.com/ontology#Fibrinolysin>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasFunction-inv> <http://www.galen.com/ontology#StaphylococcusAureus>))
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some (BodyProcess ∩ (hasIntrinsicAbnormalityStatus some nonNormal)))) ⊆ (hasAbnormalityStatus some normal) ] 
+ [ (Secretion ∩ (actsSpecificallyOn some Fibrinolysin)) ⊆ (hasFunction-inv some StaphylococcusAureus) ] 
 
 ------------------------------------------------------------
 
@@ -23630,21 +23630,21 @@ SubClassOf
 
 
 
-2363 SubClassOf(<http://www.galen.com/ontology#Naris> <http://www.galen.com/ontology#SurfaceOpening>)
+2363 SubClassOf(<http://www.galen.com/ontology#unchanged> <http://www.galen.com/ontology#ChangeInLevelState>)
 
 SubClassOf
 ==========
- [ Naris ⊆ SurfaceOpening ] 
+ [ unchanged ⊆ ChangeInLevelState ] 
 
 ------------------------------------------------------------
 
 
 
-2364 SubClassOf(<http://www.galen.com/ontology#unchanged> <http://www.galen.com/ontology#ChangeInLevelState>)
+2364 SubClassOf(<http://www.galen.com/ontology#Naris> <http://www.galen.com/ontology#SurfaceOpening>)
 
 SubClassOf
 ==========
- [ unchanged ⊆ ChangeInLevelState ] 
+ [ Naris ⊆ SurfaceOpening ] 
 
 ------------------------------------------------------------
 
@@ -25680,21 +25680,21 @@ SubClassOf
 
 
 
-2568 SubClassOf(<http://www.galen.com/ontology#ArterialBloodPressure> <http://www.galen.com/ontology#VascularPressure>)
+2568 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#BodySubstance> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
 
 SubClassOf
 ==========
- [ ArterialBloodPressure ⊆ VascularPressure ] 
+ [ (BodySubstance ∩ (hasOutcome-inv some (BodyProcess ∩ (hasIntrinsicAbnormalityStatus some nonNormal)))) ⊆ (hasIntrinsicAbnormalityStatus some nonNormal) ] 
 
 ------------------------------------------------------------
 
 
 
-2569 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#BodySubstance> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#BodyProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicAbnormalityStatus> <http://www.galen.com/ontology#nonNormal>))
+2569 SubClassOf(<http://www.galen.com/ontology#ArterialBloodPressure> <http://www.galen.com/ontology#VascularPressure>)
 
 SubClassOf
 ==========
- [ (BodySubstance ∩ (hasOutcome-inv some (BodyProcess ∩ (hasIntrinsicAbnormalityStatus some nonNormal)))) ⊆ (hasIntrinsicAbnormalityStatus some nonNormal) ] 
+ [ ArterialBloodPressure ⊆ VascularPressure ] 
 
 ------------------------------------------------------------
 
@@ -26910,21 +26910,21 @@ SubClassOf
 
 
 
-2691 SubClassOf(<http://www.galen.com/ontology#Oligodendrocyte> <http://www.galen.com/ontology#Neurone>)
+2691 SubClassOf(<http://www.galen.com/ontology#GastroduodenalArtery> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAlphaConnection-inv> <http://www.galen.com/ontology#RightGastroepiploicArtery>))
 
 SubClassOf
 ==========
- [ Oligodendrocyte ⊆ Neurone ] 
+ [ GastroduodenalArtery ⊆ (hasAlphaConnection-inv some RightGastroepiploicArtery) ] 
 
 ------------------------------------------------------------
 
 
 
-2692 SubClassOf(<http://www.galen.com/ontology#GastroduodenalArtery> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAlphaConnection-inv> <http://www.galen.com/ontology#RightGastroepiploicArtery>))
+2692 SubClassOf(<http://www.galen.com/ontology#Oligodendrocyte> <http://www.galen.com/ontology#Neurone>)
 
 SubClassOf
 ==========
- [ GastroduodenalArtery ⊆ (hasAlphaConnection-inv some RightGastroepiploicArtery) ] 
+ [ Oligodendrocyte ⊆ Neurone ] 
 
 ------------------------------------------------------------
 
@@ -29590,21 +29590,21 @@ SubClassOf
 
 
 
-2959 SubClassOf(<http://www.galen.com/ontology#Minocycline> <http://www.galen.com/ontology#Tetracycline>)
+2959 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#MentalProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#pathological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>))
 
 SubClassOf
 ==========
- [ Minocycline ⊆ Tetracycline ] 
+ [ (absence ∩ (hasExistence-inv some (MentalProcess ∩ (hasPathologicalStatus some pathological)))) ⊆ (hasAbnormalityStatus some normal) ] 
 
 ------------------------------------------------------------
 
 
 
-2960 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(<http://www.galen.com/ontology#MentalProcess> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#pathological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasAbnormalityStatus> <http://www.galen.com/ontology#normal>))
+2960 SubClassOf(<http://www.galen.com/ontology#Minocycline> <http://www.galen.com/ontology#Tetracycline>)
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some (MentalProcess ∩ (hasPathologicalStatus some pathological)))) ⊆ (hasAbnormalityStatus some normal) ] 
+ [ Minocycline ⊆ Tetracycline ] 
 
 ------------------------------------------------------------
 
@@ -31350,21 +31350,21 @@ SubClassOf
 
 
 
-3135 SubClassOf(<http://www.galen.com/ontology#NAMEDVein> ObjectIntersectionOf(<http://www.galen.com/ontology#NAMEDInternalBodyPart> <http://www.galen.com/ontology#Vein>))
+3135 SubClassOf(<http://www.galen.com/ontology#RenalVein> ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#mirrorImaged>))
 
 SubClassOf
 ==========
- [ NAMEDVein ⊆ (NAMEDInternalBodyPart ∩ Vein) ] 
+ [ RenalVein ⊆ (isPairedOrUnpaired some mirrorImaged) ] 
 
 ------------------------------------------------------------
 
 
 
-3136 SubClassOf(<http://www.galen.com/ontology#RenalVein> ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#mirrorImaged>))
+3136 SubClassOf(<http://www.galen.com/ontology#NAMEDVein> ObjectIntersectionOf(<http://www.galen.com/ontology#NAMEDInternalBodyPart> <http://www.galen.com/ontology#Vein>))
 
 SubClassOf
 ==========
- [ RenalVein ⊆ (isPairedOrUnpaired some mirrorImaged) ] 
+ [ NAMEDVein ⊆ (NAMEDInternalBodyPart ∩ Vein) ] 
 
 ------------------------------------------------------------
 
@@ -32200,21 +32200,21 @@ SubClassOf
 
 
 
-3220 SubClassOf(<http://www.galen.com/ontology#Leptospira> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShape> ObjectIntersectionOf(<http://www.galen.com/ontology#Shape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#spiralling>))))
+3220 SubClassOf(<http://www.galen.com/ontology#Haematology> <http://www.galen.com/ontology#Medicine>)
 
 SubClassOf
 ==========
- [ Leptospira ⊆ (hasShape some (Shape ∩ (hasState some spiralling))) ] 
+ [ Haematology ⊆ Medicine ] 
 
 ------------------------------------------------------------
 
 
 
-3221 SubClassOf(<http://www.galen.com/ontology#Haematology> <http://www.galen.com/ontology#Medicine>)
+3221 SubClassOf(<http://www.galen.com/ontology#Leptospira> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasShape> ObjectIntersectionOf(<http://www.galen.com/ontology#Shape> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#spiralling>))))
 
 SubClassOf
 ==========
- [ Haematology ⊆ Medicine ] 
+ [ Leptospira ⊆ (hasShape some (Shape ∩ (hasState some spiralling))) ] 
 
 ------------------------------------------------------------
 
@@ -34450,21 +34450,21 @@ SubClassOf
 
 
 
-3445 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#BodyStructure> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLeftRightSelector> <http://www.galen.com/ontology#LeftRightState>) ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#leftRightPaired>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasSpecificationLevel> <http://www.galen.com/ontology#atLeastWellSpecified>))
+3445 SubClassOf(<http://www.galen.com/ontology#AbsoluteLevelState> <http://www.galen.com/ontology#LevelState>)
 
 SubClassOf
 ==========
- [ (BodyStructure ∩ (hasLeftRightSelector some LeftRightState) ∩ (isPairedOrUnpaired some leftRightPaired)) ⊆ (hasSpecificationLevel some atLeastWellSpecified) ] 
+ [ AbsoluteLevelState ⊆ LevelState ] 
 
 ------------------------------------------------------------
 
 
 
-3446 SubClassOf(<http://www.galen.com/ontology#AbsoluteLevelState> <http://www.galen.com/ontology#LevelState>)
+3446 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#BodyStructure> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLeftRightSelector> <http://www.galen.com/ontology#LeftRightState>) ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#leftRightPaired>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasSpecificationLevel> <http://www.galen.com/ontology#atLeastWellSpecified>))
 
 SubClassOf
 ==========
- [ AbsoluteLevelState ⊆ LevelState ] 
+ [ (BodyStructure ∩ (hasLeftRightSelector some LeftRightState) ∩ (isPairedOrUnpaired some leftRightPaired)) ⊆ (hasSpecificationLevel some atLeastWellSpecified) ] 
 
 ------------------------------------------------------------
 
@@ -35990,21 +35990,21 @@ SubClassOf
 
 
 
-3599 SubClassOf(<http://www.galen.com/ontology#localAnaesthesia> <http://www.galen.com/ontology#AnaesthesiaState>)
+3599 SubClassOf(<http://www.galen.com/ontology#MoraxellaLacunata> <http://www.galen.com/ontology#Moraxella>)
 
 SubClassOf
 ==========
- [ localAnaesthesia ⊆ AnaesthesiaState ] 
+ [ MoraxellaLacunata ⊆ Moraxella ] 
 
 ------------------------------------------------------------
 
 
 
-3600 SubClassOf(<http://www.galen.com/ontology#MoraxellaLacunata> <http://www.galen.com/ontology#Moraxella>)
+3600 SubClassOf(<http://www.galen.com/ontology#localAnaesthesia> <http://www.galen.com/ontology#AnaesthesiaState>)
 
 SubClassOf
 ==========
- [ MoraxellaLacunata ⊆ Moraxella ] 
+ [ localAnaesthesia ⊆ AnaesthesiaState ] 
 
 ------------------------------------------------------------
 
@@ -36620,21 +36620,21 @@ EquivalentClasses
 
 
 
-3662 SubClassOf(<http://www.galen.com/ontology#MinorPelvis> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasTopology> ObjectIntersectionOf(<http://www.galen.com/ontology#Topology> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#topologicallySolid>))))
+3662 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(ObjectIntersectionOf(<http://www.galen.com/ontology#Process> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> <http://www.galen.com/ontology#BodyProcess>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicPathologicalStatus> <http://www.galen.com/ontology#pathological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>))
 
 SubClassOf
 ==========
- [ MinorPelvis ⊆ (hasTopology some (Topology ∩ (hasState some topologicallySolid))) ] 
+ [ (absence ∩ (hasExistence-inv some ( ∩ (hasIntrinsicPathologicalStatus some pathological)))) ⊆ (hasPathologicalStatus some physiological) ] 
 
 ------------------------------------------------------------
 
 
 
-3663 SubClassOf(ObjectIntersectionOf(<http://www.galen.com/ontology#absence> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasExistence-inv> ObjectIntersectionOf(ObjectIntersectionOf(<http://www.galen.com/ontology#Process> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasOutcome-inv> <http://www.galen.com/ontology#BodyProcess>)) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasIntrinsicPathologicalStatus> <http://www.galen.com/ontology#pathological>)))) ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasPathologicalStatus> <http://www.galen.com/ontology#physiological>))
+3663 SubClassOf(<http://www.galen.com/ontology#MinorPelvis> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasTopology> ObjectIntersectionOf(<http://www.galen.com/ontology#Topology> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasState> <http://www.galen.com/ontology#topologicallySolid>))))
 
 SubClassOf
 ==========
- [ (absence ∩ (hasExistence-inv some ( ∩ (hasIntrinsicPathologicalStatus some pathological)))) ⊆ (hasPathologicalStatus some physiological) ] 
+ [ MinorPelvis ⊆ (hasTopology some (Topology ∩ (hasState some topologicallySolid))) ] 
 
 ------------------------------------------------------------
 
@@ -39490,21 +39490,21 @@ SubClassOf
 
 
 
-3949 SubClassOf(<http://www.galen.com/ontology#Clitoris> ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#unpaired>))
+3949 SubClassOf(<http://www.galen.com/ontology#ArticularSurface> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLayer> <http://www.galen.com/ontology#Cartilage>))
 
 SubClassOf
 ==========
- [ Clitoris ⊆ (isPairedOrUnpaired some unpaired) ] 
+ [ ArticularSurface ⊆ (hasLayer some Cartilage) ] 
 
 ------------------------------------------------------------
 
 
 
-3950 SubClassOf(<http://www.galen.com/ontology#ArticularSurface> ObjectSomeValuesFrom(<http://www.galen.com/ontology#hasLayer> <http://www.galen.com/ontology#Cartilage>))
+3950 SubClassOf(<http://www.galen.com/ontology#Clitoris> ObjectSomeValuesFrom(<http://www.galen.com/ontology#isPairedOrUnpaired> <http://www.galen.com/ontology#unpaired>))
 
 SubClassOf
 ==========
- [ ArticularSurface ⊆ (hasLayer some Cartilage) ] 
+ [ Clitoris ⊆ (isPairedOrUnpaired some unpaired) ] 
 
 ------------------------------------------------------------
 

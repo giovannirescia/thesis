@@ -1,0 +1,186 @@
+
+
+0 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Father> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( Father → Person ) 
+
+------------------------------------------------------------
+
+
+
+1 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Mother> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( Mother → Person ) 
+
+------------------------------------------------------------
+
+
+
+2 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#Father> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasChild> <http://www.owl-ontologies.com/generations.owl#Person>) ObjectHasValue(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#MaleGender>)) )
+
+EquivalentClasses
+=================
+ A ( Father → (Person ∩ (hasChild some Person) ∩ (hasGender value: MaleGender)) )  ∧  A ( (Person ∩ (hasChild some Person) ∩ (hasGender value: MaleGender)) → Father ) 
+
+------------------------------------------------------------
+
+
+
+3 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#Daughter> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Person>) ObjectHasValue(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)) )
+
+EquivalentClasses
+=================
+ A ( Daughter → (Person ∩ (hasParent some Person) ∩ (hasGender value: FemaleGender)) )  ∧  A ( (Person ∩ (hasParent some Person) ∩ (hasGender value: FemaleGender)) → Daughter ) 
+
+------------------------------------------------------------
+
+
+
+4 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#Mother> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasChild> <http://www.owl-ontologies.com/generations.owl#Person>) ObjectHasValue(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)) )
+
+EquivalentClasses
+=================
+ A ( Mother → (Person ∩ (hasChild some Person) ∩ (hasGender value: FemaleGender)) )  ∧  A ( (Person ∩ (hasChild some Person) ∩ (hasGender value: FemaleGender)) → Mother ) 
+
+------------------------------------------------------------
+
+
+
+5 DataPropertyDomain(<http://www.owl-ontologies.com/generations.owl#fullName> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+5 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#Parent> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasChild> <http://www.owl-ontologies.com/generations.owl#Person>)) )
+
+EquivalentClasses
+=================
+ A ( Parent → (Person ∩ (hasChild some Person)) )  ∧  A ( (Person ∩ (hasChild some Person)) → Parent ) 
+
+------------------------------------------------------------
+
+
+
+6 DataPropertyRange(<http://www.owl-ontologies.com/generations.owl#fullName> xsd:string)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+6 ObjectPropertyRange(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+6 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Parent> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( Parent → Person ) 
+
+------------------------------------------------------------
+
+
+
+7 ObjectPropertyDomain(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+7 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Daughter> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( Daughter → Person ) 
+
+------------------------------------------------------------
+
+
+
+8 SubClassOf(<http://www.owl-ontologies.com/generations.owl#OffSpring> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( OffSpring → Person ) 
+
+------------------------------------------------------------
+
+
+
+9 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#OffSpring> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Person>)) )
+
+EquivalentClasses
+=================
+ A ( OffSpring → (Person ∩ (hasParent some Person)) )  ∧  A ( (Person ∩ (hasParent some Person)) → OffSpring ) 
+
+------------------------------------------------------------
+
+
+
+10 ObjectPropertyRange(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Gender>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+10 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Son> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+SubClassOf
+==========
+ A ( Son → Person ) 
+
+------------------------------------------------------------
+
+
+
+11 FunctionalObjectProperty(<http://www.owl-ontologies.com/generations.owl#hasGender>)
+
+FunctionalObjectProperty
+========================
+A(<hasGender>T → [hasGender]T)
+
+------------------------------------------------------------
+
+
+
+12 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Gender> owl:Thing)
+
+SubClassOf
+==========
+ A ( Gender → Thing ) 
+
+------------------------------------------------------------
+
+
+
+13 EquivalentClasses(<http://www.owl-ontologies.com/generations.owl#Son> ObjectIntersectionOf(<http://www.owl-ontologies.com/generations.owl#Person> ObjectSomeValuesFrom(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Person>) ObjectHasValue(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#MaleGender>)) )
+
+EquivalentClasses
+=================
+ A ( Son → (Person ∩ (hasParent some Person) ∩ (hasGender value: MaleGender)) )  ∧  A ( (Person ∩ (hasParent some Person) ∩ (hasGender value: MaleGender)) → Son ) 
+
+------------------------------------------------------------
+
+
+
+14 ObjectPropertyDomain(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+Translated axiom types:
+	SubClassOf
+	EquivalentClasses
+	FunctionalObjectProperty
+Unimplemented axiom types:
+	DataPropertyDomain
+	DataPropertyRange
+	ObjectPropertyRange
+	ObjectPropertyDomain
+Total axioms translated: 14
