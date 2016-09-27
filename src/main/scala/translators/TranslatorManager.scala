@@ -1,11 +1,13 @@
 package translators
 
 import java.io.{File, FileOutputStream, PrintWriter}
-import org.semanticweb.owlapi.model.AxiomType.{DATA_PROPERTY_DOMAIN, EQUIVALENT_CLASSES, SUBCLASS_OF, DATA_PROPERTY_RANGE, FUNCTIONAL_OBJECT_PROPERTY}
+import org.semanticweb.owlapi.model.AxiomType.{DATA_PROPERTY_DOMAIN, EQUIVALENT_CLASSES, SUBCLASS_OF, DATA_PROPERTY_RANGE, FUNCTIONAL_OBJECT_PROPERTY, CLASS_ASSERTION, OBJECT_PROPERTY_ASSERTION, DATA_PROPERTY_ASSERTION}
 import org.semanticweb.owlapi.model._
 import translators.EquivalentClassesTranslator._
 import translators.SubClassTranslator._
 import translators.FunctionalObjectPropertyTranslator._
+import translators.ClassAssert._
+import translators.PropAssert._
 /**
   * Created by giovannirescia on 26/9/16.
   */
@@ -18,6 +20,8 @@ object TranslatorManager {
     for (axiom <- axioms){
       writer.write("\n\n"+i.toString+" " + axiom.toString+"\n\n")
       val axType = axiom.getAxiomType
+
+      // <TBOX_AXIOMS>
       // SubClassOf Axiom Type
       if (axType == SUBCLASS_OF){
         writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
@@ -50,7 +54,24 @@ object TranslatorManager {
         writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
         translated += axType.toString
       }
+      // </TBOX_AXIOMS>
 
+      // <ABOX_AXIOMS>
+      else if(axType == CLASS_ASSERTION){
+        writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
+        classAssert(axiom.asInstanceOf[OWLClassAssertionAxiom], writer)
+        writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
+        translated += axType.toString
+      }
+      else if(axType == OBJECT_PROPERTY_ASSERTION){
+        writer.write(axType.toString + "\n" + "=" * axType.toString.size + "\n")
+        propAssert(axiom.asInstanceOf[OWLObjectPropertyAssertionAxiom], writer)
+        writer.write("\n\n" + "------------------------------" * 2 + "\n\n")
+        translated += axType.toString
+      }
+
+
+      // </ABOX_AXIOMS>
       else {
         notTranslated += axType.toString
         writer.write("@!#"*40 + "\n\n")

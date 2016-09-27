@@ -1,0 +1,24 @@
+
+
+0 ClassAssertion(owl:Datatype xsd:string)
+
+ClassAssertion
+==============
+string type: Datatype
+
+------------------------------------------------------------
+
+
+
+1 ClassAssertion(owl:Datatype xsd:decimal)
+
+ClassAssertion
+==============
+decimal type: Datatype
+
+------------------------------------------------------------
+
+Translated axiom types:
+	ClassAssertion
+Unimplemented axiom types:
+Total axioms translated: 2

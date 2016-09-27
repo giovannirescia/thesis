@@ -1,0 +1,3 @@
+Translated axiom types:
+Unimplemented axiom types:
+Total axioms translated: 0

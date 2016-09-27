@@ -2,18 +2,11 @@ import org.semanticweb.owlapi.model.{OWLObjectIntersectionOf, _}
 import org.phenoscape.scowl._
 import scala.collection.JavaConversions._
 import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
-//import renders.EquivalentClassesRenderer.equivClasses
 import org.semanticweb.owlapi.model.parameters.Imports
-import org.semanticweb.owlapi.functional.renderer.OWLFunctionalSyntaxRenderer
 import renders.LabelMaker.renderManchesterSyntax
-import renders.FunctionalRenderer.{renderFuncSyn => renderizador}
 import org.semanticweb.owlapi.apibinding.OWLManager
-import org.semanticweb.owlapi.model.AxiomType._
-import org.semanticweb.owlapi.model.AxiomType.DATA_PROPERTY_DOMAIN
-import org.semanticweb.owlapi.util.DefaultPrefixManager
 import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_INTERSECTION_OF,OBJECT_SOME_VALUES_FROM, OBJECT_HAS_VALUE, OBJECT_ALL_VALUES_FROM}
 import translators.TranslatorManager.translate
-import renders.RendererManager._
 
 val manager = OWLManager.createOWLOntologyManager
 
@@ -35,15 +28,22 @@ val onts: Map[String, OWLOntologyID] = Map(
   "wine" -> wineOntology.getOntologyID
   )
 
+val abox = manager.getOntology(onts("family")).getABoxAxioms(Imports.INCLUDED).toList
 
-translate(manager.getOntology(onts("family")).getTBoxAxioms(Imports.EXCLUDED).toList, "test_family_000")
 
-render(manager.getOntology(onts("family")).getTBoxAxioms(Imports.EXCLUDED).toList, "test_family_002")
-render(manager.getOntology(onts("galen")).getTBoxAxioms(Imports.EXCLUDED).toList, "test_galen_002")
-render(manager.getOntology(onts("dolce")).getTBoxAxioms(Imports.EXCLUDED).toList, "test_dolce_002")
-render(manager.getOntology(onts("wine")).getTBoxAxioms(Imports.EXCLUDED).toList, "test_wine_3_002")
+val l = abox(1).asInstanceOf[OWLObjectPropertyAssertionAxiom]
+
+l.getProperty
+val a = l.getAnonymousIndividuals
+
+
+def matchClasses(given: Any): (Any,  Any, String) = given match {
+  case ObjectPropertyAssertion(p) => (p._1, p._2, p._3.getIndividualsInSignature.head.getIRI.getShortForm)
+}
+
 
 val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/old/null.txt"),false))
+for (x <- abox) writer.write(renderManchesterSyntax(x, manager)+"\n\n")
 writer.close()
 
 //val ontology1 = manager.loadOntologyFromOntologyDocument(file1)
@@ -53,8 +53,6 @@ writer.close()
 
 
 
-import renders.SubClassRenderer._
-import renders.LabelMaker.renderManchesterSyntax
 //val tbox = ontology.getTBoxAxioms(Imports.EXCLUDED).toList
 //val l = tbox(14)
 //

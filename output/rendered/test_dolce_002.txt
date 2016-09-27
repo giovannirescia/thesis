@@ -32,13 +32,13 @@ SubClassOf
 
 
 
-4 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#geographic-part-of> <http://www.loa-cnr.it/ontologies/CommonSenseMapping#political-geographic-object>)
+4 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#requisite-for> <http://www.loa-cnr.it/ontologies/ExtendedDnS#parameter>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-5 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#requisite-for> <http://www.loa-cnr.it/ontologies/ExtendedDnS#parameter>)
+5 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#geographic-part-of> <http://www.loa-cnr.it/ontologies/CommonSenseMapping#political-geographic-object>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -428,19 +428,19 @@ SubClassOf
 
 
 
-58 DisjointClasses(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#arbitrary-sum> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-endurant>)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-59 SubClassOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#description> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#expressed-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#information-object>))
+58 SubClassOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#description> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#expressed-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#information-object>))
 
 SubClassOf
 ==========
  [ description ⊆ (expressed-by some information-object) ] 
 
 ------------------------------------------------------------
+
+
+
+59 DisjointClasses(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#arbitrary-sum> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-endurant>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
@@ -834,13 +834,13 @@ SubClassOf
 
 
 
-111 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#referenced-by> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-object>)
+111 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#immediate-relation-i> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-112 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#immediate-relation-i> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+112 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#referenced-by> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-object>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -884,19 +884,19 @@ SubClassOf
 
 
 
-118 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#substrate> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#endurant>)
+118 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#parametrizes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#parameter>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-119 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#parametrizes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#parameter>)
+119 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#p-sat> <http://www.loa-cnr.it/ontologies/ExtendedDnS#situation>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-120 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#p-sat> <http://www.loa-cnr.it/ontologies/ExtendedDnS#situation>)
+120 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#substrate> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#endurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1292,13 +1292,13 @@ SubClassOf
 
 
 
-174 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#deputed-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure>)
+174 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#defined-by> ObjectUnionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#concept> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure>))
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-175 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#defined-by> ObjectUnionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#concept> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure>))
+175 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#deputed-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1316,13 +1316,13 @@ SubClassOf
 
 
 
-178 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#time-of-happening-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
+178 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#causally-precedes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#activity>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-179 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#causally-precedes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#activity>)
+179 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#time-of-happening-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1392,19 +1392,19 @@ SubClassOf
 
 
 
-188 DisjointClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#non-agentive-figure> <http://www.loa-cnr.it/ontologies/ExtendedDnS#situation>)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-189 SubClassOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#collection> ObjectAllValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#part> <http://www.loa-cnr.it/ontologies/ExtendedDnS#collection>))
+188 SubClassOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#collection> ObjectAllValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#part> <http://www.loa-cnr.it/ontologies/ExtendedDnS#collection>))
 
 SubClassOf
 ==========
  [ collection ⊆ (part all collection) ] 
 
 ------------------------------------------------------------
+
+
+
+189 DisjointClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#non-agentive-figure> <http://www.loa-cnr.it/ontologies/ExtendedDnS#situation>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
@@ -1464,13 +1464,13 @@ SubClassOf
 
 
 
-198 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#instantiated-by> ObjectUnionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#collection> <http://www.loa-cnr.it/ontologies/ExtendedDnS#concept> <http://www.loa-cnr.it/ontologies/ExtendedDnS#description>))
+198 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#expands> <http://www.loa-cnr.it/ontologies/ExtendedDnS#description>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-199 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#expands> <http://www.loa-cnr.it/ontologies/ExtendedDnS#description>)
+199 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#instantiated-by> ObjectUnionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#collection> <http://www.loa-cnr.it/ontologies/ExtendedDnS#concept> <http://www.loa-cnr.it/ontologies/ExtendedDnS#description>))
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1522,13 +1522,13 @@ SubClassOf
 
 
 
-207 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#total-constant-participant> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#endurant>)
+207 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/TemporalRelations#temporally-included-in> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-208 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/TemporalRelations#temporally-included-in> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
+208 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#total-constant-participant> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#endurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1588,13 +1588,13 @@ SubClassOf
 
 
 
-218 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#atomic-part> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+218 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#abstract-location> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-endurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-219 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#abstract-location> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#non-physical-endurant>)
+219 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#atomic-part> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1680,13 +1680,13 @@ SubClassOf
 
 
 
-230 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#spatio-temporally-present-at> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#spatio-temporal-region>)
+230 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#total-constant-participant> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-231 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#total-constant-participant> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
+231 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#spatio-temporally-present-at> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#spatio-temporal-region>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -1862,19 +1862,19 @@ SubClassOf
 
 
 
-255 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#specifically-constantly-dependent-on> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-256 EquivalentClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#activity> ObjectIntersectionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#action> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#generically-dependent-on> <http://www.loa-cnr.it/ontologies/ExtendedDnS#plan>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#part> <http://www.loa-cnr.it/ontologies/ExtendedDnS#action>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#sequenced-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#task>)) )
+255 EquivalentClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#activity> ObjectIntersectionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#action> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#generically-dependent-on> <http://www.loa-cnr.it/ontologies/ExtendedDnS#plan>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#part> <http://www.loa-cnr.it/ontologies/ExtendedDnS#action>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#sequenced-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#task>)) )
 
 EquivalentClasses
 =================
  [ activity ⊆ (action ∩ (generically-dependent-on some plan) ∩ (part some action) ∩ (sequenced-by some task)) ]  ∧  [ (action ∩ (generically-dependent-on some plan) ∩ (part some action) ∩ (sequenced-by some task)) ⊆ activity ] 
 
 ------------------------------------------------------------
+
+
+
+256 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#specifically-constantly-dependent-on> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
@@ -2060,13 +2060,13 @@ SubClassOf
 
 
 
-280 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#time-of-q-presence-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#physical-quality>)
+280 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#classified-by> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-281 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#classified-by> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+281 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#time-of-q-presence-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#physical-quality>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -2172,13 +2172,13 @@ SubClassOf
 
 
 
-296 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#immediate-relation-i> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+296 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#q-location> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#quality>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-297 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#q-location> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#quality>)
+297 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/DOLCE-Lite#immediate-relation-i> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -2484,13 +2484,13 @@ SubClassOf
 
 
 
-340 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#prescribes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#action>)
+340 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#unit> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#region>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-341 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/CommonSenseMapping#unit> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#region>)
+341 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/FunctionalParticipation#prescribes> <http://www.loa-cnr.it/ontologies/ExtendedDnS#action>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -2648,13 +2648,13 @@ DataPropertyDomain
 
 
 
-362 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#component-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
+362 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/TemporalRelations#starts> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 
-363 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/TemporalRelations#starts> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#perdurant>)
+363 ObjectPropertyRange(<http://www.loa-cnr.it/ontologies/ExtendedDnS#component-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>)
 
 @!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
@@ -2672,13 +2672,7 @@ DataPropertyDomain
 
 
 
-366 ObjectPropertyDomain(<http://www.loa-cnr.it/ontologies/ExtendedDnS#internally-represented-in> <http://www.loa-cnr.it/ontologies/ExtendedDnS#description>)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-367 EquivalentClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#agentive-figure> ObjectIntersectionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#agentive-social-object> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#defined-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#constitutive-description>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#hypostasis-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#plays> <http://www.loa-cnr.it/ontologies/ExtendedDnS#role>)) )
+366 EquivalentClasses(<http://www.loa-cnr.it/ontologies/ExtendedDnS#agentive-figure> ObjectIntersectionOf(<http://www.loa-cnr.it/ontologies/ExtendedDnS#agentive-social-object> <http://www.loa-cnr.it/ontologies/ExtendedDnS#figure> ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#defined-by> <http://www.loa-cnr.it/ontologies/ExtendedDnS#constitutive-description>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#hypostasis-of> <http://www.loa-cnr.it/ontologies/DOLCE-Lite#particular>) ObjectSomeValuesFrom(<http://www.loa-cnr.it/ontologies/ExtendedDnS#plays> <http://www.loa-cnr.it/ontologies/ExtendedDnS#role>)) )
 
 EquivalentClasses
 =================

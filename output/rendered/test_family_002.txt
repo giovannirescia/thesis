@@ -86,19 +86,19 @@ DataPropertyRange
 
 
 
-9 ObjectPropertyDomain(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Person>)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-10 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Parent> <http://www.owl-ontologies.com/generations.owl#Person>)
+9 SubClassOf(<http://www.owl-ontologies.com/generations.owl#Parent> <http://www.owl-ontologies.com/generations.owl#Person>)
 
 SubClassOf
 ==========
  [ Parent ⊆ Person ] 
 
 ------------------------------------------------------------
+
+
+
+10 ObjectPropertyDomain(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Person>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
 
 
 

@@ -1,0 +1,2035 @@
+
+
+0 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom29>))
+
+SubClassOf
+==========
+ A ( Pauillac → (madeFromGrape some __nom29) ) 
+
+------------------------------------------------------------
+
+
+
+1 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineGrape>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+1 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 hasBody: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+2 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Chianti → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+3 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( Sancerre → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+4 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FrenchWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom41>)) )
+
+EquivalentClasses
+=================
+ A ( FrenchWine → (Wine ∩ (locatedIn some __nom41)) )  ∧  A ( (Wine ∩ (locatedIn some __nom41)) → FrenchWine ) 
+
+------------------------------------------------------------
+
+
+
+5 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+SubClassOf
+==========
+ A ( EarlyHarvest → Wine ) 
+
+------------------------------------------------------------
+
+
+
+6 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 hasFlavor: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+7 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom29>))
+
+SubClassOf
+==========
+ A ( StEmilion → (madeFromGrape some __nom29) ) 
+
+------------------------------------------------------------
+
+
+
+8 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>)) )
+
+EquivalentClasses
+=================
+ A ( TableWine → (Wine ∩ (hasSugar some __nom12)) )  ∧  A ( (Wine ∩ (hasSugar some __nom12)) → TableWine ) 
+
+------------------------------------------------------------
+
+
+
+9 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteLoire> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom63>))
+
+SubClassOf
+==========
+ A ( WhiteLoire → (madeFromGrape all __nom63) ) 
+
+------------------------------------------------------------
+
+
+
+10 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom45>))
+
+SubClassOf
+==========
+ A ( SweetRiesling → (hasBody some __nom45) ) 
+
+------------------------------------------------------------
+
+
+
+11 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom9> )
+
+EquivalentClasses
+=================
+ A ( WineColor → __nom9 )  ∧  A ( __nom9 → WineColor ) 
+
+------------------------------------------------------------
+
+
+
+12 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom59>))
+
+SubClassOf
+==========
+ A ( Merlot → (hasBody all __nom59) ) 
+
+------------------------------------------------------------
+
+
+
+13 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom43>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Merlot → (Wine ∩ (madeFromGrape some __nom43) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom43) ∩ (1 madeFromGrape: Thing)) → Merlot ) 
+
+------------------------------------------------------------
+
+
+
+14 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom36>)) )
+
+EquivalentClasses
+=================
+ A ( StEmilion → (Bordeaux ∩ (locatedIn some __nom36)) )  ∧  A ( (Bordeaux ∩ (locatedIn some __nom36)) → StEmilion ) 
+
+------------------------------------------------------------
+
+
+
+15 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom48>))
+
+SubClassOf
+==========
+ A ( CheninBlanc → (hasFlavor some __nom48) ) 
+
+------------------------------------------------------------
+
+
+
+16 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Medoc → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+17 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor> ObjectUnionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste>) )
+
+EquivalentClasses
+=================
+ A ( WineDescriptor → (WineColor ∪ WineTaste) )  ∧  A ( (WineColor ∪ WineTaste) → WineDescriptor ) 
+
+------------------------------------------------------------
+
+
+
+18 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( SweetRiesling → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+19 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( SemillonOrSauvignonBlanc → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+20 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom47>)) )
+
+EquivalentClasses
+=================
+ A ( ItalianWine → (Wine ∩ (locatedIn some __nom47)) )  ∧  A ( (Wine ∩ (locatedIn some __nom47)) → ItalianWine ) 
+
+------------------------------------------------------------
+
+
+
+21 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( RedBurgundy → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+22 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom37>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Riesling → (Wine ∩ (madeFromGrape some __nom37) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom37) ∩ (1 madeFromGrape: Thing)) → Riesling ) 
+
+------------------------------------------------------------
+
+
+
+23 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#adjacentRegion> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+23 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( PetiteSyrah → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+24 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteNonSweetWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom7>)) )
+
+EquivalentClasses
+=================
+ A ( WhiteNonSweetWine → (WhiteWine ∩ (hasSugar all __nom7)) )  ∧  A ( (WhiteWine ∩ (hasSugar all __nom7)) → WhiteNonSweetWine ) 
+
+------------------------------------------------------------
+
+
+
+25 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOr> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom42>)) )
+
+EquivalentClasses
+=================
+ A ( CotesDOr → (RedBurgundy ∩ (locatedIn some __nom42)) )  ∧  A ( (RedBurgundy ∩ (locatedIn some __nom42)) → CotesDOr ) 
+
+------------------------------------------------------------
+
+
+
+26 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Vintage> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear> owl:Thing))
+
+SubClassOf
+==========
+ A ( Vintage → (1 hasVintageYear: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+27 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( Muscadet → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+28 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom19>)) )
+
+EquivalentClasses
+=================
+ A ( Loire → (Wine ∩ (locatedIn some __nom19)) )  ∧  A ( (Wine ∩ (locatedIn some __nom19)) → Loire ) 
+
+------------------------------------------------------------
+
+
+
+29 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom26>)) )
+
+EquivalentClasses
+=================
+ A ( Beaujolais → (Wine ∩ (locatedIn some __nom26)) )  ∧  A ( (Wine ∩ (locatedIn some __nom26)) → Beaujolais ) 
+
+------------------------------------------------------------
+
+
+
+30 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom24>))
+
+SubClassOf
+==========
+ A ( WhiteBurgundy → (madeFromGrape some __nom24) ) 
+
+------------------------------------------------------------
+
+
+
+31 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>)) )
+
+EquivalentClasses
+=================
+ A ( DryWine → (Wine ∩ (hasSugar some __nom12)) )  ∧  A ( (Wine ∩ (hasSugar some __nom12)) → DryWine ) 
+
+------------------------------------------------------------
+
+
+
+32 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Chianti → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+33 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+33 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom2>)) )
+
+EquivalentClasses
+=================
+ A ( Medoc → (Bordeaux ∩ (locatedIn some __nom2)) )  ∧  A ( (Bordeaux ∩ (locatedIn some __nom2)) → Medoc ) 
+
+------------------------------------------------------------
+
+
+
+34 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste>)
+
+SubClassOf
+==========
+ A ( WineBody → WineTaste ) 
+
+------------------------------------------------------------
+
+
+
+35 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Gamay> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom33>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Gamay → (Wine ∩ (madeFromGrape some __nom33) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom33) ∩ (1 madeFromGrape: Thing)) → Gamay ) 
+
+------------------------------------------------------------
+
+
+
+36 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( CabernetFranc → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+37 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#VintageYear>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+37 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Merlot → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+38 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( WhiteBurgundy → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+39 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux>)
+
+SubClassOf
+==========
+ A ( Sauternes → Bordeaux ) 
+
+------------------------------------------------------------
+
+
+
+40 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBordeaux> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine>) )
+
+EquivalentClasses
+=================
+ A ( RedBordeaux → (Bordeaux ∩ RedWine) )  ∧  A ( (Bordeaux ∩ RedWine) → RedBordeaux ) 
+
+------------------------------------------------------------
+
+
+
+41 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody>)
+
+FunctionalObjectProperty
+========================
+A(<hasBody>T → [hasBody]T)
+
+------------------------------------------------------------
+
+
+
+42 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom1>))
+
+SubClassOf
+==========
+ A ( LateHarvest → (hasSugar some __nom1) ) 
+
+------------------------------------------------------------
+
+
+
+43 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#IceWine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( IceWine → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+44 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom14>)) )
+
+EquivalentClasses
+=================
+ A ( Anjou → (Loire ∩ (locatedIn some __nom14)) )  ∧  A ( (Loire ∩ (locatedIn some __nom14)) → Anjou ) 
+
+------------------------------------------------------------
+
+
+
+45 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Semillon> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom27>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Semillon → (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom27) ∩ (1 madeFromGrape: Thing)) → Semillon ) 
+
+------------------------------------------------------------
+
+
+
+46 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom54>))
+
+SubClassOf
+==========
+ A ( Anjou → (hasSugar some __nom54) ) 
+
+------------------------------------------------------------
+
+
+
+47 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoir> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom39>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( PinotNoir → (Wine ∩ (madeFromGrape some __nom39) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom39) ∩ (1 madeFromGrape: Thing)) → PinotNoir ) 
+
+------------------------------------------------------------
+
+
+
+48 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region>))
+
+SubClassOf
+==========
+ A ( Wine → (locatedIn some Region) ) 
+
+------------------------------------------------------------
+
+
+
+49 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( DryRiesling → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+50 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom29>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( CabernetSauvignon → (Wine ∩ (madeFromGrape some __nom29) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom29) ∩ (1 madeFromGrape: Thing)) → CabernetSauvignon ) 
+
+------------------------------------------------------------
+
+
+
+51 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( SemillonOrSauvignonBlanc → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+52 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( Margaux → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+53 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBordeaux> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine>) )
+
+EquivalentClasses
+=================
+ A ( WhiteBordeaux → (Bordeaux ∩ WhiteWine) )  ∧  A ( (Bordeaux ∩ WhiteWine) → WhiteBordeaux ) 
+
+------------------------------------------------------------
+
+
+
+54 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom18> )
+
+EquivalentClasses
+=================
+ A ( WineSugar → __nom18 )  ∧  A ( __nom18 → WineSugar ) 
+
+------------------------------------------------------------
+
+
+
+55 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom49>))
+
+SubClassOf
+==========
+ A ( CabernetFranc → (hasBody some __nom49) ) 
+
+------------------------------------------------------------
+
+
+
+56 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom53>))
+
+SubClassOf
+==========
+ A ( DessertWine → (hasSugar all __nom53) ) 
+
+------------------------------------------------------------
+
+
+
+57 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meursault> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom31>)) )
+
+EquivalentClasses
+=================
+ A ( Meursault → (WhiteBurgundy ∩ (locatedIn some __nom31)) )  ∧  A ( (WhiteBurgundy ∩ (locatedIn some __nom31)) → Meursault ) 
+
+------------------------------------------------------------
+
+
+
+58 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Burgundy → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+59 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasWineDescriptor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+59 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#ItalianWine>)
+
+SubClassOf
+==========
+ A ( Chianti → ItalianWine ) 
+
+------------------------------------------------------------
+
+
+
+60 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 hasMaker: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+61 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Tours> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom4>)) )
+
+EquivalentClasses
+=================
+ A ( Tours → (Loire ∩ (locatedIn some __nom4)) )  ∧  A ( (Loire ∩ (locatedIn some __nom4)) → Tours ) 
+
+------------------------------------------------------------
+
+
+
+62 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Tours> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom34>))
+
+SubClassOf
+==========
+ A ( Tours → (madeFromGrape some __nom34) ) 
+
+------------------------------------------------------------
+
+
+
+63 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meritage> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Meritage → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+64 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWhiteWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine>) )
+
+EquivalentClasses
+=================
+ A ( DryWhiteWine → (DryWine ∩ WhiteWine) )  ∧  A ( (DryWine ∩ WhiteWine) → DryWhiteWine ) 
+
+------------------------------------------------------------
+
+
+
+65 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( CheninBlanc → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+66 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom56>))
+
+SubClassOf
+==========
+ A ( Anjou → (hasBody some __nom56) ) 
+
+------------------------------------------------------------
+
+
+
+67 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom44>)) )
+
+EquivalentClasses
+=================
+ A ( Burgundy → (Wine ∩ (locatedIn some __nom44)) )  ∧  A ( (Wine ∩ (locatedIn some __nom44)) → Burgundy ) 
+
+------------------------------------------------------------
+
+
+
+68 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom59>))
+
+SubClassOf
+==========
+ A ( DryRiesling → (hasBody all __nom59) ) 
+
+------------------------------------------------------------
+
+
+
+69 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( Chardonnay → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+70 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( Riesling → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+71 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom57>))
+
+SubClassOf
+==========
+ A ( Port → (locatedIn some __nom57) ) 
+
+------------------------------------------------------------
+
+
+
+72 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( CabernetSauvignon → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+73 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Sancerre → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+74 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom48>))
+
+SubClassOf
+==========
+ A ( Chianti → (hasFlavor some __nom48) ) 
+
+------------------------------------------------------------
+
+
+
+75 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste>)
+
+SubClassOf
+==========
+ A ( WineSugar → WineTaste ) 
+
+------------------------------------------------------------
+
+
+
+76 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBordeaux> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom6>))
+
+SubClassOf
+==========
+ A ( WhiteBordeaux → (madeFromGrape all __nom6) ) 
+
+------------------------------------------------------------
+
+
+
+77 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#FullBodiedWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom45>)) )
+
+EquivalentClasses
+=================
+ A ( FullBodiedWine → (Wine ∩ (hasBody some __nom45)) )  ∧  A ( (Wine ∩ (hasBody some __nom45)) → FullBodiedWine ) 
+
+------------------------------------------------------------
+
+
+
+78 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> owl:Thing)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+78 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom56>))
+
+SubClassOf
+==========
+ A ( Beaujolais → (hasBody some __nom56) ) 
+
+------------------------------------------------------------
+
+
+
+79 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom61>))
+
+SubClassOf
+==========
+ A ( Chianti → (locatedIn some __nom61) ) 
+
+------------------------------------------------------------
+
+
+
+80 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( CheninBlanc → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+81 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom33>))
+
+SubClassOf
+==========
+ A ( Beaujolais → (madeFromGrape some __nom33) ) 
+
+------------------------------------------------------------
+
+
+
+82 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectMinCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+83 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( CabernetSauvignon → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+84 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+SubClassOf
+==========
+ A ( DessertWine → Wine ) 
+
+------------------------------------------------------------
+
+
+
+85 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+SubClassOf
+==========
+ A ( LateHarvest → Wine ) 
+
+------------------------------------------------------------
+
+
+
+86 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>)) )
+
+EquivalentClasses
+=================
+ A ( DryRiesling → (Riesling ∩ (hasSugar some __nom12)) )  ∧  A ( (Riesling ∩ (hasSugar some __nom12)) → DryRiesling ) 
+
+------------------------------------------------------------
+
+
+
+87 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#GermanWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom17>)) )
+
+EquivalentClasses
+=================
+ A ( GermanWine → (Wine ∩ (locatedIn some __nom17)) )  ∧  A ( (Wine ∩ (locatedIn some __nom17)) → GermanWine ) 
+
+------------------------------------------------------------
+
+
+
+88 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( PetiteSyrah → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+89 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TexasWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom10>)) )
+
+EquivalentClasses
+=================
+ A ( TexasWine → (Wine ∩ (locatedIn some __nom10)) )  ∧  A ( (Wine ∩ (locatedIn some __nom10)) → TexasWine ) 
+
+------------------------------------------------------------
+
+
+
+90 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( Zinfandel → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+91 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+91 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom24>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Chardonnay → (Wine ∩ (madeFromGrape some __nom24) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom24) ∩ (1 madeFromGrape: Thing)) → Chardonnay ) 
+
+------------------------------------------------------------
+
+
+
+92 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Zinfandel → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+93 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( Chardonnay → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+94 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meritage> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom8>) ObjectMinCardinality(2 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Meritage → (Wine ∩ (madeFromGrape all __nom8) ∩ (2 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape all __nom8) ∩ (2 madeFromGrape: Thing)) → Meritage ) 
+
+------------------------------------------------------------
+
+
+
+95 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AlsatianWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom13>)) )
+
+EquivalentClasses
+=================
+ A ( AlsatianWine → (Wine ∩ (locatedIn some __nom13)) )  ∧  A ( (Wine ∩ (locatedIn some __nom13)) → AlsatianWine ) 
+
+------------------------------------------------------------
+
+
+
+96 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom3>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( CabernetFranc → (Wine ∩ (madeFromGrape some __nom3) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom3) ∩ (1 madeFromGrape: Thing)) → CabernetFranc ) 
+
+------------------------------------------------------------
+
+
+
+97 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRiesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( DryRiesling → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+98 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( StEmilion → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+99 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom7>))
+
+SubClassOf
+==========
+ A ( EarlyHarvest → (hasSugar all __nom7) ) 
+
+------------------------------------------------------------
+
+
+
+100 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+100 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom34>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( CheninBlanc → (Wine ∩ (madeFromGrape some __nom34) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom34) ∩ (1 madeFromGrape: Thing)) → CheninBlanc ) 
+
+------------------------------------------------------------
+
+
+
+101 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste>)
+
+SubClassOf
+==========
+ A ( WineFlavor → WineTaste ) 
+
+------------------------------------------------------------
+
+
+
+102 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CaliforniaWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom15>)) )
+
+EquivalentClasses
+=================
+ A ( CaliforniaWine → (Wine ∩ (locatedIn some __nom15)) )  ∧  A ( (Wine ∩ (locatedIn some __nom15)) → CaliforniaWine ) 
+
+------------------------------------------------------------
+
+
+
+103 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( StEmilion → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+104 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Muscadet → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+105 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 hasSugar: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+106 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest>)
+
+SubClassOf
+==========
+ A ( Sauternes → LateHarvest ) 
+
+------------------------------------------------------------
+
+
+
+107 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#adjacentRegion> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+107 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#StEmilion> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom58>))
+
+SubClassOf
+==========
+ A ( StEmilion → (hasFlavor some __nom58) ) 
+
+------------------------------------------------------------
+
+
+
+108 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine>)
+
+SubClassOf
+==========
+ A ( SweetRiesling → DessertWine ) 
+
+------------------------------------------------------------
+
+
+
+109 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom35> )
+
+EquivalentClasses
+=================
+ A ( WineFlavor → __nom35 )  ∧  A ( __nom35 → WineFlavor ) 
+
+------------------------------------------------------------
+
+
+
+110 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear>)
+
+FunctionalObjectProperty
+========================
+A(<hasVintageYear>T → [hasVintageYear]T)
+
+------------------------------------------------------------
+
+
+
+111 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( LateHarvest → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+112 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom6>)) )
+
+EquivalentClasses
+=================
+ A ( SemillonOrSauvignonBlanc → (Wine ∩ (madeFromGrape all __nom6)) )  ∧  A ( (Wine ∩ (madeFromGrape all __nom6)) → SemillonOrSauvignonBlanc ) 
+
+------------------------------------------------------------
+
+
+
+113 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#IceWine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( IceWine → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+114 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Pauillac → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+115 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetRiesling> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Riesling> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom1>)) )
+
+EquivalentClasses
+=================
+ A ( SweetRiesling → (Riesling ∩ (hasSugar some __nom1)) )  ∧  A ( (Riesling ∩ (hasSugar some __nom1)) → SweetRiesling ) 
+
+------------------------------------------------------------
+
+
+
+116 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor>)
+
+SubClassOf
+==========
+ A ( WineColor → WineDescriptor ) 
+
+------------------------------------------------------------
+
+
+
+117 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+117 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom1>))
+
+SubClassOf
+==========
+ A ( Port → (hasSugar some __nom1) ) 
+
+------------------------------------------------------------
+
+
+
+118 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom39>))
+
+SubClassOf
+==========
+ A ( RedBurgundy → (madeFromGrape some __nom39) ) 
+
+------------------------------------------------------------
+
+
+
+119 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Region>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+119 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>)) )
+
+EquivalentClasses
+=================
+ A ( WhiteWine → (Wine ∩ (hasColor some __nom5)) )  ∧  A ( (Wine ∩ (hasColor some __nom5)) → WhiteWine ) 
+
+------------------------------------------------------------
+
+
+
+120 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom64>))
+
+SubClassOf
+==========
+ A ( Merlot → (hasFlavor all __nom64) ) 
+
+------------------------------------------------------------
+
+
+
+121 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CheninBlanc> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom7>))
+
+SubClassOf
+==========
+ A ( CheninBlanc → (hasSugar all __nom7) ) 
+
+------------------------------------------------------------
+
+
+
+122 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker>)
+
+FunctionalObjectProperty
+========================
+A(<hasMaker>T → [hasMaker]T)
+
+------------------------------------------------------------
+
+
+
+123 DisjointClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#EarlyHarvest> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+123 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom56>))
+
+SubClassOf
+==========
+ A ( Muscadet → (hasBody some __nom56) ) 
+
+------------------------------------------------------------
+
+
+
+124 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom21>))
+
+SubClassOf
+==========
+ A ( Muscadet → (madeFromGrape some __nom21) ) 
+
+------------------------------------------------------------
+
+
+
+125 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineFlavor>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+125 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Beaujolais → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+126 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom32>))
+
+SubClassOf
+==========
+ A ( Anjou → (hasColor some __nom32) ) 
+
+------------------------------------------------------------
+
+
+
+127 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Beaujolais → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+128 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom40> )
+
+EquivalentClasses
+=================
+ A ( WineBody → __nom40 )  ∧  A ( __nom40 → WineBody ) 
+
+------------------------------------------------------------
+
+
+
+129 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Beaujolais → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+130 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryRedWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DryWine> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine>) )
+
+EquivalentClasses
+=================
+ A ( DryRedWine → (DryWine ∩ RedWine) )  ∧  A ( (DryWine ∩ RedWine) → DryRedWine ) 
+
+------------------------------------------------------------
+
+
+
+131 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteBurgundy> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine>) )
+
+EquivalentClasses
+=================
+ A ( WhiteBurgundy → (Burgundy ∩ WhiteWine) )  ∧  A ( (Burgundy ∩ WhiteWine) → WhiteBurgundy ) 
+
+------------------------------------------------------------
+
+
+
+132 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Bordeaux> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom23>)) )
+
+EquivalentClasses
+=================
+ A ( Bordeaux → (Wine ∩ (locatedIn some __nom23)) )  ∧  A ( (Wine ∩ (locatedIn some __nom23)) → Bordeaux ) 
+
+------------------------------------------------------------
+
+
+
+133 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom45>))
+
+SubClassOf
+==========
+ A ( Pauillac → (hasBody some __nom45) ) 
+
+------------------------------------------------------------
+
+
+
+134 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor>)
+
+FunctionalObjectProperty
+========================
+A(<hasFlavor>T → [hasFlavor]T)
+
+------------------------------------------------------------
+
+
+
+135 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom11>))
+
+SubClassOf
+==========
+ A ( Sancerre → (madeFromGrape some __nom11) ) 
+
+------------------------------------------------------------
+
+
+
+136 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom25>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( PetiteSyrah → (Wine ∩ (madeFromGrape some __nom25) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom25) ∩ (1 madeFromGrape: Thing)) → PetiteSyrah ) 
+
+------------------------------------------------------------
+
+
+
+137 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteTableWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>)) )
+
+EquivalentClasses
+=================
+ A ( WhiteTableWine → (TableWine ∩ (hasColor some __nom5)) )  ∧  A ( (TableWine ∩ (hasColor some __nom5)) → WhiteTableWine ) 
+
+------------------------------------------------------------
+
+
+
+138 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlanc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom21>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( PinotBlanc → (Wine ∩ (madeFromGrape some __nom21) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom21) ∩ (1 madeFromGrape: Thing)) → PinotBlanc ) 
+
+------------------------------------------------------------
+
+
+
+139 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBurgundy> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Burgundy> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine>) )
+
+EquivalentClasses
+=================
+ A ( RedBurgundy → (Burgundy ∩ RedWine) )  ∧  A ( (Burgundy ∩ RedWine) → RedBurgundy ) 
+
+------------------------------------------------------------
+
+
+
+140 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom20>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( Zinfandel → (Wine ∩ (madeFromGrape some __nom20) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (Wine ∩ (madeFromGrape some __nom20) ∩ (1 madeFromGrape: Thing)) → Zinfandel ) 
+
+------------------------------------------------------------
+
+
+
+141 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotNoir> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( PinotNoir → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+142 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasMaker> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Winery>))
+
+SubClassOf
+==========
+ A ( Wine → (hasMaker all Winery) ) 
+
+------------------------------------------------------------
+
+
+
+143 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom59>))
+
+SubClassOf
+==========
+ A ( Chianti → (hasBody all __nom59) ) 
+
+------------------------------------------------------------
+
+
+
+144 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RoseWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom32>)) )
+
+EquivalentClasses
+=================
+ A ( RoseWine → (Wine ∩ (hasColor some __nom32)) )  ∧  A ( (Wine ∩ (hasColor some __nom32)) → RoseWine ) 
+
+------------------------------------------------------------
+
+
+
+145 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom48>))
+
+SubClassOf
+==========
+ A ( CabernetFranc → (hasFlavor some __nom48) ) 
+
+------------------------------------------------------------
+
+
+
+146 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom51>))
+
+SubClassOf
+==========
+ A ( Zinfandel → (hasBody all __nom51) ) 
+
+------------------------------------------------------------
+
+
+
+147 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PinotBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( PinotBlanc → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+148 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetFranc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( CabernetFranc → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+149 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>)) )
+
+EquivalentClasses
+=================
+ A ( RedWine → (Wine ∩ (hasColor some __nom28)) )  ∧  A ( (Wine ∩ (hasColor some __nom28)) → RedWine ) 
+
+------------------------------------------------------------
+
+
+
+150 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( CabernetSauvignon → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+151 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Margaux → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+152 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom49>))
+
+SubClassOf
+==========
+ A ( Sauternes → (hasBody some __nom49) ) 
+
+------------------------------------------------------------
+
+
+
+153 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SauvignonBlanc> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SemillonOrSauvignonBlanc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom11>) ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing)) )
+
+EquivalentClasses
+=================
+ A ( SauvignonBlanc → (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ (1 madeFromGrape: Thing)) )  ∧  A ( (SemillonOrSauvignonBlanc ∩ (madeFromGrape some __nom11) ∩ (1 madeFromGrape: Thing)) → SauvignonBlanc ) 
+
+------------------------------------------------------------
+
+
+
+154 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( PetiteSyrah → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+155 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PotableLiquid>)
+
+SubClassOf
+==========
+ A ( Wine → PotableLiquid ) 
+
+------------------------------------------------------------
+
+
+
+156 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( Sauternes → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+157 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CabernetSauvignon> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( CabernetSauvignon → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+158 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chianti> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom60>))
+
+SubClassOf
+==========
+ A ( Chianti → (madeFromGrape some __nom60) ) 
+
+------------------------------------------------------------
+
+
+
+159 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom45>))
+
+SubClassOf
+==========
+ A ( Port → (hasBody some __nom45) ) 
+
+------------------------------------------------------------
+
+
+
+160 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#PetiteSyrah> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom50>))
+
+SubClassOf
+==========
+ A ( PetiteSyrah → (hasFlavor all __nom50) ) 
+
+------------------------------------------------------------
+
+
+
+161 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Tours> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Tours → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+162 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineTaste> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineDescriptor>)
+
+SubClassOf
+==========
+ A ( WineTaste → WineDescriptor ) 
+
+------------------------------------------------------------
+
+
+
+163 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasVintageYear> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Vintage>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+163 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Merlot> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Merlot → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+164 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sauternes> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom52>))
+
+SubClassOf
+==========
+ A ( Sauternes → (locatedIn some __nom52) ) 
+
+------------------------------------------------------------
+
+
+
+165 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteLoire> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WhiteWine>) )
+
+EquivalentClasses
+=================
+ A ( WhiteLoire → (Loire ∩ WhiteWine) )  ∧  A ( (Loire ∩ WhiteWine) → WhiteLoire ) 
+
+------------------------------------------------------------
+
+
+
+166 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Beaujolais> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( Beaujolais → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+167 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom12>))
+
+SubClassOf
+==========
+ A ( Medoc → (hasSugar some __nom12) ) 
+
+------------------------------------------------------------
+
+
+
+168 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Chardonnay> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>))
+
+SubClassOf
+==========
+ A ( Chardonnay → (hasColor some __nom5) ) 
+
+------------------------------------------------------------
+
+
+
+169 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom16>)) )
+
+EquivalentClasses
+=================
+ A ( Muscadet → (Loire ∩ (locatedIn some __nom16)) )  ∧  A ( (Loire ∩ (locatedIn some __nom16)) → Muscadet ) 
+
+------------------------------------------------------------
+
+
+
+170 ObjectPropertyRange(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineSugar>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+170 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#IceWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#DessertWine> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#LateHarvest> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom5>)) )
+
+EquivalentClasses
+=================
+ A ( IceWine → (DessertWine ∩ LateHarvest) )  ∧  A ( (DessertWine ∩ LateHarvest) → IceWine ) 
+
+------------------------------------------------------------
+
+
+
+171 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom22>)) )
+
+EquivalentClasses
+=================
+ A ( Margaux → (Medoc ∩ (locatedIn some __nom22)) )  ∧  A ( (Medoc ∩ (locatedIn some __nom22)) → Margaux ) 
+
+------------------------------------------------------------
+
+
+
+172 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom58>))
+
+SubClassOf
+==========
+ A ( Port → (hasFlavor some __nom58) ) 
+
+------------------------------------------------------------
+
+
+
+173 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#CotesDOr> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom48>))
+
+SubClassOf
+==========
+ A ( CotesDOr → (hasFlavor some __nom48) ) 
+
+------------------------------------------------------------
+
+
+
+174 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Zinfandel> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>))
+
+SubClassOf
+==========
+ A ( Zinfandel → (hasColor some __nom28) ) 
+
+------------------------------------------------------------
+
+
+
+175 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Muscadet> ObjectMaxCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> owl:Thing))
+
+SubClassOf
+==========
+ A ( Muscadet → (1 madeFromGrape: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+176 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar>)
+
+FunctionalObjectProperty
+========================
+A(<hasSugar>T → [hasSugar]T)
+
+------------------------------------------------------------
+
+
+
+177 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Anjou> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom55>))
+
+SubClassOf
+==========
+ A ( Anjou → (hasFlavor some __nom55) ) 
+
+------------------------------------------------------------
+
+
+
+178 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Margaux> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom43>))
+
+SubClassOf
+==========
+ A ( Margaux → (madeFromGrape some __nom43) ) 
+
+------------------------------------------------------------
+
+
+
+179 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#AmericanWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom38>)) )
+
+EquivalentClasses
+=================
+ A ( AmericanWine → (Wine ∩ (locatedIn some __nom38)) )  ∧  A ( (Wine ∩ (locatedIn some __nom38)) → AmericanWine ) 
+
+------------------------------------------------------------
+
+
+
+180 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedBordeaux> ObjectAllValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom62>))
+
+SubClassOf
+==========
+ A ( RedBordeaux → (madeFromGrape all __nom62) ) 
+
+------------------------------------------------------------
+
+
+
+181 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Meursault> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom45>))
+
+SubClassOf
+==========
+ A ( Meursault → (hasBody some __nom45) ) 
+
+------------------------------------------------------------
+
+
+
+182 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedTableWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#TableWine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom28>)) )
+
+EquivalentClasses
+=================
+ A ( RedTableWine → (TableWine ∩ (hasColor some __nom28)) )  ∧  A ( (TableWine ∩ (hasColor some __nom28)) → RedTableWine ) 
+
+------------------------------------------------------------
+
+
+
+183 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom54>))
+
+SubClassOf
+==========
+ A ( Sancerre → (hasSugar some __nom54) ) 
+
+------------------------------------------------------------
+
+
+
+184 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Medoc> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom46>)) )
+
+EquivalentClasses
+=================
+ A ( Pauillac → (Medoc ∩ (locatedIn some __nom46)) )  ∧  A ( (Medoc ∩ (locatedIn some __nom46)) → Pauillac ) 
+
+------------------------------------------------------------
+
+
+
+185 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectExactCardinality(1 <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor> owl:Thing))
+
+SubClassOf
+==========
+ A ( Wine → (1 hasColor: Thing) ) 
+
+------------------------------------------------------------
+
+
+
+186 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Pauillac> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasFlavor> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom58>))
+
+SubClassOf
+==========
+ A ( Pauillac → (hasFlavor some __nom58) ) 
+
+------------------------------------------------------------
+
+
+
+187 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#SweetWine> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasSugar> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom1>)) )
+
+EquivalentClasses
+=================
+ A ( SweetWine → (Wine ∩ (hasSugar some __nom1)) )  ∧  A ( (Wine ∩ (hasSugar some __nom1)) → SweetWine ) 
+
+------------------------------------------------------------
+
+
+
+188 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasBody> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom49>))
+
+SubClassOf
+==========
+ A ( Sancerre → (hasBody some __nom49) ) 
+
+------------------------------------------------------------
+
+
+
+189 EquivalentClasses(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Sancerre> ObjectIntersectionOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Loire> ObjectSomeValuesFrom(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#locatedIn> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#__nom30>)) )
+
+EquivalentClasses
+=================
+ A ( Sancerre → (Loire ∩ (locatedIn some __nom30)) )  ∧  A ( (Loire ∩ (locatedIn some __nom30)) → Sancerre ) 
+
+------------------------------------------------------------
+
+
+
+190 FunctionalObjectProperty(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#hasColor>)
+
+FunctionalObjectProperty
+========================
+A(<hasColor>T → [hasColor]T)
+
+------------------------------------------------------------
+
+
+
+191 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Port> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#RedWine>)
+
+SubClassOf
+==========
+ A ( Port → RedWine ) 
+
+------------------------------------------------------------
+
+
+
+192 ObjectPropertyDomain(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#madeFromGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Wine>)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+192 SubClassOf(<http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#WineGrape> <http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine#Grape>)
+
+SubClassOf
+==========
+ A ( WineGrape → Grape ) 
+
+------------------------------------------------------------
+
+Translated axiom types:
+	SubClassOf
+	EquivalentClasses
+	FunctionalObjectProperty
+Unimplemented axiom types:
+	ObjectPropertyRange
+	ObjectPropertyDomain
+	DisjointClasses
+Total axioms translated: 193
