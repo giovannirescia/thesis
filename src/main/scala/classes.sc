@@ -2,11 +2,12 @@ import java.io.File
 
 import scala.collection.JavaConversions._
 import org.semanticweb.owlapi.apibinding.OWLManager
-import org.semanticweb.owlapi.model.{OWLAxiom, OWLOntologyID}
+import org.semanticweb.owlapi.model.{OWLAxiom, OWLEquivalentClassesAxiom, OWLOntologyID}
 import formulae._
 import org.semanticweb.owlapi.model.parameters.Imports
 import formulae.FormulaeManager.formulate
 import FormClass._
+import SubClassFormulae._
 val manager = OWLManager.createOWLOntologyManager
 
 val file1 = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
@@ -21,9 +22,10 @@ val l = familyOntology.getTBoxAxioms(Imports.INCLUDED).toList
 l.size
 var a = l(2)
 
-var x = Prop("hola")
-val y = And(x, x)
 
-val z = formulate(l)
+var b = a.asInstanceOf[OWLEquivalentClassesAxiom].getClassExpressionsAsList
+var c = b(1)
 
-for(d <- z) println(d.render())
+var d = matchIntersectionOf(c)
+
+EquivalentClassesFormulae.equivClasses(a.asInstanceOf[OWLEquivalentClassesAxiom])

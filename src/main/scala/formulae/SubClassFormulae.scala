@@ -35,14 +35,27 @@ object SubClassFormulae {
     }
     else if (expType == OBJECT_UNION_OF) {
       val xs = matchUnionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      Or(inspect(xsLhs, axiom), inspect(xsRhs, axiom))
+      recursiveOr(xs, axiom)
     }else if (expType == OBJECT_INTERSECTION_OF){
       val xs = matchIntersectionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      And(inspect(xsLhs, axiom), inspect(xsRhs, axiom))
+      recursiveAnd(xs, axiom)
+    }else if (expType == OBJECT_SOME_VALUES_FROM){
+      val ys = matchSomeValuesFrom(exp)
+      val ysLhs = ys._1
+      val ysRhs = ys._2
+      Diam(R (ysLhs.asOWLObjectProperty().getIRI.getShortForm ), f = inspect(ysRhs.asInstanceOf[OWLClassExpression], axiom))
+    }else if (expType == OBJECT_ALL_VALUES_FROM) {
+      val ys = matchAllValuesFrom(exp)
+      val ysLhs = ys._1
+      val ysRhs = ys._2
+      Box(R (ysLhs.asOWLObjectProperty().getIRI.getShortForm ), f = inspect(ysRhs.asInstanceOf[OWLClassExpression], axiom))
+
+    } else if (expType == OBJECT_HAS_VALUE){
+      val ys = matchHasValue(exp)
+      val ysLhs = ys._1
+      val ysRhs = ys._2
+      And(Diam(R (ysLhs.asOWLObjectProperty().getIRI.getShortForm ), f = Prop(ysRhs.getIRI.getShortForm)),
+          Box(R (ysLhs.asOWLObjectProperty().getIRI.getShortForm ), f = Prop(ysRhs.getIRI.getShortForm)))
     }
     else{
       Bot()
@@ -75,55 +88,6 @@ object SubClassFormulae {
       } else{
         inspect(op.asInstanceOf[OWLClassExpression], axiom)
       }
-
-    }
-    else if (expType == OBJECT_SOME_VALUES_FROM){
-      val ys = matchSomeValuesFrom(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      }
-      else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], axiom)
-      }
-      writer.write(" some ")
-      if (!ysRhs.isAnonymous){
-        writer.write(ysRhs.asOWLClass().getIRI.getShortForm + "")}
-      else{
-        inspect(ysRhs, axiom)
-      }
-    }else if (expType == OBJECT_ALL_VALUES_FROM) {
-      val ys = matchAllValuesFrom(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      }
-      else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], axiom)
-      }
-      writer.write(" all ")
-      if (!ysRhs.isAnonymous){
-        writer.write(ysRhs.asOWLClass().getIRI.getShortForm + "")}
-      else{
-        inspect(ysRhs, axiom)
-      }
-    } else if (expType == OBJECT_HAS_VALUE){
-      val ys = matchHasValue(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      }else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], axiom)
-      }
-      writer.write(" value: ")
-      if (!ysRhs.isAnonymous){
-        writer.write(ysRhs.getIRI.getShortForm)
-      }else{
-        inspect(ysRhs.asInstanceOf[OWLClassExpression], axiom)
-      }
     }
     else{
       writer.write("@@@@"*20)
@@ -134,6 +98,28 @@ object SubClassFormulae {
     }
     writer.write(")")
     */
+  }
+  // TODO: FIX
+  def recursiveAnd2(zs: List[OWLClassExpression], axiom: Any): Form = {
+
+    val l = zs.size-1
+    var aux = And(inspect(zs(l-1), axiom), inspect(zs(l), axiom))
+    var count = l - 1
+    while (count > 0){
+      val elem = zs(count)
+      aux = And(inspect(elem, axiom), aux)
+      count -= 1
+    }
+    aux
+  }
+
+  def recursiveAnd(ys: List[OWLClassExpression], axiom: Any): Form = {
+    if (ys.isEmpty) Top()
+    else And(inspect(ys.head, axiom), recursiveAnd(ys.tail, axiom))
+  }
+  def recursiveOr(xs: List[OWLClassExpression], axiom: Any): Form = {
+    if (xs.isEmpty) Bot()
+    else Or(inspect(xs.head, axiom), recursiveOr(xs.tail, axiom))
   }
   def matchCardinality(given: OWLClassExpression): (Int, OWLObjectPropertyExpression, OWLClassExpression) = given match{
     case ObjectMaxCardinality(n, p, f) => (n, p, f)
