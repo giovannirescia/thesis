@@ -14,7 +14,9 @@ import renders.FunctionalObjectProperty._
   */
 object RendererManager {
   def render(axioms: List[OWLAxiom], outFile: String): Unit ={
-    val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/$outFile.txt"),false))
+    val dir = new File("output-log/rendered")
+    dir.mkdirs()
+    val writer = new PrintWriter(new FileOutputStream(new File(dir.toString +  s"/$outFile.txt"),false))
     var notRend: Set[String] = Set.empty
     var rend: Set[String] = Set.empty
     var i: Int = 0

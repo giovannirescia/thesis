@@ -1,5 +1,4 @@
 import java.io.File
-
 import scala.collection.JavaConversions._
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLAxiom, OWLEquivalentClassesAxiom, OWLOntologyID}
@@ -17,7 +16,6 @@ val familyOntology = manager.loadOntologyFromOntologyDocument(file1)
 val onts: Map[String, OWLOntologyID] = Map(
   "family" -> familyOntology.getOntologyID
 )
-
 val l = familyOntology.getTBoxAxioms(Imports.INCLUDED).toList
 l.size
 var a = l(2)

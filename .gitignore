@@ -4,3 +4,4 @@
 project/*
 .idea/*
 output/old/*
+output-log/*

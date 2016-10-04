@@ -13,7 +13,9 @@ import translators.PropAssert._
   */
 object TranslatorManager {
   def translate(axioms: List[OWLAxiom], outFile: String): Unit ={
-    val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/$outFile.txt"),false))
+    val dir = new File("output-log/translations")
+    dir.mkdirs()
+    val writer = new PrintWriter(new FileOutputStream(new File(dir.toString +  s"/$outFile.txt"),false))
     var notTranslated: Set[String] = Set.empty
     var translated: Set[String] = Set.empty
     var i: Int = 0
