@@ -12,15 +12,23 @@ import translators.PropAssert._
   * Created by giovannirescia on 26/9/16.
   */
 object TranslatorManager {
-  def translate(axioms: List[OWLAxiom], outFile: String): Unit ={
-    val dir = new File("output-log/translations")
-    dir.mkdirs()
-    val writer = new PrintWriter(new FileOutputStream(new File(dir.toString +  s"/$outFile.txt"),false))
+  def translate(axioms: List[OWLAxiom], outFile: String, fullPath: Boolean = false): Unit ={
+    val writer = {
+      if (fullPath){
+        new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/$outFile.txt"), false))
+      }else {
+        val dir = new File("output-log/translations")
+        dir.mkdirs()
+        new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.txt"), false))
+      }
+    }
+
     var notTranslated: Set[String] = Set.empty
     var translated: Set[String] = Set.empty
-    var i: Int = 0
+    var i: Int = 1
+    var j: Int = 0
     for (axiom <- axioms){
-      writer.write("\n\n"+i.toString+" " + axiom.toString+"\n\n")
+      writer.write("\n\n"+"Axiom "+i.toString+": " + axiom.toString+"\n\n")
       val axType = axiom.getAxiomType
 
       // <TBOX_AXIOMS>
@@ -77,7 +85,7 @@ object TranslatorManager {
       else {
         notTranslated += axType.toString
         writer.write("@!#"*40 + "\n\n")
-        i -= 1
+        j += 1
       }
       i += 1
     }
@@ -89,7 +97,7 @@ object TranslatorManager {
     for (elem <- notTranslated){
       writer.write("\t" + elem + "\n")
     }
-    writer.write(s"Total axioms translated: $i")
+    writer.write(s"Total axioms translated: " + (i-j).toString)
     writer.close()
   }
 }

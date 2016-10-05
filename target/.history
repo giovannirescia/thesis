@@ -75,3 +75,21 @@ compile
 run gal tbox translate PRUEBA3
 compile
 run 
+run dol tbox translate QQQQ
+run dol tbox render QQQQ
+run
+run dolce tbox render PEPERINO
+run dol tbox render PEPERINO
+compile
+run dol tbox render PEPERINO
+run dol abox render PEPERINO
+ls
+run gal tbox render PEPERINO
+run family tbox render PEPERINO
+run fam tbox render PEPERINO
+run wine tbox render PEPERINO
+run wine abox render PEPERINO
+compile
+run wine abox render PEPERINO
+compile
+run wine abox render PEPERINO

@@ -13,7 +13,6 @@ object DataPropertyDomain {
     val dom = axiom.getDomain.asOWLClass().getIRI.getShortForm
     // 2203: There Exists
     // 2190: ->
-    writer.write(s"<$prop>.T \u2192 $dom")
+    writer.write(s"$prop Domain: $dom")
   }
-
 }

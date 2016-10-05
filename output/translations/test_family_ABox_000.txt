@@ -1,6 +1,6 @@
 
 
-0 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 1: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ObjectPropertyAssertion
 =======================
@@ -10,7 +10,7 @@ ObjectPropertyAssertion
 
 
 
-1 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 2: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ObjectPropertyAssertion
 =======================
@@ -20,7 +20,7 @@ ObjectPropertyAssertion
 
 
 
-2 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Tom> <http://www.owl-ontologies.com/generations.owl#MaleGender>)
+Axiom 3: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Tom> <http://www.owl-ontologies.com/generations.owl#MaleGender>)
 
 ObjectPropertyAssertion
 =======================
@@ -30,7 +30,7 @@ ObjectPropertyAssertion
 
 
 
-3 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 4: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ClassAssertion
 ==============
@@ -40,7 +40,7 @@ Mary type: Thing
 
 
 
-4 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Anne>)
+Axiom 5: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Anne>)
 
 ClassAssertion
 ==============
@@ -50,7 +50,7 @@ Anne type: Person
 
 
 
-5 ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave>)
+Axiom 6: ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave>)
 
 ClassAssertion
 ==============
@@ -60,7 +60,7 @@ Dave type: Thing
 
 
 
-6 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasChild> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave> <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 7: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasChild> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave> <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ObjectPropertyAssertion
 =======================
@@ -70,7 +70,7 @@ ObjectPropertyAssertion
 
 
 
-7 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
+Axiom 8: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
 
 ObjectPropertyAssertion
 =======================
@@ -80,7 +80,7 @@ ObjectPropertyAssertion
 
 
 
-8 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#MaleGender>)
+Axiom 9: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#MaleGender>)
 
 ClassAssertion
 ==============
@@ -90,7 +90,7 @@ MaleGender type: Thing
 
 
 
-9 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Sue>)
+Axiom 10: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Sue>)
 
 ObjectPropertyAssertion
 =======================
@@ -100,7 +100,7 @@ ObjectPropertyAssertion
 
 
 
-10 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
+Axiom 11: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
 
 ClassAssertion
 ==============
@@ -110,7 +110,7 @@ FemaleGender type: Thing
 
 
 
-11 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Anne>)
+Axiom 12: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Anne>)
 
 ClassAssertion
 ==============
@@ -120,7 +120,7 @@ Anne type: Thing
 
 
 
-12 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 13: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ObjectPropertyAssertion
 =======================
@@ -130,7 +130,7 @@ ObjectPropertyAssertion
 
 
 
-13 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave>)
+Axiom 14: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Dave>)
 
 ClassAssertion
 ==============
@@ -140,7 +140,7 @@ Dave type: Person
 
 
 
-14 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 15: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ObjectPropertyAssertion
 =======================
@@ -150,7 +150,7 @@ ObjectPropertyAssertion
 
 
 
-15 ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim>)
+Axiom 16: ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim>)
 
 ClassAssertion
 ==============
@@ -160,7 +160,7 @@ Jim type: Thing
 
 
 
-16 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
+Axiom 17: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
 
 ClassAssertion
 ==============
@@ -170,7 +170,7 @@ Scott type: Person
 
 
 
-17 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 18: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ClassAssertion
 ==============
@@ -180,7 +180,7 @@ Jane type: Thing
 
 
 
-18 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 19: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ClassAssertion
 ==============
@@ -190,7 +190,7 @@ Bob type: Thing
 
 
 
-19 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Sue>)
+Axiom 20: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Sue>)
 
 ClassAssertion
 ==============
@@ -200,7 +200,7 @@ Sue type: Thing
 
 
 
-20 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 21: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ClassAssertion
 ==============
@@ -210,7 +210,7 @@ Mary type: Person
 
 
 
-21 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Sue>)
+Axiom 22: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Sue>)
 
 ClassAssertion
 ==============
@@ -220,7 +220,7 @@ Sue type: Person
 
 
 
-22 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Tom> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 23: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Tom> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ObjectPropertyAssertion
 =======================
@@ -230,7 +230,7 @@ ObjectPropertyAssertion
 
 
 
-23 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 24: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ObjectPropertyAssertion
 =======================
@@ -240,7 +240,7 @@ ObjectPropertyAssertion
 
 
 
-24 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 25: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ClassAssertion
 ==============
@@ -250,7 +250,7 @@ Bob type: Person
 
 
 
-25 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
+Axiom 26: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Anne> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
 
 ObjectPropertyAssertion
 =======================
@@ -260,7 +260,7 @@ ObjectPropertyAssertion
 
 
 
-26 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
+Axiom 27: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasGender> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
 
 ObjectPropertyAssertion
 =======================
@@ -270,7 +270,7 @@ ObjectPropertyAssertion
 
 
 
-27 ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
+Axiom 28: ClassAssertion(owl:Thing <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott>)
 
 ClassAssertion
 ==============
@@ -280,7 +280,7 @@ Scott type: Thing
 
 
 
-28 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim>)
+Axiom 29: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim>)
 
 ClassAssertion
 ==============
@@ -290,7 +290,7 @@ Jim type: Person
 
 
 
-29 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Sue>)
+Axiom 30: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Scott> <http://www.owl-ontologies.com/generations.owl#Sue>)
 
 ObjectPropertyAssertion
 =======================
@@ -300,7 +300,7 @@ ObjectPropertyAssertion
 
 
 
-30 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 31: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Person> <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ClassAssertion
 ==============
@@ -310,7 +310,7 @@ Jane type: Person
 
 
 
-31 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Gender> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
+Axiom 32: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Gender> <http://www.owl-ontologies.com/generations.owl#FemaleGender>)
 
 ClassAssertion
 ==============
@@ -320,7 +320,7 @@ FemaleGender type: Gender
 
 
 
-32 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Mary>)
+Axiom 33: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Mary>)
 
 ObjectPropertyAssertion
 =======================
@@ -330,7 +330,7 @@ ObjectPropertyAssertion
 
 
 
-33 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 34: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ObjectPropertyAssertion
 =======================
@@ -340,7 +340,7 @@ ObjectPropertyAssertion
 
 
 
-34 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Sue>)
+Axiom 35: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Sue>)
 
 ObjectPropertyAssertion
 =======================
@@ -350,7 +350,7 @@ ObjectPropertyAssertion
 
 
 
-35 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 36: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Anne> <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ObjectPropertyAssertion
 =======================
@@ -360,7 +360,7 @@ ObjectPropertyAssertion
 
 
 
-36 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim> <http://www.owl-ontologies.com/generations.owl#Tom>)
+Axiom 37: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasSibling> <https://wiki.csc.calpoly.edu/OntologyTutorial/family_example.owl#Jim> <http://www.owl-ontologies.com/generations.owl#Tom>)
 
 ObjectPropertyAssertion
 =======================
@@ -370,7 +370,7 @@ ObjectPropertyAssertion
 
 
 
-37 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 38: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ObjectPropertyAssertion
 =======================
@@ -380,13 +380,7 @@ ObjectPropertyAssertion
 
 
 
-38 DataPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#fullName> <http://www.owl-ontologies.com/generations.owl#Mary> "Mary Smith"^^xsd:string)
-
-@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
-
-
-
-38 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Jane>)
+Axiom 39: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Mary> <http://www.owl-ontologies.com/generations.owl#Jane>)
 
 ObjectPropertyAssertion
 =======================
@@ -396,7 +390,13 @@ ObjectPropertyAssertion
 
 
 
-39 ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Bob>)
+Axiom 40: DataPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#fullName> <http://www.owl-ontologies.com/generations.owl#Mary> "Mary Smith"^^xsd:string)
+
+@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#@!#
+
+
+
+Axiom 41: ObjectPropertyAssertion(<http://www.owl-ontologies.com/generations.owl#hasParent> <http://www.owl-ontologies.com/generations.owl#Sue> <http://www.owl-ontologies.com/generations.owl#Bob>)
 
 ObjectPropertyAssertion
 =======================
@@ -406,7 +406,7 @@ ObjectPropertyAssertion
 
 
 
-40 ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Gender> <http://www.owl-ontologies.com/generations.owl#MaleGender>)
+Axiom 42: ClassAssertion(<http://www.owl-ontologies.com/generations.owl#Gender> <http://www.owl-ontologies.com/generations.owl#MaleGender>)
 
 ClassAssertion
 ==============
@@ -416,7 +416,7 @@ MaleGender type: Gender
 
 
 
-41 ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Tom>)
+Axiom 43: ClassAssertion(owl:Thing <http://www.owl-ontologies.com/generations.owl#Tom>)
 
 ClassAssertion
 ==============
@@ -429,4 +429,4 @@ Translated axiom types:
 	ClassAssertion
 Unimplemented axiom types:
 	DataPropertyAssertion
-Total axioms translated: 42
+Total axioms translated: 43

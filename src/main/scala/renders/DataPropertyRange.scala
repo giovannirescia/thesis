@@ -13,7 +13,6 @@ object DataPropertyRange {
     val range = axiom.getRange.asOWLDatatype().getIRI.getShortForm
     // 2203: There Exists
     // 2190: ->
-    writer.write(s"<~$prop>.T \u2192 $range")
+    writer.write(s"$prop Range: $range")
   }
-
 }

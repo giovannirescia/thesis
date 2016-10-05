@@ -45,7 +45,10 @@ object SubClassTranslator {
   def inspect(exp: OWLClassExpression, writer: PrintWriter, axiom: Any): Unit = {
     writer.write("(")
     val expType = exp.getClassExpressionType
-    if (expType == OBJECT_EXACT_CARDINALITY){
+    if(!exp.isAnonymous){
+      writer.write(exp.asOWLClass().getIRI.getShortForm)
+    }
+    else if (expType == OBJECT_EXACT_CARDINALITY){
       val (a,b,c) = matchCardinality(exp)
       writer.write(a + " ")
       writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
@@ -121,42 +124,21 @@ object SubClassTranslator {
       }
     }else if (expType == OBJECT_INTERSECTION_OF){
       val xs = matchIntersectionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      if (!xsLhs.isAnonymous) {
-        writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
-      }
-      if (!xsRhs.isAnonymous) {
+      for (x <- xs.take(xs.size-1)) {
+        // 2229: Intersection
+        inspect(x, writer, axiom)
         writer.write(" \u2229 ")
-        writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
       }
-      else {
-        for (x <- xs.tail) {
-          // 2229: Intersection
-          writer.write(" \u2229 ")
-          inspect(x, writer, axiom)
-        }
-
-      }
+      inspect(xs.last, writer, axiom)
     }
     else if (expType == OBJECT_UNION_OF){
       val xs = matchUnionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      if (!xsLhs.isAnonymous) {
-        writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
-      }
-      if (!xsRhs.isAnonymous) {
+      for (x <- xs.take(xs.size-1)) {
+        // 2229: Intersection
+        inspect(x, writer, axiom)
         writer.write(" \u222A ")
-        writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
       }
-      else {
-        for (x <- xs.tail) {
-          // 2229: Intersection
-          writer.write(" \u222A ")
-          inspect(x, writer, axiom)
-        }
-      }
+      inspect(xs.last, writer, axiom)
     }else{
       writer.write("@@@@"*20)
       writer.write("\n\n Axiom: " + axiom.toString + "\n\n")

@@ -22,11 +22,9 @@ object Manager{
         val ontology = manager.loadOntologyFromOntologyDocument(file)
         println("\n" + ontology.getOntologyID.getOntologyIRI.get + "\n")
         val axioms = getAxioms(ontology, args(1))
-        if(axioms.isEmpty) help()
-        else{
-          workIt(axioms, args(2), args(3))
+        if(axioms.nonEmpty) workIt(axioms, args(2), args(3))
+        else help()
         }
-      }
       else help()
     }
   }

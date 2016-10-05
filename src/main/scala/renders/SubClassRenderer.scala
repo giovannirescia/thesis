@@ -59,24 +59,28 @@ object SubClassRenderer {
   def inspect(exp: OWLClassExpression, writer: PrintWriter, axiom: Any): Unit = {
     writer.write("(")
     val expType = exp.getClassExpressionType
-    if (expType == OBJECT_EXACT_CARDINALITY){
+
+    if(!exp.isAnonymous){
+      writer.write(exp.asOWLClass().getIRI.getShortForm)
+    }// TODO: TRANSLATION MISSING
+    else if (expType == OBJECT_EXACT_CARDINALITY){
       val (a,b,c) = matchExactCardinality(exp)
       writer.write(a + " ")
       writer.write("" + b.asOWLObjectProperty().getIRI.getShortForm)
       writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
+    }// TODO: TRANSLATION MISSING
     else if (expType == OBJECT_MIN_CARDINALITY){
       val (a,b,c) = matchMinCardinality(exp)
       writer.write(a + " ")
       writer.write("" + b.asOWLObjectProperty().getIRI.getShortForm)
       writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
+    }// TODO: TRANSLATION MISSING
     else if (expType == OBJECT_MAX_CARDINALITY){
       val (a,b,c) = matchMaxCardinality(exp)
       writer.write(a + " ")
       writer.write("" + b.asOWLObjectProperty().getIRI.getShortForm)
       writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
+    }// TODO: TRANSLATION MISSING
     else if (expType == OBJECT_COMPLEMENT_OF){
       val op = exp.asInstanceOf[OWLObjectComplementOf].getOperand
       if (!op.isAnonymous) {
@@ -84,7 +88,6 @@ object SubClassRenderer {
       } else{
         inspect(op.asInstanceOf[OWLClassExpression], writer, axiom)
       }
-
     }
     else if (expType == OBJECT_SOME_VALUES_FROM){
       val ys = matchSomeValuesFrom(exp)
@@ -137,45 +140,23 @@ object SubClassRenderer {
       }else{
         inspect(ysRhs.asInstanceOf[OWLClassExpression], writer, axiom)
       }
-    }else if (expType == OBJECT_INTERSECTION_OF){
+    } else if (expType == OBJECT_INTERSECTION_OF){
       val xs = matchIntersectionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      if (!xsLhs.isAnonymous) {
-        writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
-      }
-      if (!xsRhs.isAnonymous) {
-        writer.write(" \u2229 ")
-        writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
-      }
-      else {
-        for (x <- xs.tail) {
+        for (x <- xs.take(xs.size-1)) {
           // 2229: Intersection
-          writer.write(" \u2229 ")
           inspect(x, writer, axiom)
+          writer.write(" \u2229 ")
         }
-
-      }
-    } // TODO: NOT WORKING
+      inspect(xs.last, writer, axiom)
+    }
     else if (expType == OBJECT_UNION_OF){
       val xs = matchUnionOf(exp)
-      val xsLhs = xs(0)
-      val xsRhs = xs(1)
-      if (!xsLhs.isAnonymous) {
-        writer.write(xsLhs.asOWLClass().getIRI.getShortForm)
-      }
-      if (!xsRhs.isAnonymous) {
+      for (x <- xs.take(xs.size-1)) {
+        // 2229: Intersection
+        inspect(x, writer, axiom)
         writer.write(" \u222A ")
-        writer.write(xsRhs.asOWLClass().getIRI.getShortForm)
       }
-      else {
-        for (x <- xs.tail) {
-          // 2229: Intersection
-          writer.write(" \u222A ")
-          inspect(x, writer, axiom)
-        }
-
-      }
+      inspect(xs.last, writer, axiom)
     }else{
       writer.write("@@@@"*20)
       writer.write("\n\n Axiom: " + axiom.toString + "\n\n")
