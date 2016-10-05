@@ -1,0 +1,5 @@
+pre-requisitos:
+1) haskell platform
+En el directorio donde esta este archivo:
+2) cabal configure
+3) cabal build (y si no funca cabal install)
