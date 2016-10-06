@@ -1,0 +1,52 @@
+KCNF-CONVERTER
+
+Compile:
+1) Go to the kcnf_converter folder and execute:
+   cabal build
+
+2) This will compile kcnf-converter and put the resulting 
+   executable in the dist/build/kcnf_converter folder.
+
+Run:
+1) To convert to kcnf just one file, use the executable in
+   the ist/build/kcnf_converter folder as this:
+
+       ./to_kcnf <file>
+
+   This will output the kcnf version of the formula to the 
+   standard output.
+
+SY4NCL
+
+Compile:
+1) Go to the sy4ncl folder and execute:
+
+    cabal build
+
+2) This will compile sy4ncl and put the resulting 
+   executable in the dist/build/sy4ncl folder.
+
+Run:
+1) To generate the bliss graph for just one formula, use the executable as this:
+ 
+       ./sy4ncl -f <file> -t 0
+
+    The "-t 0" param indicates the tool to generate a "global graph"
+
+   This will output three files: the graph of the formula (.bliss file), a mapping from 
+   graph nodes to propositional variable (.map file) and some stats about the graph (.stats)
+
+
+BLISS
+
+Compile:
+1) Go to the bliss-0.73 folder and execute:
+    make.
+
+Run:
+1) To calculate the simmetries for a particular graph you can use the
+   bliss executable in the bin folder:
+         ./bliss <bliss_file>
+
+   This will output the symmetries information to the standar output.
+
