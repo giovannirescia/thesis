@@ -61,6 +61,8 @@ module Rewriter (bnf,kcnf,rewrConst,rename)
  bnf (Neg (Diam r f))     = Box  r $ bnf (Neg f)
  bnf      (Box r f)       = Box  r $ bnf      f
  bnf (Neg (Box r f))      = Neg (Box r (bnf f))
+ bnf      (A f)           = A  $ (bnf f)
+ bnf      (E f)           = E  $ (bnf f)
 
 --Given a list of formulas in PNF (Pulenta Normal Form),
 --rewrites them to BNF (Box Normal Form). This ensures that
