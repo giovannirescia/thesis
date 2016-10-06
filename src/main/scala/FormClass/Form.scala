@@ -1,64 +1,74 @@
 package FormClass
+import scala.collection.mutable
 
 /**
   * Created by giovannirescia on 28/9/16.
   */
 abstract class Form {
-  def render(): String = ""
+  def render(map: mutable.Map[String, String]): String = ""
 }
 case class Prop(arg: String) extends Form {
-  override def render(): String = arg
+  override def render(map: mutable.Map[String, String]): String = map.get(arg).head
 }
 case class And(f1: Form, f2: Form) extends Form{
-  override def render(): String = {
-    "( " + f1.render() + " AND " + f2.render() + " )"
+  override def render(map: mutable.Map[String, String]): String = {
+    "( " + f1.render(map) + " ^ " + f2.render(map) + " )"
   }
 }
 case class Or(f1: Form, f2: Form) extends Form{
-  override def render(): String = {
-    "( " + f1.render() + " OR " + f2.render() + " )"
+  override def render(map: mutable.Map[String, String]): String = {
+    "( " + f1.render(map) + " v " + f2.render(map) + " )"
   }
 }
 case class Impl(f1: Form, f2: Form) extends Form{
-  override def render(): String = {
-    "( " + f1.render() + " IMPLIES " + f2.render() + " )"
+  override def render(map: mutable.Map[String, String]): String = {
+    "( " + f1.render(map) + " --> " + f2.render(map) + " )"
   }
 }
 case class Neg(form: Form) extends Form{
-  override def render(): String = {
-    "( NOT " + form.render() + " )"
+  override def render(map: mutable.Map[String, String]): String = {
+    "( - " + form.render(map) + " )"
   }
 }
-case class Diam(r: Rel, isInv: Boolean = false, f: Form) extends Form{
-  override def render(): String = {
-    if (!isInv){
-      s"( <$r> ${f.render()} )"
-  }else{
-      s"( <$r~> ${f.render()} )"
+case class Diam(r: Rel, f: Form) extends Form{
+  override def render(map: mutable.Map[String, String]): String = {
+      s"( <${r.render(map)}>${f.render(map)} )"
     }
-  }
 }
-case class Box(r: Rel, isInv: Boolean = false, f: Form) extends Form{
-  override def render(): String = {
-    if (!isInv){
-      s"( [$r] ${f.render()} )"
-    }else{
-      s"( [$r~] ${f.render()} )"
+case class Box(r: Rel, f: Form) extends Form{
+  override def render(map: mutable.Map[String, String]): String = {
+      s"( [${r.render(map)}]${f.render(map)} )"
     }
+}
+
+
+case class IDiam(r: Rel, f: Form) extends Form{
+  override def render(map: mutable.Map[String, String]): String = {
+      // TODO: FIX
+      s"( <-${r.render(map)}>${f.render(map)} )"
   }
 }
+case class IBox(r: Rel, f: Form) extends Form{
+  override def render(map: mutable.Map[String, String]): String = {
+    // TODO: FIX
+    s"( -[${r.render(map)}]${f.render(map)} )"
+    }
+}
+
 case class A(f: Form) extends Form{
-  override def render(): String = {
-    s"( A ${f.render()} )"
+  override def render(map: mutable.Map[String, String]): String = {
+    // TODO: FIX UNIVERSAL OPERATOR
+    //s"( A ${f.render(map)} )"
+    s"( A${f.render(map)} )"
   }
 }
 case class Top() extends Form{
-  override def render(): String = {
-    "\u22A4"
+  override def render(map: mutable.Map[String, String]): String = {
+    " true "
   }
 }
 case class Bot() extends Form{
-  override def render(): String = {
-    "\u22A5"
+  override def render(map: mutable.Map[String, String]): String = {
+    " false "
   }
 }

@@ -15,7 +15,7 @@ object FunctionalRenderer{
     * @return void
     */
   def renderFuncSyn(ontology: OWLOntology, name: String): Unit ={
-    val writer = new FileOutputStream("/Users/giovannirescia/coding/tesis/output/" + name + ".txt")
+    val writer = new FileOutputStream("/Users/giovannirescia/coding/tesis/output/old" + name + ".txt")
     val f = new OWLFunctionalSyntaxRenderer
     f.render(ontology, writer)
     writer.close()
