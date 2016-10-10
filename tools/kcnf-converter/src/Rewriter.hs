@@ -61,9 +61,13 @@ module Rewriter (bnf,kcnf,rewrConst,rename)
  bnf (Neg (Diam r f))     = Box  r $ bnf (Neg f)
  bnf      (Box r f)       = Box  r $ bnf      f
  bnf (Neg (Box r f))      = Neg (Box r (bnf f))
+-- TODO: Check, not in normal form
  bnf      (A f)           = A  $ (bnf f)
  bnf      (E f)           = E  $ (bnf f)
-
+ --bnf      (IDiam r f)     = IDiam r f
+ --bnf (Neg (IDiam r f))    = IDiam r f
+ bnf      (IBox r f)      = IBox r f
+ bnf (Neg (IBox r f))     = IBox r f
 --Given a list of formulas in PNF (Pulenta Normal Form),
 --rewrites them to BNF (Box Normal Form). This ensures that
 --the resulting formula is in KCNF (K Conjuntive Normal Form).

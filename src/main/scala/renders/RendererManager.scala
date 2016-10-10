@@ -23,7 +23,7 @@ object RendererManager {
       if (fullPath){
         new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/$outFile.txt"), false))
       }else {
-        val dir = new File("output-log/rendered")
+        val dir = new File("output/rendered")
         dir.mkdirs()
         new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.txt"), false))
       }
@@ -32,7 +32,7 @@ object RendererManager {
       if (fullPath){
         new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/$outFile"+"_Err.txt"), false))
       }else {
-        val dir = new File("output-log/rendered")
+        val dir = new File("output/rendered")
         dir.mkdirs()
         new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile"+"_Err.txt"), false))
       }

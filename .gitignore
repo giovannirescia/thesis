@@ -5,3 +5,10 @@ project/*
 .idea/*
 output/old/*
 output-log/*
+*.o
+*.a
+**/dist/*
+**/builds
+**/bin
+**/blis
+**~

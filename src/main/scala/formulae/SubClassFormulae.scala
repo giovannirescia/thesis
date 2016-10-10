@@ -38,7 +38,7 @@ object SubClassFormulae {
       recursiveOr(xs, axiom)
     }else if (expType == OBJECT_INTERSECTION_OF){
       val xs = matchIntersectionOf(exp)
-      recursiveAnd(xs, axiom)
+      tailRecursiveAnd(xs, axiom)
     }else if (expType == OBJECT_SOME_VALUES_FROM){
       val ys = matchSomeValuesFrom(exp)
       val ysLhs = ys._1
@@ -100,17 +100,15 @@ object SubClassFormulae {
     */
   }
   // TODO: FIX
-  def recursiveAnd2(zs: List[OWLClassExpression], axiom: Any): Form = {
-
-    val l = zs.size-1
-    var aux = And(inspect(zs(l-1), axiom), inspect(zs(l), axiom))
-    var count = l - 1
-    while (count > 0){
-      val elem = zs(count)
-      aux = And(inspect(elem, axiom), aux)
-      count -= 1
+  def tailRecursiveAnd(zs: List[OWLClassExpression], axiom: Any): Form = {
+    val init = And(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
+    def tailRecursiveAndWithAcc(accumulator: Form, ys: List[OWLClassExpression]) : Form = {
+      if (ys.isEmpty)
+        return accumulator
+      else
+        tailRecursiveAndWithAcc(And(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
     }
-    aux
+    tailRecursiveAndWithAcc(init, zs.take(zs.size-2))
   }
 
   def recursiveAnd(ys: List[OWLClassExpression], axiom: Any): Form = {

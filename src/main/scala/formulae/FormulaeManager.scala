@@ -81,15 +81,23 @@ object FormulaeManager {
     result
   }
 
-  def render(forms: ListBuffer[Form], ontology: OWLOntology, outFile: String): Unit ={
+  def render(forms: ListBuffer[Form], ontology: OWLOntology, outFile: String, fullPath: Boolean = false): Unit ={
     val classes = ontology.getClassesInSignature(Imports.INCLUDED).toList
     val individuals = ontology.getIndividualsInSignature(Imports.INCLUDED).toList
     val objprop = ontology.getObjectPropertiesInSignature(Imports.INCLUDED).toList
     val dataprop = ontology.getDataPropertiesInSignature(Imports.INCLUDED).toList
     val props = new ListBuffer[String]()
     val rels = new ListBuffer[String]()
-    val writer = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/intohylo/$outFile.intohylo"), false))
 
+    val writer = {
+      if (fullPath){
+        new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/intohylo/$outFile.intohylo"), false))
+      }else {
+        val dir = new File("output/translations/intohylo")
+        dir.mkdirs()
+        new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.intohylo"), false))
+      }
+    }
     for (x <- objprop ++ dataprop){
       rels += x.getIRI.getShortForm
     }

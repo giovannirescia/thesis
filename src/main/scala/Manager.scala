@@ -6,6 +6,7 @@ import org.semanticweb.owlapi.model.parameters.Imports
 import scala.collection.JavaConversions._
 import renders.RendererManager.render
 import translators.TranslatorManager.translate
+import formulae.FormulaeManager.{formulate, render => formRender}
 
 /**
   * Created by giovannirescia on 4/10/16.
@@ -22,15 +23,15 @@ object Manager{
         val ontology = manager.loadOntologyFromOntologyDocument(file)
         println("\n" + ontology.getOntologyID.getOntologyIRI.get + "\n")
         val axioms = getAxioms(ontology, args(1))
-        if(axioms.nonEmpty) workIt(axioms, args(2), args(3))
+        if(axioms.nonEmpty) workIt(axioms, args(2), ontology, args(3))
         else help()
         }
       else help()
     }
   }
 
-  def workIt(axioms: List[OWLAxiom], x: String, output: String) = x match {
-    case "translate" => translate(axioms, output)
+  def workIt(axioms: List[OWLAxiom], x: String, ont: OWLOntology, output: String) = x match {
+    case "translate" => formRender(formulate(axioms), ont, output)
     case "render" => render(axioms, output)
     case _ => help()
   }

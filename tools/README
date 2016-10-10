@@ -21,7 +21,7 @@ SY4NCL
 Compile:
 1) Go to the sy4ncl folder and execute:
 
-    cabal build
+    cabal install cmdargs; cabal configure; cabal build
 
 2) This will compile sy4ncl and put the resulting 
    executable in the dist/build/sy4ncl folder.
