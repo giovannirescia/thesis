@@ -1,23 +1,30 @@
-package renders
+package render
 
 import java.io.{File, FileOutputStream, PrintWriter}
-
 import org.semanticweb.owlapi.model.AxiomType.{INVERSE_FUNCTIONAL_OBJECT_PROPERTY, DISJOINT_CLASSES, OBJECT_PROPERTY_DOMAIN, OBJECT_PROPERTY_RANGE, DATA_PROPERTY_DOMAIN, EQUIVALENT_CLASSES, SUBCLASS_OF, DATA_PROPERTY_RANGE, FUNCTIONAL_OBJECT_PROPERTY}
 import org.semanticweb.owlapi.model._
-import renders.SubClassRenderer._
-import renders.EquivalentClassesRenderer.equivClasses
-import renders.DataPropertyDomain.propDomain
-import renders.DataPropertyRange.propRange
-import renders.FunctionalObjectProperty.funcProp
-import renders.ObjectPropertyDomain.objectPropDom
-import renders.ObjectPropertyRange.objectPropRange
-import renders.disjointClasses.disjClass
-import renders.invFuncObjProp.invFunc
+import render.SubClassRenderer._
+import render.EquivalentClassesRenderer.equivClasses
+import render.DataPropertyDomain.propDomain
+import render.DataPropertyRange.propRange
+import render.FunctionalObjectProperty.funcProp
+import render.ObjectPropertyDomain.objectPropDom
+import render.ObjectPropertyRange.objectPropRange
+import render.DisjointClasses.disjClass
+import render.InvFuncObjProp.invFunc
 
-/**
-  * Created by giovannirescia on 24/9/16.
-  */
-object RendererManager {
+
+object RenderManager {
+  /**
+    *
+    * @param axioms A list of OWLAxioms to render
+    * @param outFile A name for the output file. Also will write another file with the axioms that
+    *                couldn't be rendered because some case was missing. E.g., if outFile = "test", "testErr"
+    *                will be also created
+    * @param fullPath Only true when called from a worksheet (change "/Users/giovannirescia/"), otherwise it will
+    *                 create the folders output/rendered and write the output file there
+    * @param verbose Will also write the axiom before it's rendered if true
+    */
   def render(axioms: List[OWLAxiom], outFile: String, fullPath: Boolean = false, verbose: Boolean = false): Unit ={
     val writer = {
       if (fullPath){
@@ -37,7 +44,9 @@ object RendererManager {
         new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile"+"_Err.txt"), false))
       }
     }
+    /** All the axiom types that couldn't be rendered*/
     var notRend: Set[String] = Set.empty
+    /** All the axiom types that were successfuly rendered*/
     var rend: Set[String] = Set.empty
     var i: Int = 1
     var j: Int = 0

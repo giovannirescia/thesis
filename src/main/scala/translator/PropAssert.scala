@@ -1,4 +1,4 @@
-package formulae
+package translator
 
 import java.io.PrintWriter
 import org.phenoscape.scowl.ObjectPropertyAssertion

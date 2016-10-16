@@ -1,18 +1,17 @@
-package renders
+package render
 
 import java.io.PrintWriter
+import org.semanticweb.owlapi.model.{OWLDataPropertyDomainAxiom}
 
-import org.semanticweb.owlapi.model.{OWLDataPropertyDomainAxiom, OWLEquivalentClassesAxiom}
-
-/**
-  * Created by giovannirescia on 25/9/16.
-  */
 object DataPropertyDomain {
+  /**
+    *
+    * @param axiom An OWLDataPropertyDomainAxiom to render
+    * @param writer A PrintWriter to write
+    */
   def propDomain(axiom: OWLDataPropertyDomainAxiom, writer: PrintWriter): Unit ={
     val prop = axiom.getProperty.asOWLDataProperty().getIRI.getShortForm
     val dom = axiom.getDomain.asOWLClass().getIRI.getShortForm
-    // 2203: There Exists
-    // 2190: ->
     writer.write(s"$prop Domain: $dom")
   }
 }

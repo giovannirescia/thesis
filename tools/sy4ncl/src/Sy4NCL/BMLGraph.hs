@@ -8,7 +8,7 @@ import HyLo.Formula
 import HyLo.Signature.Simple
 import Control.Monad.State
 import System.CPUTime( getCPUTime )
---import Debug.Trace
+import Debug.Trace (trace)
 
 buildGraph ::  Params ->
                [Formula NomSymbol PropSymbol RelSymbol] -> 
@@ -36,6 +36,17 @@ parse               :: Formula NomSymbol PropSymbol RelSymbol ->
                        Int -> 
                        NodeId -> 
                        GraphState NodeId
+-- Adding support to Universal operator and IBox
+parse (IBox _ f)                  d ly pid = addClauseNode 5 (d+1) >>=
+                                             (addEdge' pid) >>=
+                                             (parse f (d+1) ly)                                           
+parse (Neg (IBox _ f))            d ly pid = addClauseNode 6 (d+1) >>=
+                                             (addEdge' pid) >>=
+                                             (parse f (d+1) ly)
+parse (A f)                       d ly pid = addClauseNode 7 (d+1) >>=
+                                             (addEdge' pid) >>=
+                                             (parse f (d+1) ly)
+--
 parse (Box _ f)                   d ly pid = addClauseNode 2 (d+1) >>= 
                                           (addEdge' pid) >>= 
                                           (parse f (d+1) ly)
@@ -71,10 +82,10 @@ addLiteralNode lid d pid =
      case exist of
         Nothing   -> do nid1 <- nextNid
                         nid2 <- nextNid
-                        _ <- upColorCount 4 2
+                        _ <- upColorCount 10 2 -- Changed by Giovanni, was 4 instead of 7, didn't do the trick :/
                         s' <- get
-                        let (g1,n1) = addNode (graph s) nid1 d 4
-                        let (g2,n2) = addNode g1 nid2 d 4
+                        let (g1,n1) = addNode (graph s) nid1 d 10
+                        let (g2,n2) = addNode g1 nid2 d 10
                         let g3 = addEdge g2 nid1 nid2
                         let g4 = addEdge g3 pid nid1
                         let m1 = addLitMapping m d lid n1

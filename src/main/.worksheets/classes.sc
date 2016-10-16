@@ -26,4 +26,4 @@ var c = b(1)
 
 var d = matchIntersectionOf(c)
 
-EquivalentClassesFormulae.equivClasses(a.asInstanceOf[OWLEquivalentClassesAxiom])
+EquivalentClassesFormulae.equivClasses(a.asInstanceOf[OWLEquivalentClassesAxiom]).render()

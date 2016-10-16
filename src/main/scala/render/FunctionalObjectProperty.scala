@@ -1,13 +1,14 @@
-package renders
+package render
 
 import java.io.PrintWriter
+import org.semanticweb.owlapi.model.{OWLFunctionalObjectPropertyAxiom}
 
-import org.semanticweb.owlapi.model.{OWLDataPropertyDomainAxiom, OWLFunctionalObjectPropertyAxiom}
-
-/**
-  * Created by giovannirescia on 25/9/16.
-  */
 object FunctionalObjectProperty {
+  /**
+    *
+    * @param axiom An OWLFunctionalObjectPropertyAxiom
+    * @param writer A PrintWriter to write
+    */
   def funcProp(axiom: OWLFunctionalObjectPropertyAxiom, writer: PrintWriter): Unit ={
     val prop = axiom.getProperty.asOWLObjectProperty().getIRI.getShortForm
     // 2192: ->

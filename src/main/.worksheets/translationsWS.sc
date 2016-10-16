@@ -39,11 +39,11 @@ val onts: Map[String, OWLOntologyID] = Map(
   "dolce" -> dolceOntology.getOntologyID,
   "wine" -> wineOntology.getOntologyID
 )
-//var d = familyOntology.getClassesInSignature(Imports.INCLUDED).toList
+var d = familyOntology.getClassesInSignature(Imports.INCLUDED).toList
 //var c = familyOntology.getObjectPropertiesInSignature(Imports.INCLUDED).toList
 //var b = familyOntology.getDataPropertiesInSignature(Imports.INCLUDED).toList
 //var a = familyOntology.getIndividualsInSignature(Imports.INCLUDED).toList
-//d.foreach(f => print(f.getIRI.getShortForm + " "))
+d.foreach(f => print(f.getIRI.getShortForm + " "))
 
 
 //// ABox
