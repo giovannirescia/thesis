@@ -35,7 +35,8 @@ where
                                 graph = Empty,
                                 mapping = M.empty,
                                 colorCount = s}
-        where s = S.fromList [0,0,0,0]
+        -- Enlarge the sequence
+        where s = S.fromList [0,0,0,0,0,0,0]
  
  addNode :: Graph -> NodeId -> Depth -> Color -> (Graph,Node)
  addNode  Empty nid d c        = let n = (N nid d c)

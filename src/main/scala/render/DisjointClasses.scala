@@ -49,6 +49,8 @@ object DisjointClasses {
           writer.write(" and ")
         }
         parse(xs.last, writer = writer)
+      } else {
+        throw new IllegalStateException
       }
       writer.write(")")
     }

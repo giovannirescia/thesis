@@ -6,9 +6,6 @@ import scala.collection.JavaConversions._
 import render.RenderManager.render
 import translator.TranslatorManager.{dl2ml, render => formRender}
 
-/**
-  * Created by giovannirescia on 4/10/16.
-  */
 
 object Manager{
   /**
@@ -18,28 +15,43 @@ object Manager{
     * @param args input options in the next order:
     *     ontology axioms: TBox|ABox outputFileName
     */
-  def main(args: Array[String]): Unit = {    
-    if(args.length == 4){
-      val ontologyName = args(0)
-      val axiomsType = args(1)
-      val rendOrTrans = args(2)
-      val outputFileName = args(3)
+  def main(args: Array[String]): Unit = {
+    if (args.length == 2) {
 
-      val ontologyStr: String = getOntology(ontologyName)
+      val rendOrTrans = args(0)
+      val ontologyName = args(1)
+      var ontologies: List[File] = List.empty
+      val ontSel = getOntology(ontologyName)
 
-      if (ontologyStr.nonEmpty){
-        val file = new File(ontologyStr)
+      if (ontSel == "all") {
+        ontologies = findOntologies(new File("/Users/giovannirescia/Downloads/ontologies/")).toList
+      } else if (ontSel.nonEmpty) {
+        ontologies = new File(getCurrentDirectory + "/ontologies/" + getOntology(ontologyName)) :: Nil
+      }
+      if (ontologies.nonEmpty) {
+        /** Randomize list because some ontologies have the same ID */
+        val randOnts = util.Random.shuffle(ontologies)
         val manager = OWLManager.createOWLOntologyManager
-        /** Load the selected ontology */
-        val ontology = manager.loadOntologyFromOntologyDocument(file)
-        println("\n" + ontology.getOntologyID.getOntologyIRI.get + "\n")
-        /** axioms to work with: TBox or ABox */
-        val axioms = getAxioms(ontology, axiomsType)
+        for (ont <- randOnts) {
+          try {
+            manager.loadOntologyFromOntologyDocument(ont)
+          } catch {
+               case _ : Throwable => {}
+          }
+        }
+        val xs = manager.getOntologies().toList
+        for (ontology <- xs) {
+          /** Load the selected ontology(ies) */
+          println("\n" + ontology.getOntologyID.getOntologyIRI.get + "\n")
+          /** axioms to work with */
+          val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
+          val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
 
-        if(axioms.nonEmpty){
-          workIt(axioms, rendOrTrans, ontology, outputFileName)
-        } else {
-          help()
+          val name = ontology.getOntologyID.getOntologyIRI.get().toString.replaceAll("/", "-")
+
+          workIt(abox, rendOrTrans, ontology, name + "_ABox")
+          workIt(tbox, rendOrTrans, ontology, name + "_TBox")
+
         }
       } else {
         help()
@@ -48,6 +60,7 @@ object Manager{
       help()
     }
   }
+
   /**
     * Writes a file with the axioms rendered or translated, depending on
     *     option chosen
@@ -67,9 +80,11 @@ object Manager{
     * @param axioms A string, could be 'tbox' or 'abox'
     * @return A list of axioms
     */
+  @deprecated
   def getAxioms(ont: OWLOntology, axioms: String): List[OWLAxiom] = axioms match {
     case "tbox" => ont.getTBoxAxioms(Imports.INCLUDED).toList
     case "abox" => ont.getABoxAxioms(Imports.INCLUDED).toList
+    case "ta" =>  ont.getABoxAxioms(Imports.INCLUDED).toList ++ ont.getTBoxAxioms(Imports.INCLUDED).toList
     case _ => List.empty
   }
   /**
@@ -79,16 +94,47 @@ object Manager{
     * @return The full path of the ontology
     */
   def getOntology(ontology: String): String = ontology match {
-    case "fam" => getCurrentDirectory + "/ontologies/family_example.owl"
-    case "gal" => getCurrentDirectory + "/ontologies/galen.owl"
-    case "dol" => getCurrentDirectory + "/ontologies/dolce.owl"
-    case "wine" => getCurrentDirectory + "/ontologies/wine_3.owl"
+    case "family" => "family_example.owl"
+    case "galen" => "galen.owl"
+    case "dolce" => "dolce.owl"
+    case "wine" => "wine_3.owl"
+    case "lubm" => "lubm_1.owl"
+    case "modlubm" => "modlubm_3.owl"
+    case "semintec" => "semintec_1.owl"
+    case "vicodi" => "vicodi_4.owl"
+    case "all" => "all"
     case _ => ""
   }
+
+  /**
+    *
+    * @param dir The directory where the ontologies are stored
+    * @param extensions The ontologies possible extensions, eg, owl, obo, rdf
+    * @return A list of fullpaths of ontologies
+    */
+  def getListOfFiles(dir: File, extensions: List[String]): List[File] = {
+    dir.listFiles.filter(_.isFile).toList.filter { file =>
+      extensions.exists(file.getName.endsWith(_))
+    }
+  }
+
+  /**
+    *
+    * @param dir The directory where the ontologies are store
+    * @return An Array of ontologies (the file of)
+    */
+  def findOntologies(dir: File): Array[File] = {
+    val extensions = List("owl", "rdf", "obo")
+    val (dirs, files) =  dir.listFiles.partition(_.isDirectory)
+    (files ++ dirs.flatMap(findOntologies).toList).filter { file =>
+      extensions.exists(file.getName.endsWith(_))
+    }
+  }
+
   /**
     * @return The full path of this script
     */
-  def getCurrentDirectory(): String = {
+  def getCurrentDirectory: String = {
     new java.io.File(".").getCanonicalPath
   }
   /**
@@ -96,27 +142,27 @@ object Manager{
     */
   def help(): Unit ={
     val usage = """
-                Usage: ontology axiom option file
+                Usage: <option> <ontology>
                 ---------------------------------
                 ---------------------------------
 
-                ontologie:  fam -> family ontology
-                            gal -> galen ontology
-                            dol -> dolce ontology
+                ontologies:  family -> family ontology
+                            galen -> galen ontology
+                            dolce -> dolce ontology
                             wine -> wine ontology
-
-                axiom:  tbox -> the axioms in the tbox
-                        abox -> the axioms in the abox
+                            lubm -> lubm ontology
+                            modlubm -> modlubm ontology
+                            vicodi -> vicodi ontology
+                            semintec -> semintec ontology
+                            all -> all the ontologies in the ontologies dir
 
                 option: render -> render the axioms in manchester syntax
                         translate -> perform a soon-to-be-finished translation into modal logic formulae
 
-                file: an output file name
-
                 =================================
 
                 example:
-                        > run gal abox render test_abox_rend
+                        > run render galen
 
                 """
     println(usage)

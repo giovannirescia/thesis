@@ -1,9 +1,9 @@
 package render
 
-import java.io.{File, PrintWriter, StringWriter}
+import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
 import java.util.HashMap
-import scala.collection.JavaConverters._
 
+import scala.collection.JavaConverters._
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.manchestersyntax.renderer.ManchesterOWLSyntaxObjectRenderer
 import org.semanticweb.owlapi.model.{OWLAxiom, OWLAxiomVisitor, OWLOntologySetProvider}
@@ -14,20 +14,26 @@ import org.semanticweb.owlapi.util.AnnotationValueShortFormProvider
   */
 object ManchesterRenderer {
   /**
-    * @param axiom Axiom to render
+    * @param axioms Axiom to render
     * @param context Ontoloyy provider, e.g. OWLOntologyManager
     * @return
     */
-  def renderManchSyn(axiom: OWLAxiom, context: OWLOntologySetProvider, outputName: String): Unit ={
-    val ManchSynTarget = new PrintWriter(new File("/Users/giovannirescia/coding/tesis/output/" + outputName + ".txt"))
+  def renderManchesterSyntax(axioms: List[OWLAxiom], context: OWLOntologySetProvider, output: String): Unit = {
+    val outputFile = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/manchester/$output.txt"),false))
     val writer = new StringWriter()
     val rdfsLabel = OWLManager.getOWLDataFactory.getRDFSLabel
     val labelProvider = new AnnotationValueShortFormProvider(List(rdfsLabel).asJava, new HashMap(), context)
     val renderer = new ManchesterOWLSyntaxObjectRenderer(writer, labelProvider)
-    axiom.accept(renderer: OWLAxiomVisitor)
+    var i = 0
+    for (axiom<-axioms) {
+      writer.write(i + "\n")
+      writer.write(axiom.toString + "\n\n")
+      axiom.accept(renderer: OWLAxiomVisitor)
+      writer.write("\n\n" +"-------------------------------------\n\n")
+      i += 1
+    }
     writer.close()
-    ManchSynTarget.write(writer.toString.split(" ").foreach(println).toString)
-    ManchSynTarget.close()
+    outputFile.write(writer.toString)
+    outputFile.close()
   }
-
 }

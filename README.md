@@ -24,17 +24,13 @@ still missing and the translation of the ABox will be added shortly.
 
 From sbt, run:
 
-  `> run -ontology -axioms -option -output`
+  `> run <option> <ontology>`
 
 Where:
 
 ```
--ontology: Selects an ontology. It could be: fam, gal, dol, wine.
--axiom: The axioms to translate/render. (Only tbox for now).
--option: Whether to render or translate the axioms. `render` will do a pretty print of the ontology, and `translate` will
-translate the axioms into Modal Logic formulas.
--output: The name of the file where the translations / render will be saved. For translations the extension will be .intohylo; 
-for render the extension will be .txt.
+<option>: Whether to render or translate the axioms. `render` will do a pretty print of the ontology, and `translate` will translate the axioms into Modal Logic formulas.
+<ontology>: Selects an ontology. It could be: fam, gal, dol, wine, semintec, vicodi, lubm, modlubm or all.
 ```
 
 ## Second modulo: finding symmetries in Modal Logic
