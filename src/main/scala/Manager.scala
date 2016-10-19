@@ -147,7 +147,7 @@ object Manager{
     * Simple log of how to use this script
     */
   def help(): Unit ={
-    var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/all-onts"), List("owl"))
+    var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl"))
 
     val usage = """
                 Usage: [render | translate] <ontology>
