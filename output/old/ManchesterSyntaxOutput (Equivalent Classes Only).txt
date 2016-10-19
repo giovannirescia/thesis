@@ -1,6 +1,0 @@
-OffSpring EquivalentTo Person and (hasParent some Person)
-Father EquivalentTo Person and (hasChild some Person) and (hasGender value MaleGender)
-Daughter EquivalentTo Person and (hasParent some Person) and (hasGender value FemaleGender)
-Mother EquivalentTo Person and (hasChild some Person) and (hasGender value FemaleGender)
-Parent EquivalentTo Person and (hasChild some Person)
-Son EquivalentTo Person and (hasParent some Person) and (hasGender value MaleGender)

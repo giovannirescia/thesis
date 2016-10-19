@@ -1,6 +1,0 @@
-OffSpring ≣ Person ∩ (hasParent some Person)
-Father ≣ Person ∩ (hasChild some Person) ∩ (hasGender value: MaleGender)
-Daughter ≣ Person ∩ (hasParent some Person) ∩ (hasGender value: FemaleGender)
-Mother ≣ Person ∩ (hasChild some Person) ∩ (hasGender value: FemaleGender)
-Parent ≣ Person ∩ (hasChild some Person)
-Son ≣ Person ∩ (hasParent some Person) ∩ (hasGender value: MaleGender)

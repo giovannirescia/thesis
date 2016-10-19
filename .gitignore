@@ -9,8 +9,7 @@ output/old/*
 output-log/*
 *.o
 *.a
-**/builds/old/*
-**/builds/tools/*
+**/builds/*
 **/dist/*
 **/kcnf-converter/build/*
 **/sy4ncl/dist/build/*
