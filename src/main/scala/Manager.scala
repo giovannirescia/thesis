@@ -6,7 +6,6 @@ import scala.collection.JavaConversions._
 import render.RenderManager.render
 import translator.TranslatorManager.{dl2ml, render => formRender}
 
-
 object Manager{
   /**
     * 
@@ -48,7 +47,7 @@ object Manager{
           val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
 
           val name = ontology.getOntologyID.getOntologyIRI.get().toString.replaceAll("/", "-")
-
+          println("Saving file: " + name)
           workIt(abox, rendOrTrans, ontology, name + "_ABox")
           workIt(tbox, rendOrTrans, ontology, name + "_TBox")
 
@@ -94,6 +93,7 @@ object Manager{
     * @return The full path of the ontology
     */
   def getOntology(ontology: String): String = ontology match {
+    case "all" => "all"
     case "family" => "family_example.owl"
     case "galen" => "galen.owl"
     case "dolce" => "dolce.owl"
@@ -102,7 +102,9 @@ object Manager{
     case "modlubm" => "modlubm_3.owl"
     case "semintec" => "semintec_1.owl"
     case "vicodi" => "vicodi_4.owl"
-    case "all" => "all"
+    case "go" => "go.owl"
+    case "einstein" => "einsteins_riddle.owl"
+    case "element" => "element-primitive.owl"
     case _ => ""
   }
 

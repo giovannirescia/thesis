@@ -55,112 +55,89 @@ object SubClassRenderer {
     writer.write("(")
     val expType = exp.getClassExpressionType
 
-    if(!exp.isAnonymous){
+    if (!exp.isAnonymous) {
       writer.write(exp.asOWLClass().getIRI.getShortForm)
-    }
-    // TODO: TRANSLATION MISSING
-    else if (expType == OBJECT_EXACT_CARDINALITY){
-      val (a,b,c) = matchCardinality(exp)
-      writer.write(a + " ")
-      writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-      writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
-    // TODO: TRANSLATION MISSING
-    else if (expType == OBJECT_MIN_CARDINALITY){
-      val (a,b,c) = matchCardinality(exp)
-      writer.write(a + " ")
-      writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-      writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
-    // TODO: TRANSLATION MISSING
-    else if (expType == OBJECT_MAX_CARDINALITY){
-      val (a,b,c) = matchCardinality(exp)
-      writer.write(a + " ")
-      writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-      writer.write(": " + c.asOWLClass().getIRI.getShortForm)
-    }
-    // TODO: TRANSLATION MISSING
-    else if (expType == OBJECT_COMPLEMENT_OF){
-      val op = exp.asInstanceOf[OWLObjectComplementOf].getOperand
-      if (!op.isAnonymous) {
-        writer.write(op.asOWLClass().getIRI.getShortForm)
-      } else{
-        inspect(op.asInstanceOf[OWLClassExpression], writer, axiom)
-      }
-    }
-    else if (expType == OBJECT_SOME_VALUES_FROM){
-      val ys = matchValuesFrom(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      } else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
-      }
-      writer.write(" some ")
-      if (!ysRhs.isAnonymous){
-         writer.write(ysRhs.asOWLClass().getIRI.getShortForm)
-      } else{
-        inspect(ysRhs, writer, axiom)
-      }
-    }else if (expType == OBJECT_ALL_VALUES_FROM) {
-      val ys = matchValuesFrom(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      } else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
-      }
-      writer.write(" all ")
-      if (!ysRhs.isAnonymous){
-        writer.write(ysRhs.asOWLClass().getIRI.getShortForm)
-      } else{
-        inspect(ysRhs, writer, axiom)
-      }
-    } else if (expType == OBJECT_HAS_VALUE){
-      val ys = matchHasValue(exp)
-      val ysLhs = ys._1
-      val ysRhs = ys._2
-      if(!ysLhs.isAnonymous) {
-        writer.write(ysLhs.asOWLObjectProperty().getIRI.getShortForm)
-      }else{
-        inspect(ysLhs.asInstanceOf[OWLClassExpression], writer, axiom)
-      }
-      writer.write(" value: ")
-      if (!ysRhs.isAnonymous){
-        writer.write(ysRhs.getIRI.getShortForm)
-      }else{
-        inspect(ysRhs.asInstanceOf[OWLClassExpression], writer, axiom)
-      }
-    } else if (expType == OBJECT_INTERSECTION_OF){
-      val xs = matchIntersectionOrUnionOf(exp)
-        for (x <- xs.take(xs.size-1)) {
-          // 2229: Intersection
-          inspect(x, writer, axiom)
-          writer.write(" \u2229 ")
+    } else {
+      exp match {
+        // TODO: TRANSLATION MISSING
+        case ObjectOneOf(ys) => {
+          val xs = ys.toList
+          writer.write("{")
+          for (x <- xs.take(xs.size - 1)) {
+            writer.write(x.asOWLNamedIndividual().getIRI.getShortForm + " , ")
+          }
+          writer.write(xs.last.asOWLNamedIndividual().getIRI.getShortForm + "}")
         }
-      inspect(xs.last, writer, axiom)
-    }
-    else if (expType == OBJECT_UNION_OF){
-      val xs = matchIntersectionOrUnionOf(exp)
-      for (x <- xs.take(xs.size-1)) {
-        // 2229: Intersection
-        inspect(x, writer, axiom)
-        writer.write(" \u222A ")
+        // TODO: TRANSLATION MISSING
+        case ObjectExactCardinality(n, p, f) => {
+          writer.write(n + " ")
+          writer.write(p.asOWLObjectProperty().getIRI.getShortForm)
+          writer.write(": " + f.asOWLClass().getIRI.getShortForm)
+        }
+        // TODO: TRANSLATION MISSING
+        case ObjectMinCardinality(n, p, f) => {
+          writer.write(n + " ")
+          writer.write(p.asOWLObjectProperty().getIRI.getShortForm)
+          writer.write(": " + f.asOWLClass().getIRI.getShortForm)
+        }
+        // TODO: TRANSLATION MISSING
+        case ObjectMaxCardinality(n, p, f) => {
+          writer.write(n + " ")
+          writer.write(p.asOWLObjectProperty().getIRI.getShortForm)
+          writer.write(": " + f.asOWLClass().getIRI.getShortForm)
+        }
+        // TODO: TRANSLATION MISSING
+        case ObjectComplementOf(op) => {
+          if (!op.isAnonymous) {
+            writer.write(op.asOWLClass().getIRI.getShortForm)
+          } else {
+            inspect(op.asInstanceOf[OWLClassExpression], writer, axiom)
+          }
+        }
+        case ObjectSomeValuesFrom(prop, filler) => {
+          parseProp(prop, writer)
+          writer.write(" some ")
+          inspect(filler, writer, axiom)
+        }
+        case ObjectAllValuesFrom(prop, filler) => {
+          parseProp(prop, writer)
+          writer.write(" all ")
+          inspect(filler, writer, axiom)
+        }
+        case ObjectHasValue(prop, filler) => {
+          parseProp(prop, writer)
+          writer.write(" value: ")
+          writer.write(filler.asOWLNamedIndividual().getIRI.getShortForm)
+        }
+        case ObjectIntersectionOf(ys) => {
+          val xs = ys.toList
+          for (x <- xs.take(xs.size - 1)) {
+            // 2229: Intersection
+            inspect(x, writer, axiom)
+            writer.write(" \u2229 ")
+          }
+          inspect(xs.last, writer, axiom)
+        }
+        case ObjectUnionOf(ys) => {
+          val xs = ys.toList
+          for (x <- xs.take(xs.size - 1)) {
+            // 2229: Intersection
+            inspect(x, writer, axiom)
+            writer.write(" \u222A ")
+          }
+          inspect(xs.last, writer, axiom)
+        }
+        case _ => {
+          writer.write("@@@@" * 20)
+          writer.write("\n\n Axiom: " + axiom.toString + "\n\n")
+          writer.write("Couldn't be written because of the expression: " + exp.toString + "\n\n")
+          writer.write("@@@@" * 20)
+          writer.close()
+        }
       }
-      inspect(xs.last, writer, axiom)
-      /** For debug */
-    }else{
-      writer.write("@@@@"*20)
-      writer.write("\n\n Axiom: " + axiom.toString + "\n\n")
-      writer.write("Couldn't be written because of the expression: " + exp.toString + "\n\n")
-      writer.write("@@@@"*20)
-      writer.close()
+      writer.write(")")
     }
-    writer.write(")")
   }
-
   /**
     *
     * @param given An OWLClassExpression of Cardinality
@@ -202,7 +179,15 @@ object SubClassRenderer {
     case ObjectIntersectionOf(p) => p.toList
     case ObjectUnionOf(p) => p.toList
   }
-
+  def parseProp (e: OWLObjectPropertyExpression, writer: PrintWriter) : Unit = {
+    if (!e.isAnonymous) {
+      writer.write(e.getNamedProperty.getIRI.getShortForm)
+    } else {
+      e match {
+        case ObjectInverseOf(p) => writer.write(" inverse " + "(" + p.getNamedProperty.getIRI.getShortForm + ")")
+      }
+    }
+  }
   /**
     *
     * @param given An OWLClassExpression of type ObjectHasValue

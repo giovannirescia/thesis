@@ -54,59 +54,62 @@ object TranslatorManager {
     */
 
   def render(forms: ListBuffer[MLFormula], ontology: OWLOntology, outFile: String, fullPath: Boolean = false): Unit ={
-    val classes = ontology.getClassesInSignature(Imports.INCLUDED).toList
-    val individuals = ontology.getIndividualsInSignature(Imports.INCLUDED).toList
-    val objprop = ontology.getObjectPropertiesInSignature(Imports.INCLUDED).toList
-    val dataprop = ontology.getDataPropertiesInSignature(Imports.INCLUDED).toList
-    val props = new ListBuffer[String]()
-    val rels = new ListBuffer[String]()
-    /** Output file */
-    val writer = {
-      if (fullPath){
-        new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/intohylo/$outFile.intohylo"), false))
-      }else {
-        val dir = new File("output/translations/intohylo")
-        dir.mkdirs()
-        new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.intohylo"), false))
+    /** Check if there are formulas to render */
+    if (forms.nonEmpty){
+      val classes = ontology.getClassesInSignature(Imports.INCLUDED).toList
+      val individuals = ontology.getIndividualsInSignature(Imports.INCLUDED).toList
+      val objprop = ontology.getObjectPropertiesInSignature(Imports.INCLUDED).toList
+      val dataprop = ontology.getDataPropertiesInSignature(Imports.INCLUDED).toList
+      val props = new ListBuffer[String]()
+      val rels = new ListBuffer[String]()
+      /** Output file */
+      val writer = {
+        if (fullPath){
+          new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/translations/$outFile.intohylo"), false))
+        }else {
+          val dir = new File("output/translations")
+          dir.mkdirs()
+          new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.intohylo"), false))
+        }
       }
+      /**
+        * 
+        * This two loops are meant for creating a map
+        * between the classes and propositional symbols and relations
+        * e.g., Father -> P1, Daughter -> P22, hasChild -> R3
+        */
+      for (x <- objprop ++ dataprop){
+        rels += x.getIRI.getShortForm
+      }
+      for (x <- classes ++ individuals){
+        props += x.getIRI.getShortForm
+      }
+      /** The maps vars */
+      var mainMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
+      var relMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
+      // for initialization
+      var propMap: collection.mutable.Map[String, String] = collection.mutable.Map("string" -> "P1")
+      var i = 2
+      var j = 1
+      /** The mappings */
+      for (x <- rels){
+        relMap += ((x.toString, "R"+j.toString))
+        j += 1
+      }
+      for (x <- props){
+        propMap += ((x.toString , "P"+i.toString))
+        i += 1
+      }
+      /** Main Mapping */
+      mainMap = propMap ++ relMap
+      /** Render the Modal Logic formulas in to intoHylo format */
+      writer.write("begin\n")
+      for (form <- forms.take(forms.size-1)){
+        writer.write(form.render(mainMap) + ";\n")
+      }
+      writer.write(forms.last.render(mainMap) + "\n")
+      writer.write("end")
+      writer.close()
     }
-    /** 
-      * 
-      * This two loops are meant for creating a map
-      * between the classes and propositional symbols and relations
-      * e.g., Father -> P1, Daughter -> P22, hasChild -> R3
-      */
-    for (x <- objprop ++ dataprop){
-      rels += x.getIRI.getShortForm
-    }
-    for (x <- classes ++ individuals){
-      props += x.getIRI.getShortForm
-    }
-    /** The maps vars */
-    var mainMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
-    var relMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
-    // for initialization
-    var propMap: collection.mutable.Map[String, String] = collection.mutable.Map("string" -> "P1")
-    var i = 2
-    var j = 1
-    /** The mappings */
-    for (x <- rels){
-      relMap += ((x.toString, "R"+j.toString))
-      j += 1
-    }
-    for (x <- props){
-      propMap += ((x.toString , "P"+i.toString))
-      i += 1
-    }
-    /** Main Mapping */
-    mainMap = propMap ++ relMap
-    /** Render the Modal Logic formulas in to intoHylo format */
-    writer.write("begin\n")
-    for (form <- forms.take(forms.size-1)){
-      writer.write(form.render(mainMap) + ";\n")
-    }
-    writer.write(forms.last.render(mainMap) + "\n")
-    writer.write("end")
-    writer.close()
   }
 }

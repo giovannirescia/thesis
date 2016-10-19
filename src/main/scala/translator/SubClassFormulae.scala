@@ -81,24 +81,34 @@ object SubClassFormulae {
     * Prettier, faster, better
     */
   def tailRecursiveAnd(zs: List[OWLClassExpression], axiom: Any): MLFormula = {
-    val init = And(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
-    def tailRecursiveAndWithAcc(accumulator: MLFormula, ys: List[OWLClassExpression]) : MLFormula = {
-      if (ys.isEmpty)
-        accumulator
-      else
-        tailRecursiveAndWithAcc(And(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
+    if (zs.size == 1){
+      inspect(zs.head, axiom)
+    } else{
+      val init = And(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
+      def tailRecursiveAndWithAcc(accumulator: MLFormula, ys: List[OWLClassExpression]) : MLFormula = {
+        if (ys.isEmpty){
+          accumulator
+        } else {
+          tailRecursiveAndWithAcc(And(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
+        }
+      }
+      tailRecursiveAndWithAcc(init, zs.take(zs.size-2))
     }
-    tailRecursiveAndWithAcc(init, zs.take(zs.size-2))
   }
   def tailRecursiveOr(zs: List[OWLClassExpression], axiom: Any): MLFormula = {
+    if (zs.size == 1){
+      inspect(zs.head, axiom)
+    } else{
     val init = Or(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
     def tailRecursiveOrWithAcc(accumulator: MLFormula, ys: List[OWLClassExpression]) : MLFormula = {
-      if (ys.isEmpty)
+      if (ys.isEmpty){
         accumulator
-      else
+      } else {
         tailRecursiveOrWithAcc(And(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
+      }
     }
     tailRecursiveOrWithAcc(init, zs.take(zs.size-2))
+    }
   }
   @deprecated ("use tailRecursiveAnd")
   def recursiveAnd(ys: List[OWLClassExpression], axiom: Any): MLFormula = {

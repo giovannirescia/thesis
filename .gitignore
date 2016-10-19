@@ -9,9 +9,12 @@ output/old/*
 output-log/*
 *.o
 *.a
+**/builds/old/*
+**/builds/tools/*
 **/dist/*
-**/builds
+**/kcnf-converter/build/*
+**/sy4ncl/dist/build/*
 **/bin
 **/.worksheets
-**/bliss
+**/bliss-*
 **~
