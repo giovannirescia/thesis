@@ -5,6 +5,9 @@ import org.semanticweb.owlapi.model.parameters.Imports
 import scala.collection.JavaConversions._
 import render.RenderManager.render
 import translator.TranslatorManager.{dl2ml, render => formRender}
+import scala.collection.mutable.ListBuffer
+import scala.util.Random
+import scala.math.BigDecimal
 
 object Manager{
   /**
@@ -18,41 +21,38 @@ object Manager{
     if (args.length == 2) {
 
       val rendOrTrans = args(0)
-      val ontologyName = args(1)
-      var ontologies: List[File] = List.empty
-      val ontSel = getOntology(ontologyName)
-
-      if (ontSel == "all") {
-        ontologies = findOntologies(new File("/Users/giovannirescia/Downloads/ontologies/")).toList
-      } else if (ontSel.nonEmpty) {
-        ontologies = new File(getCurrentDirectory + "/ontologies/" + getOntology(ontologyName)) :: Nil
+      val isR: Boolean = {
+        if (rendOrTrans == "render") true
+        else false
       }
-      if (ontologies.nonEmpty) {
-        /** Randomize list because some ontologies have the same ID */
-        val randOnts = util.Random.shuffle(ontologies)
-        val manager = OWLManager.createOWLOntologyManager
-        for (ont <- randOnts) {
-          try {
-            manager.loadOntologyFromOntologyDocument(ont)
-          } catch {
-               case _ : Throwable => {}
+      val ontologyName = args(1)
+      var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl"))
+
+      val ontSel = getOntologies(ontologyName, ontologies)
+      val prefix = "Saving file:\n\n\t" + getCurrentDirectory + "/output/"
+      if (ontSel.nonEmpty) {
+          for ((ont, name) <- ontSel){
+            println("="*99)
+            println("\nOntology:\n\n\t" + name + " - size: " +
+              BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
+                BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
+            val manager = OWLManager.createOWLOntologyManager
+            val ontology = manager.loadOntologyFromOntologyDocument(ont)
+            /** Load the selected ontology(ies) */
+            /** axioms to work with */
+            val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
+            val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
+            if (isR) {
+              println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
+            }else{
+              println(prefix + "translations/intohylo/" + name + "[_ABox | _TBox].intohylo\n")
+            }
+            println("="*99)
+            workIt(abox, rendOrTrans, ontology, name + "_ABox")
+            workIt(tbox, rendOrTrans, ontology, name + "_TBox")
           }
-        }
-        val xs = manager.getOntologies().toList
-        for (ontology <- xs) {
-          /** Load the selected ontology(ies) */
-          println("\n" + ontology.getOntologyID.getOntologyIRI.get + "\n")
-          /** axioms to work with */
-          val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
-          val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
-
-          val name = ontology.getOntologyID.getOntologyIRI.get().toString.replaceAll("/", "-")
-          println("Saving file: " + name)
-          workIt(abox, rendOrTrans, ontology, name + "_ABox")
-          workIt(tbox, rendOrTrans, ontology, name + "_TBox")
-
-        }
       } else {
+        println("\n\nONTOLOGY NOT FOUND...\n")
         help()
       }
     } else {
@@ -92,22 +92,26 @@ object Manager{
     *     it could be: fam, gal, dol, wine
     * @return The full path of the ontology
     */
-  def getOntology(ontology: String): String = ontology match {
-    case "all" => "all"
-    case "family" => "family_example.owl"
-    case "galen" => "galen.owl"
-    case "dolce" => "dolce.owl"
-    case "wine" => "wine_3.owl"
-    case "lubm" => "lubm_1.owl"
-    case "modlubm" => "modlubm_3.owl"
-    case "semintec" => "semintec_1.owl"
-    case "vicodi" => "vicodi_4.owl"
-    case "go" => "go.owl"
-    case "einstein" => "einsteins_riddle.owl"
-    case "element" => "element-primitive.owl"
-    case _ => ""
+  def getOntologies(matchOntology: String, ontologies: List[File]): List[(File, String)] = {
+    var xs = new ListBuffer[(File, String)]()
+    val regexp = {
+      if(matchOntology == "all"){
+        ""
+      }else{
+        matchOntology
+      }
+    }
+    for (o <- ontologies){
+      if (o.getName.startsWith(regexp)){
+        xs += ((o, o.getName))
+      }
+    }
+    if (matchOntology != "all" && xs.nonEmpty){
+      Random.shuffle(xs.toList).head::Nil
+    } else {
+      xs.toList
+    }
   }
-
   /**
     *
     * @param dir The directory where the ontologies are stored
@@ -143,30 +147,20 @@ object Manager{
     * Simple log of how to use this script
     */
   def help(): Unit ={
+    var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/all-onts"), List("owl"))
+
     val usage = """
-                Usage: <option> <ontology>
+                Usage: [render | translate] <ontology>
                 ---------------------------------
                 ---------------------------------
-
-                ontologies:  family -> family ontology
-                            galen -> galen ontology
-                            dolce -> dolce ontology
-                            wine -> wine ontology
-                            lubm -> lubm ontology
-                            modlubm -> modlubm ontology
-                            vicodi -> vicodi ontology
-                            semintec -> semintec ontology
-                            all -> all the ontologies in the ontologies dir
-
-                option: render -> render the axioms in manchester syntax
-                        translate -> perform a soon-to-be-finished translation into modal logic formulae
-
-                =================================
-
-                example:
-                        > run render galen
-
+                Example:
+                        > run render gal
                 """
     println(usage)
+    println("\n\n")
+    println("Some of the available ontologies: " + "\n=================================")
+    for (ont <- ontologies){
+      println(ont.getName)
+    }
   }
 }

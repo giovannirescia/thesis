@@ -4,6 +4,7 @@
 target/*
 project/*
 .idea/*
+ontologies/*
 **/output/*
 output/old/*
 output-log/*
