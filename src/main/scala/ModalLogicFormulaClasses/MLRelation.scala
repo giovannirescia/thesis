@@ -2,6 +2,7 @@ package ModalLogicFormulaClasses
 
 import scala.collection.mutable
 
+
 /**
   *
   * Base for a basic modal formula relation
@@ -20,7 +21,12 @@ case class R(r: String) extends MLRelation{
     if (map contains r){
       map.get(r).head
     } else{
-      /** Magic... */
+      /** 
+        * 
+        * For relations made on the fly, assign it a R_(n+1) name,
+        * where n is the MAX R_n so far.
+        * Magic...
+        */
       val aux = map.values.filter(z => z.startsWith("R")).map(y => y.split("R")(1).toInt).max
       map += ((r, "R"+(aux+1).toString))
       "R"+(aux+1).toString

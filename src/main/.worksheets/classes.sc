@@ -1,29 +1,36 @@
 import java.io.File
+import java.io.{File, FileOutputStream, PrintWriter, StringWriter}
+
+import scala.collection.JavaConversions._
+import org.phenoscape.scowl._
+import org.semanticweb.owlapi.model.parameters.Imports
+
 import scala.collection.JavaConversions._
 import org.semanticweb.owlapi.apibinding.OWLManager
-import org.semanticweb.owlapi.model.{OWLAxiom, OWLEquivalentClassesAxiom, OWLOntologyID}
-import formulae._
-import org.semanticweb.owlapi.model.parameters.Imports
-import formulae.FormulaeManager.formulate
-import FormClass._
-import SubClassFormulae._
+import org.semanticweb.owlapi.model.OWLAxiom
+import render.ManchesterRenderer.{renderManchesterSyntax => lmr}
 val manager = OWLManager.createOWLOntologyManager
 
-val file1 = new File("/Users/giovannirescia/coding/tesis/ontologies/family_example.owl")
+def getListOfFiles(dir: File, extensions: List[String]): List[File] = {
+  dir.listFiles.filter(_.isFile).toList.filter { file =>
+    extensions.exists(file.getName.endsWith(_))
+  }
+}
+def findFiles(d: File): Array[File] = {
+  val (dirs, files) =  d.listFiles.partition(_.isDirectory)
+  files ++ dirs.flatMap(findFiles)
+}
 
-val familyOntology = manager.loadOntologyFromOntologyDocument(file1)
-
-val onts: Map[String, OWLOntologyID] = Map(
-  "family" -> familyOntology.getOntologyID
-)
-val l = familyOntology.getTBoxAxioms(Imports.INCLUDED).toList
-l.size
-var a = l(2)
-
-
-var b = a.asInstanceOf[OWLEquivalentClassesAxiom].getClassExpressionsAsList
-var c = b(1)
-
-var d = matchIntersectionOf(c)
-
-EquivalentClassesFormulae.equivClasses(a.asInstanceOf[OWLEquivalentClassesAxiom]).render()
+val ontologies = getListOfFiles(new File("/Users/giovannirescia/coding/tesis/ontologies/"), List("owl"))
+ontologies.last
+val xs = ontologies.last :: Nil
+for (o <- ontologies){
+  val m = OWLManager.createOWLOntologyManager
+  val ontology = m.loadOntologyFromOntologyDocument(o)
+  val name = o.getName
+  println(name)
+  val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
+  val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
+  lmr(abox, m, name + "_ABox")
+  lmr(tbox, m, name + "_TBox")
+}

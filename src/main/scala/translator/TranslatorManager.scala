@@ -1,7 +1,6 @@
 package translator
 
 import java.io.{File, FileOutputStream, PrintWriter}
-
 import scala.collection.JavaConversions._
 import scala.collection.mutable.ListBuffer
 import org.semanticweb.owlapi.model.AxiomType._
@@ -17,7 +16,6 @@ import translator.InvFuncObjProp.invFunc
 import translator.DisjointClasses.disjClass
 
 
-
 object TranslatorManager {
   /**
     *
@@ -27,13 +25,13 @@ object TranslatorManager {
     * @param axioms A list of OWLAxioms
     * @return A list of Modal Logic formulas
     */
-  def dl2ml(axioms: List[OWLAxiom]): ListBuffer[MLFormula] ={
-    var result = new ListBuffer[MLFormula]()
-    if (axioms.nonEmpty){
-    for (axiom <- axioms){
-      val axType = axiom.getAxiomType
-        // <TBOX_AXIOMS>
-        axType match{
+  def dl2ml(axioms: List[OWLAxiom]): ListBuffer[MLFormula] = {
+    if (axioms.nonEmpty) {
+      var result = new ListBuffer[MLFormula]()
+      for (axiom <- axioms) {
+        val axType = axiom.getAxiomType
+        /** TBOX AXIOMS */
+        axType match {
           case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
           case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
           case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
@@ -47,9 +45,12 @@ object TranslatorManager {
           case _ => {}
         }
       }
+      result
+    } else {
+      throw new NoSuchElementException("The axiom list is empty")
     }
-    result
   }
+  
 
   /**
     *
@@ -64,7 +65,7 @@ object TranslatorManager {
 
   def render(forms: ListBuffer[MLFormula], ontology: OWLOntology, outFile: String, fullPath: Boolean = false): Unit ={
     /** Check if there are formulas to render */
-    if (forms.nonEmpty){
+    if (forms.nonEmpty) {
       val classes = ontology.getClassesInSignature(Imports.INCLUDED).toList
       val individuals = ontology.getIndividualsInSignature(Imports.INCLUDED).toList
       val objprop = ontology.getObjectPropertiesInSignature(Imports.INCLUDED).toList
@@ -111,7 +112,7 @@ object TranslatorManager {
       }
       /** Main Mapping */
       mainMap = propMap ++ relMap
-      /** Render the Modal Logic formulas in to intoHylo format */
+      /** Render the Modal Logic formulas into intoHylo format */
       writer.write("begin\n")
       for (form <- forms.take(forms.size-1)){
         writer.write(form.render(mainMap) + ";\n")
@@ -120,6 +121,8 @@ object TranslatorManager {
       writer.write("end")
       writer.close()
       //mainMap.filter{case (k,v)=>v.startsWith("R")}.foreach(println)
+    } else {
+      throw new NoSuchElementException("The formula list is empty")
     }
   }
 }

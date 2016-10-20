@@ -3,13 +3,13 @@ package translator
 import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_MAX_CARDINALITY, OBJECT_MIN_CARDINALITY, OBJECT_EXACT_CARDINALITY  ,OBJECT_COMPLEMENT_OF, OBJECT_HAS_VALUE, OBJECT_SOME_VALUES_FROM, OBJECT_INTERSECTION_OF, OBJECT_ALL_VALUES_FROM,OBJECT_UNION_OF}
 import org.phenoscape.scowl._
 import org.semanticweb.owlapi.model._
-import ModalLogicFormulaClasses._
+import ModalLogicFormulaClasses.{Diam, R, Box, And, Prop, IDiam, Bot, Or, Neg, A, Impl, MLFormula, Top}
 
 
 object SubClassFormulae {
   /**
     *
-    * @param axiom An OWL Subclas of Axiom
+    * @param axiom An OWL Subclass of Axiom
     * @return A Modal Logic formula of the axiom
     */
   def simpleSubClass(axiom: OWLSubClassOfAxiom): MLFormula = {
@@ -18,8 +18,8 @@ object SubClassFormulae {
   }
   /**
     *
-    * @param lhs : Left Hand Side of a OWL Expression, type: OWL Expression
-    * @param rhs : Right Hand Side of a OWL Expression, type: OWL Expression
+    * @param lhs : Left Hand Side of an OWL Expression, type: OWLClassExpression
+    * @param rhs : Right Hand Side of an OWL Expression, type: OWLClassExpression
     * @param axiom: The axiom beign rendered (for debug)
     * @return A Modal Logic formula of the axiom
     */

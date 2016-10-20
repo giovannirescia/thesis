@@ -29,8 +29,8 @@ From sbt, run:
 Where:
 
 ```
-<option>: Whether to render or translate the axioms. `render` will do a pretty print of the ontology, and `translate` will translate the axioms into Modal Logic formulas.
-<ontology>: Selects an ontology. It could be: fam, gal, dol, wine, semintec, vicodi, lubm, modlubm or all.
+<option>: Whether to render or translate the axioms. `render` will do a pretty print of the ontology, and `translate` will translate the axioms into Modal Logic formulas using the `.intohylo` format.
+<ontology>: A string to match an ontology name, the algorithm will check a "starts with" to get the ontology(ies); if the name given is "all", the algorithm will work with all the ontologies.
 ```
 
 ## Second modulo: finding symmetries in Modal Logic
@@ -45,10 +45,29 @@ kcnf -> sy4ncl -> bliss
 
 #### KCNF
 
-This modulo takes a Modal Logic formula in `intohylo` format and builds a Conjunctive Normal Form (CNF) of it.
+This modulo takes a Modal Logic formula in `.intohylo` format and builds a Conjunctive Normal Form (CNF) of it.
 
 #### SY4NCL
 
 This modulo finds symmetries in a Modal Logic formula (the formula should be in CNF).
 
 #### BLISS
+
+This modulo takes some stuff as input and then do something with it.
+
+## Putting all the pieces together
+
+### Run the next commands in sequential order (all path are from the root dir of this project)
+```
+$ cd scripts ; bash unzip.sh; cd ..
+$ sbt
+> run translate all
+```
+
+Exit `sbt` or run from another console:
+
+```
+$ cd tools/builds
+$ bash MISSING_SCRIPT_THAT_SHOULD_BUILD_THE_TOOLS_AND_CREATE_THE_SYMBOLIC_LINKS
+$ bash pipeline.sh
+```

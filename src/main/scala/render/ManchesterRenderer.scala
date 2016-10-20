@@ -19,7 +19,7 @@ object ManchesterRenderer {
     * @return
     */
   def renderManchesterSyntax(axioms: List[OWLAxiom], context: OWLOntologySetProvider, output: String): Unit = {
-    val outputFile = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/manchester/$output.txt"),false))
+    val outputFile = new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/rendered/manchester/new/$output.txt"),false))
     val writer = new StringWriter()
     val rdfsLabel = OWLManager.getOWLDataFactory.getRDFSLabel
     val labelProvider = new AnnotationValueShortFormProvider(List(rdfsLabel).asJava, new HashMap(), context)

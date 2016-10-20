@@ -2,6 +2,7 @@ package ModalLogicFormulaClasses
 
 import scala.collection.mutable
 
+
 /**
   *
   * Base for all the modal logic formulas
@@ -18,51 +19,56 @@ abstract class MLFormula {
   def render(map: mutable.Map[String, String]): String = ""
 }
 case class Prop(arg: String) extends MLFormula {
-  override def render(map: mutable.Map[String, String]): String = map.getOrElse(arg, "P999")
+  override def render(map: mutable.Map[String, String]): String = map.get(arg).head
 }
 case class And(f1: MLFormula, f2: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    "( " + f1.render(map) + " ^ " + f2.render(map) + " )"
+    "(" + f1.render(map) + " ^ " + f2.render(map) + ")"
   }
 }
 case class Or(f1: MLFormula, f2: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    "( " + f1.render(map) + " v " + f2.render(map) + " )"
+    "(" + f1.render(map) + " v " + f2.render(map) + ")"
   }
 }
 case class Impl(f1: MLFormula, f2: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    "( " + f1.render(map) + " --> " + f2.render(map) + " )"
+    "(" + f1.render(map) + " --> " + f2.render(map) + ")"
+  }
+}
+case class Iif(f1: MLFormula, f2: MLFormula) extends MLFormula{
+  override def render(map: mutable.Map[String, String]): String = {
+    "(" + f1.render(map) + " <--> " + f2.render(map) + ")"
   }
 }
 case class Neg(form: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    "( - " + form.render(map) + " )"
+    "(-" + form.render(map) + ")"
   }
 }
 case class Diam(r: MLRelation, f: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-      s"( <${r.render(map)}>${f.render(map)} )"
+      s"(<${r.render(map)}>${f.render(map)})"
     }
 }
 case class Box(r: MLRelation, f: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-      s"( [${r.render(map)}]${f.render(map)} )"
+      s"([${r.render(map)}]${f.render(map)})"
     }
 }
 case class IDiam(r: MLRelation, f: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-      s"( <-${r.render(map)}>${f.render(map)} )"
+      s"(<-${r.render(map)}>${f.render(map)})"
   }
 }
 case class IBox(r: MLRelation, f: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    s"( -[${r.render(map)}]${f.render(map)} )"
+    s"([-${r.render(map)}]${f.render(map)})"
     }
 }
 case class A(f: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
-    s"( A${f.render(map)} )"
+    s"(A${f.render(map)})"
   }
 }
 case class Top() extends MLFormula{

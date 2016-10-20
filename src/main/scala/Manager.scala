@@ -13,9 +13,9 @@ object Manager{
   /**
     * 
     * Manages an ontology for render it (pretty print),
-    * or translate it into modal logic formulae
+    * or translate it into modal logic formulas
     * @param args input options in the next order:
-    *     ontology axioms: TBox|ABox outputFileName
+    *     [render | translate] ontologyName
     */
   def main(args: Array[String]): Unit = {
     if (args.length == 2) {
@@ -40,19 +40,16 @@ object Manager{
             val ontology = manager.loadOntologyFromOntologyDocument(ont)
             /** Load the selected ontology(ies) */
             /** axioms to work with */
-            val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
-            val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
             if (isR) {
               println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
             }else{
               println(prefix + "translations/intohylo/" + name + "[_ABox | _TBox].intohylo\n")
             }
             println("="*99)
-            /** No ABox for now... */
-            //workIt(abox, rendOrTrans, ontology, name + "_ABox")
             try{
-              workIt(tbox, rendOrTrans, ontology, name + "_TBox")
+              workIt(ontology, rendOrTrans, name)
             } catch {
+              case e: NoSuchElementException => println("WARNING! " + e.getMessage)
               case _ : Throwable => println("WARNING! Error with: " + name)
             }
           }
@@ -61,6 +58,7 @@ object Manager{
         help()
       }
     } else {
+      println("Argument(s) missing...\n")
       help()
     }
   }
@@ -68,15 +66,25 @@ object Manager{
   /**
     * Writes a file with the axioms rendered or translated, depending on
     *     option chosen
-    * @param axioms A list of OWLAxioms
+    * @param ontology The ontology to work with
     * @param renderOrTrans wether render or translate the axioms
-    * @param ont An OWL Ontology
     * @param output A string for the output file
     */
-  def workIt(axioms: List[OWLAxiom], renderOrTrans: String, ont: OWLOntology, output: String) = renderOrTrans match {
-    case "translate" => formRender(dl2ml(axioms), ont, output)
-    case "render" => render(axioms, output)
-    case _ => help()
+  def workIt(ontology: OWLOntology, renderOrTrans: String, output: String) = {
+    val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
+    val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
+    renderOrTrans match {
+      case "translate" => {
+        formRender(dl2ml(tbox), ontology, output + "_TBox")
+        /** No ABox for now... */
+        //formRender(dl2ml(abox), ontology, output + "_ABox")
+      }
+      case "render" => {
+        render(abox, output + "_ABox")
+        render(tbox, output + "_TBOX")
+      }
+      case _ => help()
+    }
   }
   /**
     * Get the TBox or the ABox from an ontology
@@ -92,10 +100,14 @@ object Manager{
     case _ => List.empty
   }
   /**
-    * Get an ontology from an existing file
-    * @param ontology A string for choose an ontology
-    *     it could be: fam, gal, dol, wine
-    * @return The full path of the ontology
+    * 
+    * Given a string and a list of ontologies names, returns a pair (ontologyPath, ontologyName) inside a list
+    * if the string matches with an ontology's name, if there are multiple hits, selects one
+    * randomly. Also, if the string is "all", selects all the ontologies and translate (or render) them
+    * all. Returns empty if there are no matches.
+    * @param matchontology A string to match an ontology
+    * @param ontologies A list of ontologies files to match
+    * @return A list of (ontologyPath, ontologyName)
     */
   def getOntologies(matchOntology: String, ontologies: List[File]): List[(File, String)] = {
     var xs = new ListBuffer[(File, String)]()
@@ -134,6 +146,7 @@ object Manager{
     * @param dir The directory where the ontologies are store
     * @return An Array of ontologies (the file of)
     */
+  @deprecated
   def findOntologies(dir: File): Array[File] = {
     val extensions = List("owl", "rdf", "obo")
     val (dirs, files) =  dir.listFiles.partition(_.isDirectory)

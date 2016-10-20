@@ -1,21 +1,26 @@
 package translator
 
 import org.semanticweb.owlapi.model.{OWLClassExpression, OWLObjectPropertyRangeAxiom}
-import ModalLogicFormulaClasses._
-import SubClassFormulae.{tailRecursiveAnd, tailRecursiveOr}
-import org.phenoscape.scowl._
+import ModalLogicFormulaClasses.{A, Impl, IDiam, R, Top, MLFormula, Prop}
+import translator.SubClassFormulae.{tailRecursiveAnd, tailRecursiveOr}
+import org.phenoscape.scowl.{ObjectIntersectionOf, ObjectUnionOf}
+
 
 object ObjectPropertyRange {
   /**
-    * 
-    * @param axiom An OWLDataPropertyRangeAxiom 
+    * The Modal Logic formula version of a Object Property Range Axiom
+    * @param axiom An OWLObjectPropertyRangeAxiom 
     * @return A Modal Logic formula of the axiom (which is a Description Logic formula)
     */
   def propRange(axiom: OWLObjectPropertyRangeAxiom): MLFormula ={
     val prop = axiom.getProperty.asOWLObjectProperty().getIRI.getShortForm
     A(Impl(IDiam(R(prop), Top()), parseRange(axiom.getRange)))
   }
-
+  /**
+    * Recursively navigate through the expressions to construct the Modal Logic formula
+    * @param exp An OWLClassExpression
+    * @retun A Modal Logic formula
+    */
   def parseRange(range: OWLClassExpression) : MLFormula = range match {
     case ObjectUnionOf(xs) => tailRecursiveOr(xs.toList, "")
     case ObjectIntersectionOf(xs) => tailRecursiveAnd(xs.toList, "")
