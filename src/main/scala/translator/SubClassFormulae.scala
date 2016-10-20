@@ -24,7 +24,7 @@ object SubClassFormulae {
     * @return A Modal Logic formula of the axiom
     */
   def subClass(lhs: OWLClassExpression, rhs: OWLClassExpression, axiom: Any): MLFormula = {
-    ModalLogicFormulaClasses.A (Impl(inspect(lhs, axiom), inspect(rhs, axiom)))
+    A(Impl(inspect(lhs, axiom), inspect(rhs, axiom)))
   }
   /**
     * 
@@ -47,34 +47,15 @@ object SubClassFormulae {
           And(Diam(R(prop.asOWLObjectProperty().getIRI.getShortForm), Prop(filler.asInstanceOf[OWLNamedIndividual].getIRI.getShortForm)),
             Box(R(prop.asOWLObjectProperty().getIRI.getShortForm), Prop(filler.asInstanceOf[OWLNamedIndividual].getIRI.getShortForm)))
         }
+        case ObjectExactCardinality(n, p, f) => IDiam(R("="+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectMaxCardinality(n, p, f) => IDiam(R("MAX"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectMinCardinality(n, p, f) => IDiam(R("MIN"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectComplementOf(op) => Neg(inspect(op.asInstanceOf[OWLClassExpression], axiom))
         /** Unhandled cases */
         case _ => Bot()
       }
     }
-    // TODO: TRANSLATIONS MISSING
-    /*
-    writer.write("(") if (expType == OBJECT_EXACT_CARDINALITY){ val
-    (a,b,c) = matchCardinality(exp) writer.write(a + " ")
-    writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-    writer.write(": " + c.asOWLClass().getIRI.getShortForm) } else if
-    (expType == OBJECT_MIN_CARDINALITY){ val (a,b,c) =
-    matchCardinality(exp) writer.write(a + " ")
-    writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-    writer.write(": " + c.asOWLClass().getIRI.getShortForm) } else if
-    (expType == OBJECT_MAX_CARDINALITY){ val (a,b,c) =
-    matchCardinality(exp) writer.write(a + " ")
-    writer.write(b.asOWLObjectProperty().getIRI.getShortForm)
-    writer.write(": " + c.asOWLClass().getIRI.getShortForm) } else if
-    (expType == OBJECT_COMPLEMENT_OF){ val op =
-    exp.asInstanceOf[OWLObjectComplementOf].getOperand if
-    (!op.isAnonymous) {
-    writer.write(op.asOWLClass().getIRI.getShortForm) } else{
-    inspect(op.asInstanceOf[OWLClassExpression], axiom) } } else{
-    writer.write("@@@@"*20) writer.write("\n\n Axiom: " +
-    axiom.toString + "\n\n") writer.write("Couldn't be written because
-    of the expression: " + exp.toString + "\n\n")
-    writer.write("@@@@"*20) writer.close() } writer.write(")")
-    */
+
   }
   /**
     *

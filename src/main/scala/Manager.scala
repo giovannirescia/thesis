@@ -48,8 +48,13 @@ object Manager{
               println(prefix + "translations/intohylo/" + name + "[_ABox | _TBox].intohylo\n")
             }
             println("="*99)
-            workIt(abox, rendOrTrans, ontology, name + "_ABox")
-            workIt(tbox, rendOrTrans, ontology, name + "_TBox")
+            /** No ABox for now... */
+            //workIt(abox, rendOrTrans, ontology, name + "_ABox")
+            try{
+              workIt(tbox, rendOrTrans, ontology, name + "_TBox")
+            } catch {
+              case _ : Throwable => println("WARNING! Error with: " + name)
+            }
           }
       } else {
         println("\n\nONTOLOGY NOT FOUND...\n")

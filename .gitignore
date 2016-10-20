@@ -18,3 +18,4 @@ output-log/*
 **/.worksheets
 **/bliss-*
 **~
+data/*.owl

@@ -1,17 +1,21 @@
 package translator
 
 import java.io.{File, FileOutputStream, PrintWriter}
+
 import scala.collection.JavaConversions._
 import scala.collection.mutable.ListBuffer
-import org.semanticweb.owlapi.model.AxiomType.{CLASS_ASSERTION, DATA_PROPERTY_ASSERTION, DATA_PROPERTY_DOMAIN, DATA_PROPERTY_RANGE, EQUIVALENT_CLASSES, FUNCTIONAL_OBJECT_PROPERTY, OBJECT_PROPERTY_ASSERTION, SUBCLASS_OF}
+import org.semanticweb.owlapi.model.AxiomType._
 import org.semanticweb.owlapi.model._
 import translator.SubClassFormulae._
 import translator.EquivalentClassesFormulae._
 import translator.FunctionalObjectPropertyFormulae._
-import translator.DataPropertyDomain._
+import translator.ObjectPropertyDomain._
 import ModalLogicFormulaClasses._
-import translator.DataPropertyRange._
+import translator.ObjectPropertyRange._
 import org.semanticweb.owlapi.model.parameters.Imports
+import translator.InvFuncObjProp.invFunc
+import translator.DisjointClasses.disjClass
+
 
 
 object TranslatorManager {
@@ -25,18 +29,23 @@ object TranslatorManager {
     */
   def dl2ml(axioms: List[OWLAxiom]): ListBuffer[MLFormula] ={
     var result = new ListBuffer[MLFormula]()
-
+    if (axioms.nonEmpty){
     for (axiom <- axioms){
       val axType = axiom.getAxiomType
-      // <TBOX_AXIOMS>
-      axType match{
-        case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
-        case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
-        case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
-        case DATA_PROPERTY_DOMAIN => result += propDomain(axiom.asInstanceOf[OWLDataPropertyDomainAxiom])
-        case DATA_PROPERTY_RANGE => result += propRange(axiom.asInstanceOf[OWLDataPropertyRangeAxiom])
-        /** Unhandled cases */
-        case _ => {}
+        // <TBOX_AXIOMS>
+        axType match{
+          case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
+          case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
+          case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
+          case OBJECT_PROPERTY_DOMAIN => result += propDomain(axiom.asInstanceOf[OWLObjectPropertyDomainAxiom])
+          case OBJECT_PROPERTY_RANGE => result += propRange(axiom.asInstanceOf[OWLObjectPropertyRangeAxiom])
+          case INVERSE_FUNCTIONAL_OBJECT_PROPERTY => result += invFunc(axiom.asInstanceOf[OWLInverseFunctionalObjectPropertyAxiom])
+          case DISJOINT_CLASSES => result += disjClass(axiom.asInstanceOf[OWLDisjointClassesAxiom])
+          /** Unhandled cases
+            * ABox and some other cases
+            * */
+          case _ => {}
+        }
       }
     }
     result
@@ -110,6 +119,7 @@ object TranslatorManager {
       writer.write(forms.last.render(mainMap) + "\n")
       writer.write("end")
       writer.close()
+      //mainMap.filter{case (k,v)=>v.startsWith("R")}.foreach(println)
     }
   }
 }

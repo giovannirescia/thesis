@@ -17,6 +17,13 @@ abstract class MLRelation{
 }
 case class R(r: String) extends MLRelation{
   override def render(map: mutable.Map[String, String]): String = {
-    map.get(r).head
+    if (map contains r){
+      map.get(r).head
+    } else{
+      /** Magic... */
+      val aux = map.values.filter(z => z.startsWith("R")).map(y => y.split("R")(1).toInt).max
+      map += ((r, "R"+(aux+1).toString))
+      "R"+(aux+1).toString
+    }
   }
 }

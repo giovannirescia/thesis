@@ -18,7 +18,7 @@ abstract class MLFormula {
   def render(map: mutable.Map[String, String]): String = ""
 }
 case class Prop(arg: String) extends MLFormula {
-  override def render(map: mutable.Map[String, String]): String = map.get(arg).head
+  override def render(map: mutable.Map[String, String]): String = map.getOrElse(arg, "P999")
 }
 case class And(f1: MLFormula, f2: MLFormula) extends MLFormula{
   override def render(map: mutable.Map[String, String]): String = {
