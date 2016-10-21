@@ -19,11 +19,11 @@ object ObjectPropertyRange {
   /**
     * Recursively navigate through the expressions to construct the Modal Logic formula
     * @param exp An OWLClassExpression
-    * @retun A Modal Logic formula
+    * @return A Modal Logic formula
     */
   def parseRange(range: OWLClassExpression) : MLFormula = range match {
-    case ObjectUnionOf(xs) => tailRecursiveOr(xs.toList, "")
-    case ObjectIntersectionOf(xs) => tailRecursiveAnd(xs.toList, "")
+    case ObjectUnionOf(expressions) => tailRecursiveOr(expressions.toList, "")
+    case ObjectIntersectionOf(expressions) => tailRecursiveAnd(expressions.toList, "")
     case _ => Prop(range.asOWLClass().getIRI.getShortForm)
   }
 }

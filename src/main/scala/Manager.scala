@@ -105,7 +105,7 @@ object Manager{
     * if the string matches with an ontology's name, if there are multiple hits, selects one
     * randomly. Also, if the string is "all", selects all the ontologies and translate (or render) them
     * all. Returns empty if there are no matches.
-    * @param matchontology A string to match an ontology
+    * @param matchOntology A string to match an ontology
     * @param ontologies A list of ontologies files to match
     * @return A list of (ontologyPath, ontologyName)
     */

@@ -82,10 +82,10 @@ addLiteralNode lid d pid =
      case exist of
         Nothing   -> do nid1 <- nextNid
                         nid2 <- nextNid
-                        _ <- upColorCount 10 2 -- Changed by Giovanni, was 4 instead of 7, didn't do the trick :/
+                        _ <- upColorCount 4 2 -- Changed by Giovanni, was 4 instead of 7, didn't do the trick :/
                         s' <- get
-                        let (g1,n1) = addNode (graph s) nid1 d 10
-                        let (g2,n2) = addNode g1 nid2 d 10
+                        let (g1,n1) = addNode (graph s) nid1 d 4
+                        let (g2,n2) = addNode g1 nid2 d 4
                         let g3 = addEdge g2 nid1 nid2
                         let g4 = addEdge g3 pid nid1
                         let m1 = addLitMapping m d lid n1

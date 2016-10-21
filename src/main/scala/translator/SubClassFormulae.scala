@@ -65,7 +65,7 @@ object SubClassFormulae {
     if (zs.size == 1){
       inspect(zs.head, axiom)
     } else{
-      val init = And(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
+      val init = And(inspect(zs(zs.size-2), axiom), inspect(zs.last, axiom))
       def tailRecursiveAndWithAcc(accumulator: MLFormula, ys: List[OWLClassExpression]) : MLFormula = {
         if (ys.isEmpty){
           accumulator
@@ -80,16 +80,19 @@ object SubClassFormulae {
     if (zs.size == 1){
       inspect(zs.head, axiom)
     } else{
-    val init = Or(inspect(zs.last, axiom), inspect(zs(zs.size-2), axiom))
+    val init = Or(inspect(zs(zs.size-2), axiom), inspect(zs.last, axiom))
     def tailRecursiveOrWithAcc(accumulator: MLFormula, ys: List[OWLClassExpression]) : MLFormula = {
       if (ys.isEmpty){
         accumulator
       } else {
-        tailRecursiveOrWithAcc(And(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
+        tailRecursiveOrWithAcc(Or(accumulator, inspect(ys.last, axiom)), ys.take(ys.size-1))
       }
     }
     tailRecursiveOrWithAcc(init, zs.take(zs.size-2))
     }
+  }
+  def matchClasses(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {
+    case SubClassOf(p) => p
   }
   @deprecated ("use tailRecursiveAnd")
   def recursiveAnd(ys: List[OWLClassExpression], axiom: Any): MLFormula = {
@@ -114,9 +117,6 @@ object SubClassFormulae {
   @deprecated
   def matchSomeValuesFrom(given: OWLClassExpression): (OWLObjectPropertyExpression, OWLClassExpression) = given match{
     case ObjectSomeValuesFrom(p, f) => (p, f)
-  }
-  def matchClasses(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {
-    case SubClassOf(p) => p
   }
   @deprecated
   def matchIntersectionOf(given: OWLClassExpression):List[OWLClassExpression] = given match{

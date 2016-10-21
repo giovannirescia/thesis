@@ -23,8 +23,8 @@ object DisjointClasses {
     * @retun A Modal Logic formula
     */
   def parse(exp: OWLClassExpression) : MLFormula = exp match {
-    case ObjectUnionOf(xs) => tailRecursiveOr(xs.toList, "")
-    case ObjectIntersectionOf(xs) => tailRecursiveAnd(xs.toList, "")
+    case ObjectUnionOf(expressions) => tailRecursiveOr(expressions.toList, "")
+    case ObjectIntersectionOf(expressions) => tailRecursiveAnd(expressions.toList, "")
     case _ => Prop(exp.asOWLClass().getIRI.getShortForm)
   }
 }

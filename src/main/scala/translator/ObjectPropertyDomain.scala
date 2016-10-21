@@ -22,8 +22,8 @@ object ObjectPropertyDomain {
     * @retun A Modal Logic formula
     */
   def parseDomain(domain: OWLClassExpression) : MLFormula = domain match {
-    case ObjectUnionOf(xs) => tailRecursiveOr(xs.toList, "")
-    case ObjectIntersectionOf(xs) => tailRecursiveAnd(xs.toList, "")
+    case ObjectUnionOf(expressions) => tailRecursiveOr(expressions.toList, "")
+    case ObjectIntersectionOf(expressions) => tailRecursiveAnd(expressions.toList, "")
     case _ => Prop(domain.asOWLClass().getIRI.getShortForm)
   }
 }
