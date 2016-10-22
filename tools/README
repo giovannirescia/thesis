@@ -50,3 +50,27 @@ Run:
 
    This will output the symmetries information to the standar output.
 
+2) You should append bliss's output to the .stats files so the next step (proc_bliss.py) can retrieve the simmetries.
+         ./bliss <bliss_file> >> <stats-file>.stats
+
+PROC_BLISS.py
+
+Run:
+  1) Assuming you have a .stats file wit the output from bliss and a map file:
+        python proc_bliss.py <stats-file> <map-file>.
+
+  2) The script will generate a .symm file in the same folder where the .stats file is located.
+  3) Also the script will output some stats in the form of a csv line containing the following fields:
+    "PROBLEM,NODES,EDGES,TOP,BOX,NBOX,LITS,|AUT|,G_GENS,F_GENS,G_TIME,S_TIME,TOTAL_TIME"
+  4) The generated .symm file contains the propositional symmetries. The symmetries have the following format:
+            l p1 p2
+  Each triple corresponds to a "cycle" of the symmetry. The first element of the triple, "l", is the level of to which the cycle applies. Since we are searching for global symmetries "l" will always be 0.
+  The next two elements are the numbers of the propositional variables involved in the symmetry.
+  So, for example, if you have the following line: 
+    0 5 -6,0 -5 6
+  This corresponds to the following symmetry:
+    (P5 -P6)(-P5 P6)
+
+
+
+
