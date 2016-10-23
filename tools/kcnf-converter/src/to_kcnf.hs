@@ -19,9 +19,9 @@ main :: IO()
 main = getArgs >>= return . head >>= 
        readFile >>= return . parseOldFormat 
        >>= putStrLn . show' . remDup . rename . filt . simp . kcnf . rw
-   where filt x = filter (\x -> x /= Top) x
+   where filt x = filter (\x -> x /= Top && x /= (A Top)) x
          rw x = map rewrConst x
          simp x = map simplify x
          remDup x = Data.Set.toList $ Data.Set.fromList x
          show' x = "begin \n" ++ concat' x ++ "\nend"
-          where concat' x = intercalate ";" (map show x)
+          where concat' x = intercalate ";n" (map show x)

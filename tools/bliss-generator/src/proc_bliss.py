@@ -17,7 +17,7 @@ def load_file(f):
 def _process_nodes(ns):
     pattern = 'n\s(\d*)\s(\d*)'
     prog = re.compile(pattern)
-    clauses = {'cl':[], 'bcl':[], 'nbcl':[], 'nofn':0}
+    clauses = {'cl':[], 'bcl':[], 'nbcl':[], 'ibcl':[], 'acl':[], 'nibcl':[], 'nofn':0}
     literals = []
     for n in ns:
         result = prog.match(n)
@@ -30,7 +30,13 @@ def _process_nodes(ns):
             clauses['nbcl'].append(nid)
         elif type == 4:
             literals.append(nid)
-    clauses['nofn'] = len(clauses['cl']) + len(clauses['bcl']) + len(clauses['nbcl'])
+        elif type == 5:
+            clauses['ibcl'].append(nid)
+        elif type == 6:
+            clauses['nibcl'].append(nid)
+        elif type == 7:
+            clauses['acl'].append(nid)
+    clauses['nofn'] = sum(len(c) for c in clauses)
     return clauses, literals
 
 def _str_to_tuple(s):

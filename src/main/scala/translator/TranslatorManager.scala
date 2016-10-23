@@ -53,6 +53,34 @@ object TranslatorManager {
   
 
   /**
+    * 
+    * KCNF
+    */
+  def ml2kcnf(form: MLFormula): MLFormula = form match {
+    case Prop(p) => Prop(p)
+    case Neg(Prop(p)) => Neg(Prop(p))
+    case Neg(Top()) => And(Prop("string"), Neg(Prop("string")))
+    case Neg(Neg(f: MLFormula)) => ml2kcnf(f)
+    case Top() => Or(Prop("string"), Neg(Prop("string")))
+    case And(f1, f2) => And(ml2kcnf(f1), ml2kcnf(f2))
+    case Neg(And(f1,f2)) => Or(ml2kcnf(Neg(f1)), ml2kcnf(Neg(f2)))
+    case Or(f1, f2) => Or(ml2kcnf(f1), ml2kcnf(f2))
+    case Neg(Or(f1, f2)) => And(ml2kcnf(Neg(f1)), ml2kcnf(Neg(f2)))
+    case Impl(f1, f2) => Or(ml2kcnf(Neg(f1)), ml2kcnf(f2))
+    case Neg(Impl(f1, f2)) => And(ml2kcnf(f1), ml2kcnf(Neg(f2)))
+    case Iif(f1, f2) => And(ml2kcnf(Impl(f1, f2)), ml2kcnf(Impl(f2, f1)))
+    case Neg(Iif(f1, f2)) => Or(ml2kcnf(Neg(Impl(f1,f2))), ml2kcnf(Neg(Impl(f2,f1))))
+    case Diam(r, f) => Neg(Box(r, ml2kcnf(Neg(f))))
+    case Neg(Diam(r, f)) => Box(r, ml2kcnf(Neg(f)))
+    case Box(r, f) => Box(r, ml2kcnf(f))
+    case Neg(Box(r, f)) => Neg(Box(r, ml2kcnf(f)))
+    case A(f) => A(ml2kcnf(f))
+    case IDiam(r, f) => Neg(IBox(r, ml2kcnf(Neg(f))))
+    case Neg(IDiam(r, f)) => IBox(r, ml2kcnf(Neg(f)))
+    case IBox(r, f) => IBox(r, ml2kcnf(f))
+    case Neg(IBox(r, f)) => Neg(IBox(r, ml2kcnf(f)))
+  }
+  /**
     *
     * @param forms A list of Modal Logic formulas to render
     * @param ontology The OWLONtology from where the axioms where translated into MLformulas
@@ -117,7 +145,8 @@ object TranslatorManager {
       for (form <- forms.take(forms.size-1)){
         writer.write(form.render(mainMap) + ";\n")
       }
-      writer.write(forms.last.render(mainMap) + "\n")
+
+      writer.write(forms.form.render(mainMap) + "\n")
       writer.write("end")
       writer.close()
       //mainMap.filter{case (k,v)=>v.startsWith("R")}.foreach(println)

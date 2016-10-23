@@ -40,14 +40,15 @@ object Manager{
             val ontology = manager.loadOntologyFromOntologyDocument(ont)
             /** Load the selected ontology(ies) */
             /** axioms to work with */
-            if (isR) {
-              println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
-            }else{
-              println(prefix + "translations/intohylo/" + name + "[_ABox | _TBox].intohylo\n")
-            }
-            println("="*99)
             try{
               workIt(ontology, rendOrTrans, name)
+              if (isR) {
+                println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
+              }else{
+                println(prefix + "translations/" + name + "[_ABox | _TBox].intohylo\n")
+              }
+              println("="*99)
+
             } catch {
               case e: NoSuchElementException => println("WARNING! " + e.getMessage)
               case _ : Throwable => println("WARNING! Error with: " + name)
