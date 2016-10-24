@@ -146,7 +146,7 @@ object TranslatorManager {
         writer.write(form.render(mainMap) + ";\n")
       }
 
-      writer.write(forms.form.render(mainMap) + "\n")
+      writer.write(forms.last.render(mainMap) + "\n")
       writer.write("end")
       writer.close()
       //mainMap.filter{case (k,v)=>v.startsWith("R")}.foreach(println)

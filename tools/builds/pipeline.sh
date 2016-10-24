@@ -15,7 +15,7 @@ done
 echo "Finding symmetries..."
 cd ../intohylo-proc
 rm output-stats/*
-rm output-stats/bliss-output/*
+rm bliss-output/*
 for f in ./*intohylo; do
     ./../tools/sy4ncl -f "$f" -t 0;
 done

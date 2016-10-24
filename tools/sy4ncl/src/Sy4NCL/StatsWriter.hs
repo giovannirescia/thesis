@@ -12,8 +12,8 @@ writeStats inf = str
                     printGraphSize (graph inf)  
 
 printTime :: Double -> String
-printTime t = "Computation time: 0 sec"
---printTime t = printf "Computation time: %0.5f sec" (t :: Double)
+--printTime t = "Computation time: 0 sec"
+printTime t = printf "Computation time: %0.5f sec" (t :: Double)
 
 printColorCount :: S.Seq Color -> String
 printColorCount cs = "Color count:" ++ show (toList cs)
