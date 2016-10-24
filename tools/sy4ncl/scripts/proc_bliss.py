@@ -74,11 +74,12 @@ def dump_symm_file(filename, gens):
         f.write(s + '\n')
     
 def _process_stats(sts):
-    comp_time = float(re.search('(\d+\.\d+)', sts[0]).group(0))
-    (top_nd, box_nd, negb_nd, lits_nd) = map(int, re.search('\[(\d+),(\d+),(\d+),(\d+)\]',sts[1]).groups())
+    #comp_time = float(re.search('(\d+\.\d+)', sts[0]).group(0))
+    comp_time = 0
+    (top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd) = map(int, re.search('\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\]',sts[1]).groups())
     nodes = int(re.search('(\d+)', sts[2]).group(0))
     edges = int(re.search('(\d+)', sts[3]).group(0))
-    
+
     if len(sts)>4:
         gens = []
         for g in sts[4:-8]:
@@ -93,9 +94,9 @@ def _process_stats(sts):
             aut_size = -1
         aut_time = float(re.search('(\d+\.\d+)', sts[-1]).group(0))
     
-        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, aut_size, nof_gens, 0, comp_time, aut_time, (comp_time + aut_time),  gens]
+        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd, aut_size, nof_gens, 0, comp_time, aut_time, (comp_time + aut_time),  gens]
     else:
-        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, -1, -1, 0, comp_time, -1, -1,  []]
+        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd, -1, -1, 0, comp_time, -1, -1,  []]
     
 def get_stats(stats_file, map_file):
     problem = os.path.splitext(os.path.basename(stats_file))[0]
