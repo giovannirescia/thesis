@@ -86,7 +86,8 @@ This script will automatically:
 * Build the tools for Modal Logic
 * Translate all the ontologies to Modal Logic Formulas
 * Search, and hopefully find, symmetries in those formulas
-* The final output for each symmetry is in `output/final-output/<ontology>`
+
+The final output for each symmetry is in `output/final-output/<ontology>`
 
 For playing around with an ontology and render or translate it, from the root directory of this project, run:
 ```
