@@ -110,6 +110,15 @@ object TranslatorManager {
           new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.intohylo"), false))
         }
       }
+      val mapWritter = {
+         if (fullPath){
+          new PrintWriter(new FileOutputStream(new File(s"/Users/giovannirescia/coding/tesis/output/mappings/$outFile.mapping"), false))
+        }else {
+          val dir = new File("output/mappings")
+          dir.mkdirs()
+          new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$outFile.mapping"), false))
+        }
+      }
       /**
         * 
         * This two loops are meant for creating a map
@@ -138,6 +147,12 @@ object TranslatorManager {
         propMap += ((x.toString , "P"+i.toString))
         i += 1
       }
+      /** Dump the propMap for later use */
+      for ((k, v) <- propMap.take(propMap.size-1)){
+        mapWritter.write(v.tail + " " + k + "\n")
+      }
+      mapWritter.write(propMap.last._2.tail + " " + propMap.last._1)
+      mapWritter.close()
       /** Main Mapping */
       mainMap = propMap ++ relMap
       /** Render the Modal Logic formulas into intoHylo format */

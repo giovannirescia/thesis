@@ -1,10 +1,26 @@
 # Thesis Project: Finding Symmetries in Description Logics
 
-This project's architecture consists in two modulos.
+###  General Dependencies
 
-## First modulo: the translator, from Description Logic to Modal Logic
+* scala
+* sbt
+* ghc
+* ghc-prof
+* zlib
+* [cabal](https://www.haskell.org/cabal/) (when running ./bootstrap.sh, run with --no-doc)
 
-### A (really) brief introduction to Description Logic
+### Haskell dependencies (cabal install <package>)
+
+* alex
+* happy
+* hylolib
+* cmdargs
+
+## General Architecture
+
+### First module: the translator, from Description Logic to Modal Logic
+
+#### A (really) brief introduction to Description Logic
 
 Description logics (DL) is a family of formal knowledge representation languages, 
 that are used in artificial intelligence to describe and reason about the relevant concepts of 
@@ -12,7 +28,7 @@ an application domain (known as _terminological knowledge_). It is of particular
 for [ontologies](https://en.wikipedia.org/wiki/Ontology_(information_science)) and the
 [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web): the Web Ontology Language [OWL] and its profile is based on DLs.
 
-### From DL to ML
+#### From DL to ML
 
 This modulo is entirely coded in Scala 2.11, using [Scowl](https://github.com/phenoscape/scowl): a Scala DSL allowing
 a declarative approach to composing OWL expressions and axioms using the [OWL API](http://owlapi.sourceforge.net/).
@@ -33,7 +49,7 @@ Where:
 <ontology>: A string to match an ontology name, the algorithm will check a "starts with" to get the ontology(ies); if the name given is "all", the algorithm will work with all the ontologies.
 ```
 
-## Second modulo: finding symmetries in Modal Logic
+### Second module: finding symmetries in Modal Logic
 
 This modulo was entirely coded by Ezequiel Orbe in Haskell. It will work like a 'black box' for now, until an Scala
 implementation gets done.
@@ -57,17 +73,26 @@ This modulo takes some stuff as input and then do something with it.
 
 ## Putting all the pieces together
 
-### Run the next commands in sequential order (all path are from the root dir of this project)
+Just run
 ```
-$ cd scripts ; bash unzip.sh; cd ..
+$ bash scripts/doall.sh
+```
+
+This script will automatically:
+
+* Create all the necessary directories:
+  * Outputs
+  * Ontologies
+* Translate all the ontologies to Modal Logic Formulas
+* Search, and hopefully find, symmetries in those formulas
+* The final output for each symmetry is in `output/final-output/<ontology>`
+
+For playing around with an ontology and render or translate it, from the root directory of this project, run:
+```
 $ sbt
-> run translate all
+> run [render|translate] <ontology>
 ```
 
-Exit `sbt` or run from another console:
+## Contact
 
-```
-$ cd tools/builds
-$ bash MISSING_SCRIPT_THAT_SHOULD_BUILD_THE_TOOLS_AND_CREATE_THE_SYMBOLIC_LINKS
-$ bash pipeline.sh
-```
+For any question or suggestion, email me at giovannirescia89@gmail.com, or [open an issue on the tracker](https://github.com/giovannirescia/tesis/issues).

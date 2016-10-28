@@ -24,4 +24,4 @@ main = getArgs >>= return . head >>=
          simp x = map simplify x
          remDup x = Data.Set.toList $ Data.Set.fromList x
          show' x = "begin \n" ++ concat' x ++ "\nend"
-          where concat' x = intercalate ";n" (map show x)
+          where concat' x = intercalate ";" (map show x)

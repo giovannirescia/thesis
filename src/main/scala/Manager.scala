@@ -37,16 +37,24 @@ object Manager{
               BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
                 BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
             val manager = OWLManager.createOWLOntologyManager
+            val t0 = getTime()
             val ontology = manager.loadOntologyFromOntologyDocument(ont)
+            val t1 = getTime()
+            println("Axiom Count:\n\n\t" + ontology.getAxiomCount + "\n")
+            println("Ontology loaded in:\n\n\t" + (t1-t0)/1000.0 + " secs\n")
             /** Load the selected ontology(ies) */
             /** axioms to work with */
             try{
+              val t00 = getTime()
               workIt(ontology, rendOrTrans, name)
+              val t01 = getTime()
+              println("Ontology translated in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
               if (isR) {
                 println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
               }else{
-                println(prefix + "translations/" + name + "[_ABox | _TBox].intohylo\n")
+                println(prefix + "translations/" + name + "_TBox.intohylo\n")
               }
+              println("Total time:\n\n\t" + (getTime()-t0)/1000.0 + " secs\n")
               println("="*99)
 
             } catch {
@@ -63,7 +71,9 @@ object Manager{
       help()
     }
   }
-
+  def getTime(): Long = {
+    System.currentTimeMillis
+  }
   /**
     * Writes a file with the axioms rendered or translated, depending on
     *     option chosen
