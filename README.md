@@ -10,7 +10,6 @@
 * [cabal](https://www.haskell.org/cabal/) (when running ./bootstrap.sh, run with --no-doc)
 
 ### Haskell dependencies (cabal install \<package\>)
-=======
 
 * alex
 * happy
