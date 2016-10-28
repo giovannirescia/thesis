@@ -9,7 +9,11 @@
 * zlib
 * [cabal](https://www.haskell.org/cabal/) (when running ./bootstrap.sh, run with --no-doc)
 
+<<<<<<< HEAD
 ### Haskell dependencies (cabal install \<package\>)
+=======
+### Haskell dependencies (cabal install <package>)
+>>>>>>> ff638021f4395b1c067aa2ebfa82b2dae1467b40
 
 * alex
 * happy
