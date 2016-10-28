@@ -1,4 +1,4 @@
-name := "prueba"
+name := "Thesis: Symmetries in Description Logic"
 
 version := "1.0"
 
