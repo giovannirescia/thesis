@@ -86,7 +86,7 @@ This scripts will:
   * Outputs
   * Ontologies
 * Unzip the ontologies
-* Make a soft build of tools for Modal Logic (for a rebuild, run `$ bash scripts/fbuild.sh')
+* Make a soft build of tools for Modal Logic (for a rebuild, run `$ bash scripts/fbuild.sh`)
 * Translate all the ontologies to Modal Logic Formulas
 * Search, and hopefully find, symmetries in those formulas
 
