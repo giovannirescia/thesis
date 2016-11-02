@@ -41,6 +41,13 @@ object ClassAssertion {
           }
           parse(xs.last, writer, axiom)
         }
+        case ObjectIntersectionOf(xs) => {
+          for (x <- xs.take(xs.size-1)){
+            parse(x, writer, axiom)
+            writer.write(" and ")
+          }
+          parse(xs.last, writer, axiom)
+        }
         case ObjectAllValuesFrom(p, f) => {
           parseProp(p, writer)
           writer.write(" only ")

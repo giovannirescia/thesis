@@ -13,7 +13,7 @@ object SubClassRenderer {
     * @param writer A writer to write stuff
     */
   def simpleSubClass(axiom: OWLSubClassOfAxiom, writer: PrintWriter): Unit = {
-    val (_, x, y) = matchClasses(axiom)
+    val (x, y) = matchClasses(axiom)
     subClass(x.asInstanceOf[OWLClassExpression], y.asInstanceOf[OWLClassExpression], writer, axiom)
   }
 
@@ -166,8 +166,8 @@ object SubClassRenderer {
     * @param given An OWLClassExpression of type SubClass Of
     * @return (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression)
     */
-  def matchClasses(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {
-    case SubClassOf(p) => p
+  def matchClasses(given: Any): (OWLClassExpression, OWLClassExpression) = given match {
+    case SubClassOf(_, x, y) => (x, y)
   }
 
   /**

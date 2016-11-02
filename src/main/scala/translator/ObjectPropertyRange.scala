@@ -18,7 +18,7 @@ object ObjectPropertyRange {
   }
   /**
     * Recursively navigate through the expressions to construct the Modal Logic formula
-    * @param exp An OWLClassExpression
+    * @param range An OWLClassExpression
     * @return A Modal Logic formula
     */
   def parseRange(range: OWLClassExpression) : MLFormula = range match {

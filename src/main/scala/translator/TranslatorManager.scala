@@ -14,6 +14,7 @@ import translator.ObjectPropertyRange._
 import org.semanticweb.owlapi.model.parameters.Imports
 import translator.InvFuncObjProp.invFunc
 import translator.DisjointClasses.disjClass
+import CustomExceptions.MissingTranslationException
 
 
 object TranslatorManager {
@@ -25,26 +26,33 @@ object TranslatorManager {
     * @param axioms A list of OWLAxioms
     * @return A list of Modal Logic formulas
     */
-  def dl2ml(axioms: List[OWLAxiom]): ListBuffer[MLFormula] = {
+  def dl2ml(axioms: List[OWLAxiom], info: PrintWriter, warnings: Boolean = false): ListBuffer[MLFormula] = {
     if (axioms.nonEmpty) {
       var result = new ListBuffer[MLFormula]()
+      var count = 0
       for (axiom <- axioms) {
+        count += 1
         val axType = axiom.getAxiomType
         /** TBOX AXIOMS */
-        axType match {
-          case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
-          case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
-          case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
-          case OBJECT_PROPERTY_DOMAIN => result += propDomain(axiom.asInstanceOf[OWLObjectPropertyDomainAxiom])
-          case OBJECT_PROPERTY_RANGE => result += propRange(axiom.asInstanceOf[OWLObjectPropertyRangeAxiom])
-          case INVERSE_FUNCTIONAL_OBJECT_PROPERTY => result += invFunc(axiom.asInstanceOf[OWLInverseFunctionalObjectPropertyAxiom])
-          case DISJOINT_CLASSES => result += disjClass(axiom.asInstanceOf[OWLDisjointClassesAxiom])
-          /** Unhandled cases
-            * ABox and some other cases
-            * */
-          case _ => {}
+        try{
+          axType match {
+            case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
+            case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
+            case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
+            case OBJECT_PROPERTY_DOMAIN => result += propDomain(axiom.asInstanceOf[OWLObjectPropertyDomainAxiom])
+            case OBJECT_PROPERTY_RANGE => result += propRange(axiom.asInstanceOf[OWLObjectPropertyRangeAxiom])
+            case INVERSE_FUNCTIONAL_OBJECT_PROPERTY => result += invFunc(axiom.asInstanceOf[OWLInverseFunctionalObjectPropertyAxiom])
+            case DISJOINT_CLASSES => result += disjClass(axiom.asInstanceOf[OWLDisjointClassesAxiom])
+            /** Unhandled cases (some of them on purpose)
+              * ABox and some other cases
+              * */
+            case _ => {count -= 1}
+          }
+        } catch {
+          case c: MissingTranslationException => {count -= 1; if (warnings) println("WARNING! This axiom couldn't be translated: " + c.getMessage + "\n")}
         }
       }
+      info.write("\nAxioms translated:\n\n\t" + count + "\n")
       result
     } else {
       throw new NoSuchElementException("The axiom list is empty")
@@ -135,8 +143,8 @@ object TranslatorManager {
       var mainMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
       var relMap: collection.mutable.Map[String, String] = collection.mutable.Map.empty
       // for initialization
-      var propMap: collection.mutable.Map[String, String] = collection.mutable.Map("string" -> "P1")
-      var i = 2
+      var propMap: collection.mutable.Map[String, String] = collection.mutable.Map(("string", "P2"))
+      var i = 3
       var j = 1
       /** The mappings */
       for (x <- rels){
@@ -147,6 +155,7 @@ object TranslatorManager {
         propMap += ((x.toString , "P"+i.toString))
         i += 1
       }
+//      propMap += (("string", "P"+(props.length+2).toString))
       /** Dump the propMap for later use */
       for ((k, v) <- propMap.take(propMap.size-1)){
         mapWritter.write(v.tail + " " + k + "\n")
@@ -157,8 +166,11 @@ object TranslatorManager {
       mainMap = propMap ++ relMap
       /** Render the Modal Logic formulas into intoHylo format */
       writer.write("begin\n")
+//      mainMap.foreach(k => writer.write(k +  "\n"))
       for (form <- forms.take(forms.size-1)){
+//        writer.write(form+ "\n")
         writer.write(form.render(mainMap) + ";\n")
+        writer.write("")
       }
 
       writer.write(forms.last.render(mainMap) + "\n")

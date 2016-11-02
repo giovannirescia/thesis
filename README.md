@@ -13,7 +13,7 @@
 
 * alex
 * happy
-* hylolib
+* hylolib (>= 1.5.3)
 * cmdargs
 
 ## General Architecture
@@ -30,7 +30,7 @@ for [ontologies](https://en.wikipedia.org/wiki/Ontology_(information_science)) a
 
 #### From DL to ML
 
-This modulo is entirely coded in Scala 2.11, using [Scowl](https://github.com/phenoscape/scowl): a Scala DSL allowing
+This module is entirely coded in Scala 2.11, using [Scowl](https://github.com/phenoscape/scowl): a Scala DSL allowing
 a declarative approach to composing OWL expressions and axioms using the [OWL API](http://owlapi.sourceforge.net/).
 
 All the dependencies are specified in the build.sbt file, since this project was created under sbt.
@@ -75,17 +75,22 @@ This modulo takes some stuff as input and then do something with it.
 
 Just run
 ```
+$ bash scripts/init.sh
+$ bash scripts/sbt.sh
 $ bash scripts/doall.sh
 ```
 
-This script will automatically:
+This scripts will:
 
 * Create all the necessary directories:
   * Outputs
   * Ontologies
-* Build the tools for Modal Logic
+* Unzip the ontologies
+* Make a soft build of tools for Modal Logic (for a rebuild, run `$ bash scripts/fbuild.sh')
 * Translate all the ontologies to Modal Logic Formulas
 * Search, and hopefully find, symmetries in those formulas
+
+And BAM! 7 hours and 15 minutes later you got yourself a bunch of data...
 
 The final output for each symmetry is in `output/final-output/<ontology>`
 

@@ -4,7 +4,7 @@ import org.semanticweb.owlapi.model.ClassExpressionType.{OBJECT_MAX_CARDINALITY,
 import org.phenoscape.scowl._
 import org.semanticweb.owlapi.model._
 import ModalLogicFormulaClasses.{Diam, R, Box, And, Prop, IDiam, Bot, Or, Neg, A, Impl, MLFormula, Top}
-
+import CustomExceptions.MissingTranslationException
 
 object SubClassFormulae {
   /**
@@ -13,7 +13,7 @@ object SubClassFormulae {
     * @return A Modal Logic formula of the axiom
     */
   def simpleSubClass(axiom: OWLSubClassOfAxiom): MLFormula = {
-    val (_, x, y) = matchClasses(axiom)
+    val (x, y) = matchClasses(axiom)
     subClass(x.asInstanceOf[OWLClassExpression], y.asInstanceOf[OWLClassExpression], axiom)
   }
   /**
@@ -52,7 +52,7 @@ object SubClassFormulae {
         case ObjectMinCardinality(n, p, f) => IDiam(R("MIN"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
         case ObjectComplementOf(op) => Neg(inspect(op.asInstanceOf[OWLClassExpression], axiom))
         /** Unhandled cases */
-        case _ => Bot()
+        case _ => throw new MissingTranslationException(axiom.toString)
       }
     }
 
@@ -91,42 +91,42 @@ object SubClassFormulae {
     tailRecursiveOrWithAcc(init, zs.take(zs.size-2))
     }
   }
-  def matchClasses(given: Any): (Set[OWLAnnotation], OWLClassExpression, OWLClassExpression) = given match {
-    case SubClassOf(p) => p
+  def matchClasses(given: Any): (OWLClassExpression, OWLClassExpression) = given match {
+    case SubClassOf(_, x, y) => (x, y)
   }
-  @deprecated ("use tailRecursiveAnd")
+  @deprecated ("use tailRecursiveAnd", "")
   def recursiveAnd(ys: List[OWLClassExpression], axiom: Any): MLFormula = {
     if (ys.isEmpty) Top()
     else And(inspect(ys.head, axiom), recursiveAnd(ys.tail, axiom))
   }
-  @deprecated ("use tailRecursiveOr")
+  @deprecated ("use tailRecursiveOr", "")
   def recursiveOr(xs: List[OWLClassExpression], axiom: Any): MLFormula = {
     if (xs.isEmpty) Bot()
     else Or(inspect(xs.head, axiom), recursiveOr(xs.tail, axiom))
   }
-  @deprecated
+  @deprecated("","")
   def matchCardinality(given: OWLClassExpression): (Int, OWLObjectPropertyExpression, OWLClassExpression) = given match{
     case ObjectMaxCardinality(n, p, f) => (n, p, f)
     case ObjectMinCardinality(n, p, f) => (n, p, f)
     case ObjectExactCardinality(n, p, f) => (n, p, f)
   }
-  @deprecated
+  @deprecated("","")
   def matchAllValuesFrom(given: OWLClassExpression): (OWLObjectPropertyExpression, OWLClassExpression) = given match{
     case ObjectAllValuesFrom(p, f) => (p, f)
   }
-  @deprecated
+  @deprecated("","")
   def matchSomeValuesFrom(given: OWLClassExpression): (OWLObjectPropertyExpression, OWLClassExpression) = given match{
     case ObjectSomeValuesFrom(p, f) => (p, f)
   }
-  @deprecated
+  @deprecated("","")
   def matchIntersectionOf(given: OWLClassExpression):List[OWLClassExpression] = given match{
     case ObjectIntersectionOf(p) => p.toList
   }
-  @deprecated
+  @deprecated("","")
   def matchUnionOf(given: OWLClassExpression):List[OWLClassExpression] = given match{
     case ObjectUnionOf(p) => p.toList
   }
-  @deprecated
+  @deprecated("","")
   def matchHasValue(given: OWLClassExpression): (OWLObjectPropertyExpression, OWLNamedIndividual) = given match{
     case ObjectHasValue(p, i) => (p, i.asInstanceOf[OWLNamedIndividual])
   }

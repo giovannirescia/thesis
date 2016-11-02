@@ -1,3 +1,3 @@
 #!/bin/bash
 
-sbt "run translate all"
+sbt -mem 2048 "run translate all"

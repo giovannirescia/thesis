@@ -1,4 +1,4 @@
-import java.io.File
+import java.io.{File, PrintWriter, FileOutputStream}
 import org.semanticweb.owlapi.apibinding.OWLManager
 import org.semanticweb.owlapi.model.{OWLAxiom, OWLOntology}
 import org.semanticweb.owlapi.model.parameters.Imports
@@ -9,59 +9,99 @@ import scala.collection.mutable.ListBuffer
 import scala.util.Random
 import scala.math.BigDecimal
 
+
 object Manager{
   /**
     * 
     * Manages an ontology for render it (pretty print),
     * or translate it into modal logic formulas
     * @param args input options in the next order:
-    *     [render | translate] ontologyName
+    *     [render | translate | info] ontologyName
     */
   def main(args: Array[String]): Unit = {
     if (args.length == 2) {
 
-      val rendOrTrans = args(0)
-      val isR: Boolean = {
-        if (rendOrTrans == "render") true
-        else false
+      val opt = args(0)
+      var b: Boolean = false
+      List("render", "translate", "info").foreach(x => b = b || x.startsWith(opt))
+      if (!b){
+        println("#"*99)
+        println("\nWARNING!!! Wrong option\n")
+        println("Available options are:\n\n"+"\tinfo\n\trender\n\ttranslate")
+        println("\n"+"#"*99)
+        help()
+        sys.exit(0)
       }
-      val ontologyName = args(1)
-      var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl"))
 
+      val ontologyName = args(1)
+      var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl", "rdf"))
       val ontSel = getOntologies(ontologyName, ontologies)
       val prefix = "Saving file:\n\n\t" + getCurrentDirectory + "/output/"
-      if (ontSel.nonEmpty) {
-          for ((ont, name) <- ontSel){
-            println("="*99)
-            println("\nOntology:\n\n\t" + name + " - size: " +
-              BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
-                BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
-            val manager = OWLManager.createOWLOntologyManager
-            val t0 = getTime()
-            val ontology = manager.loadOntologyFromOntologyDocument(ont)
-            val t1 = getTime()
-            println("Axiom Count:\n\n\t" + ontology.getAxiomCount + "\n")
-            println("Ontology loaded in:\n\n\t" + (t1-t0)/1000.0 + " secs\n")
-            /** Load the selected ontology(ies) */
-            /** axioms to work with */
-            try{
-              val t00 = getTime()
-              workIt(ontology, rendOrTrans, name)
-              val t01 = getTime()
-              println("Ontology translated in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
-              if (isR) {
-                println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
-              }else{
-                println(prefix + "translations/" + name + "_TBox.intohylo\n")
-              }
-              println("Total time:\n\n\t" + (getTime()-t0)/1000.0 + " secs\n")
-              println("="*99)
 
-            } catch {
-              case e: NoSuchElementException => println("WARNING! " + e.getMessage)
-              case _ : Throwable => println("WARNING! Error with: " + name)
-            }
+      if (ontSel.nonEmpty) {
+        val dir = new File("output/general_info")
+        dir.mkdirs()
+        val info = {
+          if (ontologyName == "all") {
+            new PrintWriter(new FileOutputStream(new File(dir.toString + "/all_ontologies.info"), false))
+          } else {
+            val auxname = ontSel.head._2
+            new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$auxname.info"), false))
           }
+        }
+        for ((ont, name) <- ontSel) {
+          println("="*99)
+          info.write("\n"+"="*99)
+          info.write("\nOntology:\n\n\t" + name + "\n\nSize:\n\t" +
+            BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
+              BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
+          println("\nOntology:\n\n\t" + name + " - size: " +
+            BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
+              BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
+          val manager = OWLManager.createOWLOntologyManager
+          val t0 = getTime()
+          val ontology = manager.loadOntologyFromOntologyDocument(ont)
+          val t1 = getTime()
+
+          info.write("\nOntology loaded in:\n\n\t" + (t1-t0)/1000.0 + " secs\n")
+          info.write("\nAxiom Count:\n\n\t" + ontology.getAxiomCount + "\n")
+          info.write("\nTbox Count:\n\n\t" + ontology.getTBoxAxioms(Imports.INCLUDED).size + "\n")
+          info.write("\nAbox Count:\n\n\t" + ontology.getABoxAxioms(Imports.INCLUDED).size + "\n")
+
+          /** Load the selected ontology(ies) */
+          /** axioms to work with */
+          try{
+            if ("render".startsWith(opt)) {
+              val t00 = getTime()
+              workIt(ontology, opt, name, info)
+              val t01 = getTime()
+              info.write("\nOntology rendered in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
+              println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
+            }else if ("translate".startsWith(opt)) {
+              val t00 = getTime()
+              workIt(ontology, opt, name, info)
+              val t01 = getTime()
+              info.write("\nOntology translated in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
+              println(prefix + "translations/" + name + "_TBox.intohylo\n")
+            }
+
+          } catch {
+            case e: NoSuchElementException => println("WARNING! " + e.getMessage)
+          }
+          if (!(ontologyName == "all")){
+            println(prefix + "general_info/" + name + ".info\n")
+          }
+
+          info.write("\nTotal time:\n\n\t" + (getTime()-t0)/1000.0 + " secs\n")
+          info.write("\n"+"="*99)
+          println("="*99)
+
+        }
+        //xs.sortWith(_._1 > _._1).take(20).foreach(f => info.write(f + "\n"))
+        if (ontologyName == "all"){
+          println(prefix + "general_info/all_ontologies.info\n")
+        }
+        info.close()
       } else {
         println("\n\nONTOLOGY NOT FOUND...\n")
         help()
@@ -78,23 +118,23 @@ object Manager{
     * Writes a file with the axioms rendered or translated, depending on
     *     option chosen
     * @param ontology The ontology to work with
-    * @param renderOrTrans wether render or translate the axioms
+    * @param opt wether render or translate the axioms
     * @param output A string for the output file
     */
-  def workIt(ontology: OWLOntology, renderOrTrans: String, output: String) = {
+  def workIt(ontology: OWLOntology, opt: String, output: String, info: PrintWriter) = {
     val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
     val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
-    renderOrTrans match {
-      case "translate" => {
-        formRender(dl2ml(tbox), ontology, output + "_TBox")
-        /** No ABox for now... */
-        //formRender(dl2ml(abox), ontology, output + "_ABox")
-      }
-      case "render" => {
-        render(abox, output + "_ABox")
-        render(tbox, output + "_TBOX")
-      }
-      case _ => help()
+    if ("translate".startsWith(opt)){
+      formRender(dl2ml(tbox, info), ontology, output + "_TBox")
+        /** No ABox for now... 
+          * 
+          * formRender(dl2ml(abox), ontology, output + "_ABox")
+          */
+    } else if ("render".startsWith(opt)) {
+      render(abox, output + "_ABox")
+      render(tbox, output + "_TBox")
+    } else {
+      help()
     }
   }
   /**
@@ -103,7 +143,7 @@ object Manager{
     * @param axioms A string, could be 'tbox' or 'abox'
     * @return A list of axioms
     */
-  @deprecated
+  @deprecated("","")
   def getAxioms(ont: OWLOntology, axioms: String): List[OWLAxiom] = axioms match {
     case "tbox" => ont.getTBoxAxioms(Imports.INCLUDED).toList
     case "abox" => ont.getABoxAxioms(Imports.INCLUDED).toList
@@ -157,7 +197,7 @@ object Manager{
     * @param dir The directory where the ontologies are store
     * @return An Array of ontologies (the file of)
     */
-  @deprecated
+  @deprecated("","")
   def findOntologies(dir: File): Array[File] = {
     val extensions = List("owl", "rdf", "obo")
     val (dirs, files) =  dir.listFiles.partition(_.isDirectory)
@@ -176,14 +216,15 @@ object Manager{
     * Simple log of how to use this script
     */
   def help(): Unit ={
-    var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl"))
+    var ontologies: List[File] = getListOfFiles(new File(getCurrentDirectory + "/ontologies"), List("owl", "rdf"))
 
     val usage = """
-                Usage: [render | translate] <ontology>
+                Usage: [render | translate | info] <ontology>
                 ---------------------------------
                 ---------------------------------
                 Example:
                         > run render gal
+                        > run i dolc
                 """
     println(usage)
     println("\n\n")

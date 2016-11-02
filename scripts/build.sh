@@ -1,7 +1,25 @@
 #!/bin/bash
+
 cd tools/kcnf-converter
-cabal configure; cabal build
+if [ ! -f dist/build/kcnf_converter/kcnf_converter ]
+then
+    cabal configure; cabal build
+else
+    echo "KCNF build exists, skypping..."
+fi
+
 cd ../sy4ncl
-cabal configure; cabal build
+if [ ! -f dist/build/sy4ncl/sy4ncl ]
+then
+    cabal configure; cabal build
+else
+    echo "sy4ncl build exists, skypping..."
+fi
+
 cd ../bliss-0.73
-make
+if [ ! -f bliss ]
+then
+    make
+else
+    echo "bliss found, skypping..."
+fi
