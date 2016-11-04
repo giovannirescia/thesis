@@ -26,34 +26,73 @@ object TranslatorManager {
     * @param axioms A list of OWLAxioms
     * @return A list of Modal Logic formulas
     */
-  def dl2ml(axioms: List[OWLAxiom], info: PrintWriter, warnings: Boolean = false): ListBuffer[MLFormula] = {
+  def dl2ml(axioms: List[OWLAxiom], output: String, info: PrintWriter, warnings: Boolean = false): ListBuffer[MLFormula] = {
     if (axioms.nonEmpty) {
       var result = new ListBuffer[MLFormula]()
       var count = 0
+      var ax_translated = Set[String]()
+      var ax_left = Set[String]()
+      var ax_unhandled = Set[String]()
+
+      val dir = new File("output/general_info/axioms_types")
+      dir.mkdirs()
+
+      val ax_t_writer = new PrintWriter(new FileOutputStream(new File(dir.toString + "/translated_" + s"$output"), false))
+      val ax_l_writer = new PrintWriter(new FileOutputStream(new File(dir.toString + "/left_" + s"$output"), false))
+      val ax_uh_writer = new PrintWriter(new FileOutputStream(new File(dir.toString + "/unhandled_" + s"$output"), false))
+
       for (axiom <- axioms) {
         count += 1
         val axType = axiom.getAxiomType
         /** TBOX AXIOMS */
         try{
           axType match {
-            case SUBCLASS_OF => result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])
-            case EQUIVALENT_CLASSES => result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])
-            case FUNCTIONAL_OBJECT_PROPERTY => result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])
-            case OBJECT_PROPERTY_DOMAIN => result += propDomain(axiom.asInstanceOf[OWLObjectPropertyDomainAxiom])
-            case OBJECT_PROPERTY_RANGE => result += propRange(axiom.asInstanceOf[OWLObjectPropertyRangeAxiom])
-            case INVERSE_FUNCTIONAL_OBJECT_PROPERTY => result += invFunc(axiom.asInstanceOf[OWLInverseFunctionalObjectPropertyAxiom])
-            case DISJOINT_CLASSES => result += disjClass(axiom.asInstanceOf[OWLDisjointClassesAxiom])
-            /** Unhandled cases (some of them on purpose)
+            case SUBCLASS_OF => {ax_translated+= axType.toString; result += simpleSubClass(axiom.asInstanceOf[OWLSubClassOfAxiom])}
+            case EQUIVALENT_CLASSES => {ax_translated+= axType.toString; result += equivClasses(axiom.asInstanceOf[OWLEquivalentClassesAxiom])}
+            case FUNCTIONAL_OBJECT_PROPERTY => {ax_translated+= axType.toString; result += funcProp(axiom.asInstanceOf[OWLFunctionalObjectPropertyAxiom])}
+            case OBJECT_PROPERTY_DOMAIN => {ax_translated+= axType.toString; result += propDomain(axiom.asInstanceOf[OWLObjectPropertyDomainAxiom])}
+            case OBJECT_PROPERTY_RANGE => {ax_translated+= axType.toString; result += propRange(axiom.asInstanceOf[OWLObjectPropertyRangeAxiom])}
+            case INVERSE_FUNCTIONAL_OBJECT_PROPERTY => {ax_translated+= axType.toString; result += invFunc(axiom.asInstanceOf[OWLInverseFunctionalObjectPropertyAxiom])}
+            case DISJOINT_CLASSES => {ax_translated+= axType.toString; result += disjClass(axiom.asInstanceOf[OWLDisjointClassesAxiom])}
+            /** Left on purpose */
+            case DATA_PROPERTY_DOMAIN => ax_left += axType.toString
+            case DATA_PROPERTY_RANGE => ax_left += axType.toString
+            /** Unhandled cases
               * ABox and some other cases
               * */
-            case _ => {count -= 1}
+            case _ => {ax_unhandled += axType.toString; count -= 1}
           }
         } catch {
           case c: MissingTranslationException => {count -= 1; if (warnings) println("WARNING! This axiom couldn't be translated: " + c.getMessage + "\n")}
         }
       }
+
       info.write("\nAxioms translated:\n\n\t" + count + "\n")
+
+      if (ax_translated.nonEmpty) {
+        ax_t_writer.write("Axiom Types Translated:\n")
+        for (a <- ax_translated){
+          ax_t_writer.write("\t" + a + "\n")
+        }
+      }
+      if (ax_unhandled.nonEmpty) {
+        ax_uh_writer.write("Axiom Types Unhandled:\n")
+        for (a <- ax_unhandled){
+          ax_uh_writer.write("\t" + a + "\n")
+        }
+      }
+      if (ax_left.nonEmpty) {
+        ax_l_writer.write("Axiom Types Left:\n")
+        for (a <- ax_left){
+          ax_l_writer.write("\t" + a + "\n")
+        }
+      }
+      ax_l_writer.close()
+      ax_t_writer.close()
+      ax_uh_writer.close()
+
       result
+
     } else {
       throw new NoSuchElementException("The axiom list is empty")
     }

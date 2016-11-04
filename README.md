@@ -90,9 +90,9 @@ This scripts will:
 * Translate all the ontologies to Modal Logic Formulas
 * Search, and hopefully find, symmetries in those formulas
 
-And BAM! 7 hours and 15 minutes later you got yourself a bunch of data...
+This process takes about 47 minutes.
 
-The final output for each symmetry is in `output/final-output/<ontology>`
+The final output for each symmetry is in `output/final-output/<ontology>`. There is also general information in `output/general_info` and `output/general_info/axioms_types`.
 
 For playing around with an ontology and render or translate it, from the root directory of this project, run:
 ```

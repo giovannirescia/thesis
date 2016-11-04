@@ -119,13 +119,13 @@ object Manager{
     *     option chosen
     * @param ontology The ontology to work with
     * @param opt wether render or translate the axioms
-    * @param output A string for the output file
+    * @param output A string for the output file (the ontology name)
     */
   def workIt(ontology: OWLOntology, opt: String, output: String, info: PrintWriter) = {
     val abox = ontology.getABoxAxioms(Imports.INCLUDED).toList
     val tbox = ontology.getTBoxAxioms(Imports.INCLUDED).toList
     if ("translate".startsWith(opt)){
-      formRender(dl2ml(tbox, info), ontology, output + "_TBox")
+      formRender(dl2ml(tbox, output, info), ontology, output + "_TBox")
         /** No ABox for now... 
           * 
           * formRender(dl2ml(abox), ontology, output + "_ABox")
