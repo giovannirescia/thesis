@@ -67,7 +67,7 @@ object TranslatorManager {
         }
       }
 
-      info.write("\nAxioms translated:\n\n\t" + count + "\n")
+      info.write(count.toString + ",")
 
       if (ax_translated.nonEmpty) {
         ax_t_writer.write("Axiom Types Translated:\n")

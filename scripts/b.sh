@@ -9,17 +9,25 @@ fi
 # run this from parent dir
 mkdir -p output/bliss-output
 cd output/syncl-output
-echo "Doing the bliss thing..."
+echo ""
+echo "----------------------------"
+echo ""
+echo "Doing the Bliss thing..."
+echo ""
+
+echo "" > ../general_info/bliss.txt
+
 cp *.stats ../bliss-output
+n=$(ls -1 | grep .bliss | wc -l)
+i=1
 
 for f in ./*.bliss; do
-    echo "---------------------------------------------------------------------------------------------------------------------";
+    echo "$i / $((n)): $f"
     filename=$(echo `basename "$f" .bliss`);
     ext=$(echo ".stats");
-    echo "$filename";
-    a=$(($(gdate +%s%N)/1000000))
+    a=$(($(gdate +%s%N)/1000000));
     ./../../tools/bliss-0.73/bliss "$f" >> ../bliss-output/$filename$ext;
-    b=$(($(gdate +%s%N)/1000000))
-    echo "$a $b" | awk '{printf "\n\n\t%.3f secs\n\n", ($2-$1)/1000}'
-    echo "---------------------------------------------------------------------------------------------------------------------";
+    b=$(($(gdate +%s%N)/1000000));
+    echo "$a $b $filename" | awk '{printf ""$3"; %.3f secs\n", ($2-$1)/1000}' >> ../general_info/bliss.txt;
+    i=$((i+1));
 done

@@ -43,18 +43,18 @@ object Manager{
         dir.mkdirs()
         val info = {
           if (ontologyName == "all") {
-            new PrintWriter(new FileOutputStream(new File(dir.toString + "/all_ontologies.info"), false))
+            new PrintWriter(new FileOutputStream(new File(dir.toString + "/all_ontologies.csv"), false))
           } else {
             val auxname = ontSel.head._2
-            new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$auxname.info"), false))
+            new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$auxname.csv"), false))
           }
         }
+        info.write("NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, TOTAL_TIME\n")
         for ((ont, name) <- ontSel) {
           println("="*99)
-          info.write("\n"+"="*99)
-          info.write("\nOntology:\n\n\t" + name + "\n\nSize:\n\t" +
+          info.write(name + "," +
             BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
-              BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
+              BigDecimal.RoundingMode.HALF_UP).toDouble + ",")
           println("\nOntology:\n\n\t" + name + " - size: " +
             BigDecimal(ont.length/(1024.0*1024.0)).setScale(3,
               BigDecimal.RoundingMode.HALF_UP).toDouble + " M"+ "\n")
@@ -63,10 +63,10 @@ object Manager{
           val ontology = manager.loadOntologyFromOntologyDocument(ont)
           val t1 = getTime()
 
-          info.write("\nOntology loaded in:\n\n\t" + (t1-t0)/1000.0 + " secs\n")
-          info.write("\nAxiom Count:\n\n\t" + ontology.getAxiomCount + "\n")
-          info.write("\nTbox Count:\n\n\t" + ontology.getTBoxAxioms(Imports.INCLUDED).size + "\n")
-          info.write("\nAbox Count:\n\n\t" + ontology.getABoxAxioms(Imports.INCLUDED).size + "\n")
+          info.write((t1-t0)/1000.0 +",")
+          info.write(ontology.getAxiomCount + ",")
+          info.write(ontology.getTBoxAxioms(Imports.INCLUDED).size + ",")
+          info.write(ontology.getABoxAxioms(Imports.INCLUDED).size + ",")
 
           /** Load the selected ontology(ies) */
           /** axioms to work with */
@@ -75,13 +75,13 @@ object Manager{
               val t00 = getTime()
               workIt(ontology, opt, name, info)
               val t01 = getTime()
-              info.write("\nOntology rendered in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
+              info.write((t01-t00)/1000.0 + ",")
               println(prefix + "rendered/" + name + "[_ABox | _TBox].txt\n")
             }else if ("translate".startsWith(opt)) {
               val t00 = getTime()
               workIt(ontology, opt, name, info)
               val t01 = getTime()
-              info.write("\nOntology translated in:\n\n\t" + (t01-t00)/1000.0 + " secs\n")
+              info.write((t01-t00)/1000.0 + ",")
               println(prefix + "translations/" + name + "_TBox.intohylo\n")
             }
 
@@ -89,11 +89,11 @@ object Manager{
             case e: NoSuchElementException => println("WARNING! " + e.getMessage)
           }
           if (!(ontologyName == "all")){
-            println(prefix + "general_info/" + name + ".info\n")
+            println(prefix + "general_info/" + name + ".csv\n")
           }
 
-          info.write("\nTotal time:\n\n\t" + (getTime()-t0)/1000.0 + " secs\n")
-          info.write("\n"+"="*99)
+          info.write(((getTime()-t0)/1000.0).toString)
+          info.write("\n")
           println("="*99)
 
         }
@@ -101,6 +101,7 @@ object Manager{
         if (ontologyName == "all"){
           println(prefix + "general_info/all_ontologies.info\n")
         }
+        println("Ontologies info format:\n\n\t" + "[NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, TOTAL_TIME]\n")
         info.close()
       } else {
         println("\n\nONTOLOGY NOT FOUND...\n")

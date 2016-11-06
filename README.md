@@ -51,7 +51,7 @@ Where:
 
 ### Second module: finding symmetries in Modal Logic
 
-This modulo was entirely coded by Ezequiel Orbe in Haskell. It will work like a 'black box' for now, until an Scala
+This module was entirely coded by Ezequiel Orbe in Haskell. It will work like a 'black box' for now, until an Scala
 implementation gets done.
 
 The basic pipeline is:
@@ -92,7 +92,7 @@ This scripts will:
 
 This process takes about 47 minutes.
 
-The final output for each symmetry is in `output/final-output/<ontology>`. There is also general information in `output/general_info` and `output/general_info/axioms_types`.
+The final output for each symmetry is in `output/final-output/<ontology>`. There is also general information, e.g. time of each step, general information about the ontologies, etc, in `output/general_info` and `output/general_info/axioms_types`.
 
 For playing around with an ontology and render or translate it, from the root directory of this project, run:
 ```
