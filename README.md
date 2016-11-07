@@ -8,6 +8,7 @@
 * ghc-prof
 * zlib
 * [cabal](https://www.haskell.org/cabal/) (when running ./bootstrap.sh, run with --no-doc)
+* coreutils (macOS Users)
 
 ### Haskell dependencies (cabal install \<package\>)
 
@@ -75,9 +76,9 @@ This modulo takes some stuff as input and then do something with it.
 
 Just run
 ```
-$ bash scripts/init.sh
-$ bash scripts/sbt.sh
-$ bash scripts/doall.sh
+$ sh scripts/init.sh
+$ sh scripts/sbt.sh
+$ sh scripts/doall.sh
 ```
 
 This scripts will:
@@ -97,7 +98,7 @@ The final output for each symmetry is in `output/final-output/<ontology>`. There
 For playing around with an ontology and render or translate it, from the root directory of this project, run:
 ```
 $ sbt
-> run [render|translate] <ontology>
+> run [render|translate|info] <ontology>
 ```
 
 ## Contact

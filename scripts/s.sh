@@ -18,12 +18,12 @@ n=$(ls -1 | wc -l)
 i=1
 
 for f in ./*intohylo; do
-    echo "$i / $((n)): $f"
-    a=$(($(gdate +%s%N)/1000000))
+    raw=$(echo `basename "$f" .intohylo`);
+    echo "$i / $((n)): $raw"
+    a=$(($(date +%s%N)/1000000))
     ./../../tools/sy4ncl/dist/build/sy4ncl/sy4ncl -f "$f" -t 0;
-    b=$(($(gdate +%s%N)/1000000))
-    echo "$a $b $f" | awk '{printf ""$3"; %.3f secs\n", ($2-$1)/1000}' >> ../general_info/sy4ncl.txt
+    b=$(($(date +%s%N)/1000000))
+    echo "$a $b $raw" | awk '{printf ""$3"; %.3f secs\n", ($2-$1)/1000}' >> ../general_info/sy4ncl.txt
     i=$((i+1))
     mv *.bliss *.map *.stats ../syncl-output;
-    
 done
