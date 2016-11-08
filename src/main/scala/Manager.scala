@@ -49,7 +49,7 @@ object Manager{
             new PrintWriter(new FileOutputStream(new File(dir.toString + s"/$auxname.csv"), false))
           }
         }
-        info.write("NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, TOTAL_TIME\n")
+        info.write("NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, DL2ML_TOTAL_TIME\n")
         for ((ont, name) <- ontSel) {
           println("="*99)
           info.write(name + "," +
@@ -101,7 +101,7 @@ object Manager{
         if (ontologyName == "all"){
           println(prefix + "general_info/all_ontologies.info\n")
         }
-        println("Ontologies info format:\n\n\t" + "[NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, TOTAL_TIME]\n")
+        println("Ontologies info format:\n\n\t" + "[NAME, SIZE(MB), LOAD_TIME, AXIOM_COUNT, TBOX_COUNT, ABOX_COUNT, TRANSLATED_AXIOM_COUNT, [RENDER_TRANSLATE]_TIME, DL2ML_TOTAL_TIME]\n")
         info.close()
       } else {
         println("\n\nONTOLOGY NOT FOUND...\n")

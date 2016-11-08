@@ -13,7 +13,7 @@ echo "----------------------------"
 echo ""
 echo "Mapping back..."
 echo ""
-echo "" > ../general_info/mappings.txt
+echo "" > ../general_info/mappings.csv
 n=$(ls -1 | wc -l)
 i=1
 
@@ -24,7 +24,7 @@ for f in ./*.mapping; do
     ext=$(echo ".symm");
     scala ../../scripts/mapper.scala "$f" ../bliss-proc-output/"$raw$ext" > ../final-output/$raw;
     b=$(($(date +%s%N)/1000000))
-    echo "$a $b $raw" | awk '{printf ""$3"; %.3f secs\n", ($2-$1)/1000}' >> ../general_info/mappings.txt
+    echo "$a $b $raw" | awk '{printf ""$3"; %.3f\n", ($2-$1)/1000}' >> ../general_info/mappings.csv
     i=$((i+1))
 done
 echo ""
