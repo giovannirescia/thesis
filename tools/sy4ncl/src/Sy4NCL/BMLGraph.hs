@@ -37,20 +37,20 @@ parse               :: Formula NomSymbol PropSymbol RelSymbol ->
                        NodeId -> 
                        GraphState NodeId
 -- Adding support to Universal operator and IBox
-parse (IBox _ f)                  d ly pid = addClauseNode 5 (d+1) >>=
+parse (IBox (RelSymbol r) f)                  d ly pid = addClauseNode (getColor 2 r) (d+1) >>=
                                              (addEdge' pid) >>=
                                              (parse f (d+1) ly)                                           
-parse (Neg (IBox _ f))            d ly pid = addClauseNode 6 (d+1) >>=
+parse (Neg (IBox (RelSymbol r) f))            d ly pid = addClauseNode (getColor 3 r) (d+1) >>=
                                              (addEdge' pid) >>=
                                              (parse f (d+1) ly)
-parse (A f)                       d ly pid = addClauseNode 7 (d+1) >>=
+parse (A f)                       d ly pid = addClauseNode 3 (d+1) >>=
                                              (addEdge' pid) >>=
                                              (parse f (d+1) ly)
 --
-parse (Box _ f)                   d ly pid = addClauseNode 2 (d+1) >>= 
+parse (Box (RelSymbol r) f)                   d ly pid = addClauseNode (getColor 0 r) (d+1) >>= 
                                           (addEdge' pid) >>= 
                                           (parse f (d+1) ly)
-parse (Neg (Box _ f))             d ly pid = addClauseNode 3 (d+1) >>= 
+parse (Neg (Box (RelSymbol r) f))             d ly pid = addClauseNode (getColor 1 r) (d+1) >>= 
                                           (addEdge' pid) >>= 
                                           (parse f (d+1) ly)
 parse (Prop (PropSymbol v))       d ly pid = addLiteralNode v (d*ly) pid
@@ -62,6 +62,11 @@ parse (f1 :|: f2)                 d ly pid = (sequence $ map parse' fList) >>=
 parse _ _ _ _= error "Formula not in CNF"                                                    
 
 
+getColor :: Int -> Int -> Int
+-- t: Type (Box, IBox, neg IBox, neg Box)
+-- r: The number of the relation
+-- [Top Clause, Literals, A, [...], [...], ...]
+getColor t r = 4 + ((r-1) * 4)  + t
 
 addTopClauseNode :: GraphState NodeId
 addTopClauseNode = addClauseNode 1 0
@@ -82,10 +87,10 @@ addLiteralNode lid d pid =
      case exist of
         Nothing   -> do nid1 <- nextNid
                         nid2 <- nextNid
-                        _ <- upColorCount 4 2 -- Changed by Giovanni, was 4 instead of 7, didn't do the trick :/
+                        _ <- upColorCount 2 2 -- Changed by Giovanni, was 4 instead of 7, didn't do the trick :/
                         s' <- get
-                        let (g1,n1) = addNode (graph s) nid1 d 4
-                        let (g2,n2) = addNode g1 nid2 d 4
+                        let (g1,n1) = addNode (graph s) nid1 d 2
+                        let (g2,n2) = addNode g1 nid2 d 2
                         let g3 = addEdge g2 nid1 nid2
                         let g4 = addEdge g3 pid nid1
                         let m1 = addLitMapping m d lid n1

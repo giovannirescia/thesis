@@ -36,8 +36,14 @@ where
                                 mapping = M.empty,
                                 colorCount = s}
         -- Enlarge the sequence
-        where s = S.fromList [0,0,0,0,0,0,0]
- 
+        -- Missing function to get the max N such as R_N belongs to one of [R_N],-[R_N],-[-R_N],[-R_N]
+        where s = createSeq 2 []
+
+ createSeq :: Int -> [Int] -> S.Seq Int
+ createSeq 0 xs = S.fromList ([0,0,0]++xs)
+ createSeq n xs = createSeq (n-1) (xs++[0,0,0,0])
+ -- initialize with createSeq <num of Relations> []
+
  addNode :: Graph -> NodeId -> Depth -> Color -> (Graph,Node)
  addNode  Empty nid d c        = let n = (N nid d c)
                                  in (Graph (n:[]) [], n)

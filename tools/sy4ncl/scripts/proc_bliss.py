@@ -77,6 +77,7 @@ def _process_stats(sts):
     #comp_time = float(re.search('(\d+\.\d+)', sts[0]).group(0))
     comp_time = 0
     (top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd) = map(int, re.search('\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\]',sts[1]).groups())
+        
     nodes = int(re.search('(\d+)', sts[2]).group(0))
     edges = int(re.search('(\d+)', sts[3]).group(0))
 
@@ -106,9 +107,9 @@ def get_stats(stats_file, map_file):
     
     raw_map = load_file(map_file)
     var_map = _process_var_mapping(raw_map)
-    nof_sp, gens, _ = _check_spurious_gens(var_map.keys(), stats[-1])
-    
-    stats[8] = stats[7] - nof_sp
+    nof_sp, gens, sp_gens = _check_spurious_gens(var_map.keys(), stats[-1])
+
+    stats[11] = stats[10] - nof_sp
     lit_gens = _translate_generators(gens, var_map)
     if len(lit_gens) > 0:
         fname = os.path.join(os.path.dirname(stats_file), ('%s.symm' % problem))
