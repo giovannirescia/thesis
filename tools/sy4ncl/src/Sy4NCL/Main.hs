@@ -8,9 +8,12 @@ import Sy4NCL.StatsWriter
 import Sy4NCL.MappingWriter
 import HyLo.Formula
 import HyLo.Signature.Simple 
+import HyLo.Signature
 import HyLo.InputFile 
 import Control.Monad.State
 import System.FilePath
+--import Debug.Trace
+import qualified Data.Set as Set
 
 runWithParams:: Params -> IO () 
 runWithParams params = 
@@ -50,9 +53,10 @@ runBuilder :: Params ->
               [Formula NomSymbol PropSymbol RelSymbol] -> 
               IO GraphInfo
 runBuilder p builder fs 
-        | (format p) == 1 = execStateT (builder p fs) (defaultGraphInfo 0)
-        | otherwise = execStateT (builder p fs) (defaultGraphInfo 0)
-
+        | (format p) == 1 = execStateT (builder p fs) (defaultGraphInfo 0 max_sig)
+        | otherwise = execStateT (builder p fs) (defaultGraphInfo 0 max_sig)
+  where max_sig = getMaxSignature fs
+     
 getStatsFilename :: Params -> String
 getStatsFilename p = dir </> f' 
         where f' = replaceExtension (takeFileName f) ".stats"
@@ -70,3 +74,10 @@ getGraphFilename p = dir </> f'
         where f' = replaceExtension (takeFileName f) ".bliss"
               f = filename p
               dir = outDir p
+
+getMaxSignature :: [Formula NomSymbol PropSymbol RelSymbol] -> (PropSymbol, RelSymbol)--(NomSymbol, PropSymbol, RelSymbol)
+getMaxSignature fs = (max_prop, max_rel)
+        where andified = foldr1 (:&:) fs
+              sig = getSignature andified
+              max_prop = Set.findMax $ propSymbols sig
+              max_rel = Set.findMax $ relSymbols sig

@@ -9,7 +9,7 @@ executable sy4ncl
   build-depends:   
                    base >= 4,
                    containers,
-                   hylolib,
+                   hylolib >= 1.5.3,
                    cmdargs,
                    mtl,
                    filepath,

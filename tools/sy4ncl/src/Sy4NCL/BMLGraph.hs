@@ -8,7 +8,6 @@ import HyLo.Formula
 import HyLo.Signature.Simple
 import Control.Monad.State
 import System.CPUTime( getCPUTime )
-import Debug.Trace (trace)
 
 buildGraph ::  Params ->
                [Formula NomSymbol PropSymbol RelSymbol] -> 
@@ -63,9 +62,10 @@ parse _ _ _ _= error "Formula not in CNF"
 
 
 getColor :: Int -> Int -> Int
--- t: Type (Box, IBox, neg IBox, neg Box)
+-- t: Type (Box, neg Box, IBox, neg IBox)
 -- r: The number of the relation
 -- [Top Clause, Literals, A, [...], [...], ...]
+-- Prefix + (r-1) * 4 + t
 getColor t r = 4 + ((r-1) * 4)  + t
 
 addTopClauseNode :: GraphState NodeId

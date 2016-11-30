@@ -4,7 +4,7 @@ where
  import qualified Data.Map as M
  import qualified Data.Sequence as S
  import Control.Monad.State
- --import Debug.Trace
+ import HyLo.Signature.Simple hiding (N)
  
  type NodeId = Int
  type Depth  = Int
@@ -29,20 +29,20 @@ where
  
  type GraphState a = StateT GraphInfo IO a
  
- defaultGraphInfo :: NodeId -> GraphInfo
- defaultGraphInfo startId = GraphInfo{ buildTime = 0,
+ defaultGraphInfo :: NodeId -> (PropSymbol, RelSymbol) -> GraphInfo
+ defaultGraphInfo startId max_sig = GraphInfo{ buildTime = 0,
                                 lastNid = startId,
                                 graph = Empty,
                                 mapping = M.empty,
                                 colorCount = s}
-        -- Enlarge the sequence
-        -- Missing function to get the max N such as R_N belongs to one of [R_N],-[R_N],-[-R_N],[-R_N]
-        where s = createSeq 2 []
+        where (PropSymbol _, RelSymbol max_rel) = max_sig
+              colors = 3 + (4 * max_rel)
+              s = S.replicate colors 0
 
- createSeq :: Int -> [Int] -> S.Seq Int
- createSeq 0 xs = S.fromList ([0,0,0]++xs)
- createSeq n xs = createSeq (n-1) (xs++[0,0,0,0])
- -- initialize with createSeq <num of Relations> []
+ -- createSeq :: Int -> [Int] -> S.Seq Int
+ -- createSeq 0 xs = S.fromList ([0,0,0]++xs)
+ -- createSeq n xs = createSeq (n-1) (xs++[0,0,0,0])
+ -- -- initialize with createSeq <num of Relations> []
 
  addNode :: Graph -> NodeId -> Depth -> Color -> (Graph,Node)
  addNode  Empty nid d c        = let n = (N nid d c)
@@ -58,15 +58,13 @@ where
  nextNid = do s <- get
               let i = (lastNid s) + 1
               put s { lastNid = i  } 
---              s' <- get
               return i
-              --trace ("state:" ++ show s ++ "\nstate2:" ++ show s' ++"\n nid:" ++show i ++"\n") $ 
+
  upColorCount :: Color -> Int -> GraphState NodeId
  upColorCount c n = do s <- get
                        let count = (colorCount s)
                        let !i =  (c-1)
                        let !val = (S.index count i) + n
---                       let !val = (count!!(c-1)) + n
                        let !count' = S.update i val count
                        put s { colorCount = count'  } 
                        return val
