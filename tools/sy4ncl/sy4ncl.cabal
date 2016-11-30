@@ -8,7 +8,7 @@ executable sy4ncl
   hs-source-dirs:  src
   build-depends:   
                    base >= 4,
-                   containers,
+                   containers == 0.5.7.1,
                    hylolib >= 1.5.3,
                    cmdargs,
                    mtl,
