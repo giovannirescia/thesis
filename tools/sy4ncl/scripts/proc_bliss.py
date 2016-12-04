@@ -3,7 +3,7 @@ import os
 import sys
 import datetime
 #import time
-
+import numpy as np
 
 def load_file(f):
     with open(f) as f:
@@ -76,8 +76,15 @@ def dump_symm_file(filename, gens):
 def _process_stats(sts):
     #comp_time = float(re.search('(\d+\.\d+)', sts[0]).group(0))
     comp_time = 0
-    (top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd) = map(int, re.search('\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\]',sts[1]).groups())
-        
+#    (top_nd, lits_nd, a_nd, box_nd, negb_nd, ibox_nd, negibox_nd) = map(int, re.search('\[(\d+),(\d+),(\d+),(\d+),(\d+),(\d+),(\d+)\]',sts[1]).groups())
+    cc = eval(sts[1].split(':')[1])
+    
+    top_nd, lits_nd, a_nd = cc[0], cc[1], cc[2]
+    xs = cc[3:]
+    xs = [xs[i+3*i:i+4+3*i] for i in range(0, len(xs) // 4)]
+    ys = np.array(xs)
+    box_nd, negb_nd, ibox_nd, negibox_nd, n_rels = sum(ys[:,0]),sum(ys[:,1]),sum(ys[:,2]),sum(ys[:,3]), sum(sum(ys))
+
     nodes = int(re.search('(\d+)', sts[2]).group(0))
     edges = int(re.search('(\d+)', sts[3]).group(0))
 
@@ -95,21 +102,22 @@ def _process_stats(sts):
             aut_size = -1
         aut_time = float(re.search('(\d+\.\d+)', sts[-1]).group(0))
     
-        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd, aut_size, nof_gens, 0, comp_time, aut_time, (comp_time + aut_time),  gens]
+        return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd, n_rels, aut_size, nof_gens, 0, comp_time, aut_time, (comp_time + aut_time),  gens]
     else:
         return  [nodes, edges, top_nd, box_nd, negb_nd, lits_nd, ibox_nd, negibox_nd, a_nd, -1, -1, 0, comp_time, -1, -1,  []]
     
 def get_stats(stats_file, map_file):
     problem = os.path.splitext(os.path.basename(stats_file))[0]
-    
     raw_stats = load_file(stats_file)
+
+
     stats = _process_stats(raw_stats)
-    
+
     raw_map = load_file(map_file)
     var_map = _process_var_mapping(raw_map)
     nof_sp, gens, sp_gens = _check_spurious_gens(var_map.keys(), stats[-1])
 
-    stats[11] = stats[10] - nof_sp
+    stats[12] = stats[11] - nof_sp
     lit_gens = _translate_generators(gens, var_map)
     if len(lit_gens) > 0:
         fname = os.path.join(os.path.dirname(stats_file), ('%s.symm' % problem))
@@ -120,6 +128,7 @@ folder = None
 if len(sys.argv) > 1:
     stats_file = sys.argv[1]
     map_file = sys.argv[2]
+        
 else:
     print 'No file specified. '
     exit(0)

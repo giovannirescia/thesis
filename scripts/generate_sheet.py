@@ -18,7 +18,7 @@ s_t = s[1]
 b_t = b[1]
 bp_t = bp[1]
 m_t = m[1]
-g = gen[11]
+g = gen[12].astype(int)
 h = ["To KCNF", "Sy5ncl", "Bliss", "Bliss proc", "Mappings", "Generators", "Total time"]
 
 tt = sum(list(map(lambda x: x.values, [k_t, s_t, b_t, bp_t, m_t, dl2ml_t])))

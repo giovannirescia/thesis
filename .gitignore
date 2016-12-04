@@ -19,4 +19,3 @@ output-log/*
 **/bliss-*
 **~
 data/*.owl
-*.pdf
