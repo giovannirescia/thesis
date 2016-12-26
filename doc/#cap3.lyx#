@@ -1,0 +1,321 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass classicthesis
+\begin_preamble
+\usepackage[spanish,es-lcroman,es-tabla]{babel}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Simetrías en Ontologías
+\end_layout
+
+\begin_layout Standard
+Ahora que sabemos que los modelos de Lógica Modal son los 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename gfx/img1.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+La versión abstracta - dl2ml
+\end_layout
+
+\begin_layout Standard
+In the eagerness of finding symmetries on Description Logics (
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+), a set of tools for finding symmetries in Modal Logics (
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+) are to be used.
+ But first, a bridge between the two logis needs to be build: the translations
+ are the approach to build such bridge.
+\end_layout
+
+\begin_layout Section*
+Translations
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+be a relation and 
+\begin_inset Formula $\mathcal{C}_{i}$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+a concept.
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+\size larger
+\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}\rightarrow\mathcal{F_{ML}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\,$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})\doteq\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})\doteq[\mathcal{R}]\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}\,hasValue\,\mathcal{C})\doteq[\mathcal{R}]\Psi(\mathcal{C})\land\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}^{-}someValuesFrom\,\mathcal{C})\doteq\langle\mathcal{R}^{-}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\doteq\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})\doteq\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2})\doteq\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})\doteq\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}\,ObjectDomain\,\mathcal{C})\doteq\forall(\langle\mathcal{R}\rangle\top\implies\Psi(\mathcal{C}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{R}\,ObjectRange\,\mathcal{C})\doteq\forall(\langle\mathcal{R}^{-}\rangle\top\implies\Psi(\mathcal{C}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(functional\,\mathcal{R})\doteq\forall(\langle\mathcal{R}\rangle\top\implies[\mathcal{R}]\top)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(inverseFunctional\,\mathcal{R})\doteq\forall(\langle\mathcal{R}^{-}\rangle\top\implies[\mathcal{R}^{-}]\top)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})\doteq\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(Complement\,\mathcal{C})\doteq\neg\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(Cardinality\,type\,\mathcal{N}\,\mathcal{C})\doteq\langle str(type\mathcal{NC})\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
