@@ -102,6 +102,18 @@ La arquitectura del sistema a granularidad baja es como sigue:
 \end_layout
 
 \begin_layout Section
+Ontologías
+\end_layout
+
+\begin_layout Standard
+Habiendo dado ya una formalización de las lógicas de descripción y de cómo
+ construir sus fórmulas, ya contamos con las herramientas para poder definir
+ algún sistema de interés.
+ Y una ontología es una especificación explícita de dicho sistema o conceptualiz
+ación (http://www.obitko.com/tutorials/ontologies-semantic-web/ontologies.html)
+\end_layout
+
+\begin_layout Section
 La versión abstracta - dl2ml
 \end_layout
 

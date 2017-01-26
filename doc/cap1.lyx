@@ -149,8 +149,9 @@ partir sobre un eje
 , y repite el mismo patrón, aunque quizá con direcciones diferentes, en
  ambas partes.
  En la resolución de problemas matemáticos es muy usual recurrir a las simetrías
- en términos de razonamiento, ya que se puede analizar un caso en detalle
- y dicho análsis sería igual para sus pares simétricos.
+ en términos de razonamiento, ya que, si el problema es simétrico, se puede
+ analizar un caso en detalle y dicho análsis sería igual para sus pares
+ simétricos.
 \end_layout
 
 \begin_layout Standard
@@ -184,8 +185,8 @@ bases de conocimiento
 .
  Y como en cualquier base de datos, el objetivo es poder hacer consultas
  y obtener de la manera más rápida posible, una respuesta correcta.
- Nos concetraremos en buscar métodos para agilizar en cómo se realizan las
- consultas a nuestra base de conocimientos.
+ Nos concetraremos en buscar métodos para agilizar la forma en que se realizan
+ las consultas a nuestra base de conocimientos.
  Más concretamente estos métodos tienen como objetivo encontrar simetrías
  en la base de datos, por lo que si, por ejemplo, queremos hacer una pregunta
  sobre algún concepto muy 
@@ -204,12 +205,11 @@ A
 \emph on
 B
 \emph default
-, que es un concepto mucho más simple, entonces podremos hacer nuestra consulta
- sobre 
+, y ya que conocemos la respuesta para 
 \emph on
 B
 \emph default
-.
+, entonces podemos reutilizar dicha respuesta.
 \end_layout
 
 \begin_layout Standard
