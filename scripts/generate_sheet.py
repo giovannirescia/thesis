@@ -19,7 +19,7 @@ b_t = b[1]
 bp_t = bp[1]
 m_t = m[1]
 g = gen[12].astype(int)
-h = ["To KCNF", "Sy5ncl", "Bliss", "Bliss proc", "Mappings", "Generators", "Total time"]
+h = ["To KCNF", "Sy4ncl", "Bliss", "Bliss proc", "Mappings", "Generators", "Total time"]
 
 tt = sum(list(map(lambda x: x.values, [k_t, s_t, b_t, bp_t, m_t, dl2ml_t])))
 
@@ -30,6 +30,7 @@ df = pd.DataFrame({h[0]:k_t,
                    h[3]:bp_t,
                    h[4]:m_t,
                    h[6]:tt})
+
 df = df[h]
 df = pd.concat([al, df], axis=1)
 df = df.sort_values(by=["Generators"], ascending=False)
