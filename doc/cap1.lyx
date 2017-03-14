@@ -150,7 +150,7 @@ partir sobre un eje
  ambas partes.
  En la resolución de problemas matemáticos es muy usual recurrir a las simetrías
  en términos de razonamiento, ya que, si el problema es simétrico, se puede
- analizar un caso en detalle y dicho análsis sería igual para sus pares
+ analizar un caso en detalle y dicho análsis sería similar para sus pares
  simétricos.
 \end_layout
 
@@ -164,12 +164,14 @@ Esto se lo robé a Ezequiel
 
 \end_inset
 
-En el contexto de razonamiento automático, se puede definir como simetría
- de una fórmula a una permutación de sus variables (literales) que mantenga
- su estructura y sus modelos.
- De esta manera, si somos capaces de demostrar que una fórmula tiene simetrías,
- podemos guiar al algoritmo de búsqueda para que solo busque soluciones
- en las partes no simétricas del espacio de búsqueda.
+La noción de simetría se ha utilizado también en el área de razonamiento
+ automático.
+ En este contexto, por ejemplo, se define la simetría de una fórmula de
+ lógica proposicional como una permutación de sus variables (también llamadas,
+ literales) que mantenga su estructura y sus modelos.
+ Si somos capaces de demostrar que una fórmula tiene simetrías, podemos
+ guiar al algoritmo de búsqueda para que solo busque soluciones en las partes
+ no simétricas del espacio de búsqueda.
 \end_layout
 
 \begin_layout Section
@@ -177,8 +179,17 @@ Qué vamos a hacer en esta tesis
 \end_layout
 
 \begin_layout Standard
-En esta tesis vamos a trabajar con un tipo de base de datos muy particulares,
- llamadas 
+Mencionamos el concepto de simetría, pero no mencionamos cuál será el espacio
+ de acción o dónde serán aplicadas.
+ Sin entrar en demasiado detalle ahora, pues luego dedicaremos secciones
+ completas, las fórmulas a las cuales le buscaremos las simetrías, son fórmulas
+ de una lógica llamada 
+\emph on
+Lógica de Descripción.
+
+\emph default
+ Éstas lógicas son muy útiles a la hora de construir cierto tipo particular
+ de bases de datos, llamadas 
 \emph on
 bases de conocimiento
 \emph default

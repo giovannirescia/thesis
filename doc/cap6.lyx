@@ -6,7 +6,7 @@
 \origin unavailable
 \textclass classicthesis
 \begin_preamble
-\usepackage[spanish,es-lcroman,es-tabla]{babel}
+\usepackage[spanish, es-lcroman]{babel}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
@@ -75,26 +75,1243 @@
 \begin_body
 
 \begin_layout Chapter
-Conclusiones & Trabajo Futuro [3 hojas] 
+Análisis de Simetrias en Ontologias Existentes [5 hojas]
+\end_layout
+
+\begin_layout Standard
+A continuación describiremos las ontologías con las que hemos trabajado,
+ así como también presentaremos un análisis de los resultados.
 \end_layout
 
 \begin_layout Section
-resumen de lo hecho (dar los limites del trabajo)
+Descripción de las ontologías utilizadas
 \end_layout
 
-\begin_layout Section
+\begin_layout Itemize
+National Cancer Institute Thesaurus
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Acrónimo: NCIT
+\end_layout
+
+\begin_layout Itemize
+Ontología: 9d-new (CAMBIAR)
+\end_layout
+
+\begin_layout Itemize
+Descripción: un vocabulario para la atención clínica, actividades administrativa
+s, información pública e investigación básica.
+\end_layout
+
+\begin_layout Itemize
+URL: https://bioportal.bioontology.org/ontologies/NCIT
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 9.9
+\end_layout
+
+\begin_layout Itemize
+Cantidad de axiomas: 74773
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 46940
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Tipos de axiomas traducidos: SubClassOf, ObjectPropertyDomain, ObjectPropertyRan
+ge.
+ (ALC)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Uberon
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: uberon.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: es una ontología de anatomía para representar partes del cuerpo,
+ órganos y tejidos de varias especies de animales, con un foco en los vertebrado
+s.
+\end_layout
+
+\begin_layout Itemize
+URL: http://uberon.github.io
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 40.6
+\end_layout
+
+\begin_layout Itemize
+Cantidad de axiomas: 133573 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 25683 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Tipos de axiomas traducidos: SubClassOf, EquivalentClasses, DisjointClasses.
+ (ALC)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+DOLCE
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: dolce.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: DOLCE (
+\emph on
+Descriptive Ontology for Linguistic and Cognitive Engineering
+\emph default
+) es el primer módulo de la 
+\emph on
+WonderWeb Foundational Ontologies Library 
+\emph default
+(WFOL).
+\end_layout
+
+\begin_layout Itemize
+URL: http://www.loa.istc.cnr.it/old/DOLCE.html
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 0.23
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 1828 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 780 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 2
+\end_layout
+
+\begin_layout Itemize
+Tipos de axiomas traducidos: ObjectPropertyRange InverseFunctionalObjectProperty
+ FunctionalObjectProperty SubClassOf ObjectPropertyDomain DisjointClasses
+ EquivalentClasses.
+ (ALCF)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GALEN
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: galen.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: es una base de conocimiento de tipo biomédico.
+\end_layout
+
+\begin_layout Itemize
+URL: https://bioportal.bioontology.org/ontologies/GALEN
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 1.46
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 7364 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 4069 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Expresividad: (Horn-)SHIF
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+FBbt XP
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: fbbt_xp.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: Una ontología que representa la anatomía bruta de Drosophila
+ melanogaster.
+ 
+\end_layout
+
+\begin_layout Itemize
+URL: http://www.obofoundry.org/
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 12.3
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 126585 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 16014 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 22079 
+\end_layout
+
+\begin_layout Itemize
+Expresividad: SHI
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CTON
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: cton.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: Ontología de tipos de células.
+\end_layout
+
+\begin_layout Itemize
+URL: http://www.gong.manchester.ac.uk/CTON.html
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 20
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 144210 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 33160 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Expresividad: SubClassOf, EquivalentClasses, FunctionalObjectProperty, DisjointC
+lasses.
+ ALCF
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Family
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: family_example.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: ontología utilizada para varios tutoriales, ya que se trata
+ de una estructura intuitiva.
+\end_layout
+
+\begin_layout Itemize
+URL: https://wiki.csc.calpoly.edu/OntologyTutorial/wiki/IntroductionToOntologiesWit
+hProtege
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 0.017
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 92
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 20
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 43
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ObjectPropertyRange, FunctionalObjectProperty, SubClassOf,
+ ObjectPropertyDomain, EquivalentClasses.
+ (ALCF)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+LUBM
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: lubm_4.owl (CAMBIAR)
+\end_layout
+
+\begin_layout Itemize
+Descripción: ontología artificial para medir el desempeño de razonadores
+ OWL.
+\end_layout
+
+\begin_layout Itemize
+Más información: http://ceur-ws.org/Vol-1014/paper_59.pdf
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 32.1
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 478027 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 85 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 477784 
+\end_layout
+
+\begin_layout Itemize
+Expresividad: SubClassOf, EquivalentClasses, ObjectPropertyDomain, ObjectPropert
+yRange.
+ ALC.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GINA
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: gina.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: generada a partir de las guías de la iniciativa global sobre
+ el asma.
+\end_layout
+
+\begin_layout Itemize
+URL: http://pszwed.ia.agh.edu.pl/ontologies/
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 38.7
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 104012 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 86025 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ALC.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+GO
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: go.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: el proyecto 
+\emph on
+Gene
+\emph default
+ 
+\emph on
+Ontology
+\emph default
+ provee vocabularios controlados sobre términos definidos representando
+ propiedades sobre productos de genes.
+ 
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 166.4
+\end_layout
+
+\begin_layout Itemize
+URL: http://www.geneontology.org/
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 565615 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 104783 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 0
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ALC
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+ModLUBM
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: modlubm_4.owl (CAMBIAR)
+\end_layout
+
+\begin_layout Itemize
+Descripción: una versión modificada de la ontología LUBM.
+\end_layout
+
+\begin_layout Itemize
+Más información: http://www.ghxiao.org/publications/2014-phd-thesis-Xiao-inline-ev
+aluation.pdf
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 32.2
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 478037 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 90
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 477784 
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ALC.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pizza
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: pizza.owl
+\end_layout
+
+\begin_layout Itemize
+Descripción: otra ontología de 
 \begin_inset Quotes eld
 \end_inset
 
-opiniones
+juguete
 \begin_inset Quotes erd
+\end_inset
+
+ que se utiliza mucho en tutoriales.
+\end_layout
+
+\begin_layout Itemize
+Más información: http://protegewiki.stanford.edu/wiki/Pr4_UG_ex_Pizza
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 0.092
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 940 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 692 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 11
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ObjectPropertyRange, InverseFunctionalObjectProperty, FunctionalOb
+jectProperty, SubClassOf, ObjectPropertyDomain, DisjointClasses, EquivalentClass
+es.
+ (ALCF)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+VICODI
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: vicodi_4.owl (CAMBIAR)
+\end_layout
+
+\begin_layout Itemize
+Descripción: ontología creada para mejorar la comprensión del contenido
+ digital de Internet.
+\end_layout
+
+\begin_layout Itemize
+URL: http://www.vicodi.org/about.htm
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 16
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 268692 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 213 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 268265 
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ObjectPropertyDomain, SubClassOf, ObjectPropertyRange.
+ ALC
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Wine
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ontología: wine_10.owl (CAMBIAR)
+\end_layout
+
+\begin_layout Itemize
+Descripción: una ontología para describir tipos y dominios de vinos, utilizada
+ también para ejemplos y tutoriales.
+\end_layout
+
+\begin_layout Itemize
+Más información: http://slidewiki.org/slide/24832
+\end_layout
+
+\begin_layout Itemize
+Tamaño (MB): 8.67
+\end_layout
+
+\begin_layout Itemize
+Cantidad de Axiomas: 178209 
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la TBox: 209
+\end_layout
+
+\begin_layout Itemize
+Axiomas en la ABox: 177834 
+\end_layout
+
+\begin_layout Itemize
+Expresividad: ObjectPropertyRange, FunctionalObjectProperty, SubClassOf,
+ ObjectPropertyDomain, DisjointClasses, EquivalentClasses.
+ ALCF
+\end_layout
+
+\end_deeper
+\begin_layout Section
+tabla de datos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="5">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ontología
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Carga segundos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Axiomas tr.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Trad.
+ seg.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generadores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ged_p2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.9 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50488
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18180
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9d_new
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8.5 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+46940
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10218
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+go
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+104783
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8496
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+termdb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30374
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6316
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+protege
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+36205
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5222
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+module
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22543
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3184
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cton
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33160
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2278
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+gina
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+80150
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1932
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fbbt_xp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1452
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uberon
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25683
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+818
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+galen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4069
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+754
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados de las primeras 10 ontologías con más generadores
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Resultados
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:manana"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Section
-qué más se puede hacer a partir de acá
+análisis de datos
+\end_layout
+
+\begin_layout Section
+conclusión: anda
 \end_layout
 
 \end_body

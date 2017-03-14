@@ -117,7 +117,7 @@ mejor
 \emph default
  conocimiento puede llegar a ser más importante que contar con mejores algoritmo
 s.
- Para contar con sistema verdaderamente inteligentes, el conocimiento necesita
+ Para contar con sistemas verdaderamente inteligentes, el conocimiento necesita
  ser capturado, procesado, reusado y comunicado.
  Las ontologías dan soporte a todas estas tareas.
 \end_layout
@@ -246,7 +246,7 @@ La Ontología, vista como
 \emph on
 ciencia
 \emph default
-, es una rama de la filosofía que lidia la naturaleza y la organización
+, es una rama de la filosofía que lidia con la naturaleza y la organización
  de la realidad.
  Intenta poder responder cosas como 
 \emph on
@@ -254,12 +254,12 @@ qué es la existencia
 \emph default
 , 
 \emph on
-cuáles son las propiedades pueden explicar la existencia
+cuáles son las propiedades que pueden explicar la existencia
 \emph default
 , etc.
  Aristóteles definió
 \begin_inset Note Comment
-status open
+status collapsed
 
 \begin_layout Plain Layout
 FALTA LA CITA
@@ -368,9 +368,9 @@ Qué es una Ontología
 \end_layout
 
 \begin_layout Standard
-Aunque la necesidad por contar con una definición formal de lo que es una
- ontología, todavía no hay una definición en común para dicho término, tal
- como sucede con el término 
+Aunque existe la necesidad por contar con una definición formal de lo que
+ es una ontología, todavía no hay una definición en común para dicho término,
+ tal como sucede con el término 
 \emph on
 computabilidad efectiva
 \emph default
@@ -622,7 +622,7 @@ B
 
 \begin_layout Standard
 De todas maneras, las ontologías no deben ser limitadas a jerarquías de
- taxonomías de clases ni a definiciones que solo introducen terminilogías
+ taxonomías de clases ni a definiciones que solo introducen terminologías
  y que no aportan ningún tipo de conocimiento acerca de ese mundo.
  Para especificar una conceptualización, los axiomas que restringen las
  posibles interpretaciones para los términos definidos, también pueden llegar
@@ -725,8 +725,8 @@ Las ontologías, si son utilizadas para procesamiento automático en computadora
  Hay varios lenguajes para expresar ontologías de manera formal, revisaremos
  algunos de ellos a continuación.
  Estos lenguajes proveen métodos para expresar una ontología particular,
- y por lo general, también pueden utilzarse para expresar conocimiento base
- basado en la ontología.
+ y por lo general, también pueden utilizarse para expresar conocimiento
+ base basado en la ontología.
 \end_layout
 
 \begin_layout Standard
@@ -741,9 +741,9 @@ reference "fig:Levels-of-expressivity"
 .
  En la parte derecha de la escala hay términos catalogados utilizados para
  expresar conocimiento o información.
- Estos términos pueden no con descripción alguna, y son comprendidos solo
- porque fueron elegidos del lenguaje natural, y su significado puede ser
- solo estimado.
+ Estos términos pueden no contar con descripción alguna, y son comprendidos
+ solo porque fueron elegidos del lenguaje natural, y su significado puede
+ ser solo estimado.
  La descripción de cada término en lenguaje natural es mejor, especialmente
  si hay relaciones expresadas entre tales términos, como 
 \emph on
@@ -1053,7 +1053,7 @@ name "fig:Web-Semántica"
 \end_layout
 
 \begin_layout Standard
-La primer cada del sistema, 
+La primer capa del sistema, 
 \emph on
 URI
 \emph default
@@ -1106,7 +1106,7 @@ XML schema
 \end_layout
 
 \begin_layout Standard
-Un formato de representación de la información básico para la web semántica
+Un formato básico de representación de la información para la web semántica
  es 
 \emph on
 RDF
@@ -1132,8 +1132,8 @@ que conforma el grafo de datos.
 \end_layout
 
 \begin_layout Standard
-Cualquiera puede un vocabulario de términos utilizados para descripciones
- más detalladas.
+Cualquiera puede definir un vocabulario de términos utilizados para descripcione
+s más detalladas.
  Para permitir descripciones estandarizadas de taxonomías y otros constructores
  
 \emph on
@@ -1148,8 +1148,8 @@ Esquema RDF
 RDFS
 \emph default
 ) fue creado junto a su semántica formal dentro de RDF.
- RDFS pueden ser utilizados para describir taxonomías de clases y propiedades
- y así crear ontologías pequeñas.
+ Los RDFS pueden ser utilizados para describir taxonomías de clases y propiedade
+s y así crear ontologías pequeñas.
 \end_layout
 
 \begin_layout Standard
@@ -4174,845 +4174,6 @@ name "tab:Axiomas-y-hechos-2"
 \begin_layout Plain Layout
 
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-De 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- hacia 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Luego de muchas definiciones y desarrollo teórcico en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, ya contamos con todos los ingredientes que necesitamos para poder hacer
- una traducción correcta de fórmulas en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- a fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the eagerness of finding symmetries on Description Logics (
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-), a set of tools for finding symmetries in Modal Logics (
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-) are to be used.
- But first, a bridge between the two logis needs to be build: the translations
- are the approach to build such bridge.
-\end_layout
-
-\begin_layout Subsection
-Función de traducción 
-\begin_inset Formula $\Psi$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Trabajaremos con la sintaxis de OWL para definir nuetra función.
- Sea 
-\begin_inset Formula $\mathcal{R}$
-\end_inset
-
- una propiedad y 
-\begin_inset Formula $\mathcal{C},\mathcal{C}_{1}\,y\,\mathcal{C}_{2}$
-\end_inset
-
- clases, sea 
-\begin_inset Formula $\mathcal{F_{DL}}$
-\end_inset
-
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y 
-\begin_inset Formula $\mathcal{F_{ML}}$
-\end_inset
-
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, definamos 
-\begin_inset Formula $\Psi$
-\end_inset
-
- recursivamente de la siguiente manera:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="18" columns="3">
-<features tabularvalignment="middle">
-<column alignment="right" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top">
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size larger
-\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\rightarrow$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{F_{ML}}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\Psi(\mathcal{R}\,hasValue\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})\land\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\Psi(\mathcal{R}^{-}someValuesFrom\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}^{-}\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,ObjectDomain\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies\Psi(\mathcal{C}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,ObjectRange\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies\Psi(\mathcal{C}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(functional\,\mathcal{R})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies[\mathcal{R}]\top)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(inverseFunctional\,\mathcal{R})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies[\mathcal{R}^{-}]\top)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(Complement\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\neg\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(Cardinality\,type\,\mathcal{N}\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle str(type\mathcal{NC})\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
 
 \end_inset
 

@@ -89,26 +89,26 @@ Lógicas de Descripción
 \end_layout
 
 \begin_layout Standard
-Como sabemos la lógica de primer orden
+La lógica de primer orden 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "FOL"
 
 \end_inset
 
- es una lógica en la cual la satisfacibilidad es indecidible, cuando no
- se aplica ninguna restricción.
+ es una lógica en la cual, si no se le aplica ninguna restricción, la satisfacib
+ilidad es indecidible.
  Las lógicas de descripción son fragmentos decidibles de la lógica de primer
  orden.
 \end_layout
 
 \begin_layout Standard
-Más precisamente, las lógicas de descripción son una familia de la formalización
- de la Representación de Conocimiento basado en lógica.
+Más precisamente, cuando se busca representar formalmente conocimiento a
+ través de la lógica, las lógicas de descripción son la herramienta adecuada.
  La investigación en el área de la representación y razonamiento de conocimiento
-, es dirigida en métodos que sean capaces de proveer descripciones de alto
- nivel del mundo, que puedan ser usadas eficazmente para construir aplicaciones
- inteligentes.
+, está enfocada en el desarrollo de métodos que sean capaces de proveer
+ descripciones de alto nivel del mundo, que puedan ser usadas eficazmente
+ para construir aplicaciones inteligentes.
  En este contexto, nos referimos a un sistema 
 \begin_inset Quotes eld
 \end_inset
@@ -117,18 +117,18 @@ inteligente
 \begin_inset Quotes erd
 \end_inset
 
- a la habilidad que tiene un sistema para encontrar consecuencias implícitas
- en base a su conocimiento represantado de forma explícita.
+ a aquel que tiene la capacidad de encontrar consecuencias implícitas en
+ base a su conocimiento representado de forma explícita.
  Tales sistemas son caracterizados como sistemas basados en conocimiento.
  
 \end_layout
 
 \begin_layout Standard
 Distintos abordajes para la representación del conocimiento se desarrollaron
- en los años setenta, y son clasificados en dos categorías: formalismos
- basados en lógica (que nacen la intuición que el cálculo de predicados
+ en los años setenta, y pueden ser clasificados en dos categorías: formalismos
+ basados en lógica (que nacen de la intuición que el cálculo de predicados
  puede usarse de forma objetiva para capturar hechos del mundo), y por otro
- lado, representaciones que no son basados en la lógica.
+ lado, representaciones que no son basadas en la lógica.
  Entre los sistemas más populares que no son basados en lógica encontramos
  dos: las 
 \emph on
@@ -136,7 +136,7 @@ redes semánticas
 \emph default
  y 
 \emph on
-estructuras (frames)
+las estructuras (frames)
 \emph default
 .
  En las redes semánticas 
@@ -149,7 +149,7 @@ key "Quillian"
  el conocimiento se representa en la forma de un grafo dirigido con etiquetas:
  cada nodo es asociado con un concepto y los arcos representan relaciones
  de algún tipo entre conceptos.
- En el caso de las estructuras
+ En el caso de las estructuras 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Minsky"
@@ -166,8 +166,8 @@ strings
 \emph default
 ) o identificadores de otras estructuras.
  Si bien las redes semánticas y las estructuras contienen diferencias muy
- marcadas, tanto como en las motivaciones como en sus prestaciones, comparten
- una base común.
+ marcadas, tanto en las motivaciones que llevaron a su desarrollo como en
+ sus prestaciones, comparten una base común.
  De hecho, nos podemos referir a ambas como estructuras de red, donde la
  estructura de cada red apunta a representar conjuntos de individuos y cómo
  éstos se relacionan entre sí.
@@ -206,8 +206,8 @@ es-un/una
 \end_inset
 
 ).
- La relación IS-A define una jerarquía entre los conceptos que conecta,
- como también la herencia de atributos: si un concepto 
+ La relación IS-A define una jerarquía entre los conceptos que implica la
+ herencia de atributos: si un concepto 
 \emph on
 A
 \emph default
@@ -227,26 +227,33 @@ B
  Por ejemplo, si decimos que los carnívoros tienen órganos para capturar
  a su presa, entonces los félidos también cuentan con dichos órganos.
  Un atributo característico de las Lógicas de Descripción es poder representar
- otros tipos de relaciones que siguen siendo válidas entre conceptos, más
- allá de las relaciones IS-A.
- Por ejemplo, el concepto Carnívoro cuenta con la propiedad (también llamada
- 
-\emph on
-rol
-\emph default
-) expresada conectando al concepto con el nodo para el rol llamado 
+ otros tipos de relaciones entre conceptos, más allá de las relaciones IS-A,
+ veremos tales características más adelante, por ahora nos enfocaremos en
+ los sistemas basados en estructuras.
+ Siguiendo con el ejemplo de la red 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Red-simple"
+
+\end_inset
+
+, vemos que el concepto Carnívoro está conectado con el nodo 
 \emph on
 seAlimentaDe
 \emph default
+, el cual es una propiedad, o también llamado, 
+\emph on
+rol
+\emph default
 .
- Este rol cuenta con una 
+ Éste cuenta con una 
 \emph on
 restrición de valor
 \emph default
 , denotado por la etiqueta r/v, que expresa una limitación en el rango de
  tipos de objetos que pueden relacionarse con el rol.
- Nuestro rol tiene una restricción en cuanto a la cardinalidad, expresada
- como (
+ En nuestro ejemplo, el rol tiene una restricción en cuanto a la cardinalidad,
+ expresada como (
 \begin_inset Formula $0$
 \end_inset
 
@@ -258,7 +265,11 @@ restrición de valor
 \begin_inset Quotes eld
 \end_inset
 
-un carnívoro es un animal que ha comido otros animales
+un carnívoro es un animal que come (
+\begin_inset Formula $0$
+\end_inset
+
+ o más) animales
 \begin_inset Quotes erd
 \end_inset
 
@@ -270,7 +281,7 @@ un carnívoro es un animal que ha comido otros animales
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -320,10 +331,10 @@ Un detalle importante en estas estructuras son las relaciones implícitas
 \end_layout
 
 \begin_layout Standard
-Sin embargo, a medida que las relaciones entre los conceptos se vuelve más
- compleja, aumenta la dificultad para dar caracterizaciones precisas sobre
- qué tipos de relaciones pueden ser computadas, y para garantizar su correctitud
- y completitud.
+Sin embargo, a medida que las relaciones entre los conceptos se vuelven
+ más complejas, aumenta la dificultad para dar caracterizaciones precisas
+ sobre qué tipos de relaciones pueden ser computadas, y para garantizar
+ su correctitud y completitud.
 \end_layout
 
 \begin_layout Standard
@@ -336,26 +347,26 @@ Usando las ideas que hemos visto hasta el momento, varios sistemas fueron
  simplemente definiendo un lenguaje para los elementos de la estructura
  (sintaxis) y proveyendo una interpretación para estos símbolos (semántica).
  Si bien la sintaxis puede variar bajo ciertos aspectos (dominio del problema,
- filosofía, etc), la semántica suele estar data por estilos de semántica
- de Tarski.
+ filosofía, etc), la semántica suele estar dada en términos de modelos.
+ Una Lógica de Descripción es esta caracterización de sintaxis y semántica
+ de una red, describiremos dicha caracterización con precisión luego en
+ este mismo capítulo.
 \end_layout
 
 \begin_layout Standard
-Para la sintaxis introducimos un lenguaje abstracto, bastante parecido a
- algún formalismo básico.
- La construcción básica se da a partir de dos alfabetos disjuntos que son
- utilizados para denotar 
+Para la sintaxis se introdujo un lenguaje abstracto, definida a partir de
+ dos alfabetos disjuntos que son utilizados para denotar 
 \emph on
 conceptos atómicos
 \emph default
- (símbolos unarios de predicados) y 
+ (símbolos unarios de predicado) y 
 \emph on
 roles atómicos
 \emph default
-, designados por símbolos de predicados binarios (utilizados para expresar
- relaciones entre los conceptos).
- Los términos, o fórmulas, son luego formados a partir de los símbolos básicos
- usando distintos constructores.
+ de predicado (símbolos binarios) utilizados para expresar relaciones entre
+ los conceptos.
+ Las fórmulas se construyen a partir de los símbolos básicos usando distintos
+ operadores.
  Por ejemplo, la 
 \emph on
 intersección de conceptos
@@ -377,9 +388,13 @@ D
 \end_layout
 
 \begin_layout Standard
-Las características fundamentales de las Lógicas de Descripción reside en
- las construcciones que permiten establecer relaciones entre los conceptos.
- Los más básicos son las 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Las características fundamentales de las Lógicas de Descripción residen
+ en las construcciones que permiten establecer relaciones entre los conceptos.
+ Las más básicas son las 
 \emph on
 restricciones sobre valores
 \emph default
@@ -409,11 +424,15 @@ C
 ).
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 Con respecto a la semántica, básicamente los conceptos tienen interpretaciones
- de conjuntos teóricos: un concepto es interpretado como un conjunto de
- individuos (elementos de ese conjunto) y los roles son interpretados como
- conjuntos de pares de individuos.
+ de conjuntos: un concepto es interpretado como un conjunto de individuos
+ mientras que los roles son interpretados como conjuntos de pares de individuos.
  Ahondaremos más en estos temás más adelante en este capítulo.
 \end_layout
 
@@ -423,10 +442,10 @@ Por ende, los conceptos atómicos son interpretados como subconjuntos del
  es especificada definiendo el conjunto de individuos denotado por cada
  constructor.
  Por ejemplo, el concepto 
-\begin_inset Formula $C\sqcap D$
+\begin_inset Formula $C\sqcup D$
 \end_inset
 
- es el conjunto de individuos obtenido intersecando los conjuntos de individuos
+ es el conjunto de individuos obtenido uniendo los conjuntos de individuos
  denotados por 
 \emph on
 C
@@ -436,7 +455,12 @@ C
 D
 \emph default
 , respectivamente.
- De manera similar, la interpretación de 
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+De manera similar, la interpretación de 
 \begin_inset Formula $\forall R.C$
 \end_inset
 
@@ -451,8 +475,13 @@ C
 .
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-A modo de ejemplificar un poco, supongamos que 
+A modo de ejemplo, supongamos que 
 \emph on
 Persona, Hombre 
 \emph default
@@ -464,7 +493,7 @@ Mujer
 \emph on
 tieneHijo
 \emph default
- son roles atómicos.
+ es un rol atómico.
  Usando los operadores 
 \emph on
 intersección, unión
@@ -482,7 +511,7 @@ las personas que no son mujeres
 \begin_inset Quotes erd
 \end_inset
 
- o 
+, 
 \begin_inset Quotes eld
 \end_inset
 
@@ -490,7 +519,7 @@ los individuos que son mujeres u hombres
 \begin_inset Quotes erd
 \end_inset
 
-, denotados por las siguientes expresiones
+ o incluso el conjunto de las madres, denotados por las siguientes expresiones:
 \end_layout
 
 \begin_layout Standard
@@ -498,15 +527,13 @@ los individuos que son mujeres u hombres
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
+<lyxtabular version="3" rows="3" columns="1">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
 <cell alignment="center" valignment="top" usebox="none">
@@ -521,20 +548,27 @@ status collapsed
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-y
-\end_layout
-
-\end_inset
-</cell>
+</row>
+<row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 \begin_inset Formula $Mujer\sqcup Hombre$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $tieneHijo(Mujer)$
 \end_inset
 
 
@@ -556,16 +590,157 @@ y
 \end_layout
 
 \begin_layout Standard
-La inferencia básica sobre expresiones entre conceptos en Lógicas de Descripción
- es la 
+Como mencionamos en el capítulo 1, las Lógicas de Descripción resultan muy
+ útiles a la hora de representar bases de datos; y como en toda base de
+ dato los objetivos son poder representar información y extraer información.
+ Definiremos luego la sintaxis y semántica de manera precisa que nos permiten
+ realizar estas operaciones, por ahora introduciremos algunos operadores,
+ como el usado en el ejemplo anterior, y daremos una noción intuitiva de
+ su uso.
+ Expresiones tales como 
+\begin_inset Formula $C\sqsubseteq D,\,\forall R.C$
+\end_inset
+
+ y 
+\begin_inset Formula $C(a)$
+\end_inset
+
+ son utilizadas tanto en la representación y la extracción de información.
+ Se diferencian dado el contexto de su uso, pero aquí usaremos los prefijos
+ 
+\emph on
+!
+\emph default
+ y 
+\emph on
+?
+\emph default
+ para indicar si es representación o extracción, respectivamente.
+ También hace falta poner en contexto a la base de datos a la cual nos estamos
+ refiriendo, si no, a menos que se trate de una tautología, no podríamos
+ aseverar o refutar ninguna expresión.
+ Dicho esto, sea 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+ alguna base de datos.
+ En cuanto a representación, si quisieramos expresar, por ejemplo, que 
+\begin_inset Quotes eld
+\end_inset
+
+los hombres son mortales
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+todos los padres tienen hijos
+\begin_inset Quotes erd
+\end_inset
+
+ y que 
+\begin_inset Quotes eld
+\end_inset
+
+el individuo Batman es un superhéroe
+\begin_inset Quotes erd
+\end_inset
+
+ son declaraciones sobre 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+, podríamos usar la siguiente notación:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $!Hombre\sqsubseteq Mortal$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $!\forall tieneHijo.Padre$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $!Superhéroe(Batman)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En cuanto a la inferencia, la operación básica sobre expresiones entre conceptos
+ en Lógicas de Descripción es la 
 \emph on
 subsunción
 \emph default
  (inclusión), escrita por lo general como 
-\begin_inset Formula $C\sqsubseteq D$
+\begin_inset Formula $\mathcal{KB}\models C\sqsubseteq D$
 \end_inset
 
-.
+ (aunque aquí lo expresaremos también como 
+\begin_inset Formula $?C\sqsubseteq D$
+\end_inset
+
+, dada alguna base de datos 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+).
  Determinar la inclusión refiere al problema de comprobar si el concepto
  denotado por 
 \emph on
@@ -586,7 +761,7 @@ D
 \emph default
 .
  Por ejemplo, uno podría querer saber si 
-\begin_inset Formula $Persona\sqsubseteq Mujer$
+\begin_inset Formula $?Persona\sqsubseteq Mujer$
 \end_inset
 
 .
@@ -603,9 +778,10 @@ satisfacibilidad
 
 \begin_layout Standard
 Aunque ya hemos especificado el significado de los conceptos con una semántica
- lógica, los diseños de procedimientos de inferencia sobre Lógicas de Descripció
-n fueron influenciados por mucho tiempo por las redes semánticas, donde
- los conceptos eran vistos como nodos y los roles como aristas en una red.
+ lógica (i.e., un concepto es un conjunto de elementos), los diseños de procedimie
+ntos de inferencia sobre Lógicas de Descripción fueron influenciados por
+ mucho tiempo por las redes semánticas, donde los conceptos eran vistos
+ como nodos y los roles como aristas en una red.
  La inclusión entre expresiones de conceptos fue reconocida como la inferencia
  clave y la idea básica de los primeros algoritmos de inclusión fue transformar
  dos conceptos, tomados como entrada, a grafos etiquetados y ver si alguno
@@ -632,7 +808,7 @@ inclusión estructural
 .
  Sin embargo, un análisis minucioso sobre el algoritmo de inclusión estructural
  muestra que es correcto, pero no siempre completo en término de la semántica
- lógica: siempre que el algoritmo retorna 
+ lógica: el algoritmo podía retornar 
 \begin_inset Quotes eld
 \end_inset
 
@@ -640,7 +816,7 @@ sí
 \begin_inset Quotes erd
 \end_inset
 
-, la respuesta es correcta, pero cuando retorna 
+, 
 \begin_inset Quotes eld
 \end_inset
 
@@ -648,7 +824,24 @@ no
 \begin_inset Quotes erd
 \end_inset
 
-, existe la posibilidad que esa respuesta sea incorrecta.
+ pero también 
+\begin_inset Quotes eld
+\end_inset
+
+no sé
+\begin_inset Quotes erd
+\end_inset
+
+.
+ O sea que no era completo bajo 
+\begin_inset Quotes eld
+\end_inset
+
+sí/no
+\begin_inset Quotes erd
+\end_inset
+
+, pero sí completo puesto que siempre retornaba una respuesta.
 \end_layout
 
 \begin_layout Standard
@@ -678,7 +871,7 @@ key "brachman-lavesque"
 
 \end_inset
 
-, argumentan que hay una 
+, se argumenta que hay una 
 \emph on
 compensación/pérdida
 \emph default
@@ -709,6 +902,7 @@ El mismo paper introduce al menos dos nuevas ideas:
 \end_layout
 
 \begin_layout Itemize
+la 
 \begin_inset Quotes eld
 \end_inset
 
@@ -740,13 +934,18 @@ Una consecuencia inmediata que se desprende de esas ideas es que el tradeoff
  entre la complejidad computacional y la expresividad del lenguaje (que
  el mismo está definido en término de los constructores que están admitidos
  en el lenguaje) puede ser estudiada formal y metódicamente.
- Más aún, el problema de encontrar el tradeoff óptimo, siendo éste la extensión
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Más aún, el problema de encontrar el tradeoff óptimo, siendo éste la extensión
  más expresiva de 
 \begin_inset Formula $\text{\mathcal{FL}}^{-}$
 \end_inset
 
  con respecto a un conjunto de constructores dados que mantiene las inclusiones
- en el orden polinomial, fue muy estudiadio 
+ en el orden polinomial, fue muy estudiado 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "donini91"
@@ -754,6 +953,11 @@ key "donini91"
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -792,7 +996,7 @@ Proveer una caracterización precisa de la base de conocimientos; esto involucra
 \end_layout
 
 \begin_layout Itemize
-Proveer un entorno de desarrollo donde el usuario pueda dar uso de distintos
+Proveer un entorno de desarrollo donde el usuario pueda hacer uso de distintos
  servicios y que éstos sean eficientes.
 \end_layout
 
@@ -830,13 +1034,23 @@ Terminological Box
 \emph default
 ), y es construida a través de declaraciones que describen propiedades generales
  sobre los conceptos.
- Dada la naturaleza de las inclusiones las relaciones sobre los conceptos
+ 
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Dada la naturaleza de las inclusiones las relaciones sobre los conceptos
  que constituyen la terminología, las Tbox son pensadas como estructuras
  de tipo reticulado.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-La Abox, es la encargada del conocimiento extensional, o aserciones (de
+La ABox, es la encargada del conocimiento extensional, o aserciones (de
  ahí 
 \emph on
 Assertional Box
@@ -847,18 +1061,6 @@ Assertional Box
 
 \begin_layout Subsubsection
 TBox
-\end_layout
-
-\begin_layout Standard
-Un elemento clave en una base de conocimiento basada de Lógicas de Descripción
- (
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-, de ahora en más) está dado por las operaciones usadas para construir la
- terminología.
- Tales operaciones están relacionadas de manera directa a las formas y significa
-dos de las declaraciones permitidas en la TBox.
 \end_layout
 
 \begin_layout Standard
@@ -889,7 +1091,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $Mujer\equiv Persona\sqcap\lnot Hombre$
+\begin_inset Formula $!Mujer\equiv Persona\sqcap\lnot Hombre$
 \end_inset
 
 
@@ -912,21 +1114,11 @@ status open
 
 \begin_layout Standard
 Tal declaración es interpretada como una equivalencia lógica, que provee
- condiciones necesarias y suficientess para clasificar individuos como mujeres.
- Es importante notar que esta forma de definición es mucho más fuerte que
- otras utilizadas en otros tipos de representación de conocimiento, que
- típicamente solo proveen las condiciones necesarias; el punto fuerte de
- este tipo de declaraciones es usualmente considerado una característica
- particular de las bases de conocimiento de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-.
+ condiciones necesarias y suficientes para clasificar individuos como mujeres.
 \end_layout
 
 \begin_layout Standard
-Por lo tanto, en estas bases, la terminología es constituida por un conjunto
- de definiciones de conceptos.
+La terminología es constituida por un conjunto de definiciones de conceptos.
  Sin embargo, hay un par de reglas básicas implícitas en cualquier terminología:
 \end_layout
 
@@ -974,7 +1166,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $Hombre\sqsubseteq Persona$
+\begin_inset Formula $!Hombre\sqsubseteq Persona$
 \end_inset
 
 
@@ -1013,7 +1205,14 @@ ABox
 \noindent
 Como mencionamos, la ABox contiene conocimiento extensional acerca del dominio
  de interés, i.e., aserciones acerca de los individuos.
- Veamos como ejemplo las siguientes aserciones
+ Veamos como ejemplo las siguientes aserciones, en las cuales los individuos
+ son 
+\emph on
+Julieta, Islandia
+\emph default
+ y 
+\emph on
+Reikavik
 \end_layout
 
 \begin_layout Standard
@@ -1023,7 +1222,7 @@ Como mencionamos, la ABox contiene conocimiento extensional acerca del dominio
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1036,7 +1235,7 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $Mujer\sqcap Persona(Julieta)$
+\begin_inset Formula $!Mujer\sqcap Persona(Julieta)$
 \end_inset
 
 
@@ -1050,7 +1249,7 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $tieneCapital(Islandia,Reikavik)$
+\begin_inset Formula $!tieneCapital(Islandia,Reikavik)$
 \end_inset
 
 
@@ -1105,9 +1304,10 @@ comprobación de instancias
 \begin_layout Standard
 \paragraph_spacing single
 \noindent
-Es importante resaltar que la presencia de de individuos en una base de
- conocimientos aumenta la complejidad de razonamiento desde un punto computacion
-al 
+Es importante resaltar que si en una base de conocimientos además de conceptos
+ también contamos con instancias particulares de los elementos de esos conceptos
+, o sea individuos, la complejidad de razonamiento desde un punto de vista
+ computacional es más costosa 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "donini94"
@@ -1163,9 +1363,751 @@ status collapsed
 Sintaxis y Semántica
 \end_layout
 
+\begin_layout Description
+Definición:
+\end_layout
+
 \begin_layout Standard
-\paragraph_spacing single
-\noindent
+
+\emph on
+(Sintaxis).
+ Sea A un 
+\emph default
+Concepto Atómico
+\emph on
+, C y D 
+\emph default
+Conceptos 
+\emph on
+y R un 
+\emph default
+Rol Atómico.
+ 
+\emph on
+El conjunto de las fórmulas de una lógica de descripción 
+\begin_inset Formula $\mathsf{CON}{}_{\mathcal{DL}}$
+\end_inset
+
+ se define como
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\emph on
+\begin_inset Formula $\mathsf{CON}{}_{\mathcal{DL}}::=A\mid\top\mid\bot\mid\neg A\mid C\sqcap D\mid C\sqcup D\mid\forall R.C\mid\exists R.C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+(Semántica).
+ Sea 
+\begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
+\end_inset
+
+ un modelo.
+ Donde 
+\begin_inset Formula $\Delta$
+\end_inset
+
+ es un conjunto no vació y 
+\begin_inset Formula $\mathcal{I}:\mathsf{CON_{\mathcal{DL}}}\rightarrow\mathcal{P}(\Delta)\cup\{\top,\bot\}$
+\end_inset
+
+.
+ Sean 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(A)\in\mathcal{P}(\Delta)$
+\end_inset
+
+ 
+\emph on
+e 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(R)\in\mathcal{P}(\Delta\times\Delta)$
+\end_inset
+
+
+\emph on
+, para cada concepto atómico y relación atómica respectivamente
+\emph default
+.
+
+\emph on
+ Definamos recursivamente en términos de conjuntos qué representa cada uno
+ de los constructores restantes de 
+\begin_inset Formula $\mathsf{CON}{}_{\mathcal{DL}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="3">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(\top)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\bot)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\emptyset$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\neg A)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta\setminus\mathcal{I}(A)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C\sqcap D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C)\cap\mathcal{I}(D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C\sqcup D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C)\cup\mathcal{I}(D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\forall R.C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid\forall y\in\Delta,(x,y)\in\mathcal{I}(R)\implies y\in\mathcal{I}(C)\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\exists R.C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid\exists y\in\Delta,(x,y)\in\mathcal{I}(R)\land y\in\mathcal{I}(C)\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las fórmulas definidas hasta el momento son parte del 
+\emph on
+lenguage de concepto.
+\end_layout
+
+\begin_layout Standard
+Daremos ahora sintaxis y semántica a expresiones booleanas:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C(a))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+ 
+\emph on
+sii 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(a)\in\mathcal{I}(C)$
+\end_inset
+
+, 
+\begin_inset Formula $\bot$
+\end_inset
+
+ 
+\emph on
+en caso contrario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(R(a,b))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+ 
+\emph on
+sii 
+\begin_inset Formula $(\mathcal{I}(a),\mathcal{I}(b))\in\mathcal{I}(R)$
+\end_inset
+
+, 
+\begin_inset Formula $\bot$
+\end_inset
+
+ en caso contrario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C\sqsubseteq D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+ 
+\emph on
+sii 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(C)\subseteq\mathcal{I}(D)$
+\end_inset
+
+, 
+\begin_inset Formula $\bot$
+\end_inset
+
+ 
+\emph on
+en caso contrario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C\equiv D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\top$
+\end_inset
+
+ 
+\emph on
+sii 
+\emph default
+
+\begin_inset Formula $\mathcal{I}(C)=\mathcal{I}(D)$
+\end_inset
+
+, 
+\begin_inset Formula $\bot$
+\end_inset
+
+ 
+\emph on
+en caso contrario
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
 Habiendo ya fijado las bases conceptuales de un sistema de representación
  de conocimiento 
 \begin_inset Formula $\mathcal{DL}$
@@ -1243,7 +2185,7 @@ R.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
@@ -1634,7 +2576,7 @@ name "tab:ALsinsem"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \paragraph_spacing single
 \noindent
 En la 
@@ -1659,11 +2601,11 @@ tab:ALsinsemext
  para dar lugar a más constructores y así enriquecer la expresividad.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align left
@@ -1824,7 +2766,7 @@ Unión de dos Conceptos
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\{a\in\Delta^{\mathcal{I}}\mid\exists b.(a,b)\in R^{\mathcal{I}}\land b\in C\}$
+\begin_inset Formula $\{a\in\Delta^{\mathcal{I}}\mid\exists b.(a,b)\in R^{\mathcal{I}}\land b\in C^{\mathcal{I}}\}$
 \end_inset
 
 
@@ -1980,16 +2922,12 @@ name "tab:ALsinsemext"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 <Ejemplos>
 \begin_inset Marginal
 status open
@@ -2003,14 +2941,43 @@ status open
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
-Clases y Complejedidad
+Complejidad de 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Como fue mencionado anteriormente, a medida que agregamos constructores
- para poder generar nuevas expresiones y enriquecer la expresividad de nuestro
- lenguaje, el costo computacional aumenta.
+La clase de 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ con la que estuvimos trabajando hasta ahora es 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+ (por 
+\emph on
+Attribute Language with Complements, 
+\emph default
+o 
+\emph on
+Lenguaje de Atributos con Complementos, 
+\emph default
+en
+\emph on
+ 
+\emph default
+español), es la clase básica.
+ Podemos enriquecer su expresividad, pero a cambio de un costo a la hora
+ de razonar sobre dicha lógica.
  En la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
@@ -2284,7 +3251,7 @@ un conjunto contable infinito de variables proposicionales y
 MOD
 \family default
  = 
-\begin_inset Formula $\{m,m''\}$
+\begin_inset Formula $\{m_{1},m_{2},\dots\}$
 \end_inset
 
  
@@ -2315,8 +3282,10 @@ MOD
  
 \emph on
 El conjunto de las fórmulas modales básicas 
+\family sans
 \emph default
 FORM
+\family default
 \emph on
  sobre la signatura 
 \begin_inset Formula $\mathcal{S}$
@@ -2333,7 +3302,7 @@ FORM
 FORM
 \family default
  
-\begin_inset Formula $::=p\mid\lnot\varphi\mid\varphi\lor\psi\mid[m]\varphi$
+\begin_inset Formula $::=p\mid\lnot\varphi\mid\varphi\lor\psi\mid\varphi\land\psi\mid[m]\varphi\mid\langle m\rangle\varphi$
 \end_inset
 
 ,
@@ -2374,50 +3343,8 @@ y
 FORM
 \family default
 .
-\begin_inset Formula $\top$
-\end_inset
-
 
 \emph on
-y
-\emph default
- 
-\begin_inset Formula $\perp$
-\end_inset
-
- 
-\emph on
-representan una tautología arbitraria y la contradicción, respectivamente.
- También utilizaremos los conectivos clásicos como 
-\begin_inset Formula $\land,\rightarrow$
-\end_inset
-
- definidos de la forma usual.
- Por cada 
-\begin_inset Formula $m\in$
-\end_inset
-
-
-\emph default
- 
-\family sans
-MOD
-\family default
- 
-\emph on
-tenemos un 
-\emph default
-operador dual 
-\begin_inset Formula $\langle m\rangle$
-\end_inset
-
- 
-\emph on
-(diamante) definido como 
-\begin_inset Formula $\langle m\rangle\varphi=\lnot[m]\lnot\varphi$
-\end_inset
-
-.
  Cuando 
 \family sans
 \emph default
@@ -2426,10 +3353,14 @@ MOD
 \emph on
  es un singleton, es decir, en el caso mono-modal, simplemente escribimos
  
-\begin_inset Formula $\square\,y\,\Diamond.$
+\begin_inset Formula $\square\,y\,\Diamond$
 \end_inset
 
+, en vez de 
+\begin_inset Formula $[m],\,y\,\langle m\rangle$
+\end_inset
 
+, respectivamente.
 \end_layout
 
 \begin_layout Description
@@ -2491,18 +3422,18 @@ la
 valuación
 \emph on
 , es una función que asigna a cada elemento 
-\begin_inset Formula $p\in\mathsf{PROP}$
+\begin_inset Formula $w\in W$
 \end_inset
 
  un subconjunto 
-\begin_inset Formula $V(p)\subseteq W.$
+\begin_inset Formula $V(W)\subseteq\mathsf{PROP}.$
 \end_inset
 
  Informalmente, podemos pensar a 
-\begin_inset Formula $V(p)$
+\begin_inset Formula $V(w)$
 \end_inset
 
- como el conjunto de variables proposicionales que son verdaderas en p.
+ como el conjunto de variables proposicionales que son verdaderas en w.
 \end_layout
 
 \begin_layout Description
@@ -2512,7 +3443,8 @@ Definición:
 \begin_layout Standard
 
 \emph on
-(Semántica) Sea 
+(Semántica) Usualmente, la notación que se utiliza para dar semántica a
+ las lógicas modales es la siguiente: Sea 
 \begin_inset Formula $\mathcal{M}=\langle R,M,V\rangle$
 \end_inset
 
@@ -2543,7 +3475,7 @@ satisfacible
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="8" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
@@ -2705,6 +3637,49 @@ sii
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{M},w\models\varphi\land\psi$
+\end_inset
+
+
+\emph on
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+sii 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{M},w\models\varphi$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{M},w\models\psi$
+\end_inset
+
+, 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -2740,6 +3715,393 @@ sii
 \end_inset
 
 , para todo v tal que wRv.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{M},w\models\diamond\varphi$
+\end_inset
+
+
+\emph on
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+sii 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\mathcal{M},v\models\varphi$
+\end_inset
+
+, para algún v tal que wRv.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Ahora daremos la semántica en una notación que corresponda a la dada para
+ lógicas de descripción.
+ Tomemos a 
+\begin_inset Formula $\mathcal{I=}(R,V)$
+\end_inset
+
+ y a 
+\begin_inset Formula $\Delta=M\not=\emptyset$
+\end_inset
+
+.
+ Sean 
+\begin_inset Formula $\mathcal{I}(p)\subseteq\Delta$
+\end_inset
+
+ e 
+\begin_inset Formula $\mathcal{I}(R)\subseteq\Delta\times\Delta$
+\end_inset
+
+ para cada símbolo proposicional y cada relación, o modalidad, respectivamente.
+ Recordar que como trabajaremos en lógica monomodal, 
+\begin_inset Formula $\mathcal{R}=\{R\}=\{\boxempty\}$
+\end_inset
+
+.
+ Sean 
+\begin_inset Formula $\varphi$
+\end_inset
+
+, 
+\begin_inset Formula $\psi\in\mathsf{FORM}$
+\end_inset
+
+.
+ Definiremos recursivamente los operadores de la siguiente manera
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\neg\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Delta\setminus\mathcal{I}(\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\varphi\lor\psi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\varphi)\cup\mathcal{I}(\psi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\varphi\land\psi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\varphi)\cap\mathcal{I}(\psi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\boxempty\varphi)$
+\end_inset
+
+
+\emph on
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid\forall y\in\Delta,(x,y)\in\mathcal{I}(R)\implies y\in\mathcal{I}(\varphi)\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\diamond\varphi)$
+\end_inset
+
+
+\emph on
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid\exists y\in\Delta,(x,y)\in\mathcal{I}(R)\land y\in\mathcal{I}(\varphi)\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -2886,41 +4248,6 @@ valuación
 \end_inset
 
  como el conjunto de variables proposicionales que son verdaderas en w.
-\end_layout
-
-\begin_layout Description
-Definición:
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-(Modelos Puntuados) Un 
-\emph default
-modelo puntuado
-\emph on
- es un modelo con un elemento distinguido, e.g., dado un modelo 
-\begin_inset Formula $\mathcal{M}=\langle W,R,V\rangle$
-\end_inset
-
- y un elemento w en W, el modelo puntuado correspondiente es la tupla 
-\begin_inset Formula $\mathcal{M}=\langle w,W,R,V\rangle$
-\end_inset
-
-.
- Si un modelo puntuado 
-\begin_inset Formula $\mathcal{M}$
-\end_inset
-
- satisface una fórmula 
-\begin_inset Formula $\varphi$
-\end_inset
-
- escribimos 
-\begin_inset Formula $\mathcal{M\models}\varphi$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Description
@@ -3279,20 +4606,7 @@ Ahora trazaremos el nexo entre Lógicas Modales,
 \end_inset
 
  cuentan con diferente expresividad, y por lo tanto, complejidad computacional.
- Algunos ejemplos son 
-\begin_inset Formula $\mathcal{EL}$
-\end_inset
-
-, 
-\begin_inset Formula $\mathcal{ALC}$
-\end_inset
-
- y 
-\begin_inset Formula $\mathcal{SHOIQ}$
-\end_inset
-
-, ordenados de menos expresivos a más expresivos.
- Por ahora nos concetraremos en 
+ Por ahora nos concentraremos solo en 
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
@@ -3328,7 +4642,7 @@ reference "tab: dl2ml"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3405,7 +4719,7 @@ status open
 \begin_inset Formula $C_{i}$
 \end_inset
 
- es un concepto
+ es un concepto atómico
 \end_layout
 
 \end_inset
@@ -3428,11 +4742,11 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\lnot C_{j}$
+\begin_inset Formula $\lnot C$
 \end_inset
 
 , y 
-\begin_inset Formula $C_{j}$
+\begin_inset Formula $C$
 \end_inset
 
  es un concepto
@@ -3525,7 +4839,7 @@ status open
 \begin_inset Formula $R$
 \end_inset
 
- es un rol y 
+ es un rol atómico y 
 \begin_inset Formula $C_{j}$
 \end_inset
 
@@ -3559,7 +4873,7 @@ status open
 \begin_inset Formula $R$
 \end_inset
 
- es un rol y 
+ es un rol atómico y 
 \begin_inset Formula $C_{j}$
 \end_inset
 
@@ -3805,7 +5119,7 @@ en vez de
 \end_layout
 
 \begin_layout Subsection
-Nexo Semántico
+Nexo Semántico (FALTA COMPLETAR)
 \end_layout
 
 \begin_layout Standard
@@ -3821,7 +5135,7 @@ Extensión de una fórmula
 \begin_inset Formula $\varphi$
 \end_inset
 
-
+ (QUIZÁ ESTO NO VA MÁS)
 \end_layout
 
 \begin_layout Standard
@@ -3837,7 +5151,7 @@ Extensión de una fórmula
 \begin_inset Formula $\mathcal{ML}$
 \end_inset
 
-, analizaremos la extensión de una fórmula 
+, definiremos la extensión de una fórmula 
 \begin_inset Formula $\varphi$
 \end_inset
 
@@ -3885,7 +5199,7 @@ Extensión de una fórmula
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
-) Sea 
+) Sean: 
 \begin_inset Formula $\mathcal{M=\langle\varDelta},\mathcal{I\rangle}$
 \end_inset
 
@@ -3897,27 +5211,53 @@ Extensión de una fórmula
 \begin_inset Formula $\mathcal{I}$
 \end_inset
 
- una función de interpretación, decimos que:
+ una función de interpretación, 
+\begin_inset Formula $\mathcal{KB}=\langle\mathcal{T},\mathcal{A}\rangle$
+\end_inset
+
+ una Base de Conocomiento, o 
+\emph on
+Knowledge Base
+\emph default
+, con 
+\begin_inset Formula $\mathcal{T}$
+\end_inset
+
+ una TBox y 
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ una ABox
+\emph on
+, 
+\emph default
+diremos
+\emph on
+ 
+\emph default
+que
+\emph on
+ 
+\begin_inset Formula $\mathcal{M}\models\mathcal{KB}$
+\end_inset
+
+ 
+\emph default
+si y solo
+\emph on
+ 
+\emph default
+si
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="4">
+<lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
 <row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -3951,7 +5291,7 @@ Extensión de una fórmula
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\langle\varDelta,\mathcal{I}\rangle\models$
+\begin_inset Formula $\forall\,C_{i}\sqsubseteq C_{j}\in\mathcal{T}$
 \end_inset
 
 
@@ -3963,6 +5303,249 @@ Extensión de una fórmula
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\emph on
+vale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C_{i}\sqsubseteq C_{j})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall\,C\equiv D\mathcal{\in T}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+vale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C\equiv D)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall\,C(a)\in\mathcal{A}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+vale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(C(a))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall\,R(a,b)\in\mathcal{A}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+vale
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(R(a,b))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En tal caso diremos que 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ es modelo de 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Por último, ya estamos en condiciones de definir cuándo una expresión en
+ 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ es consecuencia lógica de una 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+.
+ Sea 
+\begin_inset Formula $\mathcal{M=\langle\varDelta},\mathcal{I\rangle}$
+\end_inset
+
+.
+ Por lo tanto
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{KB}\models$
+\end_inset
+
+
 \begin_inset Formula $C_{i}\sqsubseteq C_{j}$
 \end_inset
 
@@ -3987,7 +5570,7 @@ Extensión de una fórmula
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\parallel C_{i}\parallel^{\mathcal{M}}\,\subseteq\,\parallel C_{j}\parallel^{\mathcal{M}}$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\sqsubseteq C_{j})).$
 \end_inset
 
 
@@ -4001,18 +5584,10 @@ Extensión de una fórmula
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\langle\varDelta,\mathcal{I}\rangle\models$
+\begin_inset Formula $\mathcal{KB}\models$
 \end_inset
 
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $C_{i}\equiv C_{j}$
 \end_inset
 
@@ -4033,479 +5608,11 @@ Extensión de una fórmula
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\parallel C_{i}\parallel^{\mathcal{M}}\,=\,\parallel C_{j}\parallel^{\mathcal{M}}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\langle\varDelta,\mathcal{I}\rangle\models$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $a:C_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $sii$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(a)\in\parallel C_{i}\parallel^{\mathcal{M}}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle\varDelta,\mathcal{I}\rangle\models$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $(a,b):R$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $sii$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $(\mathcal{I}(a),\mathcal{I}(a))\in\mathcal{I}(R)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Sea 
-\begin_inset Formula $\mathcal{KB}=\langle\mathcal{T},\mathcal{A}\rangle$
-\end_inset
-
- una Base de Conocomiento, o 
-\emph on
-Knowledge Base
-\emph default
-, con 
-\begin_inset Formula $\mathcal{T}$
-\end_inset
-
- una TBox y 
-\begin_inset Formula $\mathcal{A}$
-\end_inset
-
- una ABox.
- Sea 
-\begin_inset Formula $\mathcal{M}=\langle\mathcal{I},\Delta\rangle$
-\end_inset
-
- un modelo, definiremos 
-\begin_inset Formula $\mathcal{M}\models\mathcal{KB}$
-\end_inset
-
- si y solo si:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
-<features tabularvalignment="middle">
-<column alignment="left" valignment="top" width="0pt">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall C_{i}\sqsubseteq C_{j}\in\mathcal{T}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-vale
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{M\models}C_{i}\sqsubseteq C_{j}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall a:C_{i}\in\mathcal{T}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $vale$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{M\models}a:C_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall(a,b):R\in\mathcal{A}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-vale
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{M\models}(a,b):R$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Por último, ya estamos en condiciones de definir cuándo una expresión en
- 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- es consecuencia lógica de una 
-\begin_inset Formula $\mathcal{KB}$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="0pt">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell multicolumn="1" alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{KB}\models$
-\end_inset
-
-
-\begin_inset Formula $C_{i}\sqsubseteq C_{j}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $sii$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{M}\models C_{i}\sqsubseteq C_{j}).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\equiv C_{j})).$
 \end_inset
 
 
@@ -4523,18 +5630,9 @@ Por último, ya estamos en condiciones de definir cuándo una expresión en
 \end_inset
 
 
-\begin_inset Formula $a:C$
+\begin_inset Formula $C(a)$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4556,7 +5654,7 @@ Por último, ya estamos en condiciones de definir cuándo una expresión en
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{M}\models a:C).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C(a))).$
 \end_inset
 
 
@@ -4574,18 +5672,9 @@ Por último, ya estamos en condiciones de definir cuándo una expresión en
 \end_inset
 
 
-\begin_inset Formula $(a,b):R$
+\begin_inset Formula $R(a,b)$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -4607,7 +5696,7 @@ Por último, ya estamos en condiciones de definir cuándo una expresión en
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{M}\models(a,b):R).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(T(a,b))).$
 \end_inset
 
 

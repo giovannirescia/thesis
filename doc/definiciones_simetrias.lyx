@@ -1,0 +1,736 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(Permutación de literales proposicionales).
+ 
+\emph on
+Una
+\emph default
+ permutación de literales proposicionales
+\emph on
+ es una función biyectiva 
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\emph default
+: 
+\family sans
+PLIT
+\begin_inset Formula $\longmapsto$
+\end_inset
+
+PLIT.
+ 
+\family default
+\emph on
+Dado un conjunto de literales proposicionales L, 
+\begin_inset Formula $\sigma(L)=\{\sigma(l)\mid l\in L\}$
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\emph on
+Nota.
+
+\emph default
+ La definición que acabamos de dar define permutaciones sobre el conjunto
+ infinito 
+\family sans
+PLIT
+\family default
+.
+ Sin embargo, en la práctica, solo trabajamos con permutaciones definidas
+ sobre un subconjunto finito 
+\emph on
+A
+\emph default
+ de 
+\family sans
+PLIT
+\family default
+, es decir, el conjunto de los literales proposicionales que aparecen en
+ la fórmula en la cual estamos trabajando.
+\end_layout
+
+\begin_layout Standard
+En lo que sigue, asumiremos que toda permutación es una permutación de literales
+ proposicionales y las llamaremos simplemente una 
+\begin_inset Quotes eld
+\end_inset
+
+permutación
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_layout Standard
+(Permutación de una fórmula).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal y 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una permutación.
+ Definimos 
+\begin_inset Formula $\sigma(\varphi)$
+\end_inset
+
+ recursivamente como
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma(\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{\sigma(C)\mid C\in\varphi\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+para 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma(C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{\sigma(A)\mid A\in C\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+para C una cláusula en CNF modal
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma(\text{\boxempty}C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\boxempty\sigma(C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma(\neg\boxempty C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\neg\boxempty\sigma(C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dado un conjunto de literales proposicionales, estamos intersados en aquellas
+ permutaciones del conjunto que son 
+\emph on
+consistentes
+\emph default
+.
+\end_layout
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_layout Standard
+(Permutación Consistente).
+ 
+\emph on
+Una permutación 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es 
+\emph default
+consistente
+\emph on
+ si por cada literal proposicional l tenemos que 
+\begin_inset Formula $\sigma(\sim l)=\sim\sigma(l)$
+\end_inset
+
+, donde 
+\begin_inset Formula $\sim$
+\end_inset
+
+ es una función que retorna el complemento de un literal proposicional,
+ es decir, 
+\begin_inset Formula $\sim p=\neg p$
+\end_inset
+
+ y 
+\begin_inset Formula $\sim\neg p=p.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La condición de consistencia de una permutación garantiza que la misma interactu
+ará de forma correcta cuando es aplicada a un conjunto de literales proposiciona
+les, es decir, si tenemos un conjunto consistente de literales proposicionales,
+ se mantendrá consistente luego de aplicar una permutación consistente al
+ mismo.
+\end_layout
+
+\begin_layout Standard
+Desde el punto de vista de la teoría de grupos, las permutaciones consistentes
+ forma un subgrupo del grupo de todas las permutaciones sobre un determinado
+ conjunto, ya que la composición de permutaciones consistentes da como resultado
+ una permutación consistente.
+\end_layout
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_layout Standard
+(Simetría).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal.
+ Una permutación consistente 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ si 
+\begin_inset Formula $\varphi=\sigma(\varphi)$
+\end_inset
+
+, cuando las conjunciones y la disyunción en 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ son representadas como conjuntos.
+\end_layout
+
+\begin_layout Standard
+También necesitamos considerar el efecto de aplicar permutaciones a los
+ modelos.
+ Si 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es verdadera en un modelo 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+, intuitivamente queremos que 
+\begin_inset Formula $\sigma(\varphi)$
+\end_inset
+
+, sea verdadera en el modelo 
+\begin_inset Formula $\sigma(\mathcal{M})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Description
+Definición:
+\end_layout
+
+\begin_layout Standard
+(Permutación de un modelo).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una permutación y 
+\begin_inset Formula $\mathcal{M}=\langle w,W,R,V\rangle$
+\end_inset
+
+ un modelo.
+ Luego 
+\begin_inset Formula $\sigma(\mathcal{M})=\langle w,W,R,V'\rangle$
+\end_inset
+
+, donde,
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula $V'(w)=\sigma(L_{V(w)})\cap$
+\end_inset
+
+
+\family sans
+\emph default
+PROP 
+\family default
+\emph on
+para todo 
+\begin_inset Formula $w\in W.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L_{V(w)}$
+\end_inset
+
+ 
+\emph on
+es el conjunto de literales completo y consistente generado por V(w).
+ Dado M un conjunto de modelos, 
+\begin_inset Formula $\sigma(M)=\{\sigma(\mathcal{M})\mid\mathcal{M}\in M\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+Proposición:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una permutación consistente, 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal y 
+\begin_inset Formula $\mathcal{M}=\langle w,W,R,V\rangle$
+\end_inset
+
+ un modelo.
+ Luego 
+\begin_inset Formula $\mathcal{M}\models\varphi$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\sigma(\mathcal{M})\models\sigma(\varphi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostración: Ver ORBE, 2014.
+\end_layout
+
+\begin_layout Description
+Corolario:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Si 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ luego 
+\begin_inset Formula $\mathcal{M}\in Mods(\varphi)$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\sigma(\mathcal{M})\in Mods(\varphi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+<Descripción del corolario 2.1>
+\end_layout
+
+\begin_layout Description
+Teorema:
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Sean 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ y 
+\begin_inset Formula $\psi$
+\end_inset
+
+ fórmulas en CNF modal y sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $\varphi\models\psi$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\varphi\models\sigma(\psi).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostración: Ver ORBE, 2014.
+\end_layout
+
+\begin_layout Standard
+<Descripción del teorema 2.2>
+\end_layout
+
+\begin_layout Standard
+El Corolario 2.1 y el Teorema 2.2 son los resultados claves que permiten utilizar
+ las simetrías de una fórmula en la lógica modal básica.
+\end_layout
+
+\end_body
+\end_document

@@ -176,10 +176,6 @@ http://wiki.lyx.org/Bib\SpecialChar TeX
 
 \end_layout
 
-\begin_layout Part
-Lógicas de Descripción
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -210,10 +206,6 @@ filename "cap3.lyx"
 
 \end_layout
 
-\begin_layout Part
-Experimentación
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -234,10 +226,6 @@ filename "cap5.lyx"
 
 \end_layout
 
-\begin_layout Part
-Conclusión
-\end_layout
-
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
@@ -252,6 +240,16 @@ filename "cap6.lyx"
 \begin_inset CommandInset include
 LatexCommand include
 filename "cap7.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "cap8.lyx"
 
 \end_inset
 

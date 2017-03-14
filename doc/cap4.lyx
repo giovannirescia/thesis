@@ -31,16 +31,7 @@
 \index_command default
 \paperfontsize default
 \spacing single
-\use_hyperref true
-\pdf_bookmarks true
-\pdf_bookmarksnumbered false
-\pdf_bookmarksopen false
-\pdf_bookmarksopenlevel 1
-\pdf_breaklinks false
-\pdf_pdfborder false
-\pdf_colorlinks false
-\pdf_backref section
-\pdf_pdfusetitle true
+\use_hyperref false
 \papersize default
 \use_geometry false
 \use_package amsmath 1
@@ -84,211 +75,440 @@
 \begin_body
 
 \begin_layout Chapter
-Herramientas [4-5 Hojas] Implementación
+Simetrías en Ontologías
 \end_layout
 
 \begin_layout Section
-Scripts
-\end_layout
-
-\begin_layout Standard
-Los principales:
-\end_layout
-
-\begin_layout Itemize
-init.sh:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-mkdirs.sh: crea los directorios para las salidas de las herramientas sobre
- lógica modal
-\end_layout
-
-\begin_layout Itemize
-unzip.sh: descomprime las ontologías para trabajar
-\end_layout
-
-\begin_layout Itemize
-wipe.sh: borra datos previos (se puede correr init.sh luego de haber obtenido
- algunos resultados) 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-VER DE CAMBIAR UN POCO ESTE SCRIPT
-\end_layout
-
+De 
+\begin_inset Formula $\mathcal{DL}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-buid.sh: compila todas las herramientas para lógica modal
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-sbt.sh:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Se encarga de realizar las traducciones de todas las ontologías que encuentre
- en el directorio 
-\emph on
-ontologies/
-\emph default
- a lógica modal.
- También genera un mapeo entre variables proposicionales y los nombres de
- los conceptos
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-doall.sh:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-k.sh: todas las fórmulas en lógica modal que resolvió nuestro traductor,
- las pasa a formato CNF
-\end_layout
-
-\begin_layout Itemize
-s.sh: genera los grafos (no?)
-\end_layout
-
-\begin_layout Itemize
-b.sh: busca automorfismos en los grafos generados por el script anterior
-\end_layout
-
-\begin_layout Itemize
-bp.sh: bliss-proc.py
-\end_layout
-
-\begin_layout Itemize
-map.sh: mapea de vuelta las variables proposicionales a los nombres de los
- conceptos
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-\begin_inset Separator plain
+ hacia 
+\begin_inset Formula $\mathcal{ML}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Algunos scripts adicionales:
-\end_layout
+Luego de muchas definiciones y desarrollo teórico en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
 
-\begin_layout Itemize
-info.sh:
-\end_layout
+ y 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
-Se encarga de generar archivos de información sobre las ontologías, como
- tamaño (MB), tbox count, abox count, etc.
- La información se guarda en 
-\emph on
-<dir>
-\end_layout
+, ya contamos con todos los ingredientes que necesitamos para poder hacer
+ una traducción correcta de fórmulas en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
 
-\end_deeper
-\begin_layout Itemize
-generate_sheet.py:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Genera un archivo con toda la información obtenida por los scripts, de forma
- estructurada.
-\end_layout
-
-\end_deeper
-\begin_layout Section
-Bliss
-\end_layout
-
-\begin_layout Standard
-Aprender
-\end_layout
-
-\begin_layout Section
-Manual de uso
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://github.com/giovannirescia/thesis
-\end_layout
-
+ a fórmulas en 
+\begin_inset Formula $\mathcal{ML}$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
-Pipeline
+\begin_layout Standard
+In the eagerness of finding symmetries on Description Logics (
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+), a set of tools for finding symmetries in Modal Logics (
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+) are to be used.
+ But first, a bridge between the two logis needs to be build: the translations
+ are the approach to build such bridge.
+\end_layout
+
+\begin_layout Subsection
+Función de traducción 
+\begin_inset Formula $\Psi$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Nuestro input será una ontología, por lo que primero empezaremos trabajando
- con lógicas de descripción.
- El primer paso para poder aplicar todas las herramientas para encontrar
- simetrías es hacer uso de las traducciones definidas en la sección 
+A continuación definiremos una función de traducción 
+\series bold
+
+\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}$
+\end_inset
+
+
+\series default
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset Formula $\mathcal{F_{ML}}$
+\end_inset
+
+, donde 
+\begin_inset Formula $\mathcal{F_{DL}}$
+\end_inset
+
+ el conjunto de fórmulas en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{F_{ML}}$
+\end_inset
+
+ el conjunto de fórmulas en 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+.
+ Recordemos que las fórmulas de 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ tienen su notación en lenguaje OWL descrita en las tablas 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "sec:Translations"
+reference "tab:DL-OWL"
 
 \end_inset
 
- y luego ir aplicando cada uno de los scripts.
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DL-OWL-axiomas"
+
+\end_inset
+
+.
+ También usaremos referencias de las tablas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ALsinsem"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:ALsinsemext"
+
+\end_inset
+
+.
+ Para la definición de 
+\begin_inset Formula $\Psi$
+\end_inset
+
+, expresaremos las reglas de manera intuitiva, ya que una demostración formal
+ de éstas sería muy tediosa.
 \end_layout
 
-\begin_layout Subsection
-dl2ml (traducción)
+\begin_layout Itemize
+\begin_inset Formula $\exists R.C$
+\end_inset
+
+, recordemos que esta expresión indica 
+\begin_inset Quotes eld
+\end_inset
+
+los elementos 
+\emph on
+a
+\emph default
+ tales que existe un elemento 
+\emph on
+b
+\emph default
+ y el par 
+\emph on
+(a, b)
+\emph default
+ forma parte de 
+\emph on
+R
+\emph default
+ y 
+\emph on
+b
+\emph default
+ está en el conjunto 
+\emph on
+C
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+, en 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ esto está representado por su cuantificador existencial 
+\begin_inset Formula $\diamond$
+\end_inset
+
+, por lo tanto:
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
-Este script traduce de DL a LM.
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-kcnf
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
 \end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+De manera totalmente análoga, 
+\begin_inset Formula $\forall R.C$
+\end_inset
+
+ expresa 
+\begin_inset Quotes eld
+\end_inset
+
+los elementos 
+\emph on
+a
+\emph default
+ tales que para todo elemento 
+\emph on
+b
+\emph default
+ tal que 
+\emph on
+(a, b)
+\emph default
+ esté en 
+\emph on
+R
+\emph default
+ entonces se da que 
+\emph on
+b
+\emph default
+ pertence a 
+\emph on
+C
+\emph default
+
+\begin_inset Quotes erd
+\end_inset
+
+, el cuantificador universal en 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ está dado por el operador 
+\begin_inset Formula $\boxempty$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-Este script transforma una fórmula de lógica modal a una versión CNF.
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-sy4ncl
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-bliss
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
+\end_inset
+
+
 \end_layout
 
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2}$
+\end_inset
+
+, siempre es el caso en que si el conjunto 
+\begin_inset Formula $\mathcal{C}_{1}$
+\end_inset
+
+ cumple con alguna propiedad, entonces 
+\begin_inset Formula $\mathcal{C}_{2}$
+\end_inset
+
+ también:
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-finding automorphism
-\end_layout
-
-\begin_layout Standard
-\begin_inset Flex URL
+\begin_inset Float table
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
-http://www.tcs.hut.fi/Software/bliss/
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -296,8 +516,1352 @@ http://www.tcs.hut.fi/Software/bliss/
 
 \end_layout
 
-\begin_layout Subsection
-bliss proc
+\end_deeper
+\begin_layout Itemize
+La equivalencia de conjuntos, 
+\begin_inset Formula $\mathcal{C}_{1}\equiv\mathcal{C}_{2}$
+\end_inset
+
+, no es nada menos que una doble inclusión, por lo tanto es definida como:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Debemos recordar que a nivel de modelos siempre estamos trabajando con conjuntos
+ y propiedades sobre éstos, por lo tanto en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+, las propiedades que puedan cumplirse sobre la unión de dos conjuntos,
+ 
+\begin_inset Formula $\mathcal{C}_{1}\cup\mathcal{C}_{2}$
+\end_inset
+
+, será lo mismo que en 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ se cumpla sobre algunos de los dos:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+De forma análoga:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+En el caso de conjuntos disjuntos, 
+\begin_inset Formula $\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+El complemento de conjuntos, 
+\begin_inset Formula $\lnot C$
+\end_inset
+
+ en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ (o, 
+\begin_inset Formula $Complement\,\mathcal{C}$
+\end_inset
+
+ en OWL), se traduce como la negación de una fórmula de 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(Complement\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\neg\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Trabajaremos con la sintaxis de OWL para definir nuestra función.
+ Sea 
+\begin_inset Formula $\mathcal{R}$
+\end_inset
+
+ una propiedad y 
+\begin_inset Formula $\mathcal{C},\mathcal{C}_{1}\,y\,\mathcal{C}_{2}$
+\end_inset
+
+ clases, sea 
+\begin_inset Formula $\mathcal{F_{DL}}$
+\end_inset
+
+ el conjunto de fórmulas en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{F_{ML}}$
+\end_inset
+
+ el conjunto de fórmulas en 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+, definamos 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ recursivamente de la siguiente manera:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="18" columns="4">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{F_{ML}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\Psi(\mathcal{R}\,hasValue\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})\land\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\Psi(\mathcal{R}^{-}someValuesFrom\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\langle\mathcal{R}^{-}\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,ObjectDomain\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies\Psi(\mathcal{C}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{R}\,ObjectRange\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies\Psi(\mathcal{C}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(functional\,\mathcal{R})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies[\mathcal{R}]\top)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(inverseFunctional\,\mathcal{R})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies[\mathcal{R}^{-}]\top)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(Complement\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size large
+\begin_inset Formula $\neg\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ok
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(Cardinality\,type\,\mathcal{N}\,\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\langle str(type\mathcal{NC})\rangle\Psi(\mathcal{C})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \end_body
