@@ -9,8 +9,11 @@
 \usepackage[spanish,es-lcroman,es-tabla]{babel}
 \end_preamble
 \use_default_options true
+\begin_modules
+theorems-ams-bytype
+\end_modules
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -61,7 +64,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -75,15 +78,28 @@
 \begin_body
 
 \begin_layout Chapter
-Simetrías en Ontologías
+Simetrías
+\end_layout
+
+\begin_layout Standard
+Primero daremos una noción de simetrías en el contexto de Lógicas Modales,
+ luego utilizando el nexo entre 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ dado en el capítulo anterior, describiremos cómo buscar simetrías en 
+\begin_inset Formula $\mathcal{DL}.$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-De 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- hacia 
+Simetrías en 
 \begin_inset Formula $\mathcal{ML}$
 \end_inset
 
@@ -91,873 +107,130 @@ De
 \end_layout
 
 \begin_layout Standard
-Luego de muchas definiciones y desarrollo teórico en 
-\begin_inset Formula $\mathcal{DL}$
+Las simetrías en 
+\begin_inset Formula $\mathsf{\mathcal{ML}}$
 \end_inset
 
- y 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, ya contamos con todos los ingredientes que necesitamos para poder hacer
- una traducción correcta de fórmulas en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- a fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the eagerness of finding symmetries on Description Logics (
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-), a set of tools for finding symmetries in Modal Logics (
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-) are to be used.
- But first, a bridge between the two logis needs to be build: the translations
- are the approach to build such bridge.
-\end_layout
-
-\begin_layout Subsection
-Función de traducción 
-\begin_inset Formula $\Psi$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A continuación definiremos una función de traducción 
-\series bold
-
-\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}$
-\end_inset
-
-
-\series default
-
-\begin_inset Formula $\rightarrow$
-\end_inset
-
-
-\begin_inset Formula $\mathcal{F_{ML}}$
-\end_inset
-
-, donde 
-\begin_inset Formula $\mathcal{F_{DL}}$
-\end_inset
-
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y 
-\begin_inset Formula $\mathcal{F_{ML}}$
-\end_inset
-
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-.
- Recordemos que las fórmulas de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- tienen su notación en lenguaje OWL descrita en las tablas 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:DL-OWL"
-
-\end_inset
-
- y 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:DL-OWL-axiomas"
+ fueron extensamente estudiadas en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
 
 \end_inset
 
 .
- También usaremos referencias de las tablas 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:ALsinsem"
-
-\end_inset
-
- y 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:ALsinsemext"
-
-\end_inset
-
-.
- Para la definición de 
-\begin_inset Formula $\Psi$
-\end_inset
-
-, expresaremos las reglas de manera intuitiva, ya que una demostración formal
- de éstas sería muy tediosa.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\exists R.C$
-\end_inset
-
-, recordemos que esta expresión indica 
-\begin_inset Quotes eld
-\end_inset
-
-los elementos 
-\emph on
-a
-\emph default
- tales que existe un elemento 
-\emph on
-b
-\emph default
- y el par 
-\emph on
-(a, b)
-\emph default
- forma parte de 
-\emph on
-R
-\emph default
- y 
-\emph on
-b
-\emph default
- está en el conjunto 
-\emph on
-C
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-, en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
- esto está representado por su cuantificador existencial 
-\begin_inset Formula $\diamond$
-\end_inset
-
-, por lo tanto:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-De manera totalmente análoga, 
-\begin_inset Formula $\forall R.C$
-\end_inset
-
- expresa 
-\begin_inset Quotes eld
-\end_inset
-
-los elementos 
-\emph on
-a
-\emph default
- tales que para todo elemento 
-\emph on
-b
-\emph default
- tal que 
-\emph on
-(a, b)
-\emph default
- esté en 
-\emph on
-R
-\emph default
- entonces se da que 
-\emph on
-b
-\emph default
- pertence a 
-\emph on
-C
-\emph default
-
-\begin_inset Quotes erd
-\end_inset
-
-, el cuantificador universal en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
- está dado por el operador 
-\begin_inset Formula $\boxempty$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-\begin_inset Formula $\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2}$
-\end_inset
-
-, siempre es el caso en que si el conjunto 
-\begin_inset Formula $\mathcal{C}_{1}$
-\end_inset
-
- cumple con alguna propiedad, entonces 
-\begin_inset Formula $\mathcal{C}_{2}$
-\end_inset
-
- también:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-La equivalencia de conjuntos, 
-\begin_inset Formula $\mathcal{C}_{1}\equiv\mathcal{C}_{2}$
-\end_inset
-
-, no es nada menos que una doble inclusión, por lo tanto es definida como:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Debemos recordar que a nivel de modelos siempre estamos trabajando con conjuntos
- y propiedades sobre éstos, por lo tanto en 
+ A continuación introduciremos los conceptos principales que nos permitirán
+ hablar de simetrías en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
-, las propiedades que puedan cumplirse sobre la unión de dos conjuntos,
+.
+\end_layout
+
+\begin_layout Definition
+(Permutación de literales proposicionales).
  
-\begin_inset Formula $\mathcal{C}_{1}\cup\mathcal{C}_{2}$
-\end_inset
-
-, será lo mismo que en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
- se cumpla sobre algunos de los dos:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2})$
+\emph on
+Una
+\emph default
+ permutación de literales proposicionales
+\emph on
+ es una función biyectiva 
+\begin_inset Formula $\sigma$
 \end_inset
 
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-De forma análoga:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\emph default
+: 
 \family sans
-\series bold
-\size large
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
+PLIT
+\begin_inset Formula $\longmapsto$
 \end_inset
 
+PLIT.
+ 
+\family default
+\emph on
+Dado un conjunto de literales proposicionales L, 
+\begin_inset Formula $\sigma(L)=\{\sigma(l)\mid l\in L\}$
+\end_inset
 
+.
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-En el caso de conjuntos disjuntos, 
-\begin_inset Formula $\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2}$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})$
+\begin_inset space ~
 \end_inset
 
 
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
+\begin_layout Standard
 
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
+\emph on
+Nota.
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\emph default
+ La definición que acabamos de dar define permutaciones sobre el conjunto
+ infinito 
 \family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-El complemento de conjuntos, 
-\begin_inset Formula $\lnot C$
-\end_inset
-
- en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- (o, 
-\begin_inset Formula $Complement\,\mathcal{C}$
-\end_inset
-
- en OWL), se traduce como la negación de una fórmula de 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(Complement\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+PLIT
+\family default
+.
+ Sin embargo, en la práctica, solo trabajamos con permutaciones definidas
+ sobre un subconjunto finito 
+\emph on
+A
+\emph default
+ de 
 \family sans
-\series bold
-\size large
-\begin_inset Formula $\neg\Psi(\mathcal{C})$
-\end_inset
-
-
+PLIT
+\family default
+, es decir, el conjunto de los literales proposicionales que aparecen en
+ la fórmula en la cual estamos trabajando.
 \end_layout
 
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Standard
-Trabajaremos con la sintaxis de OWL para definir nuestra función.
- Sea 
-\begin_inset Formula $\mathcal{R}$
+En lo que sigue, asumiremos que toda permutación es una permutación de literales
+ proposicionales y las llamaremos simplemente una 
+\begin_inset Quotes eld
 \end_inset
 
- una propiedad y 
-\begin_inset Formula $\mathcal{C},\mathcal{C}_{1}\,y\,\mathcal{C}_{2}$
+permutación
+\begin_inset Quotes erd
 \end_inset
 
- clases, sea 
-\begin_inset Formula $\mathcal{F_{DL}}$
+.
+\end_layout
+
+\begin_layout Definition
+(Permutación de una fórmula).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
 \end_inset
 
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{DL}$
+ una fórmula en CNF modal y 
+\begin_inset Formula $\sigma$
 \end_inset
 
- y 
-\begin_inset Formula $\mathcal{F_{ML}}$
+ una permutación.
+ Definimos 
+\begin_inset Formula $\sigma(\varphi)$
 \end_inset
 
- el conjunto de fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, definamos 
-\begin_inset Formula $\Psi$
-\end_inset
-
- recursivamente de la siguiente manera:
+ recursivamente como
 \end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="18" columns="4">
+<lyxtabular version="3" rows="6" columns="4">
 <features tabularvalignment="middle">
 <column alignment="right" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top">
-<column alignment="left" valignment="top">
+<column alignment="center" valignment="top">
 <row>
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
@@ -997,14 +270,11 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
-\size larger
-\begin_inset Formula $\Psi:\,D_{\Psi}\subseteq\mathcal{F_{DL}}$
+\begin_inset Formula $\sigma(\varphi)$
 \end_inset
 
 
@@ -1016,7 +286,16 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\rightarrow$
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{\sigma(C)\mid C\in\varphi\}$
 \end_inset
 
 
@@ -1028,57 +307,13 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{F_{ML}}$
+
+\emph on
+para 
+\begin_inset Formula $\varphi$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+ una fórmula en CNF modal
 \end_layout
 
 \end_inset
@@ -1089,7 +324,7 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
+\begin_inset Formula $\sigma(C)$
 \end_inset
 
 
@@ -1101,10 +336,7 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
+=
 \end_layout
 
 \end_inset
@@ -1113,7 +345,7 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\begin_inset Formula $\{\sigma(A)\mid A\in C\}$
 \end_inset
 
 
@@ -1125,7 +357,9 @@ Trabajaremos con la sintaxis de OWL para definir nuestra función.
 \begin_inset Text
 
 \begin_layout Plain Layout
-ok
+
+\emph on
+para C una cláusula en CNF modal
 \end_layout
 
 \end_inset
@@ -1136,7 +370,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
+\begin_inset Formula $\sigma(\text{\boxempty}C)$
 \end_inset
 
 
@@ -1148,10 +382,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
+=
 \end_layout
 
 \end_inset
@@ -1160,78 +391,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\Psi(\mathcal{R}\,hasValue\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})\land\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
+\begin_inset Formula $\boxempty\sigma(C)$
 \end_inset
 
 
@@ -1254,19 +414,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\Psi(\mathcal{R}^{-}someValuesFrom\,\mathcal{C})$
+\begin_inset Formula $\sigma(\neg\boxempty C)$
 \end_inset
 
 
@@ -1278,10 +426,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
+=
 \end_layout
 
 \end_inset
@@ -1290,7 +435,7 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}^{-}\rangle\Psi(\mathcal{C})$
+\begin_inset Formula $\neg\boxempty\sigma(C)$
 \end_inset
 
 
@@ -1309,13 +454,10 @@ ok
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})$
-\end_inset
-
 
 \end_layout
 
@@ -1325,9 +467,6 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
 
 \end_layout
 
@@ -1337,511 +476,6 @@ ok
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\equiv\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\cup\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{\text{1}}\cap\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,ObjectDomain\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies\Psi(\mathcal{C}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{R}\,ObjectRange\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies\Psi(\mathcal{C}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(functional\,\mathcal{R})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $\forall(\langle\mathcal{R}\rangle\top\implies[\mathcal{R}]\top)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(inverseFunctional\,\mathcal{R})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\langle\mathcal{R}^{-}\rangle\top\implies[\mathcal{R}^{-}]\top)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1\,}Disjoint\,\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\forall(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(Complement\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\neg\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ok
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(Cardinality\,type\,\mathcal{N}\,\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle str(type\mathcal{NC})\rangle\Psi(\mathcal{C})$
-\end_inset
-
 
 \end_layout
 
@@ -1862,6 +496,948 @@ ok
 \end_inset
 
 
+\end_layout
+
+\begin_layout Definition
+(Conjunto Completo, Consistente y Generado de literales proposicionales).
+ 
+\emph on
+Un conjunto de literales proposicionales L es 
+\emph default
+completo
+\emph on
+ si por cada 
+\begin_inset Formula $p\in\mathsf{PROP},\,p\in L\,o\,\neg p\in L$
+\end_inset
+
+.
+ Es 
+\emph default
+consistente
+\emph on
+ si por cada 
+\begin_inset Formula $p\in\mathsf{PROP}$
+\end_inset
+
+, 
+\begin_inset Formula $p\notin L$
+\end_inset
+
+ o 
+\begin_inset Formula $\neg p\notin L$
+\end_inset
+
+.
+ Todo conjunto completo y consistente de literales proposicionales L define
+ una única valuación proposicional 
+\begin_inset Formula $v\subseteq\mathsf{PROP}$
+\end_inset
+
+ donde 
+\begin_inset Formula $p\in v$
+\end_inset
+
+ si 
+\begin_inset Formula $p\in L$
+\end_inset
+
+ y 
+\begin_inset Formula $p\notin L$
+\end_inset
+
+ si 
+\begin_inset Formula $\neg p\in L$
+\end_inset
+
+.
+ Dado 
+\begin_inset Formula $S\subseteq\mathsf{PROP}$
+\end_inset
+
+, el 
+\emph default
+conjunto consistente y completo de literales proposicionales generado por
+ 
+\emph on
+S (notación 
+\begin_inset Formula $L_{S}$
+\end_inset
+
+) es 
+\begin_inset Formula $S\cup\{\neg p\mid p\in\mathsf{PROP}\setminus S\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Dado un conjunto de literales proposicionales, estamos interesados en aquellas
+ permutaciones del conjunto que son 
+\emph on
+consistentes
+\emph default
+.
+\end_layout
+
+\begin_layout Definition
+(Permutación Consistente).
+ 
+\emph on
+Una permutación 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es 
+\emph default
+consistente
+\emph on
+ si por cada literal proposicional l tenemos que 
+\begin_inset Formula $\sigma(\sim l)=\sim\sigma(l)$
+\end_inset
+
+, donde 
+\begin_inset Formula $\sim$
+\end_inset
+
+ es una función que retorna el complemento de un literal proposicional,
+ es decir, 
+\begin_inset Formula $\sim p=\neg p$
+\end_inset
+
+ y 
+\begin_inset Formula $\sim\neg p=p.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La condición de consistencia de una permutación garantiza que la misma interactu
+ará de forma correcta cuando es aplicada a un conjunto de literales proposiciona
+les, es decir, si tenemos un conjunto consistente de literales proposicionales,
+ se mantendrá consistente luego de aplicar una permutación consistente al
+ mismo.
+\end_layout
+
+\begin_layout Standard
+Desde el punto de vista de la teoría de grupos, las permutaciones consistentes
+ forman un subgrupo del grupo de todas las permutaciones sobre un determinado
+ conjunto, ya que la composición de permutaciones consistentes da como resultado
+ una permutación consistente.
+\end_layout
+
+\begin_layout Definition
+(Simetría).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal.
+ Una permutación consistente 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ si 
+\begin_inset Formula $\varphi=\sigma(\varphi)$
+\end_inset
+
+, cuando las conjunciones y las disyunciones en 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ son representadas como conjuntos.
+\end_layout
+
+\begin_layout Standard
+También necesitamos considerar el efecto de aplicar permutaciones a los
+ modelos.
+ Si 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es verdadera en un modelo 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+, denotado como 
+\begin_inset Formula $\mathcal{M}\models\varphi$
+\end_inset
+
+, intuitivamente queremos que 
+\begin_inset Formula $\sigma(\varphi)$
+\end_inset
+
+, sea verdadera en el modelo 
+\begin_inset Formula $\sigma(\mathcal{M})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+(Permutación de un modelo).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una permutación y 
+\begin_inset Formula $\mathcal{M}=\langle\Delta,\mathcal{I}\rangle$
+\end_inset
+
+ un modelo.
+ Luego 
+\begin_inset Formula $\sigma(\mathcal{M})=\langle\Delta,\mathcal{I}'\rangle$
+\end_inset
+
+, donde,
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula $\mathcal{I}'(w)=\sigma(L_{\mathcal{I}(w)})\cap$
+\end_inset
+
+
+\family sans
+\emph default
+PROP 
+\family default
+\emph on
+para todo 
+\begin_inset Formula $w\in\Delta.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $L_{\mathcal{I}(w)}$
+\end_inset
+
+ 
+\emph on
+es el conjunto de literales completo y consistente generado por 
+\begin_inset Formula $\mathcal{I}(w)$
+\end_inset
+
+.
+ Dado M un conjunto de modelos, 
+\begin_inset Formula $\sigma(M)=\{\sigma(\mathcal{M})\mid\mathcal{M}\in M\}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+
+\emph on
+Sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una permutación consistente, 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal y 
+\begin_inset Formula $\mathcal{M}=\langle\Delta,\mathcal{I}\rangle$
+\end_inset
+
+ un modelo.
+ Luego 
+\begin_inset Formula $\mathcal{M}\models\varphi$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\sigma(\mathcal{M})\models\sigma(\varphi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostración: Ver 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+(Conjunto de Modelos de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula y 
+\begin_inset Formula $\mathcal{M}$
+\end_inset
+
+ un modelo.
+ Denotaremos con 
+\begin_inset Formula $Mods(\varphi)$
+\end_inset
+
+ al conjunto 
+\begin_inset Formula $\{\mathcal{M}\mid\mathcal{M}\models\varphi\}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Corollary
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "cor4.1"
+
+\end_inset
+
+Si 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ es una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ luego 
+\begin_inset Formula $\mathcal{M}\in Mods(\varphi)$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\sigma(\mathcal{M})\in Mods(\varphi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Corolario 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor4.1"
+
+\end_inset
+
+ nos indica que, en la lógica modal básica, las simetrías tienen el mismo
+ efecto que en la lógica proposicional.
+ El grupo de simetrías de una fórmula 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ actuando sobre el conjunto de modelos lo particiona de forma tal que las
+ clases de equivalencia (órbitas) contienen sólo modelos que satisfacen
+ 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ o sólo modelos que no satisfacen 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Como consecuencia de esto, podríamos evitar buscar una solución en el espacio
+ de modelos completos y enfocarnos solamente en los representantes de cada
+ clase de equivalencia, suponiendo que los podemos computar.
+ 
+\end_layout
+
+\begin_layout Standard
+Además de particionar el espacio de modelos, las simetrías nos proveen un
+ mecanismo de inferencia.
+\end_layout
+
+\begin_layout Theorem
+
+\emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "teo4.1"
+
+\end_inset
+
+Sean 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ y 
+\begin_inset Formula $\psi$
+\end_inset
+
+ fórmulas en CNF modal y sea 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ una simetría de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Luego 
+\begin_inset Formula $\varphi\models\psi$
+\end_inset
+
+ si y solo si 
+\begin_inset Formula $\varphi\models\sigma(\psi).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Demostración: Ver 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Teorema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "teo4.1"
+
+\end_inset
+
+ nos provee de una mecanismo de inferencia que puede ser utilizado en toda
+ situación donde exista algún tipo de consecuencia lógica involucrada durante
+ el razonamiento modal automático.
+ Sin lugar a dudas, aplicar una permutación es computacionalmente mas “barato”
+ que aplicar una expansión en un tableaux o un paso de resolución.
+ Por lo tanto, las nuevas fórmulas obtenidas de esta forma pueden reducir
+ el tiempo total de ejecución de un algoritmo de inferencia.
+ En el caso de la lógica proposicional este mecanismo de inferencia ha probado
+ su efectividad en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Benhamou"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El Corolario 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cor4.1"
+
+\end_inset
+
+ junto con el Teorema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "teo4.1"
+
+\end_inset
+
+ son los resultados claves que permiten utilizar las simetrías de una fórmula
+ en la lógica modal básica.
+ Sin embargo, es fundamental mencionar que este importantísimo resultado
+ también se puede extender a lógicas multimodales de manera directa, esto
+ se puede ver en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Detectando y Utilizando Simetrías
+\end_layout
+
+\begin_layout Standard
+El primer paso para utilizar las simetrías en cualquier lógica es detectarlas.
+ En esta sección nos enfocaremos en detectar simetrías en fórmulas en CNF
+ modal usando técnias basadas en grafos.
+\end_layout
+
+\begin_layout Standard
+La detección de simetrías basada en grafos es la técnica más común para
+ detectar simetrías en fórmulas y ha encontrado aplicación en diferentes
+ dominios 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Sakallah"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Su éxito se puede explicar en función de dos aspectos.
+ Primero, es conceptualmente simple: la idea es construir un grafo a partir
+ de una fórmula, de forma tal, que el grupo de automorfismos del grafo sea
+ isomorfo al grupo de simetrías de la fórmula.
+ Y segundo, la disponibilidad de herramientas de detección de automorfismos
+ de grafos muy eficientes.
+\end_layout
+
+\begin_layout Subsection
+Definiciones
+\end_layout
+
+\begin_layout Standard
+A menos que se indique lo contrario, trabajeremos con fórmulas en CNF moda,
+ aunque las escribiremos de la forma usual para mantener la claridad en
+ la notación.
+ Con 
+\begin_inset Formula $Sub(\varphi)$
+\end_inset
+
+ denotaremos al conjunto de subfórmulas de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Definition
+(Átomos de una fórmula).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal.
+ Con 
+\begin_inset Formula $At(\varphi)$
+\end_inset
+
+ denotamos al conjunto de átomos que ocurren en 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ independientemente de la profundidad modal a la cual ocurren.
+ Con 
+\begin_inset Formula $At(\varphi,n)$
+\end_inset
+
+, 
+\begin_inset Formula $n\in\mathbb{N}$
+\end_inset
+
+, donotaoms al conjunto de átomos que ocurren en 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ a profundidad modal n.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(Cláusulas top y cláusulas modales).
+ 
+\emph on
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal.
+ Una 
+\emph default
+cláusula top 
+\emph on
+de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es una cláusula que ocurre a profundidad modal 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ Una 
+\emph default
+cláusula modal 
+\emph on
+de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ es una cláusula que ocurre en un literal modal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un aspecto clave en la construcción de un grafo coloreado es cómo colorear
+ los nodos.
+ Para ello definamos una 
+\emph on
+función de tipado:
+\end_layout
+
+\begin_layout Definition
+(Función de Tipado).
+ 
+\emph on
+Sea s: 
+\begin_inset Formula $\mathsf{MOD}\times\{0,1\}\rightarrow\mathbb{N}\setminus\{0,1\}$
+\end_inset
+
+ una función inyectoria y sea 
+\begin_inset Formula $t:Sub(\varphi)\rightarrow\mathbb{N}$
+\end_inset
+
+ una función parcial definida como
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $t(\psi)=\begin{cases}
+1 & si\,\psi\,es\,una\,cláusula\,top\\
+s(m,0) & si\,\psi=[m]C\\
+s(m,1) & si\,\psi=\neg[m]C
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+La función de tipado t asigna un tipo numérico a toda cláusula (top o modal).
+ Para las cláusulas modales, el tipo está basado en la modalidad y la polaridad
+ del literal modal en la cual ocurre.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Detectando Simetrías Globales
+\end_layout
+
+\begin_layout Standard
+Utilizaremos el algoritmo para detectar simetrías globales, definido en
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Example
+
+\emph on
+Considere la fórmula
+\end_layout
+
+\begin_layout Example
+\begin_inset Formula $\varphi=(a\lor[m](b\lor\neg[m]c))\land(b\lor[m](a\lor\neg[m]c))$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Example
+
+\emph on
+La figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:ejemplo-grafo-4-1"
+
+\end_inset
+
+ muestra su grafo 
+\begin_inset Formula $G(\varphi)$
+\end_inset
+
+ asociado construido usando el algoritmo definido en 
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+
+\emph on
+ (los colores están representados por las diferentes formas en la figura).
+\end_layout
+
+\begin_layout Example
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename gfx/grafo.ejemplo.3.1.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo del algoritmo para simetrías globales
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ejemplo-grafo-4-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+El grafo tiene un automorfismo no trivial 
+\begin_inset Formula $\pi=(A\,B)(C\,D)(E\,F)(a\,b)(\neg a\,\neg b)$
+\end_inset
+
+ que se corresponde con la simetría 
+\begin_inset Formula $\sigma=(a\,b)(\neg a\,\neg b)$
+\end_inset
+
+ de 
+\begin_inset Formula $\varphi.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El siguiente resultado prueba que la construcción definida en la Definición
+ del Algoritmo para Simetrías Globales presentado en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+, es correcta.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "teo4.2"
+
+\end_inset
+
+Sea 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ una fórmula en CNF modal y 
+\begin_inset Formula $G(\varphi)=(V,E_{\text{1}},E_{2})$
+\end_inset
+
+ el grafo coloreado construido a partir de la Definición del Algoritmo para
+ Simetrías Globales presentado en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+ Luego, toda simetría 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ de 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ se corresponde uno-a-uno con un automorfismo 
+\begin_inset Formula $\pi$
+\end_inset
+
+ de 
+\begin_inset Formula $G(\varphi).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Theorem
+Demostración: ver 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El Teorema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "teo4.2"
+
+\end_inset
+
+ nos asegura que el algoritmo es correcto y por ende, que no se detectarán
+ simetrías espúreas, es decir, automorfismos del grafo que no son simetrías
+ de la fórmula.
+\end_layout
+
+\begin_layout Section
+Simetrías en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Habiendo ya demostrado en el Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:DL"
+
+\end_inset
+
+ que 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ comparten los mismos modelos, y utilizando tanto la función de traducción
+ 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ del Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:FuncTrad"
+
+\end_inset
+
+, se puede utilizar la misma metología utilizada para 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+ a la hora de buscar simetrías en una fórmula 
+\begin_inset Formula $\varphi$
+\end_inset
+
+: construir el grafo 
+\begin_inset Formula $G(\varphi)$
+\end_inset
+
+ y luego buscar automorfismos de éste siguiendo el algoritmo definido en
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+.
 \end_layout
 
 \end_body
