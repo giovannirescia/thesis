@@ -1,0 +1,183 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass classicthesis
+\begin_preamble
+\usepackage[spanish,es-lcroman,es-tabla]{babel}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:conclusiones"
+
+\end_inset
+
+Conclusiones y Trabajo Futuro
+\end_layout
+
+\begin_layout Standard
+El trabajo de esta Tesis fue principalmente la investigación de simetrías
+ en Lógicas de Descripción.
+ Pero en el camino recorrido para llegar a tales resultados se han obtenido
+ algunos otros resultados secundarios.
+ Revisemos los detalles obtenidos.
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:ResumendeloHecho"
+
+\end_inset
+
+Resumen de lo hecho (dar los límites del trabajo)
+\end_layout
+
+\begin_layout Standard
+Como el título de esta obra indica, la principal tarea aquí fue el estudio
+ de las simetrías en Lógicas de Descripción, como caso de estudio particular
+ trabajamos directamente buscando simetrías en ontologías, ya que su aplicación
+ (de las simetrías) puede tener un impacto mucho importante, haciendo más
+ eficientes a los razonadores que trabajan con dichas ontologías.
+\end_layout
+
+\begin_layout Standard
+Como es natural, en este trabajo comenzamos por los cimientos teóricos de
+ las lógicas de descripción y la naturaleza de las ontologías.
+ Dimos definiciones precisas de sintaxis y semántica tanto de las lógicas
+ de descripción como para las lógicas modales, como los nexos entre las
+ mismas (tanto en sintaxis como en semántica).
+ Esto fue para crear una función de traducción 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ usada para traducir fórmulas de 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ a fórmulas de 
+\begin_inset Formula $\mathcal{ML}$
+\end_inset
+
+, ya que la gran mayoría de los resultados estaban probados para ésta (solo
+ hubo que adaptar algunos, y muy poco).
+\end_layout
+
+\begin_layout Standard
+También dimos nociones de simetrías en fórmulas son vistas como automorfismos
+ de un grafo, por lo cual definimos un algoritmo, correcto, para describir
+ una fórmula como un grafo.
+\end_layout
+
+\begin_layout Standard
+Si bien haber encontrado simetrías fue un resultado muy bueno, hay que recordar
+ dos cosas: primero, que solo se trabajó con la TBox de cada ontología,
+ entonces seguramente si también se hubiera trabajado con las ABox la cantidad
+ de simetrías encontradas hubiera disminuido.
+ Y segundo, están los resultados demostrando que se han encontrado simetrías,
+ pero nada se hace con éstas, lo interesante sería 
+\emph on
+implementar
+\emph default
+ estas simetrías en un razonador que utilice dichas ontologías y ver si
+ el razonador mejora en su rendimiento.
+\end_layout
+
+\begin_layout Section
+\begin_inset Quotes eld
+\end_inset
+
+opiniones
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Qué más se puede hacer a partir de acá
+\end_layout
+
+\begin_layout Standard
+Como mencionamos en la Sección 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:ResumendeloHecho"
+
+\end_inset
+
+ hay mucho lugar para experimentar todavía, las ABox no se han trabajado
+ y seguramente también se observarán algunos resultados interesantes.
+\end_layout
+
+\end_body
+\end_document

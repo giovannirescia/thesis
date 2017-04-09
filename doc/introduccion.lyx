@@ -1,0 +1,1369 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass classicthesis
+\begin_preamble
+\usepackage[spanish,es-lcroman,es-tabla]{babel}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:introduccion"
+
+\end_inset
+
+Introducción
+\end_layout
+
+\begin_layout Section
+Qué vamos a hacer en esta tesis
+\end_layout
+
+\begin_layout Standard
+Supongamos que estamos frente a una computadora que contiene una base de
+ datos a la cual podemos hacer consultas.
+ Ahora supongamos que la computadora conoce la repuesta para alguna consulta
+ de tipo 
+\emph on
+A
+\emph default
+, pero nosotros queremos hacerle alguna otra consulta de tipo 
+\emph on
+B
+\emph default
+.
+
+\emph on
+ 
+\emph default
+Ahora supongamos que contamos con algún algoritmo que puede decidir si dos
+ consultas tomadas en cuenta bajo ciertos aspectos, son 
+\emph on
+similares
+\emph default
+.
+ Entonces nuestra computadora podría valerse de esta información y reutilizar
+ una respuesta similar a la de a 
+\emph on
+A
+\emph default
+ al contestar 
+\emph on
+B
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Dicho de manera metafórica, ese será el foco de trabajo de esta tesis: detectar
+ 
+\emph on
+similitudes
+\emph default
+ en consultas para ciertas bases de datos; donde estas similitudes serán
+ introducidas formalmente bajo el nombre de 
+\emph on
+simetrías
+\emph default
+.
+ Las bases de datos particulares con las que trabajeremos son conocidas
+ como 
+\emph on
+bases de conocimiento
+\emph default
+ o 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+ (utilizaremos los términos 
+\emph on
+bases de conocimiento 
+\emph default
+y 
+\emph on
+
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+ 
+\emph default
+intercambiablemente durante el resto de esta tesis).
+ Mencionamos bases de 
+\emph on
+conocimiento
+\emph default
+ pero, ¿conocimiento sobre qué?, bueno, esto dependerá del dominio del problema
+ que necesitemos modelar, puede ser algo concreto como algo abstracto.
+ Y ahora que sabemos el tipo de conocimiento con el que nuestra base de
+ datos puede contar, ¿cómo lo representamos en la misma? Estas bases de
+ conocimiento son especificadas formalmente utilizando el lenguaje que proveen
+ las 
+\emph on
+Lógicas de Descripción
+\emph default
+ o 
+\emph on
+
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+
+\emph default
+ (utilizaremos los términos 
+\emph on
+Lógicas de Descripción 
+\emph default
+y 
+\emph on
+
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ 
+\emph default
+intercambiablemente durante el resto de esta tesis).
+ El lenguaje OWL está basado en estas lógicas de descripción y es utilizado
+ para definir a estas bases de conocimiento en una computadora para que
+ pueda ser procesado por ésta.
+\end_layout
+
+\begin_layout Section
+Capturando Conocimiento
+\end_layout
+
+\begin_layout Standard
+La historia de la inteligencia artificial nos ha mostrado que el 
+\emph on
+conocimiento
+\emph default
+ es crítico a la hora de desarrollar sistemas de inteligencia artificial.
+ En muchos casos, a la hora de resolver una tarea, contar con 
+\emph on
+mejor
+\emph default
+ conocimiento puede llegar a ser más importante que contar con mejores algoritmo
+s.
+ Para poder tener sistemas verdaderamente inteligentes, el conocimiento
+ necesita ser capturado, procesado, reusado y comunicado.
+ Las ontologías dan soporte a todas estas tareas.
+\end_layout
+
+\begin_layout Subsection
+Ontologías
+\end_layout
+
+\begin_layout Standard
+El término 
+\emph on
+ontología
+\emph default
+ tiene sus raíces en la parte de la filosofía que está enfocada en el estudio
+ del ser o la existencia.
+ En términos de ciencias de la computación, ontología refiere a un término
+ técnico que denota un artefacto que es 
+\emph on
+diseñado
+\emph default
+ para un propósito: permitir el modelado de conocimiento sobre cierto dominio
+ específico, tanto real como ficticio.
+\end_layout
+
+\begin_layout Standard
+Este término ha sido adoptado por investigadores en el área de Inteligencia
+ Artificial (IA), quienes reconocieron la aplicación del trabajo desde la
+ lógica matemática 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AI"
+
+\end_inset
+
+ y argumentaron que se podrían crear nuevas ontologías vistas como modelos
+ computacionales que permitirían cierto tipo de razonamiento automático
+ 
+\begin_inset CommandInset citation
+LatexCommand citealt
+key "AI2"
+
+\end_inset
+
+.
+ En la década de 1980 la comunidad de IA comenzó a usar el término ontología
+ para referirse ambas cosas: a una teoría de un mundo modelado (por ejemplo,
+ Naïve Physics 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AI2"
+
+\end_inset
+
+), y como un componente de los sistemas de conocimiento.
+\end_layout
+
+\begin_layout Standard
+A comienzos de 1990, un esfuerzo para crear estándares identificó un conjunto
+ de capas en las cuales a la capa correspondiente a la ontología se la refirió
+ como el componente estándar de los sistemas de conocimiento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AI3"
+
+\end_inset
+
+.
+ Un muy citado y conocido paper 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "AI4"
+
+\end_inset
+
+ define ontología como una 
+\emph on
+especificación explícita de una conceptualización
+\emph default
+, que refiere a 
+\emph on
+los objetos, conceptos y otras entidades que son parte de algún área de
+ interés y las relaciones entre éstos
+\emph default
+.
+ Mientras que los términos 
+\emph on
+especificación 
+\emph default
+y 
+\emph on
+conceptualización
+\emph default
+ puedan prestarse para diferentes interpretaciones, los puntos esenciales
+ en la definición de ontología son
+\end_layout
+
+\begin_layout Itemize
+Una ontología define (especifica) los conceptos, relaciones, y otras distincione
+s que son relevantes para modelar el dominio.
+\end_layout
+
+\begin_layout Itemize
+The specification takes the form of the definitions of representational
+ vocabulary (classes, relations, and so forth), which provide meanings for
+ the vocabulary and formal constraints on its coherent use.
+\end_layout
+
+\begin_layout Itemize
+La especificación toma la forma de las definiciones del vocabulario (clases,
+ relaciones, etc.), que proveen un significado para el vocabulario y las
+ restricciones formales para su uso coherente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Distintos abordajes para la representación de las ontologías se desarrollaron
+ en los años setenta, y pueden ser clasificados en dos categorías: formalismos
+ basados en lógica (que asumen que el cálculo de predicados puede usarse
+ de forma objetiva para capturar hechos del mundo), y por otro lado, representac
+iones no basadas en lógica.
+ Entre los sistemas más populares no basados en lógica encontramos dos:
+ las 
+\emph on
+redes semánticas
+\emph default
+ y 
+\emph on
+las estructuras (frames)
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+\paragraph_spacing single
+Sistemas no basados en lógica
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+En las redes semánticas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Quillian"
+
+\end_inset
+
+ el conocimiento se representa en la forma de un grafo dirigido con etiquetas:
+ cada nodo es asociado con un concepto y los arcos representan relaciones
+ de algún tipo entre conceptos.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+En el caso de las estructuras 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Minsky"
+
+\end_inset
+
+, el objetivo se centra en lograr conocimiento estructurado basándose en
+ la capacidad de expresar relaciones entre estructuras.
+ Una estructura representa cierto concepto y es caracterizada por un númeo
+ de atributos; donde los valores de los atributos pueden ser elementos de
+ algún dominio concreto (e.g., enteros, 
+\emph on
+strings
+\emph default
+) o identificadores de otras estructuras.
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+Si bien las redes semánticas y las estructuras contienen diferencias muy
+ marcadas, tanto en las motivaciones que llevaron a su desarrollo como en
+ sus prestaciones, comparten una base común.
+ De hecho, nos podemos referir a ambas como estructuras de red, donde la
+ estructura de cada red apunta a representar conjuntos de individuos y cómo
+ éstos se relacionan entre sí.
+ Por ejemplo, la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:redSimple
+\end_layout
+
+\end_inset
+
+ representa conocimiento modelando una pequeña parte del mundo animal; la
+ estructura utilizada también es referida como una 
+\emph on
+terminología
+\emph default
+, y representa la generalización/especificación de los conceptos involucrados.
+ Por ejemplo, el vínculo entre 
+\emph on
+Félidos
+\emph default
+ y 
+\emph on
+Carnívoros
+\emph default
+ indica que todos los félidos son carnívoros; este tipo de relación también
+ es llamada una relación 
+\emph on
+IS-A
+\emph default
+ (en español, 
+\begin_inset Quotes eld
+\end_inset
+
+es-un/una
+\begin_inset Quotes erd
+\end_inset
+
+).
+ La relación IS-A define una jerarquía entre los conceptos que implica la
+ herencia de atributos: si un concepto 
+\emph on
+A
+\emph default
+ es más específico que otro concepto 
+\emph on
+B
+\emph default
+, entonces el concepto 
+\emph on
+A
+\emph default
+ hereda las propiedades del concepto 
+\emph on
+B
+\emph default
+.
+ Por ejemplo, si decimos que los carnívoros tienen ciertos órganos particulares
+ que usan para capturar a su presa, entonces los félidos también cuentan
+ con dichos órganos.
+ Siguiendo con el ejemplo de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:redSimple
+\end_layout
+
+\end_inset
+
+, vemos que el concepto Carnívoro está conectado con el nodo 
+\emph on
+seAlimentaDe
+\emph default
+, el cual es una propiedad también llamada, 
+\emph on
+rol
+\emph default
+.
+ Éste cuenta con una 
+\emph on
+restrición de valor
+\emph default
+, denotado por la etiqueta RV, que expresa una limitación en el rango de
+ tipos de objetos que pueden relacionarse con el rol.
+ En nuestro ejemplo, el rol tiene una restricción en cuanto a la cardinalidad,
+ expresada como (
+\begin_inset Formula $0$
+\end_inset
+
+, NIL), donde el primer número es el límite inferior y el segundo número
+ el límite superior (NIL representa infinito).
+ Entonces, podría leerse como 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+un carnívoro es un animal que come (
+\begin_inset Formula $0$
+\end_inset
+
+ o más) animales
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/network_2.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:redSimple"
+
+\end_inset
+
+Red simple
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un detalle importante en estas estructuras son las relaciones implícitas
+ que se encuentran entre los conceptos.
+ Por ejemplo, como todos los carnívoros son animales, y un félido es un
+ carnívoro, por lo tanto un félido es un animal.
+ Este es el objetivo de un sistema de representación de conocimiento: encontrar
+ este tipo de relaciones implícitas.
+\end_layout
+
+\begin_layout Standard
+Sin embargo, a medida que las relaciones entre los conceptos se vuelven
+ más complejas, aumenta la dificultad para dar caracterizaciones precisas
+ sobre qué tipos de relaciones pueden ser computadas, y para garantizar
+ su correctitud y completitud.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sistemas basados en lógica: las Lógicas de Descripción al rescate
+\end_layout
+
+\begin_layout Standard
+Usando las ideas que hemos visto hasta el momento, varios sistemas fueron
+ implementados y utilizados en aplicaciones.
+ Como resultado, surgió la necesidad de una caracterización precisa del
+ significado de las estructuras usadas en las representaciones y del conjunto
+ de inferencias que podían obtenerse de dichas estructuras.
+ Esta precisa caracterización del significado de una red puede obtenerse
+ definiendo un lenguaje para los elementos de la estructura (sintaxis) y
+ proveyendo una interpretación para estos símbolos (semántica).
+ Si bien la sintaxis puede variar bajo ciertos aspectos (dominio del problema,
+ filosofía, etc), la semántica suele estar dada en términos de modelos.
+ Una Lógica de Descripción es esta caracterización de sintaxis y semántica
+ de una red.
+\end_layout
+
+\begin_layout Standard
+Para la sintaxis se introdujo un lenguaje abstracto, definido a partir de
+ dos alfabetos disjuntos que son utilizados para denotar 
+\emph on
+conceptos atómicos
+\emph default
+ (símbolos unarios de predicado) y 
+\emph on
+roles atómicos
+\emph default
+ de predicado (símbolos binarios) utilizados para expresar relaciones entre
+ los conceptos.
+ Las fórmulas se construyen a partir de los símbolos básicos usando distintos
+ operadores.
+ Por ejemplo, la 
+\emph on
+intersección de conceptos
+\emph default
+, que es denotada por 
+\begin_inset Formula $C\sqcap D$
+\end_inset
+
+, es usada para restringir el conjunto de individuos bajo consideración
+ a aquellos que pertenecen tanto a 
+\emph on
+C
+\emph default
+ como a 
+\emph on
+D
+\emph default
+, es decir, el operador 
+\begin_inset Formula $\sqcap$
+\end_inset
+
+ se comporta como el operador intersección de conjuntos, pero sobre conceptos.
+\end_layout
+
+\begin_layout Standard
+Con respecto a la semántica, un concepto es interpretado como un conjunto
+ de individuos mientras que los roles son interpretados como conjuntos de
+ pares de individuos.
+ Por ende, los conceptos atómicos son interpretados como subconjuntos del
+ dominio de interpretación, mientras que la semántica de los otros constructores
+ es especificada definiendo el conjunto de individuos denotado por cada
+ constructor.
+ Por ejemplo, el concepto 
+\begin_inset Formula $C\sqcup D$
+\end_inset
+
+ es el conjunto de individuos obtenido uniendo los conjuntos de individuos
+ denotados por 
+\emph on
+C
+\emph default
+ y por 
+\emph on
+D
+\emph default
+, respectivamente, o sea que se podría definir al operador 
+\begin_inset Formula $\sqcup$
+\end_inset
+
+ como el operador unión de conjuntos, solo que opera sobre conceptos.
+\end_layout
+
+\begin_layout Standard
+A modo de ejemplo, supongamos que 
+\emph on
+Persona, Hombre 
+\emph default
+y 
+\emph on
+Mujer
+\emph default
+ son conceptos atómicos y que 
+\emph on
+tieneHijo
+\emph default
+ es un rol atómico.
+ Usando los operadores 
+\emph on
+intersección, unión
+\emph default
+ y 
+\emph on
+complemento
+\emph default
+ de conceptos, interpretados como operaciones entre conjuntos, podemos describir
+ nuevos conceptos, como por ejemplo 
+\begin_inset Quotes eld
+\end_inset
+
+las personas que no son mujeres
+\begin_inset Quotes erd
+\end_inset
+
+, 
+\begin_inset Quotes eld
+\end_inset
+
+los individuos que son mujeres u hombres
+\begin_inset Quotes erd
+\end_inset
+
+ o incluso el conjunto de las madres, denotados por las siguientes expresiones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Persona\sqcap\lnot Mujer$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Mujer\sqcup Hombre$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $tieneHijo(Mujer)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Expresando ontologías en computadoras
+\end_layout
+
+\begin_layout Standard
+La 
+\emph on
+World Wide Web
+\emph default
+, o 
+\emph on
+WWW
+\emph default
+, es una librería enorme de documentos entrelazados que son transferidos
+ entre computadoras y presentados a las personas.
+ Actualmente la WWW contiene muchísima información y conocimiento, pero
+ las máquinas por lo general solo transportan y presentan el contenido de
+ los documentos que describen al conocimiento.
+ Son las personas las encargadas de conectar todas las fuentes de información
+ relevante e interpretarlas.
+\end_layout
+
+\begin_layout Standard
+La 
+\emph on
+Web Semántica
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OWLAPI"
+
+\end_inset
+
+, tiene como objetivo mejorar la actual web para que las computadoras sean
+ capaces de procesar la información presentada en la WWW, interpretarla
+ y conectarla, para ayudar a las personas a encontrar el conocimiento requerido.
+ De la misma manera que la WWW, la web semántica es un sistema distribuido
+ de hipertexto, está pensado para formar un gran sistema de conocimiento
+ distribuido.
+ El foco de la web semántica es compartir datos, en vez de documentos.
+ En otras palabras, es un proyecto que debería proveer 
+\emph on
+una estructura, o marco, común que permita a la información ser compartida
+ y reusada a través de los límites de la aplicación, el trabajo y la comunidad.
+ Es un esfuerzo en colaboración liderado por el Consorcio de la WWW (W3C).
+\end_layout
+
+\begin_layout Standard
+La parte relevante para esta tesis de la arquitectura de la web semántica
+ está dada por la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:w3cstack
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/web_semantica.png
+	scale 66
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+Web Semántica
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:w3cstack"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La primer capa del sistema, 
+\emph on
+URI
+\emph default
+ y 
+\emph on
+Unicode
+\emph default
+, siguen las características importantes de la WWW.
+ Unicode es un estándar para la codificación de conjuntos internacionales
+ de caractéres y permite usar cualquier lenguaje humano (para escritura
+ y lectura) en la web usando una forma estandar.
+ URI, o 
+\emph on
+Uniform Resource Identifier
+\emph default
+ (Identificador de recurso uniforme, en español) es un 
+\emph on
+string
+\emph default
+ (conjunto de caractéres) de forma estandarizada que permite identificar
+ recursos de forma única (e.g., documentos).
+\end_layout
+
+\begin_layout Standard
+La capa 
+\emph on
+Extensible Markup Language 
+\emph default
+(XML) junto con las definiciones de 
+\emph on
+XML namespace
+\emph default
+ y 
+\emph on
+XML schema
+\emph default
+ se aseguran de que haya una sintaxis común utilizada en la web semántica.
+ XML es un lenguaje de marcas (etiquetas) de propósito general para documentos
+ que contienen información estructurada.
+\end_layout
+
+\begin_layout Standard
+Un formato básico de representación de la información para la web semántica
+ es 
+\emph on
+RDF
+\emph default
+ (por 
+\emph on
+Resource Description Framework
+\emph default
+, o 
+\emph on
+Sistema de Descripción de Recursos
+\emph default
+, en español).
+ Es un sistema para representar información acerca de los recursos en forma
+ de grafo.
+ Está basado en triplas 
+\emph on
+sujeto-predicado-objeto 
+\emph default
+que conforma el grafo de datos.
+ Todos los datos en la web semántica usan RDF como el principal lenguaje
+ de representación.
+ Debido a que RDF estaba pensando principalmente para representar metadatos
+ sobre recursos de la WWW, fue construido con recursos de URI.
+\end_layout
+
+\begin_layout Standard
+Para permitir descripciones estandarizadas de taxonomías y otros constructores
+ 
+\emph on
+ontológicos
+\emph default
+, un 
+\emph on
+Esquema RDF
+\emph default
+ (
+\emph on
+RDFS
+\emph default
+) fue creado junto a su semántica formal dentro de RDF.
+ Los RDFS pueden ser utilizados para describir taxonomías de clases y propiedade
+s y así crear ontologías pequeñas.
+\end_layout
+
+\begin_layout Standard
+Para crear ontologías más detalladas se puede utilizar el 
+\emph on
+Lenguaje Ontológico Web
+\emph default
+ (
+\emph on
+OWL, 
+\emph default
+por 
+\emph on
+Ontology Web Language
+\emph default
+).
+ OWL es un lenguaje derivado de las lógicas de descripción y ofrece más
+ construcciones sobre RDFS.
+ Está sintácticamente embebido dentro de RDF, así que como RDFS, provee
+ vocabulario estandarizado adicional.
+ Dado que OWL está basado en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+, implica dos cosas: primero, existe una definición formal de este lenguaje;
+ y segundo, le brinda la capacidad de razonar a la web semántica.
+\end_layout
+
+\begin_layout Section
+Sobre simetrías
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+Revisar
+\end_layout
+
+\end_inset
+
+Cuando pensamos en el concepto de simetría, quizá lo primero que se nos
+ viene a la cabeza puede ser un polígono regular, un número capicúa o incluso
+ la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:rorschach
+\end_layout
+
+\end_inset
+
+ del Test de Rorschach .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename gfx/rorschach.jpg
+	lyxscale 44
+	width 45line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:rorschach"
+
+\end_inset
+
+Lámina 8 del Test de Rorschach
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es decir pensamos en algo que se puede 
+\emph on
+partir sobre un eje
+\emph default
+, y repite el mismo patrón, aunque quizá con direcciones diferentes, en
+ ambas partes.
+ En la resolución de problemas matemáticos es muy usual recurrir a las simetrías
+ en términos de razonamiento, ya que, si el problema es simétrico, se puede
+ analizar un caso en detalle y dicho análsis sería similar para sus pares
+ simétricos.
+\end_layout
+
+\begin_layout Standard
+El concepto de simetría tiene muchos usos.
+ No sólo podemos estudiar las propiedades simétricas de los objetos que
+ ya hemos mencionado (figuras, números, etc.) para comprender su comportamiento
+ o revelar algún patrón, sino que también podemos derivar consecuencias
+ específicas en relación con el objeto bajo estudio en función de sus propiedade
+s de simetría, utilizando 
+\emph on
+argumentos basados en simetría
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, si podemos identificar las simetrías de un problema, podríamos
+ utilizarlas para reducir la dificultad del razonamiento analizando en detalle
+ sólo uno de los problemas simétricos (o casos) y luego generalizar el resultado
+ a los demás.
+ Esto es exactamente lo que tratamos de hacer cuando utilizamos las simetrías
+ de un problema en el contexto de razonamiento automático.
+\end_layout
+
+\begin_layout Standard
+En dicho contexto, la presencia de simetrías en el espacio de búsqueda de
+ un problema puede aumentar la dificultad para encontrar una solución al
+ forzar al algoritmo de búsqueda a explorar subespacios simétricos que no
+ contiene soluciones.
+ Si somos capaces de demostrar que una fórmula tiene simetrías, podemos
+ guiar al algoritmo de búsqueda para que solo busque soluciones en las partes
+ no simétricas del espacio de búsqueda.
+\end_layout
+
+\begin_layout Standard
+Dentro del contexto de razonamiento automático, definiremos 
+\emph on
+simetría
+\emph default
+ de un problema a una permutación de sus variables (o literales) que preserve
+ su estructura (su forma sintáctica) y por lo tanto, su conjunto de soluciones
+ (modelos).
+\end_layout
+
+\begin_layout Standard
+La intuición que subyace al principio de simetría es que en el curso de
+ una prueba matemática, a menudo se utiliza un elemento arbitrario de un
+ conjunto como representante de este conjunto, siempre que el conjunto sea
+ simétrico, de modo que los argumentos subsiguientes se aplican del mismo
+ modo a los demás elementos del conjunto.
+\end_layout
+
+\begin_layout Standard
+A pesar de mostrar la utilidad de las reglas de simetría para algunos problemas
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Krishnamurthy"
+
+\end_inset
+
+ no presenta algoritmo alguno para realizar la detección de simetrías, y
+ tampoco se discute en detalle cómo los procedimientos de resolución deben
+ utilizar las reglas de simetría.
+\end_layout
+
+\begin_layout Standard
+En 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crawford"
+
+\end_inset
+
+ se presenta un enfoque diferente para la detección de simetrías.
+ Se demuestra que el problema de detección de simetrías en fórmulas proposiciona
+les se puede reducir polinomialmente al problema de detección de automorfismos
+ en grafos coloreados y se presenta un algoritmo para crear un grafo coloreado
+ a partir de una fórmula proposicional en forma normal conjuntiva (CNF).
+ Luego, un subgrupo del grupo de simetrías de la fórmula es detectado mediante
+ la detección del grupo de automorfismos del grafo resultante.
+\end_layout
+
+\begin_layout Standard
+De todas maneras, el trabajo realizado en esta tesis está directamente relaciona
+do con lo hecho en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+, donde el estudio de simetrías fue aplicado a lógicas modales.
+ Aquí creamos un nexo (tanto semántico como sintáctico) a las lógicas modales
+ y adaptamos las herramientas utilizadas en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+ para poder usarlas en lógicas de descripción sin un mayor esfuerzo, es
+ decir, nos valemos de la 
+\emph on
+simetría
+\emph default
+ entre lógicas modales y lógicas de descripción para poder utilizar herramientas
+ 
+\emph on
+simétricas
+\emph default
+ a las utilizadas para lógicas modales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Greyedout
+status open
+
+\begin_layout Plain Layout
+Podría decirse que utilizamos simetrías para detectar otras simetrías...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+La estructura de esta tesis
+\end_layout
+
+\begin_layout Standard
+Esta tesis está organizada de la siguiente manera: en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:introduccion
+\end_layout
+
+\end_inset
+
+ describimos brevemente el dominio del problema y damos algunas nociones
+ intuitivas sobre conceptos que se desarrollarán en profundidad a lo largo
+ de este trabajo.
+\end_layout
+
+\begin_layout Standard
+Luego, en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:dl
+\end_layout
+
+\end_inset
+
+ damos una definición formal de la sintaxis y semántica para las lógicas
+ de descripción y las lógicas modales, como así también el nexo entre estas
+ dos familias de lógicas.
+\end_layout
+
+\begin_layout Standard
+El lenguaje OWL, para expresar ontologías en computadoras junto con su relación
+ directa a lógicas de descripción es introducido en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:owl
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El primer resultado teórico importante es presentado en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
+
+\end_inset
+
+: la función de traducción 
+\begin_inset Formula $\Psi$
+\end_inset
+
+, que permite traducir fórmulas escritas en lenguaje OWL a su fórmula modal
+ equivalente.
+\end_layout
+
+\begin_layout Standard
+Damos un algoritmo para detectar simetrías en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:simetrias
+\end_layout
+
+\end_inset
+
+, junto con el Teorema de satisfacibilidad para lógicas de descripción con
+ simetrías.
+\end_layout
+
+\begin_layout Standard
+En el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:herramientas
+\end_layout
+
+\end_inset
+
+ contamos un poco sobre las herramientas implementas (y la extensión de
+ algunas ya existentes) para la detección de simetrías en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+.
+ También mostramos cómo construir una ontología utilizando el lenguaje OWL,
+ y detectamos algunas simetrías sobre esta ontología 
+\emph on
+de juguete
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+Las herramientas presentadas en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:herramientas
+\end_layout
+
+\end_inset
+
+ son puestas a prueba con ontologías reales en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:analisis
+\end_layout
+
+\end_inset
+
+, con un análisis de los resultados obtenidos.
+\end_layout
+
+\begin_layout Standard
+Por último, el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:conclusiones
+\end_layout
+
+\end_inset
+
+ da las conclusiones sobre el trabajo realizado en esta tesis, sus límites
+ y propuestas sobre trabajo futuro.
+\end_layout
+
+\end_body
+\end_document
