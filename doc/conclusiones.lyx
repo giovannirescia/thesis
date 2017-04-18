@@ -86,7 +86,7 @@ Conclusiones y Trabajo Futuro
 
 \begin_layout Standard
 El trabajo de esta Tesis fue principalmente la investigación de simetrías
- en Lógicas de Descripción.
+ en lógicas de descripción.
  Pero en el camino recorrido para llegar a tales resultados se han obtenido
  algunos otros resultados secundarios.
  Revisemos los detalles obtenidos.
@@ -99,14 +99,14 @@ name "sec:ResumendeloHecho"
 
 \end_inset
 
-Resumen de lo hecho (dar los límites del trabajo)
+Resumen de lo hecho
 \end_layout
 
 \begin_layout Standard
 Como el título de esta obra indica, la principal tarea aquí fue el estudio
- de las simetrías en Lógicas de Descripción, como caso de estudio particular
+ de las simetrías en lógicas de descripción, como caso de estudio particular
  trabajamos directamente buscando simetrías en ontologías, ya que su aplicación
- (de las simetrías) puede tener un impacto mucho importante, haciendo más
+ (de las simetrías) puede tener un impacto muy importante, haciendo más
  eficientes a los razonadores que trabajan con dichas ontologías.
 \end_layout
 
@@ -116,11 +116,11 @@ Como es natural, en este trabajo comenzamos por los cimientos teóricos de
  Dimos definiciones precisas de sintaxis y semántica tanto de las lógicas
  de descripción como para las lógicas modales, como los nexos entre las
  mismas (tanto en sintaxis como en semántica).
- Esto fue para crear una función de traducción 
+ Estos preliminares fueron para introducir una función de traducción 
 \begin_inset Formula $\Psi$
 \end_inset
 
- usada para traducir fórmulas de 
+ usada en la traducción fórmulas de 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -129,27 +129,48 @@ Como es natural, en este trabajo comenzamos por los cimientos teóricos de
 \end_inset
 
 , ya que la gran mayoría de los resultados estaban probados para ésta (solo
- hubo que adaptar algunos, y muy poco).
+ hubo que adaptar algunas herramientas, y muy poco).
 \end_layout
 
 \begin_layout Standard
-También dimos nociones de simetrías en fórmulas son vistas como automorfismos
- de un grafo, por lo cual definimos un algoritmo, correcto, para describir
+También dimos nociones de simetrías en fórmulas, que son vistas como automorfism
+os de un grafo, por lo cual definimos un algoritmo, correcto, para describir
  una fórmula como un grafo.
+ Entonces el problema de buscar simetrías en una fórmula se redujo a buscar
+ automorfismos en un grafo, el correspondiente a dicha fórmula.
+\end_layout
+
+\begin_layout Section
+Qué más se puede hacer a partir de acá
 \end_layout
 
 \begin_layout Standard
 Si bien haber encontrado simetrías fue un resultado muy bueno, hay que recordar
  dos cosas: primero, que solo se trabajó con la TBox de cada ontología,
  entonces seguramente si también se hubiera trabajado con las ABox la cantidad
- de simetrías encontradas hubiera disminuido.
- Y segundo, están los resultados demostrando que se han encontrado simetrías,
- pero nada se hace con éstas, lo interesante sería 
+ de simetrías encontradas hubiera sido diferente.
+ Y segundo, dado que en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SymmBlk"
+
+\end_inset
+
+ se demuestra que hacer uso de las simetrías encontradas tiene un impacto
+ positivo en los sistemas implementados, ya que los razonadores que trabajan
+ con ontologías están basados en 
 \emph on
-implementar
+tableaux
 \emph default
- estas simetrías en un razonador que utilice dichas ontologías y ver si
- el razonador mejora en su rendimiento.
+ (como los sistemas mencionados en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SymmBlk"
+
+\end_inset
+
+), hay una posibilidad de mejorar los tiempos de ejecución de estos razonadores
+ al incorporar las simetrías que se encuentren.
 \end_layout
 
 \begin_layout Section
@@ -161,22 +182,6 @@ opiniones
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Qué más se puede hacer a partir de acá
-\end_layout
-
-\begin_layout Standard
-Como mencionamos en la Sección 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:ResumendeloHecho"
-
-\end_inset
-
- hay mucho lugar para experimentar todavía, las ABox no se han trabajado
- y seguramente también se observarán algunos resultados interesantes.
 \end_layout
 
 \end_body

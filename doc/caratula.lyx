@@ -303,23 +303,6 @@ myTime
 \begin_inset space \space{}
 \end_inset
 
-–
-\begin_inset space \space{}
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-myVersion
-\end_layout
-
-\end_inset
-
 
 \begin_inset Newline newline
 \end_inset

@@ -111,19 +111,26 @@ Descripción de las ontologías utilizadas
 
 \begin_layout Standard
 Estas primeras ontologías son las que se pudo obtener algo de información,
- el resúmen comparando los tamaños de las TBox se encuentra en la tabla
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:resumen-1"
+ el resúmen comparando los tamaños de las TBox se encuentra en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:resumen-1
+\end_layout
 
 \end_inset
 
 .
- También en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:resumen-2"
+ También en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:resumen-2
+\end_layout
 
 \end_inset
 
@@ -157,12 +164,6 @@ URL: https://bioportal.bioontology.org/ontologies/NCIT
 Axiomas en la TBox: 46940
 \end_layout
 
-\begin_layout Itemize
-Tipos de axiomas traducidos: SubClassOf, ObjectPropertyDomain, ObjectPropertyRan
-ge.
- (ALC)
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 Uberon
@@ -184,12 +185,7 @@ URL: http://uberon.github.io
 \end_layout
 
 \begin_layout Itemize
-Axiomas en la TBox: 25683 
-\end_layout
-
-\begin_layout Itemize
-Tipos de axiomas traducidos: SubClassOf, EquivalentClasses, DisjointClasses.
- (ALC)
+Axiomas en la TBox: 25683
 \end_layout
 
 \end_deeper
@@ -222,13 +218,6 @@ URL: http://www.loa.istc.cnr.it/old/DOLCE.html
 Axiomas en la TBox: 780 
 \end_layout
 
-\begin_layout Itemize
-Tipos de axiomas traducidos: ObjectPropertyRange InverseFunctionalObjectProperty
- FunctionalObjectProperty SubClassOf ObjectPropertyDomain DisjointClasses
- EquivalentClasses.
- (ALCF)
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 GALEN
@@ -249,10 +238,6 @@ URL: https://bioportal.bioontology.org/ontologies/GALEN
 
 \begin_layout Itemize
 Axiomas en la TBox: 4069 
-\end_layout
-
-\begin_layout Itemize
-Expresividad: (Horn-)SHIF
 \end_layout
 
 \end_deeper
@@ -279,10 +264,6 @@ URL: http://www.obofoundry.org
 Axiomas en la TBox: 16014 
 \end_layout
 
-\begin_layout Itemize
-Expresividad: SHI
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 CTON
@@ -305,12 +286,6 @@ URL: http://www.gong.manchester.ac.uk/CTON.html
 Axiomas en la TBox: 33160 
 \end_layout
 
-\begin_layout Itemize
-Expresividad: SubClassOf, EquivalentClasses, FunctionalObjectProperty, DisjointC
-lasses.
- ALCF
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 Family
@@ -327,18 +302,11 @@ Descripción: ontología utilizada para varios tutoriales, ya que se trata
 \end_layout
 
 \begin_layout Itemize
-URL: https://wiki.csc.calpoly.edu/OntologyTutorial/wiki/IntroductionToOntologiesWit
-hProtege
+URL: https://wiki.csc.calpoly.edu/OntologyTutorial/
 \end_layout
 
 \begin_layout Itemize
 Axiomas en la TBox: 20
-\end_layout
-
-\begin_layout Itemize
-Expresividad: ObjectPropertyRange, FunctionalObjectProperty, SubClassOf,
- ObjectPropertyDomain, EquivalentClasses.
- (ALCF)
 \end_layout
 
 \end_deeper
@@ -362,12 +330,6 @@ Más información: http://ceur-ws.org/Vol-1014/paper_59.pdf
 
 \begin_layout Itemize
 Axiomas en la TBox: 85 
-\end_layout
-
-\begin_layout Itemize
-Expresividad: SubClassOf, EquivalentClasses, ObjectPropertyDomain, ObjectPropert
-yRange.
- ALC.
 \end_layout
 
 \end_deeper
@@ -402,10 +364,6 @@ URL: http://www.geneontology.org/
 Axiomas en la TBox: 104783 
 \end_layout
 
-\begin_layout Itemize
-Expresividad: ALC
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 ModLUBM
@@ -427,10 +385,6 @@ aluation.pdf
 
 \begin_layout Itemize
 Axiomas en la TBox: 90
-\end_layout
-
-\begin_layout Itemize
-Expresividad: ALC.
 \end_layout
 
 \end_deeper
@@ -463,13 +417,6 @@ Más información: http://protegewiki.stanford.edu/wiki/Pr4_UG_ex_Pizza
 Axiomas en la TBox: 692 
 \end_layout
 
-\begin_layout Itemize
-Expresividad: ObjectPropertyRange, InverseFunctionalObjectProperty, FunctionalOb
-jectProperty, SubClassOf, ObjectPropertyDomain, DisjointClasses, EquivalentClass
-es.
- (ALCF)
-\end_layout
-
 \end_deeper
 \begin_layout Itemize
 VICODI
@@ -491,11 +438,6 @@ URL: http://www.vicodi.org/about.htm
 
 \begin_layout Itemize
 Axiomas en la TBox: 213 
-\end_layout
-
-\begin_layout Itemize
-Expresividad: ObjectPropertyDomain, SubClassOf, ObjectPropertyRange.
- ALC
 \end_layout
 
 \end_deeper
@@ -521,12 +463,6 @@ Más información: http://slidewiki.org/slide/24832
 Axiomas en la TBox: 209
 \end_layout
 
-\begin_layout Itemize
-Expresividad: ObjectPropertyRange, FunctionalObjectProperty, SubClassOf,
- ObjectPropertyDomain, DisjointClasses, EquivalentClasses.
- ALCF
-\end_layout
-
 \end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
@@ -540,7 +476,7 @@ Expresividad: ObjectPropertyRange, FunctionalObjectProperty, SubClassOf,
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -730,7 +666,7 @@ Uberon
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{ALC}$
+\begin_inset Formula $\mathcal{ALCQ}$
 \end_inset
 
 
@@ -890,7 +826,7 @@ Dolce
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{ALCF}$
+\begin_inset Formula $\mathcal{ALCF}QC$
 \end_inset
 
 
@@ -922,7 +858,7 @@ Wine
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{ALCF}$
+\begin_inset Formula $\mathcal{ALCF}Q$
 \end_inset
 
 
@@ -986,7 +922,7 @@ Pizza
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{ALCF}$
+\begin_inset Formula $\mathcal{ALCF}Q$
 \end_inset
 
 
@@ -1007,16 +943,6 @@ Pizza
 
 \begin_layout Plain Layout
 Resúmen sobre las ontologías 
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Resúmen
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:resumen-1"
@@ -1045,7 +971,7 @@ Otras ontologías
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1206,16 +1132,6 @@ semintec
 
 \begin_layout Plain Layout
 Resúmen sobre las otras ontologías 
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Resúmen
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:resumen-2"
@@ -1236,30 +1152,42 @@ name "tab:resumen-2"
 \end_layout
 
 \begin_layout Section
-Tablas de Datos
+Tablas de datos
 \end_layout
 
 \begin_layout Standard
-La tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:tabla-de-datos"
+La 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:tabla-de-datos
+\end_layout
 
 \end_inset
 
  muestra algunos de los resultados obtenidos luego de correr las herramientas
  sobre las ontologías más conocidas.
- También en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:tabla-de-datos-extra"
+ También en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:tabla-de-datos-extra
+\end_layout
 
 \end_inset
 
  se encuentran los resultados sobre las ontologías de la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:resumen-2"
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:resumen-2
+\end_layout
 
 \end_inset
 
@@ -1290,8 +1218,8 @@ status collapsed
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -1441,7 +1369,7 @@ Tiempo total
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1450,7 +1378,7 @@ Nodos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3891,6 +3819,9 @@ Cabe destacar que hay un par de etapas más de post procesamiento de datos,
 
 \emph on
 Notas: la abreviación TGA es utilizada para Tamaño del Grupo de Automorfismos.
+ Todos los tiempos están medidos en segundos.
+ La unidad de medida de las columnas dl2ml, SY4NCL, BLISS es tiempo (también
+ en segundos).
 \end_layout
 
 \begin_layout Standard
@@ -3898,7 +3829,7 @@ Notas: la abreviación TGA es utilizada para Tamaño del Grupo de Automorfismos.
 placement H
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -3911,8 +3842,8 @@ status collapsed
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="4cm">
-<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -4062,7 +3993,7 @@ Tiempo total
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4071,7 +4002,7 @@ Nodos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5232,27 +5163,18 @@ name "tab:tabla-de-datos-extra"
 \end_layout
 
 \begin_layout Section
-Análisis de los Resultados
+Análisis de los resultados
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
+Podríamos resumir los resultados de la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
 
 \begin_layout Plain Layout
-REVISAR
+
+tab:tabla-de-datos
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Podríamos resumir los resultados de la Tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:tabla-de-datos"
 
 \end_inset
 
@@ -5295,15 +5217,19 @@ Pero las pruebas empíricas realizadas hasta el momento parecen demostrar
  que encontremos una cantidad considerable simetrías.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsection*
 Sobre el tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-Otra vez la Tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:tabla-de-datos"
+Otra vez la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:tabla-de-datos
+\end_layout
 
 \end_inset
 
@@ -5317,17 +5243,8 @@ reference "tab:tabla-de-datos"
 \end_layout
 
 \begin_layout Standard
-También hay que tener en cuenta que, como ya se mencionó
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-dónde?
-\end_layout
-
-\end_inset
-
-, la búsqueda de simetrías puede realizarse 
+También hay que tener en cuenta que, como ya se mencionó, la búsqueda de
+ simetrías puede realizarse 
 \emph on
 offline
 \emph default
@@ -5349,19 +5266,14 @@ Otros análisis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
+Veamos ahora algunos resultados de la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
 
 \begin_layout Plain Layout
-SIGUE ACÁ?
+
+tab:tabla-de-datos
 \end_layout
-
-\end_inset
-
-Veamos ahora algunos resultados de la Tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:tabla-de-datos"
 
 \end_inset
 
@@ -5390,7 +5302,7 @@ go
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -5400,8 +5312,8 @@ status collapsed
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="1.5cm">
+<column alignment="center" valignment="top" width="1.5cm">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <row>
@@ -5414,11 +5326,11 @@ Ontología
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tamaño TBox
+Tamaño
 \end_layout
 
 \end_inset
@@ -5459,11 +5371,11 @@ BLISS
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tiempo total
+Tiempo
 \end_layout
 
 \end_inset
@@ -5479,25 +5391,25 @@ Tiempo total
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tbox
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5506,7 +5418,7 @@ Nodos
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5524,11 +5436,11 @@ Aristas
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+total
 \end_layout
 
 \end_inset
@@ -5589,7 +5501,7 @@ ncit
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5601,7 +5513,7 @@ ncit
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5905,10 +5817,14 @@ name "tab:analisis-resultados"
 \end_layout
 
 \begin_layout Standard
-La Tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:analisis-resultados"
+La 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:analisis-resultados
+\end_layout
 
 \end_inset
 
@@ -5966,29 +5882,16 @@ go
 .
 \end_layout
 
-\begin_layout Section
-Conclusión
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-SE VA? REVISAR
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 No se han podido establecer relaciones muy directas entre los valores observados
- en la tabla 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:analisis-resultados"
+ en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:analisis-resultados
+\end_layout
 
 \end_inset
 

@@ -144,6 +144,10 @@ bases de conocimiento
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
+, por 
+\emph on
+Knowledge Base
+\emph default
  (utilizaremos los términos 
 \emph on
 bases de conocimiento 
@@ -178,6 +182,14 @@ Lógicas de Descripción
 
 
 \emph default
+,
+\emph on
+ 
+\emph default
+por 
+\emph on
+Description Logics
+\emph default
  (utilizaremos los términos 
 \emph on
 Lógicas de Descripción 
@@ -191,13 +203,20 @@ y
  
 \emph default
 intercambiablemente durante el resto de esta tesis).
- El lenguaje OWL está basado en estas lógicas de descripción y es utilizado
- para definir a estas bases de conocimiento en una computadora para que
- pueda ser procesado por ésta.
+ 
+\end_layout
+
+\begin_layout Standard
+El lenguaje para implementar estas bases de conocimiento en una computadora,
+ y puedan ser procesadas por ésta, es por defecto el lenguaje 
+\emph on
+OWL
+\emph default
+, un lenguaje inspirado en las lógicas de descripción.
 \end_layout
 
 \begin_layout Section
-Capturando Conocimiento
+Capturando conocimiento
 \end_layout
 
 \begin_layout Standard
@@ -572,7 +591,7 @@ Sin embargo, a medida que las relaciones entre los conceptos se vuelven
 \end_layout
 
 \begin_layout Subsection
-Sistemas basados en lógica: las Lógicas de Descripción al rescate
+Sistemas basados en lógica: las lógicas de descripción al rescate
 \end_layout
 
 \begin_layout Standard
@@ -994,15 +1013,6 @@ Sobre simetrías
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-Revisar
-\end_layout
-
-\end_inset
-
 Cuando pensamos en el concepto de simetría, quizá lo primero que se nos
  viene a la cabeza puede ser un polígono regular, un número capicúa o incluso
  la 
@@ -1309,7 +1319,7 @@ chap:herramientas
 
 \end_inset
 
- contamos un poco sobre las herramientas implementas (y la extensión de
+ contamos un poco sobre las herramientas implementadas (y la extensión de
  algunas ya existentes) para la detección de simetrías en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset

@@ -88,8 +88,8 @@ Simetrías en Lógicas de Descripción
 \end_layout
 
 \begin_layout Standard
-En este capítulo hablaremos de simetrías en Lógicas de Descripción.
- Primero daremos una noción de simetrías en el contexto de Lógicas Modales,
+En este capítulo hablaremos de simetrías en lógicas de descripción.
+ Primero daremos una noción de simetrías en el contexto de lógicas modales,
  luego utilizando el nexo entre 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
@@ -1346,7 +1346,7 @@ $
 \end_layout
 
 \begin_layout Section
-Detectando Simetrías
+Detectando simetrías
 \end_layout
 
 \begin_layout Standard
@@ -1368,7 +1368,7 @@ key "Orbe:2014aa"
 
 \end_inset
 
- para Lógicas Modales a Lógicas de Descripción.
+ para lógicas modales a lógicas de descripción.
 \end_layout
 
 \begin_layout Standard
@@ -1394,12 +1394,12 @@ Su éxito se puede explicar en función de dos aspectos.
 \end_layout
 
 \begin_layout Subsection
-Detección de Simetrías en Lógicas Modales
+Detección de simetrías en lógicas modales
 \end_layout
 
 \begin_layout Standard
 A continuación presentaremos uno de los algoritmos de detección de simetrías
- en Lógicas Modales introducidos en 
+ en lógicas modales introducidos en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Orbe:2014aa"
@@ -1407,6 +1407,285 @@ key "Orbe:2014aa"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Definition
+
+\emph on
+(Literales y CNF modal).
+ Un 
+\emph default
+literal proposicional 
+\emph on
+l es una variable proposicional p o su negación 
+\begin_inset Formula $\lnot p$
+\end_inset
+
+.
+ El conjunto de literales sobre 
+\begin_inset Formula $\mathsf{PROP}$
+\end_inset
+
+ es 
+\begin_inset Formula $\mathsf{PLIT=PROP}\cup\{\lnot p\mid p\in\mathsf{PROP}\}$
+\end_inset
+
+.
+ Una fórmula modal está en 
+\emph default
+forma normal conjuntiva modal (CNF modal) 
+\emph on
+si es una conjunción de cláusulas en CNF modal.
+ Una cláusula 
+\emph default
+en CNF modal
+\emph on
+ es una disyunción de literales proposicionales y modales.
+ Un 
+\emph default
+literal modal
+\emph on
+ es una fórmula de la forma 
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C o 
+\begin_inset Formula $\lnot$
+\end_inset
+
+
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C, donde C es una cláusula en CNF modal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+(Profundidad Modal).
+ 
+\emph on
+La 
+\emph default
+profundidad modal
+\emph on
+ de una fórmula 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ (notación 
+\begin_inset Formula $md(\varphi))$
+\end_inset
+
+ es una función que va de fórmulas a los números naturales definida como
+ sigue:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md(p)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+ 
+\emph on
+para 
+\begin_inset Formula $p\in\mathsf{PROP}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md(\neg\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md(\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md(\varphi\lor\psi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+máx
+\begin_inset Formula $\{md(\varphi),md(\psi)\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md([m]\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1+md(\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1512,6 +1791,18 @@ Sea s:
 \end_inset
 
  una función parcial definida como
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+FALTA LA FUNCIÓN s
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -1919,7 +2210,7 @@ Ahora bien, ¿cómo podemos detectar simetrías en
 ? Gracias a la traducción del Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:dl"
+reference "chap:dl2ml"
 
 \end_inset
 
@@ -1938,7 +2229,7 @@ Para ello, dada una ontología primero debemos traducirla a una fórmula modal
  usando las traducciones del Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:dl"
+reference "chap:dl2ml"
 
 \end_inset
 
@@ -1960,7 +2251,7 @@ Por lo tanto, si
  nuestra función de traducción definida en el Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "chap:dl"
+reference "chap:dl2ml"
 
 \end_inset
 

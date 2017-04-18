@@ -10,6 +10,10 @@
 \addbibresource{biblio.bib}
 \end_preamble
 \use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language spanish
 \language_package default
@@ -46,7 +50,7 @@
 \use_package stmaryrd 1
 \use_package undertilde 1
 \cite_engine natbib
-\cite_engine_type numerical
+\cite_engine_type authoryear
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false
@@ -74,6 +78,16 @@
 \end_header
 
 \begin_body
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "caratula.lyx"
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Standard
 \begin_inset CommandInset include
@@ -179,7 +193,7 @@ http://wiki.lyx.org/Bib\SpecialChar TeX
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap1.lyx"
+filename "introduccion.lyx"
 
 \end_inset
 
@@ -189,7 +203,7 @@ filename "cap1.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap2.lyx"
+filename "dl.lyx"
 
 \end_inset
 
@@ -199,7 +213,7 @@ filename "cap2.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap3.lyx"
+filename "owl.lyx"
 
 \end_inset
 
@@ -209,7 +223,7 @@ filename "cap3.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap4.lyx"
+filename "dl2ml.lyx"
 
 \end_inset
 
@@ -219,7 +233,7 @@ filename "cap4.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap5.lyx"
+filename "simDL.lyx"
 
 \end_inset
 
@@ -229,7 +243,7 @@ filename "cap5.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap6.lyx"
+filename "herramientas.lyx"
 
 \end_inset
 
@@ -239,7 +253,7 @@ filename "cap6.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap7.lyx"
+filename "analisis.lyx"
 
 \end_inset
 
@@ -249,7 +263,7 @@ filename "cap7.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "cap8.lyx"
+filename "conclusiones.lyx"
 
 \end_inset
 

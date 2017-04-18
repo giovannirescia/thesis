@@ -94,19 +94,6 @@ Herramientas
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-REVISAR ESTRUCTURA / EJEMPLO
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Ya contamos con todas las bases teóricas para poder empezar a buscar (y
  con suerte, encontrar) simetrías en 
 \begin_inset Formula $\mathcal{DL}$
@@ -170,17 +157,7 @@ name "fig:Arquitectura-General"
 
 \begin_layout Standard
 Como dato de entrada, nuestra herramienta recibe una ontología en formato
- .OWL
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-https://www.w3.org/TR/owl-features/
-\end_layout
-
-\end_inset
-
-.
+ OWL.
  El módulo dl2ml, implementado en 
 \emph on
 Scala
@@ -282,18 +259,18 @@ key "Bliss"
 \end_inset
 
 , junto con un mapeo entre nodos y literales y estadísticas sobre el grafo.
- Cabe destacar que este último módulo fue desarrollado para Lógicas Mono
- Modales; en esta tesis se lo extendió para Lógicas Multi Modales.
+ Cabe destacar que este último módulo fue desarrollado para lógicas mono
+ modales; en esta tesis se lo extendió para lógicas multi modales.
 \end_layout
 
 \begin_layout Standard
 El módulo 
 \emph on
-Bliss
+BLISS
 \emph default
  toma la especificación de un grafo y realiza la búsqueda de automorfismos
  en éste.
- Un detalle importante es que Bliss solo devuelve los autoformismos 
+ Un detalle importante es que BLISS solo devuelve los autoformismos 
 \emph on
 generadores
 \emph default
@@ -306,7 +283,7 @@ generadores
 \begin_layout Standard
 Si el grafo tiene automorfismos no triviales, entonces el módulo mapper
  reconstruye las simetrías de la ontología utilizando el mapeo entre nodos
- y literales generado por Sy4ncl.
+ y literales generado por SY4NCL.
  Por último realiza un mapeo 
 \emph on
 de vuelta
@@ -350,8 +327,17 @@ p99101
 .
 \end_layout
 
+\begin_layout Standard
+También es importante resaltar que todas estas herramientas pueden ser ejecutada
+s en modo 
+\emph on
+offline
+\emph default
+, o sea, sin la necesidad de internet.
+\end_layout
+
 \begin_layout Section
-Probando las Herramientas
+Probando las herramientas
 \end_layout
 
 \begin_layout Standard
@@ -360,16 +346,17 @@ Para ilustrar el funcionamiento de nuestra herramienta veamos cómo es una
 \end_layout
 
 \begin_layout Standard
-Primero describiremos una estructura en 
+Primero describiremos una ontología en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
- para luego especificarla en OWL como una ontología y así finalmente correr
- las herramientas sobre ésta.
+.
+ Luego especificaremos la misma ontología en OWL, para poder correr las
+ herramientas sobre ésta.
 \end_layout
 
 \begin_layout Subsection
-Ejemplo de conceptualización en 
+Ejemplo de una ontología en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -605,6 +592,12 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ontologiaDL"
+
+\end_inset
+
 Descripción de la TBox
 \end_layout
 
@@ -636,17 +629,34 @@ y
 gato
 \emph default
  comparten la mismas propiedades, o sea, todas éstas son subclase de los
- mamíferos y a la vez son cuadrúpedos.
+ 
+\emph on
+mamíferos
+\emph default
+ y a la vez son 
+\emph on
+cuadrúpedos
+\emph default
+.
 \end_layout
 
 \begin_layout Subsection
-De la conceptualización a la especificación: Construyendo la ontología en
- OWL
+Construyendo la ontología en OWL
 \end_layout
 
 \begin_layout Standard
-Ahora que contamos con una conceptualización, podemos especificarla (o sea,
- crear su ontología) para poder trabajar con ésta.
+Basándonos en la ontología construida en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:ontologiaDL
+\end_layout
+
+\end_inset
+
+, armemos la misma ontología pero en lenguaje OWL.
 \end_layout
 
 \begin_layout Standard
@@ -660,201 +670,242 @@ status open
 
 \begin_layout Plain Layout
 
-// Creación de la ontología
+1.
+ // Creación de la ontología
 \end_layout
 
 \begin_layout Plain Layout
 
-val manager = OWLManager.createOWLOntologyManager() 
+2.
+ val manager = OWLManager.createOWLOntologyManager() 
 \end_layout
 
 \begin_layout Plain Layout
 
-val ontology = manager.createOntology()
+3.
+ val ontology = manager.createOntology()
 \end_layout
 
 \begin_layout Plain Layout
 
-val prfx = "http://www.famaf.unc.edu.ar/giovannirescia/test.owl"
+4.
+ val prfx = "http://www.famaf.unc.edu.ar/giovannirescia/test.owl"
 \end_layout
 
 \begin_layout Plain Layout
 
+5.
 \end_layout
 
 \begin_layout Plain Layout
 
-// Definición de clases
+6.
+ // Definición de clases
 \end_layout
 
 \begin_layout Plain Layout
 
-val perro = Class(prfx#perro) 
+7.
+ val perro = Class(prfx#perro) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val cachorro = Class(prfx#cachorro) 
+8.
+ val cachorro = Class(prfx#cachorro) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val gato = Class(prfx#gato) 
+9.
+ val gato = Class(prfx#gato) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val gatito = Class(prfx#gatito) 
+10.
+ val gatito = Class(prfx#gatito) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val caballo = Class(prfx#caballo) 
+11.
+ val caballo = Class(prfx#caballo) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val potrillo = Class(prfx#potrillo) 
+12.
+ val potrillo = Class(prfx#potrillo) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val loro = Class(prfx#loro) 
+13.
+ val loro = Class(prfx#loro) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val pichón = Class(prfx#pichón) 
+14.
+ val pichón = Class(prfx#pichón) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val ave = Class(prfx#ave) 
+15.
+ val ave = Class(prfx#ave) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val mamífero = Class(prfx#mamífero)
+16.
+ val mamífero = Class(prfx#mamífero)
 \end_layout
 
 \begin_layout Plain Layout
 
+17.
 \end_layout
 
 \begin_layout Plain Layout
 
-// Definición de Propiedades
+18.
+ // Definición de Propiedades
 \end_layout
 
 \begin_layout Plain Layout
 
-val cuadrúpedo = ObjectProperty(prfx#cuadrúpedo) 
+19.
+ val cuadrúpedo = ObjectProperty(prfx#cuadrúpedo) 
 \end_layout
 
 \begin_layout Plain Layout
 
-val críaDe = ObjectProperty(prfx#críaDe) 
+20.
+ val críaDe = ObjectProperty(prfx#críaDe) 
 \end_layout
 
 \begin_layout Plain Layout
 
+21.
 \end_layout
 
 \begin_layout Plain Layout
 
+22.
 \end_layout
 
 \begin_layout Plain Layout
 
-var xs = ListBuffer[OWLAxiom]
+23.
+ var xs = ListBuffer[OWLAxiom]
 \end_layout
 
 \begin_layout Plain Layout
 
+24.
 \end_layout
 
 \begin_layout Plain Layout
 
-// Relaciones entre las clases
+25.
+ // Relaciones entre las clases
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += gato SubClassOf mamífero 
+26.
+ xs += gato SubClassOf mamífero 
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += perro SubClassOf mamífero 
+27.
+ xs += perro SubClassOf mamífero 
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += caballo SubClassOf mamífero
+28.
+ xs += caballo SubClassOf mamífero
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += loro SubClassOf ave 
+29.
+ xs += loro SubClassOf ave 
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += ave DisjointWith mamífero
+30.
+ xs += ave DisjointWith mamífero
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += pichón EquivalentTo (loro and (críaDe some loro))
+31.
+ xs += pichón EquivalentTo (loro and (críaDe some loro))
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += gatito EquivalentTo (gato and (críaDe some gato))
+32.
+ xs += gatito EquivalentTo (gato and (críaDe some gato))
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += cachorro EquivalentTo (perro and (críaDe some perro))
+33.
+ xs += cachorro EquivalentTo (perro and (críaDe some perro))
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += potrillo EquivalentTo (caballo and (críaDe some caballo)) 
+34.
+ xs += potrillo EquivalentTo (caballo and (críaDe some caballo)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += caballo EquivalentTo (mamífero and (cuadrúpedo some mamífero)) 
+35.
+ xs += caballo EquivalentTo (mamífero and (cuadrúpedo some mamífero)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += gato EquivalentTo (mamífero and (cuadrúpedo some mamífero))
+36.
+ xs += gato EquivalentTo (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
-xs += perro EquivalentTo (mamífero and (cuadrúpedo some mamífero))
+37.
+ xs += perro EquivalentTo (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
+38.
 \end_layout
 
 \begin_layout Plain Layout
 
-// Guardamos los cambios en la ontología
+39.
+ // Guardamos los cambios en la ontología
 \end_layout
 
 \begin_layout Plain Layout
 
-xs.foreach(axiom => manager.addAxiom(ontology, axiom)) 
+40.
+ xs.foreach(axiom => manager.addAxiom(ontology, axiom)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-manager.saveOntology(ontology, file)
+41.
+ manager.saveOntology(ontology, file)
 \end_layout
 
 \end_inset
@@ -867,25 +918,19 @@ Hasta ahora lo que hicimos fue:
 \end_layout
 
 \begin_layout Itemize
-Crear un prefijo o identificador de ontología 
+En la línea 2, crear un 
 \emph on
-prfx 
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-[QUIZÁ IRRELEVANTE]
-\end_layout
-
-\end_inset
-
-
+adminitrador de ontologías
+\emph default
+, que nos permitirá crear y manipular ontologías.
 \end_layout
 
 \begin_layout Itemize
-Crear las clases de interés como 
+Creamos una ontología en la línea 3.
+\end_layout
+
+\begin_layout Itemize
+Entre las líneas 6 y 16 creaamos las clases de interés como 
 \emph on
 perro, gato, caballo 
 \emph default
@@ -906,44 +951,21 @@ ave
 \end_layout
 
 \begin_layout Itemize
-Crear dos propiedades, 
-\emph on
-cuadrúpedo
-\emph default
- y 
-\emph on
-críaDe
-\emph default
-.
+Las líneas 19 y 20 definen propiedades que aplicaremos a las clases definidas.
 \end_layout
 
 \begin_layout Itemize
-Por último aplicar las propiedades y subclases, por ejemplo, que 
-\emph on
-gato
-\emph default
- es subclase de 
-\emph on
-mamífero
-\emph default
-, 
-\emph on
-loro
-\emph default
- es subclase de 
-\emph on
-ave
-\emph default
- y que la clase 
-\emph on
-mamífero
-\emph default
- es disjunta de la clase 
-\emph on
-ave
-\emph default
-, o sea que no pueden haber individuos que pertenezcan a ambas clases silmutánea
-mente.
+Luego definimos los axiomas de interés entre las líneas 25 y 37: cómo se
+ relacionan las clases entre sí y qué propiedad afecta a cuál clase.
+\end_layout
+
+\begin_layout Itemize
+En la línea 40 utilizamos el administrador de ontologías para cargar todas
+ los axiomas definidos.
+\end_layout
+
+\begin_layout Itemize
+Guardaremos la ontología en disco, en la línea 41.
 \end_layout
 
 \begin_layout Standard
@@ -1054,12 +1076,12 @@ status open
 
 \begin_layout Plain Layout
 
-    <!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#fourLegged -->
+    <!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#cuadrúpedo -->
 \end_layout
 
 \begin_layout Plain Layout
 
-	<ObjectProperty rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#fourLegged"
+	<ObjectProperty rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#cuadrúpedo"
 />     
 \end_layout
 
@@ -1075,7 +1097,7 @@ status open
 
 \begin_layout Plain Layout
 
-	<ObjectProperty rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#newBorn"/>
+	<ObjectProperty rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#críaDe"/>
      
 \end_layout
 
@@ -1126,17 +1148,18 @@ status open
 
 \begin_layout Plain Layout
 
-    <!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#birds -->
+    <!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#aves -->
 \end_layout
 
 \begin_layout Plain Layout
 
-    <Class rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#birds">
+    <Class rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#aves">
 \end_layout
 
 \begin_layout Plain Layout
 
-		<disjointWith rdf:resource="http://www.famaf.unc.edu.ar/giovanni/test.owl#mammal"/>
+		<disjointWith rdf:resource="http://www.famaf.unc.edu.ar/giovanni/test.owl#mamíferos
+"/>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1159,7 +1182,7 @@ status open
 
 \begin_layout Plain Layout
 
-	<!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#squab -->
+	<!-- http://www.famaf.unc.edu.ar/giovanni/test.owl#pichón -->
 \end_layout
 
 \begin_layout Plain Layout
@@ -1169,7 +1192,7 @@ status open
 
 \begin_layout Plain Layout
 
-	<Class rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#squab">
+	<Class rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#pichón">
 \end_layout
 
 \begin_layout Plain Layout
@@ -1190,7 +1213,7 @@ status open
 \begin_layout Plain Layout
 
                     <rdf:Description rdf:about="http://www.famaf.unc.edu.ar/giovanni
-/test.owl#parrot"/>
+/test.owl#loro"/>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1201,13 +1224,13 @@ status open
 \begin_layout Plain Layout
 
 	                    	<onProperty rdf:resource="http://www.famaf.unc.edu.ar/giovanni
-/test.owl#newBorn"/>
+/test.owl#críaDe"/>
 \end_layout
 
 \begin_layout Plain Layout
 
                   		  <someValuesFrom rdf:resource="http://www.famaf.unc.edu.ar/giov
-anni/test.owl#parrot"/>
+anni/test.owl#loro"/>
 \end_layout
 
 \begin_layout Plain Layout
@@ -1421,7 +1444,7 @@ SY4NCL
 \end_layout
 
 \begin_layout Standard
-Con la fórmula en CNF modal, generamos el grafo en formato Bliss:
+Con la fórmula en CNF modal, generamos el grafo en formato BLISS:
 \end_layout
 
 \begin_layout Standard
@@ -1650,8 +1673,8 @@ Estadísticas generadas por SY4NCL
 \end_layout
 
 \begin_layout Standard
-Luego se ejecuta Bliss el grafo creado por SY4NCL.
- Como salida Bliss genera algunas estadísticas junto con la información
+Luego se ejecuta BLISS el grafo creado por SY4NCL.
+ Como salida BLISS genera algunas estadísticas junto con la información
  de los generados (si los hubiese):
 \end_layout
 
@@ -1660,7 +1683,7 @@ Luego se ejecuta Bliss el grafo creado por SY4NCL.
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1760,6 +1783,16 @@ Con respecto a la ontología:
 \begin_layout Itemize
 
 \emph on
+Expresividad: 
+\begin_inset Formula $\mathcal{AL}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
 Cantidad de axiomas en nuestra ontolgía: 
 \begin_inset Formula $12$
 \end_inset
@@ -1810,24 +1843,24 @@ Edges
 
 \end_deeper
 \begin_layout Itemize
-Bliss encuentra
+BLISS encuentra
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 
 \emph on
-Generator
+Generators
 \emph default
- : ?
+ : 1, la cantidad de autoformismos básicos para generar nuevos automorfismos
 \end_layout
 
 \begin_layout Itemize
 
 \emph on
-Aut
+|Aut| 
 \emph default
- : ?
+: 2, la cantidad de de automorfismos totales en el grafo
 \end_layout
 
 \end_deeper
@@ -1843,6 +1876,13 @@ Como vemos, bliss fue capaz de encontrar autoformismos en el grafo.
 
 \begin_layout Standard
 \begin_inset space \space{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1887,9 +1927,32 @@ potrillo <-> gatito
 \end_layout
 
 \begin_layout Standard
-Como era de esperarse, encontramos que tanto gato, perro y caballo son equivalen
-tes, en el sentido que cumplen con las mismas propiedades.
- Lo mismo pasa con gatito, cachorro y potrillo.
+Como era de esperarse, encontramos que tanto 
+\emph on
+gato
+\emph default
+, 
+\emph on
+perro
+\emph default
+ y 
+\emph on
+caballo
+\emph default
+ son equivalentes, en el sentido que cumplen con las mismas propiedades.
+ Lo mismo pasa con 
+\emph on
+gatito
+\emph default
+, 
+\emph on
+cachorro
+\emph default
+ y 
+\emph on
+potrillo
+\emph default
+.
 \end_layout
 
 \begin_layout Standard
@@ -1950,12 +2013,37 @@ cachorro <-> potrillo
 
 \begin_layout Standard
 Como era de esperar ahora ya no encuentra como simétricas a la clase de
- gato con perro o caballo, porque ésta tiene una propiedad que las otras
- clases no.
- También es importante recalcar que la clase gatito dejó de ser equivalente
- a las clases potrillo y cachorro, esto pasa porque, aunque no le hayamos
- agregado ninguna propiedad explícitamente, esta clase comparte propiedades
- de la clase gato y por lo tanto comparte la propiedad 
+ 
+\emph on
+gato
+\emph default
+ con 
+\emph on
+perro
+\emph default
+ o 
+\emph on
+caballo
+\emph default
+, porque ésta tiene una propiedad que las otras clases no.
+ También es importante recalcar que la clase 
+\emph on
+gatito
+\emph default
+ dejó de ser equivalente a las clases 
+\emph on
+potrillo
+\emph default
+ y 
+\emph on
+cachorro
+\emph default
+, esto pasa porque, aunque no le hayamos agregado ninguna propiedad explícitamen
+te, esta clase comparte propiedades de la clase 
+\emph on
+gato
+\emph default
+ y por lo tanto comparte la propiedad 
 \emph on
 nueveVidas
 \emph default
