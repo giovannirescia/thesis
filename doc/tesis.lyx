@@ -213,16 +213,6 @@ filename "dl.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "owl.lyx"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
 filename "dl2ml.lyx"
 
 \end_inset

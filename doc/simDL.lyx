@@ -1786,7 +1786,7 @@ Sea s:
 \begin_inset Formula $\mathsf{MOD}\times\{0,1\}\rightarrow\mathbb{N}\setminus\{0,1\}$
 \end_inset
 
- una función inyectiva y sea 
+ una función inyectiva arbitraria y sea 
 \begin_inset Formula $t:Sub(\varphi)\rightarrow\mathbb{N}$
 \end_inset
 
@@ -2265,6 +2265,29 @@ reference "chap:dl2ml"
 \begin_layout Standard
 \align center
 \begin_inset Formula $\varGamma=\bigwedge\limits _{\alpha\in TBox(\vartheta)}\Psi(\alpha)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+a man needs a closure
+\end_layout
+
+\end_inset
+
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+a man needs a closure
+\end_layout
+
 \end_inset
 
 
