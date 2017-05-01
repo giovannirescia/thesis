@@ -85,39 +85,37 @@ name "chap:dl"
 
 \end_inset
 
-Lógicas de Descripción
+Lenguajes para la representación de conocimiento
 \end_layout
 
 \begin_layout Standard
-En este capítulo veremos en profundidad a las lógicas de descripción, su
- sintaxis y semántica; y su relación con OWL.
+En este capítulo presentaremos en profundidad a las lógicas de descripción,
+ su sintaxis y semántica; y su relación con OWL.
 \end_layout
 
 \begin_layout Section
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-FALTA TÍTULO DE SECCIÓN
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:DL"
 
 \end_inset
 
-
+Lógicas de descripción
 \end_layout
 
 \begin_layout Standard
 Las lógicas de descripción son una familia de lógicas que se utilizan para
  representar conocimiento de manera formal.
  Una de las características principales de las lógicas de descripción, es
- que pueden verse como fragmentos decidibles de la lógica de primer orden.
+ que pueden verse como fragmentos decidibles de la lógica de primer orden
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FOL"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -150,25 +148,11 @@ chap:introduccion
 .
 \end_layout
 
-\begin_layout Subsection
-Ontologías basadas en  lógicas de descripción
-\end_layout
-
 \begin_layout Standard
 Las lógicas de descripción resultan muy útiles a la hora de representar
- bases de datos; y como en toda base de datos el objetivo es poder representar
- y extraer información.
- Definiremos luego la sintaxis y semántica de manera precisa que nos permiten
- realizar estas operaciones, por ahora introduciremos algunos conceptos
- básicos.
-\end_layout
-
-\begin_layout Subsubsection
-Representando información
-\end_layout
-
-\begin_layout Standard
-Las bases de conocimiento usadas por las lógicas de descripción diferencian
+ bases de conocimiento; donde el objetivo es poder representar y extraer
+ información.
+ Las bases de conocimiento expresadas por las lógicas de descripción diferencian
  entre el conocimiento 
 \emph on
 intencional
@@ -187,7 +171,7 @@ y la
 ABox
 \emph default
 .
- La primera contiene conocimiento intencional en forma de una 
+ La TBox contiene conocimiento intencional en forma de una 
 \emph on
 terminología
 \emph default
@@ -212,42 +196,30 @@ Assertional Box
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-revisar redacción
+Definiremos luego la sintaxis y semántica de estas lógicas de manera precisa,
+ por ahora introduciremos algunos conceptos básicos.
 \end_layout
 
-\end_inset
-
-Cada lenguaje para la descripción se define en dos niveles.
+\begin_layout Standard
+Cada lenguaje para una lógica de descripción se define en dos niveles.
  Primero se definen los operadores que pueden utilizarse para la definición
  de conceptos (lo que se llama el lenguaje de conceptos, 
 \begin_inset Formula $\mathsf{CON}$
 \end_inset
 
-, de una determinada 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
 ).
  Estos conceptos pueden luego utilizarse para definir las fórmulas utilizadas
  en la TBox y la ABox.
- Usualmente, los operadores que se permiten utilizar en las TBox yABox son
- comunes a todas las 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-, que se diferencian solo en qué operadores se permiten en sus lenguajes
- de conceptos.
 \end_layout
 
 \begin_layout Standard
-Como ejemplo, definamos el lenguaje de concepto de la 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
+Usualmente, los operadores que se permiten utilizar en las TBox yABox son
+ comunes a todas las lógicas de descripción, las cuales se diferencian solo
+ en qué operadores se permiten en sus lenguajes de conceptos.
+\end_layout
 
+\begin_layout Standard
+Como ejemplo, definamos el lenguaje de concepto de la lógica de descripción
  llamada 
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
@@ -323,6 +295,11 @@ name "def:(TBox-y-ABox)"
 \end_inset
 
 (TBox y ABox).
+ Sea 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ una lógica de descripción.
  Una 
 \emph default
 TBox
@@ -403,16 +380,38 @@ Donde
 \end_inset
 
 .
+ 
+\begin_inset Formula $C_{1}\equiv C_{2}$
+\end_inset
+
+ expresa que los conceptos son equivalentes, mientras que 
+\begin_inset Formula $C_{1}\sqsubseteq C_{2}$
+\end_inset
+
+ indica que todos los individuos que conforman 
+\begin_inset Formula $C_{1}$
+\end_inset
+
+ también son parte del concepto 
+\begin_inset Formula $C_{2}$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Por otro lado, las construcciones que encontramos en una 
+Una 
 \emph default
 ABox
 \emph on
- son de la forma
+ de 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+ es un conjunto finito de fórmulas de la forma
 \end_layout
 
 \begin_layout Standard
@@ -479,7 +478,7 @@ La primer fórmula define que el individuo a es un elemento particular del
 
 \begin_layout Standard
 El conjunto 
-\begin_inset Formula $\mathsf{CON}_{\mathcal{BOX}}$
+\begin_inset Formula $\mathsf{CONSTRUCT}_{\mathcal{BOX}}$
 \end_inset
 
  estará compuesto por estas cuatro construcciones de la Definición 
@@ -610,6 +609,13 @@ clasificación
 son llamadas 
 \emph on
 axiomas de inclusión generales.
+
+\emph default
+ Y en este caso, expresa que 
+\emph on
+todos los hombres, son personas
+\emph default
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -768,11 +774,7 @@ def:(TBox-y-ABox)
 \begin_layout Definition
 
 \emph on
-(Semántica 
-\begin_inset Formula $\mathsf{CON}_{\mathcal{ALC}}$
-\end_inset
-
-).
+(Semántica del lenguaje de conceptos).
  Sea 
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
@@ -782,7 +784,7 @@ def:(TBox-y-ABox)
 \begin_inset Formula $\Delta$
 \end_inset
 
- es un conjunto no vació e 
+ es un conjunto no vacío e 
 \begin_inset Formula $\mathcal{I}:\mathsf{CON_{\mathcal{ALC}}}\rightarrow\mathcal{P}(\Delta)\cup\{\top,\bot\}$
 \end_inset
 
@@ -1119,7 +1121,8 @@ e
 \begin_layout Definition
 
 \emph on
-Sea 
+(Semántica de las construcciones de TBox y ABox).
+ Sea 
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
@@ -1128,8 +1131,8 @@ Sea
 \begin_inset Formula $\Delta$
 \end_inset
 
- es un conjunto no vació e 
-\begin_inset Formula $\mathcal{I}:\text{\mathsf{CON}}_{\mathcal{BOX}}\cup\mathsf{CON_{\mathcal{ALC}}}\rightarrow\{\top,\bot\}$
+ es un conjunto no vacío e 
+\begin_inset Formula $\mathcal{I}:\text{\mathsf{CONSTRUCT}}_{\mathcal{BOX}}\cup\mathsf{CON_{\mathcal{ALC}}}\rightarrow\{\top,\bot\}$
 \end_inset
 
 .
@@ -1429,6 +1432,14 @@ Extrayendo información
 \end_layout
 
 \begin_layout Standard
+Hasta ahora, sólo hemos descrito cómo se puede representar conocimiento
+ e una base de conocimiento.
+ Es momento de describir cómo extraemos información de éstas.
+ La principal tarea de extracción de información es la inferencia sobre
+ el conocimiento existente en la base de conocimiento.
+\end_layout
+
+\begin_layout Standard
 En cuanto a la inferencia, la operación básica sobre expresiones entre conceptos
  en lógicas de descripción es la 
 \emph on
@@ -1483,11 +1494,19 @@ satisfacibilidad
 \end_layout
 
 \begin_layout Standard
-Aunque la semántica lógica de los conceptos está dada en términos de elementos
- de algún conjunto, los diseños de procedimientos de inferencia sobre lógicas
- de descripción fueron influenciados por mucho tiempo por las redes semánticas,
- donde los conceptos eran vistos como nodos y los roles como aristas en
- una red.
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+OBSERVACIÓN DE EZEQUIEL QUE NO SE ENTIENDE
+\end_layout
+
+\end_inset
+
+Aunque la semántica lógica de los conceptos está dada en de conjuntos, los
+ diseños de procedimientos de inferencia sobre lógicas de descripción fueron
+ influenciados por mucho tiempo por las redes semánticas, donde los conceptos
+ eran vistos como nodos y los roles como aristas en una red.
  La inclusión entre expresiones de conceptos fue reconocida como la inferencia
  clave y la idea básica de los primeros algoritmos de inclusión fue transformar
  dos conceptos, tomados como entrada, a grafos etiquetados y ver si alguno
@@ -1557,613 +1576,14 @@ o es por lo general necesario contar con la garantía que el sistema no ha
  fallado en verificar inclusiones.
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Complejidad de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La complejidad de razonar en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- viene dada por la expresividad del lenguaje de concepto de la lógica de
- descripción con la que estemos trabajando.
- En la Definición 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-def:ConcLangALC
-\end_layout
-
-\end_inset
-
- vimos con cuánta expresividad pueden llegar a ser definidos nuestros conceptos.
- Otras lógicas de descripción permiten otras restricciones a la hora de
- definir un concepto, brindando más expresividad y otra complejidad a la
- hora de razonar sobre éste.
-\end_layout
-
-\begin_layout Standard
-Como ejemplo, extendamos 
-\begin_inset Formula $\mathcal{ALC}$
-\end_inset
-
- con un operador de restricción sobre la cardinalidad 
-\begin_inset Formula $\geq nR.C$
-\end_inset
-
- y 
-\begin_inset Formula $\leq nR.C$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\emph on
-\begin_inset Formula $\mathsf{CON}{}_{\mathcal{ALCQ}}::=\mathsf{CON}{}_{\mathcal{ALC}}\mid\leq nR.C\mid\geq nR.C$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Con su semántica definida como:
-\end_layout
-
-\begin_layout Standard
-\paragraph_spacing onehalf
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
-<features tabularvalignment="middle">
-<column alignment="right" valignment="top" width="0pt">
-<column alignment="center" valignment="top">
-<column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(\geq nR.C)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C){\mid}\geq n\}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(\leq nR.C)$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C){\mid}\leq n\}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Así como introducimos un nuevo operador a 
-\begin_inset Formula $\mathsf{CON_{\mathcal{ALC}}}$
-\end_inset
-
- para obtener 
-\begin_inset Formula $\mathcal{ALCQ}$
-\end_inset
-
-, podemos seguir modificando el lenguaje de concepto para obtener nuevas
- lógicas de descripción.
- Algunos ejemplos de las lógicas de descripción clásicas son:
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mathcal{AL}$
-\end_inset
-
-, por 
-\emph on
-
-\begin_inset Formula $\mathcal{A}$
-\end_inset
-
-ttribute 
-\begin_inset Formula $\mathcal{L}$
-\end_inset
-
-anguage
-\emph default
-, es una versión menos expresiva de 
-\begin_inset Formula $\mathcal{ALC}$
-\end_inset
-
-, pues no cuenta con el complemento sobre conceptos.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mathcal{SHIF}$
-\end_inset
-
- se obtiene extendiendo 
-\begin_inset Formula $\mathcal{ALC}$
-\end_inset
-
- con transitividad sobre roles, jerarquías sobre roles, roles inversos y
- propiedades funcionales.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Formula $\mathcal{SHOIN}$
-\end_inset
-
- es el resultado de agregar nominales y restricciones de cardinalidad a
- 
-\begin_inset Formula $\mathcal{SHIF}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Ahora que contamos con una noción sobre qué cosas puede expresar en cada
- lógica de descripción, veamos cuánto cuesta razonar sobre cada una de éstas,
- teniendo en cuenta que a mayor poder de expresividad mayor será el costo
- de razonamiento.
- La complejidad, en estos casos, está dada por la inclusión de conceptos,
- i.e., por preguntar si 
-\begin_inset Formula $\mathcal{KB}\models C\sqsubseteq D$
-\end_inset
-
-, para alguna 
-\begin_inset Formula $\mathcal{KB}$
-\end_inset
-
-.
- En el Cuadro 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:LenguajeComplejidad"
-
-\end_inset
-
- listamos algunos lenguajes junto a su complejidad computacional
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://www.cs.man.ac.uk/~ezolin/dl/
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="2">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="10cm">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Flex CT - Table Headline
-status open
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Flex CT - Table Headline
-status open
-
-\begin_layout Plain Layout
-Complejidad Computacional de Inclusiones
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{AL}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $PTime$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{ALC}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $PSpace$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{SHIF}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $ExpTime$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\mathcal{SHOIN}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $NExpTime$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "tab:LenguajeComplejidad"
-
-\end_inset
-
-Lenguajes 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y su complejidad
-\begin_inset Argument 1
-status collapsed
-
-\begin_layout Plain Layout
-Lenguajes 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y su complejidad
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Por último, en el paper 
-\emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-The Tractability of Subsumption in Frame-Based Description Logics
-\begin_inset Quotes erd
-\end_inset
-
-
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "brachman-lavesque"
-
-\end_inset
-
-, se argumenta que hay un
-\emph on
- balance
-\emph default
- (o, 
-\emph on
-tradeoff
-\emph default
-, en inglés) entre la expresividad de un lenguaje de representación y la
- dificultad de hacer razonamientos sobre las representaciones construidas
- usando dicho lenguaje.
- También proveen un primer ejemplo de este tradeoff analizando el lenguaje
- 
-\begin_inset Formula $\text{\mathcal{\mathcal{FL}}}^{-}$
-\end_inset
-
- (
-\emph on
-Frame Language
-\emph default
-), que incluye intersección de conceptos, restricción de valores y una simple
- forma de cuantificación existencial.
-\end_layout
-
-\begin_layout Standard
-El mismo paper introduce al menos dos nuevas ideas:
-\end_layout
-
-\begin_layout Itemize
-la 
-\begin_inset Quotes eld
-\end_inset
-
-eficiencia de razonamientos
-\begin_inset Quotes erd
-\end_inset
-
- sobre estructuras de conocimiento pueden ser estudiadas usando las herramientas
- de complejidad computacional;
-\end_layout
-
-\begin_layout Itemize
-diferentes combinaciones de constructores pueden dar lugar a lenguajes con
- diferentes propiedades computacionales.
-\end_layout
-
-\begin_layout Standard
-Una consecuencia inmediata que se desprende de esas ideas es que el tradeoff
- entre la complejidad computacional y la expresividad del lenguaje (que
- el mismo está definido en término de los constructores que están admitidos
- en el lenguaje) puede ser estudiada de manera formal y metódica.
-\end_layout
-
 \begin_layout Section
 Satisfacibilidad
+\end_layout
+
+\begin_layout Standard
+Definamos a continuación cuándo consideraremos que una base de conocimiento
+ es consecuencia lógica de un modelo, y cuándo las fórmulas de una TBox
+ y una ABox son consecuencias lógicas de alguna base de conocimiento.
 \end_layout
 
 \begin_layout Definition
@@ -2185,7 +1605,7 @@ Sean,
 \begin_inset Formula $\mathcal{KB}=\langle\mathcal{T},\mathcal{A}\rangle$
 \end_inset
 
- una Base de Conocomiento, o Knowledge Base, con 
+ una base de conocomiento, con 
 \begin_inset Formula $\mathcal{T}$
 \end_inset
 
@@ -2695,12 +2115,602 @@ Sea
 
 \end_layout
 
-\begin_layout Section
-Relación entre 
+\begin_layout Subsection
+Complejidad de 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
- y OWL
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+COMENTARIO DE EZEQUIEL QUE NO SE ENTIENDE
+\end_layout
+
+\end_inset
+
+En 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "brachman-lavesque"
+
+\end_inset
+
+, se argumenta que hay un
+\emph on
+ balance
+\emph default
+ (o, 
+\emph on
+tradeoff
+\emph default
+, en inglés) entre la expresividad de un lenguaje de representación y la
+ dificultad de hacer razonamientos sobre las representaciones construidas
+ usando dicho lenguaje.
+ 
+\end_layout
+
+\begin_layout Standard
+El mismo paper introduce, entre otras, la siguiente idea:
+\end_layout
+
+\begin_layout Itemize
+diferentes combinaciones de constructores pueden dar lugar a lenguajes con
+ diferentes propiedades computacionales.
+\end_layout
+
+\begin_layout Standard
+Una consecuencia inmediata que se desprende de dicho trabajo es que el tradeoff
+ entre la complejidad computacional y la expresividad del lenguaje (que
+ el mismo está definido en término de los constructores que están admitidos
+ en el lenguaje) puede ser estudiada de manera formal y metódica.
+\end_layout
+
+\begin_layout Standard
+La complejidad de razonar en una lógica de descripción viene dada por la
+ expresividad del lenguaje de concepto de la misma.
+ En la Definición 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+def:ConcLangALC
+\end_layout
+
+\end_inset
+
+ vimos con cuánta expresividad pueden llegar a ser definidos nuestros conceptos.
+ Otras lógicas de descripción permiten otras construcciones a la hora de
+ definir un concepto, brindando más expresividad y otra complejidad a la
+ hora de razonar sobre éste.
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, podemos definir la lógica 
+\begin_inset Formula $\mathcal{ALCQ}$
+\end_inset
+
+, extendiendo 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+ con los operadores de restricción sobre cardinalidad 
+\begin_inset Formula $\geq nR.C$
+\end_inset
+
+ y 
+\begin_inset Formula $\leq nR.C$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\emph on
+\begin_inset Formula $\mathsf{CON}{}_{\mathcal{ALCQ}}::=\mathsf{CON}{}_{\mathcal{ALC}}\mid\leq nR.C\mid\geq nR.C$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+con su semántica definida como:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="right" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="left" valignment="top" width="0pt">
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\geq nR.C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\geq n\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{I}(\leq nR.C)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+\begin_inset Formula $\doteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\leq n\}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así como introducimos un nuevo operador a 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+ para obtener 
+\begin_inset Formula $\mathcal{ALCQ}$
+\end_inset
+
+, podemos seguir modificando el lenguaje de concepto para obtener nuevas
+ lógicas de descripción.
+ Algunos ejemplos de las lógicas de descripción clásicas son:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{AL}$
+\end_inset
+
+, por 
+\emph on
+
+\begin_inset Formula $\mathcal{A}$
+\end_inset
+
+ttribute 
+\begin_inset Formula $\mathcal{L}$
+\end_inset
+
+anguage
+\emph default
+, es una versión menos expresiva de 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+, pues no cuenta con el complemento sobre conceptos.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{SHIF}$
+\end_inset
+
+ se obtiene extendiendo 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+ con transitividad sobre roles, jerarquías sobre roles, roles inversos y
+ propiedades funcionales.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mathcal{SHOIN}$
+\end_inset
+
+ es el resultado de agregar nominales y restricciones de cardinalidad a
+ 
+\begin_inset Formula $\mathcal{SHIF}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora que contamos con una noción sobre qué cosas puede expresar en cada
+ lógica de descripción, veamos cuánto cuesta razonar sobre cada una de éstas,
+ teniendo en cuenta que a mayor poder de expresividad mayor será el costo
+ de razonamiento.
+ La complejidad, en estos casos, está dada por la inclusión de conceptos,
+ i.e., por preguntar si 
+\begin_inset Formula $\mathcal{KB}\models C\sqsubseteq D$
+\end_inset
+
+, para alguna 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
+.
+ En el Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:LenguajeComplejidad"
+
+\end_inset
+
+ listamos algunos lenguajes junto a su complejidad computacional
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.cs.man.ac.uk/~ezolin/dl/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="10cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex CT - Table Headline
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Flex CT - Table Headline
+status open
+
+\begin_layout Plain Layout
+Complejidad Computacional de Inclusiones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{AL}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $PTime$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $PSpace$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{ALCQ}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $PSpace$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{SHIF}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $ExpTime$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mathcal{SHOIN}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $NExpTime$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:LenguajeComplejidad"
+
+\end_inset
+
+Lógicas de descripción y su complejidad
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+Lenguajes 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+ y su complejidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+OWL
 \end_layout
 
 \begin_layout Standard
@@ -2709,45 +2719,7 @@ Repasemos un poco ahora sobre ontologías, OWL, y su relación sintáctica
 \end_layout
 
 \begin_layout Subsection
-Ontologías
-\end_layout
-
-\begin_layout Standard
-En este contexto, un lenguaje para ontologías es uno en el cual es posible
- proveer información acerca de diferentes tipos de objetos en el dominio
- de interés.
- Estas colecciones de información son referidas como ontologías.
- Por ende, una ontología provee una manera de referinos al mundo, o a alguna
- parte específica de éste.
-\end_layout
-
-\begin_layout Standard
-Hay muchos tipos diferentes tipos de ontologías que han sido propuestos.
- Desde ontologías que representan estructuras de objetos fundamentales (por
- ejemplo, diviendo al mundo entre objetos reales, objetos ficticios, etc.)
- pasando por ontologías que proveen los cimientos para grandes áreas de
- conocimiento (por ejemplo, una ontología para un comercio electrónico),
- hasta ontologías para dominios de aplicación particulares (por ejemplo,
- dividiendo servicios de transporte en servicios de reservación para vuelos,
- servicios de renta de autos, etc.).
-\end_layout
-
-\begin_layout Standard
-Muchos lenguajes diferentes han sido propuestos para ser el lenguaje de
- las ontologías.
- Desde lenguajes muy expresivos, como lógicas de primer orden 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "FOL"
-
-\end_inset
-
-, pasando por lenguajes de expresión intermedia como las lógicas de descripción,
- hasta lenguajes muy simples, como taxonomías de generalación.
-\end_layout
-
-\begin_layout Subsection
-OWL
+Qué es OWL
 \end_layout
 
 \begin_layout Standard
@@ -2763,7 +2735,7 @@ chap:introduccion
 \end_inset
 
  mencionamos que OWL es lenguaje en el cual se definen las ontologías para
- la web semántica.
+ la Web Semántica.
  Más precisamente, OWL 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2783,68 +2755,240 @@ key "OWLAPI"
 \end_inset
 
 .
- Así, OWL está preparado para ser un formalismo importante para el diseño
- y difusión de información en forma de ontología, particularmente en la
- web semántica.
+ OWL fue diseñado principalmente para representar categorías de objetos
+ y cómo los objetos están relacionados.
 \end_layout
 
 \begin_layout Standard
-OWL está preparado para ser una parte importante de la web semántica, pero,
- ¿qué es OWL y cómo esta capa es parte de la web semántica? Respuestas a
- estas preguntas están íntimamente relacionadas con la historia y desarrollo
- de OWL.
+Es importante resaltar que OWL no fue diseñado de manera aislada, sino que
+ contó con muchas influencias.
+ Analicemos un poco la historia de OWL.
+\end_layout
+
+\begin_layout Subsection
+Orígenes
 \end_layout
 
 \begin_layout Standard
-Históricamente, OWL DL puede ser remontado a las redes semánticas (mencionadas
- en el 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-chap:introduccion
-\end_layout
-
-\end_inset
-
-), utilizadas para modelar relaciones simples entre individuos y clases
- vía roles.
- Pero como ya vimos, estas redes carecían de semántica formal, esto fue
- lo que dio pie para las lógicas de descripción.
- Por lo tanto, OWL DL es esencialmente una lógica de descripción.
+El diseño de OWL fue el resultado de una variedad de influencias: paradigmas
+ para la representación de conocimiento, lenguajes para ontologías existentes
+ y lenguajes de la Web Semántica existentes.
 \end_layout
 
 \begin_layout Standard
-Se mencionó en el 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-chap:introduccion
-\end_layout
-
-\end_inset
-
- que RDF(S) puede ser utilizado para modelar ontologías simples y que permite
- derivar cierto conocimiento implícito, pero dado que su expresividad es
- muy limitada, no podemos representar conocimiento más complejo.
-\end_layout
-
-\begin_layout Standard
-Para modelar conocimiento más complejo, lenguajes de representación más
- expresivos basados en lógica formal son utilizados 
+Algunas de las influencias más importantes para OWL llegaron, vía su predecesor
+ 
+\emph on
+DAM+OIL
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "owlDl"
+key "DAMOIL"
+
+\end_inset
+
+, de la mano de las lógicas de descripción, del paradigma de las estructuras
+ (mencionado en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:introduccion
+\end_layout
+
+\end_inset
+
+) y de RDF.
+ En particular, la especificación formal de OWL fue influenciada por las
+ lógicas de descripción, mientras que su estructura fue influenciada por
+ el paradigmas de estructuras, y la sintaxis RDF/XML fue influenciada por
+ un requerimiento de compatibilidad con respecto a RDF (pues en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:w3cstack
+\end_layout
+
+\end_inset
+
+ vemos que la capa de OWL está por encima de la capa de RDF).
+ Analicemos un poco estos tres pilares fundamentales sobre los cuales OWL
+ se ha basado.
+\end_layout
+
+\begin_layout Subsubsection*
+Lógicas de descripción
+\end_layout
+
+\begin_layout Standard
+Las lógicas de descripción fueron ampliamente en la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+sec:DL
+\end_layout
 
 \end_inset
 
 .
- Esto nos permite hacer razonamiento lógico sobre el conocimiento, y por
- ende acceder al conocimiento que modela de manera implícitamente.
- OWL es el lenguaje que nos lo permitirá.
+ Las tanto las lógicas de descripción como ideas de la investigación sobre
+ éstas, han tenido un fuerte impacto en el diseño de OWL; en particular
+ sobre el formalismo de la semántica, la elección de los constructores del
+ lenguaje y la integración de tipos de datos y valores de datos.
+ De hecho, 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+ (dos de tres 
+\emph on
+especies
+\emph default
+ de OWL) pueden ser vistas como lógicas de descripción, con una ontología
+ como equivalente a las bases de conocimiento expresadas con lógicas de
+ descripción.
+\end_layout
+
+\begin_layout Subsubsection*
+El paradigma de las estructuras
+\end_layout
+
+\begin_layout Standard
+En el contexto de la Web Semántica, donde los usuarios experimentados desearían
+ crear o modificar ontologías, la legibilidad y la facilidad de uso son
+ consideraciones importantes a la hora de diseñar un lenguaje de ontologías.
+ En el diseño de 
+\emph on
+OIL 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OIL"
+
+\end_inset
+
+
+\emph default
+, uno de los lenguajes en los cuales OWL está basado, estos requerimientos
+ fueron cumplidos proveyendo una sintaxis basada en el paradigma de estructuras.
+ Las estructuras (mencionadas en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:introduccion
+\end_layout
+
+\end_inset
+
+), agrupan información acerca de cada clase, haciendo que las ontologías
+ sean más fáciles de leer y de entender.
+ El paradigma de las estructuras ha sido utilizado en varios sistemas de
+ representación de conocimiento, como por ejemplo la herramienta de diseño
+ de ontologías 
+\emph on
+Protégé
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Protege"
+
+\end_inset
+
+ y 
+\emph on
+OKBC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OKBC"
+
+\end_inset
+
+
+\emph default
+.
+\end_layout
+
+\begin_layout Subsubsection*
+La sintaxis RDF
+\end_layout
+
+\begin_layout Standard
+La tercer mayor influencia en el diseño de OWL fue el requisito de mantener
+ la mayor compatibilidad posible con los lenguajes Web existentes, en particular
+ con RDF.
+ Este requerimiento estaba bien fundado, dado que RDF (y en particular RDFS)
+ ya incluía varias de las características básicas para el diseño de ontologías.
+\end_layout
+
+\begin_layout Standard
+A simple vista, este requerimiento podría ser satisfecho fácilmente: se
+ le podría dar a OWL una sintaxis basada en RDF.
+ Sin embargo, para poder proveer una máxima compatibilidad, era también
+ necesario asegurar que la semántica de las ontologías en OWL eran consistentes
+ con la semántica de RDF.
+ Esto no fue una tarea fácil de lograr, ya que OWL provee una expresividad
+ mucho mayor que RDF.
+\end_layout
+
+\begin_layout Subsubsection
+Predecesores de OWL
+\end_layout
+
+\begin_layout Standard
+OWL no fue el primer lenguaje para ontologías habilitado para la web, y
+ su diseño fue influenciado por otros lenguajes que ya existían al momento
+ de diseñar OWL, algunos de estos son: RDFS, 
+\emph on
+SHOE
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SHOE"
+
+\end_inset
+
+, OIL, 
+\emph on
+DAML-ONT
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DAMLONT"
+
+\end_inset
+
+y DAML+OIL.
+ En particular, DAML+OIL fue una gran influencia para OWL, y la carta de
+ la W3C
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.w3.org/2001/sw/WebOnt/charter
+\end_layout
+
+\end_inset
+
+ dicta explícitamente que el diseño de OWL debe estar basado en DAM+OIL.
+ A su vez, DAM+OIL fue muy influenciado por el lenguaje OIL, con influencias
+ adicionales de DAML-ONT y RDFS.
+\end_layout
+
+\begin_layout Subsection
+Variantes
 \end_layout
 
 \begin_layout Standard
@@ -2859,77 +3003,71 @@ to, y por lo tanto problemas de escalabilidad.
 
 \begin_layout Standard
 Con el fin de darle opciones al usuario en cuanto a diferentes niveles de
- expresividad, tres sublenguajes de OWL han sido diseñados: OWL Full, OWL
- DL y OWL Lite.
- Algunas características de estos lenguajes:
+ expresividad, tres sublenguajes de OWL han sido diseñados: 
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+, 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+ y 
+\begin_inset Formula $OWL_{Full}$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-OWL Full
+\begin_layout Subsubsection*
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-contiene a OWL DL y OWL Lite,
+\begin_layout Standard
+Utilizado principalmente por usuarios que necesitan una clasificación jerárquica
+ y restricciones simples.
+ Por ejemplo, aunque da soporte a restricciones de cardinalidad, solo permite
+ los valores 0 y 1.
+ Es decidible y cuenta con complejidad ExpTime.
 \end_layout
 
-\begin_layout Itemize
-muy expresivo,
+\begin_layout Subsubsection*
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-difícil para trabajar y entender semánticamente,
+\begin_layout Standard
+Da soporte a usuarios que quieren la mayor expresividad posible, aún manteniendo
+ completitud (está garantizado que todas las expresiones son computables)
+ y decibilidad (todas las computaciones terminan en un tiempo finito).
+ Es soportado por la gran mayoría de los razonadores (software para crear
+ y manipular ontologías).
+ Su complejidad es NExpTime.
 \end_layout
 
-\begin_layout Itemize
-indecidible,
+\begin_layout Subsubsection*
+\begin_inset Formula $OWL_{Full}$
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-soportado por muy pocas herramientas (razonadores).
+\begin_layout Standard
+Diseñado para usuarios que quieren la mayor expresividad y la libertad sintáctic
+a que provee RDF, pero no da ninguna garantía computacional.
+ No hay razonadores que pueda ser capaz de dar soporte a cada característica
+ de 
+\begin_inset Formula $OWL_{Full}$
+\end_inset
+
+.
+ Es muy difícil para trabajar y entender semánticamente.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-OWL DL
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-contiene a OWL Lite,
-\end_layout
-
-\begin_layout Itemize
-decidible,
-\end_layout
-
-\begin_layout Itemize
-soportado por la mayoría de los razonadores,
-\end_layout
-
-\begin_layout Itemize
-complejidad: NExpTime.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-OWL Lite
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-decidible,
-\end_layout
-
-\begin_layout Itemize
-menos expresivo,
-\end_layout
-
-\begin_layout Itemize
-complejidad: ExpTime.
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 La versión actual de OWL soportada por la W3C es OWL 2, y su semántica está
  dada por la lógica de descripción 
@@ -2947,6 +3085,34 @@ key "owlw3c2"
 \end_layout
 
 \begin_layout Subsection
+Por qué usamos OWL
+\end_layout
+
+\begin_layout Standard
+La Web Semántica es una visión para el futuro de la Web, en la cual la informaci
+ón contará con un significado explícito, facilitando la tarea de las computadora
+s para procesar e integrar automáticamente la información que se encuentra
+ en la Web.
+ La Web semántica se basará en la capacidad de XML para definir esquemas
+ de etiquetas personalizados y en el enfoque flexible de RDF para representar
+ datos.
+\end_layout
+
+\begin_layout Standard
+El primer nivel por encima de RDF requerido por la Web Semántica es un lenguaje
+ de ontologías que puede describir formalmente el significado de terminología
+ usado en documentos Web.
+ Si uno espera que las computadoras realicen tareas de razonamiento útiles
+ en estos documentos, entonces el lenguaje debe ir más allá de la semántica
+ básica de RDFS.
+\end_layout
+
+\begin_layout Standard
+OWL ha sido diseñado para cumplir con tales requisitos de un lenguaje de
+ ontologías para la Web.
+\end_layout
+
+\begin_layout Subsection
 Sintaxis de OWL
 \end_layout
 
@@ -2958,8 +3124,7 @@ reference "tab:DL-OWL"
 
 \end_inset
 
- introducimos parte de la sintaxis que forman parte de OWL DL y su equivalente
- en 
+ introducimos parte de la sintaxis de OWL DL y su equivalente en 
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
@@ -2975,7 +3140,7 @@ reference "tab:DL-OWL-extra"
 \end_layout
 
 \begin_layout Standard
-A modo de ejemplo, veamos en la 
+A modo de ejemplo, en la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -2986,7 +3151,7 @@ fig:owlver
 
 \end_inset
 
-, cómo la siguiente fórmula en 
+, vemos cómo la siguiente fórmula en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -2994,115 +3159,11 @@ fig:owlver
 \begin_inset Formula $Persona\sqcap\forall tieneHijo(Doctor\sqcup\exists tieneHijo.Doctor)$
 \end_inset
 
- puede ser escrita en lenguaje OWL DL:
+ puede ser escrita en lenguaje OWL DL.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
- <owl:Class>
-\end_layout
-
-\begin_layout Plain Layout
-  <owl:intersectionOf rdf:parseType=" collection">
-\end_layout
-
-\begin_layout Plain Layout
-    <owl:Class rdf:about="#Persona"/>
-\end_layout
-
-\begin_layout Plain Layout
-    <owl:Restriction>
-\end_layout
-
-\begin_layout Plain Layout
-      <owl:onProperty rdf:resource="#tieneHijo"/>
-\end_layout
-
-\begin_layout Plain Layout
-      <owl:allValuesFrom>
-\end_layout
-
-\begin_layout Plain Layout
-        <owl:unionOf rdf:parseType=" collection">
-\end_layout
-
-\begin_layout Plain Layout
-          <owl:Class rdf:about="#Doctor"/>
-\end_layout
-
-\begin_layout Plain Layout
-          <owl:Restriction>
-\end_layout
-
-\begin_layout Plain Layout
-            <owl:onProperty rdf:resource="#tieneHijo"/>
-\end_layout
-
-\begin_layout Plain Layout
-            <owl:someValuesFrom rdf:resource="#Doctor"/>
-\end_layout
-
-\begin_layout Plain Layout
-          </owl:Restriction>
-\end_layout
-
-\begin_layout Plain Layout
-        </owl:unionOf>
-\end_layout
-
-\begin_layout Plain Layout
-      </owl:allValuesFrom>
-\end_layout
-
-\begin_layout Plain Layout
-    </owl:Restriction>
-\end_layout
-
-\begin_layout Plain Layout
-  </owl:intersectionOf>
-\end_layout
-
-\begin_layout Plain Layout
-</owl:Class>
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\lang english
-Fórmula escrita en OWL-DL
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:owlver"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
+\begin_inset Newpage clearpage
 \end_inset
 
 
@@ -3722,6 +3783,134 @@ Una parte de la sintaxis de OWL DL y su equivalente en
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:DL-OWL"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ <owl:Class>
+\end_layout
+
+\begin_layout Plain Layout
+
+  <owl:intersectionOf rdf:parseType=" collection">
+\end_layout
+
+\begin_layout Plain Layout
+
+    <owl:Class rdf:about="#Persona"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+    <owl:Restriction>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <owl:onProperty rdf:resource="#tieneHijo"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+      <owl:allValuesFrom>
+\end_layout
+
+\begin_layout Plain Layout
+
+        <owl:unionOf rdf:parseType=" collection">
+\end_layout
+
+\begin_layout Plain Layout
+
+          <owl:Class rdf:about="#Doctor"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+          <owl:Restriction>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <owl:onProperty rdf:resource="#tieneHijo"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <owl:someValuesFrom rdf:resource="#Doctor"/>
+\end_layout
+
+\begin_layout Plain Layout
+
+          </owl:Restriction>
+\end_layout
+
+\begin_layout Plain Layout
+
+        </owl:unionOf>
+\end_layout
+
+\begin_layout Plain Layout
+
+      </owl:allValuesFrom>
+\end_layout
+
+\begin_layout Plain Layout
+
+    </owl:Restriction>
+\end_layout
+
+\begin_layout Plain Layout
+
+  </owl:intersectionOf>
+\end_layout
+
+\begin_layout Plain Layout
+
+</owl:Class>
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\lang english
+Fórmula escrita en OWL-DL
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:owlver"
 
 \end_inset
 
