@@ -1860,12 +1860,13 @@ Generators
 \emph on
 |Aut| 
 \emph default
-: 2, la cantidad de de automorfismos totales en el grafo
+: 2, pues contamos con un automorfismo trivial (i.e., la función identidad),
+ y otro no trivial.
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-Como vemos, bliss fue capaz de encontrar autoformismos en el grafo.
+Como vemos, BLISS fue capaz de encontrar autoformismos en el grafo.
  El siguiente paso es traducir los automorfismos a simetrías de nuestra
  
 \begin_inset Formula $\mathcal{KB}$
@@ -1903,22 +1904,7 @@ status open
 
 \begin_layout Plain Layout
 
-gato <-> perro
-\end_layout
-
-\begin_layout Plain Layout
-
-caballo <-> gato
-\end_layout
-
-\begin_layout Plain Layout
-
-gatito <-> cachorro
-\end_layout
-
-\begin_layout Plain Layout
-
-potrillo <-> gatito
+(gato perro)(caballo gato)(gatito cachorro)(potrillo gatito)
 \end_layout
 
 \end_inset
@@ -1998,12 +1984,7 @@ status open
 
 \begin_layout Plain Layout
 
-perro <-> caballo
-\end_layout
-
-\begin_layout Plain Layout
-
-cachorro <-> potrillo
+(perro caballo)(cachorro potrillo)
 \end_layout
 
 \end_inset

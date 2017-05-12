@@ -88,70 +88,19 @@ De Lógicas de Descripción a Lógicas Modales
 \end_layout
 
 \begin_layout Standard
-Las herramientas principales desarrollas para la búsqueda de simetrías en
- lógicas de descripción fueron desarrolladas para lógicas modales, un fragmento
- particular (y decidible) de lógica de primer orden
-\begin_inset CommandInset citation
-LatexCommand cite
-key "FOL"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Contaremos un poco sobre el nexo entre estas dos lógicas sobre el cual nos
- valimos para poder trasladar la mayor cantidad de resultados, implementando
- la menor cantidad de cambios posibles.
-\end_layout
-
-\begin_layout Section
-El puente de Schild
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-VER QUÉ MÁS PONER
-\end_layout
-
-\end_inset
-
-El lenguaje para definir conceptos en lógicas de descripción es muy similar
- al de las lógicas modales.
- Esta similitud fue observada por 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Schild"
-
-\end_inset
-
-, quien hizo uso de esto para transferir resultados de complejidad y axiomatizac
-ión de lógicas modales a lógicas de descripción.
-\end_layout
-
-\begin_layout Standard
-Schild también notó que el nexo entre lógicas modales y lógicas de descripción
- puede establacerse solo al nivel de 
-\emph on
-satisfacibilidad de concepto
-\emph default
-.
- La lógica modal básica no es tan expresiva como el razonamiento sobre ABox
- o inferencia sobre definiciones de una TBox.
-\end_layout
-
-\begin_layout Standard
-Además, algunos lenguajes de descripción muy expresivos incluían construcciones
- para la creación de roles complejos como intersección, clausura transitiva,
- etc.
+En este capítulo presentamos brevemente las lógicas modales, y luego establecere
+mos la conexión entre éstas y las lógicas de descripción.
+ Esta conexión es la que luego nos permitirá transferir resultados sobre
+ simetrías en lógicas modales a lógicas de descripción.
 \end_layout
 
 \begin_layout Section
 Lógicas Modales
+\end_layout
+
+\begin_layout Standard
+Comenzaremos presentando los conceptos principales de lógicas modales que
+ utilizaremos en el resto de este trabajo.
 \end_layout
 
 \begin_layout Definition
@@ -253,9 +202,9 @@ PROP
 \family sans
 MOD
 \family default
-, 
+,
 \emph on
-y 
+ 
 \begin_inset Formula $\varphi,\psi\in$
 \end_inset
 
@@ -265,6 +214,10 @@ y
 \family sans
 FORM
 \family default
+, 
+\emph on
+y A es el operador universal
+\emph default
 .
 
 \emph on
@@ -294,7 +247,7 @@ MOD
 \end_layout
 
 \begin_layout Standard
-Históricamente, las fórmulas modales se valúan en 
+Las fórmulas modales se evalúan sobre 
 \emph on
 Modelos de Kripke.
 \end_layout
@@ -377,7 +330,18 @@ valuación
 
 \begin_layout Standard
 Sin embargo, un modelo de Kripke puede considerarse como un modelo del tipo
- que fueron introducidos para lógicas de descripción.
+ que fueron introducidos para las lógicas de descripción en el 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+chap:dl
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Proposition
@@ -394,7 +358,7 @@ tiene asociado un modelo equivalente (en la semántica de lógicas de descripci�
 \begin_inset Formula $\mathcal{M}'=\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
- donde 
+, donde 
 \begin_inset Formula $\Delta\not=\emptyset$
 \end_inset
 
@@ -581,25 +545,31 @@ para
 \end_layout
 
 \begin_layout Standard
-Ahora daremos la semántica en una notación que corresponda a la dada para
- lógicas de descripción.
+Para facilitar la transferencia de resultados de lógicas modales a lógicas
+ de descripción, daremos la semántica de la lógica modal presentada en una
+ notación que corresponda a la dada para lógicas de descripción.
  
 \end_layout
 
 \begin_layout Definition
 
 \emph on
+\begin_inset CommandInset label
+LatexCommand label
+name "dlModml"
+
+\end_inset
+
 (Semántica) Sea 
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
- un modelo.
- Donde 
+ un modelo, donde 
 \begin_inset Formula $\Delta$
 \end_inset
 
- es un conjunto no vació y 
-\begin_inset Formula $\mathcal{I}:\mathsf{CON_{\mathcal{ML}}}\rightarrow\mathcal{P}(\Delta)$
+ es un conjunto no vació e 
+\begin_inset Formula $\mathcal{I}:\mathsf{FORM}\rightarrow\mathcal{P}(\Delta)$
 \end_inset
 
 .
@@ -616,7 +586,11 @@ Ahora daremos la semántica en una notación que corresponda a la dada para
 \end_inset
 
 .
- Definiremos recursivamente los operadores de la siguiente manera
+ Definimos 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+ recursivamente de la siguiente manera
 \end_layout
 
 \begin_layout Standard
@@ -971,15 +945,74 @@ Hacia DL
 \end_layout
 
 \begin_layout Standard
-Ahora trazaremos el nexo sintáctico entre lógicas modales, 
-\begin_inset Formula $\mathcal{ML}$
+La Definición 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+dlModml
+\end_layout
+
 \end_inset
 
-, y 
-\begin_inset Formula $\mathcal{DL}$
+ nos permite aplicar modelos de lógicas de descripción a fórmulas de lógicas
+ modales.
+ A continuación, veremos cómo podemos rescribir fórmulas modales en notación
+ de lógicas de descripción.
+\end_layout
+
+\begin_layout Subsection
+El puente de Schild
+\end_layout
+
+\begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+VER QUÉ MÁS PONER
+\end_layout
+
 \end_inset
 
+El lenguaje para definir conceptos en lógicas de descripción es muy similar
+ al de las lógicas modales.
+ Esta similitud fue observada por 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schild"
+
+\end_inset
+
+, quien hizo uso de esto para transferir resultados de complejidad y axiomatizac
+ión de lógicas modales a lógicas de descripción.
+\end_layout
+
+\begin_layout Standard
+Schild también notó que el nexo entre lógicas modales y lógicas de descripción
+ puede establacerse solo al nivel de 
+\emph on
+satisfacibilidad de concepto
+\emph default
 .
+ La lógica modal básica no es tan expresiva como el razonamiento sobre ABox
+ o inferencia sobre definiciones de una TBox.
+\end_layout
+
+\begin_layout Standard
+Además, algunos lenguajes de descripción muy expresivos incluían construcciones
+ para la creación de roles complejos como intersección, clausura transitiva,
+ etc.
+\end_layout
+
+\begin_layout Subsubsection
+Lógicas modales en términos de lógicas de descripción
+\end_layout
+
+\begin_layout Standard
+Ahora trazaremos el nexo sintáctico entre las lógicas modales y las lógicas
+ de descripción.
  Como mencionamos anteriormente, distintas clases de lenguajes en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
@@ -998,11 +1031,7 @@ Las expresiones entre conceptos en
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
- podrían pensarse como fórmulas modales en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, como muestra el Cuadro 
+ podrían pensarse como fórmulas modales, como muestra el Cuadro 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab: dl2ml"
@@ -1017,7 +1046,7 @@ reference "tab: dl2ml"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1056,7 +1085,7 @@ status open
 status open
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{DL}$
+\begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
  
@@ -1280,7 +1309,7 @@ Relación entre
 \end_inset
 
  y 
-\begin_inset Formula $\mathcal{DL}$
+\begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
  
@@ -1330,7 +1359,7 @@ reference "tab: dl2ml"
 \emph on
 A
 \emph default
-), presentado originalmente por 
+), presentado originalmente en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schild"
@@ -1338,12 +1367,21 @@ key "Schild"
 \end_inset
 
 .
- Para obtener una conexión que también incluya la TBox, hace falta el operador
- 
+ Para obtener una 
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+COMENTARIO DE EZEQUIEL QUE NO SE ENTIENDE (5-5)
+\end_layout
+
+\end_inset
+
+conexión que también incluya la TBox, hace falta el operador 
 \emph on
 A
 \emph default
-, y esta conexión se discute en la sección siguiente.
+, y esta conexión se discute en la siguiente sección.
  En nuestro caso, esta conexión nos permitirá transferir resultados sobre
  simetrías en 
 \begin_inset Formula $\mathcal{ML}$
@@ -1366,56 +1404,48 @@ key "Areces"
 \end_inset
 
 .
- Esta última conexión queda fuera de lo investigado en esta tesis.
+ Sin embargo esta última conexión queda fuera de lo investigado en esta
+ tesis.
 \end_layout
 
-\begin_layout Section
-Función de traducción 
-\begin_inset Formula $\Psi$
-\end_inset
-
-
+\begin_layout Subsection
+De OWL a lógicas modales
 \end_layout
 
 \begin_layout Standard
-A continuación presentaremos una función que traduce fómulas en 
-\begin_inset Formula $\mathcal{DL}$
+En la sección anterior presentamos la conexión existente entre 
+\begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
- a fórmulas en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
+ y la lógica modal básica.
+ También vimos que no era posible incluir a la TBox ya que necesitábamos
+ el operador universal 
+\emph on
+A
+\emph default
 .
- 
-\end_layout
-
-\begin_layout Standard
-En el Cuadro 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:DL-OWL"
-
+ Completemos ahora la conexión, pero en vez de hacerlo sobre 
+\begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
-, trazamos el nexo entre expresiones de 
-\begin_inset Formula $\mathcal{DL}$
+, lo haremos partiendo de OWL; esto es porque nos interesa buscar simetrías
+ en ontologías reales que estén implementadas y sean utilizadas por los
+ razonadores de lógicas de descripción, y las mismas están escritas con
+ el lenguaje OWL (
+\begin_inset Formula $OWL_{\text{\mathcal{DL}}},$
 \end_inset
 
- y OWL DL; como nuestro interés es buscar simetrías en ontologías implementadas
- y utilizadas por razonadores, expresaremos las siguientes fórmulas en notación
- OWL DL, aunque podemos remplazar dichas fórmulas por su notación equivalente
- en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- sin problema alguno.
+ para ser precisos).
 \end_layout
 
 \begin_layout Definition
 
 \emph on
-Sea 
+(Función de traducción 
+\begin_inset Formula $\Psi$
+\end_inset
+
+) Sea 
 \begin_inset Formula $\mathcal{F_{DL}}$
 \end_inset
 
@@ -1450,7 +1480,7 @@ Sea
 
 .
  Entonces 
-\begin_inset Formula $\Psi:D_{\Psi}\subseteq\text{\mathcal{F_{DL}}}\rightarrow\mathcal{F_{ML}}$
+\begin_inset Formula $\Psi:D_{\Psi}\rightarrow\mathcal{F_{ML}}$
 \end_inset
 
  queda definida de la siguiente manera:
@@ -2319,7 +2349,7 @@ Sea
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Entendiendo la traducción
 \end_layout
 
@@ -2332,90 +2362,34 @@ reference "equivF"
 \end_inset
 
  se puede deducir la correctitud de dicha traducción de forma intuitiva
- analizando algunas las diferentes reglas que la componen.
+ analizando algunas de las diferentes reglas que la componen.
+ Para ello utilizaremos también el 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+tab:DL-OWL
 \end_layout
 
-\begin_layout Standard
-Para relacionar OWL con fórmulas de 
-\begin_inset Formula $\mathcal{DL}$
 \end_inset
 
- reutilizamos el Cuadro 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "tab:DL-OWL"
-
+, que relaciona OWL con fórmulas de 
+\begin_inset Formula $\mathcal{DL}$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
+\begin_layout Enumerate
 
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $1.\,\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})$
+\series bold
+\begin_inset Formula $\mathbf{\Psi(\mathcal{R}\,someValuesFrom\,\mathcal{C})\doteq\mathbf{\mathbf{\langle}\text{\ensuremath{\mathcal{R}}}\mathbf{\rangle\Psi(\mathcal{C})}}}$
 \end_inset
 
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\langle\mathcal{R}\rangle\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En 
+\series default
+: En 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -2459,7 +2433,8 @@ C
 \begin_inset Quotes erd
 \end_inset
 
-, en 
+.
+ En 
 \begin_inset Formula $\mathcal{ML}$
 \end_inset
 
@@ -2470,72 +2445,11 @@ C
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $2.\,\Psi(\mathcal{R}\,allValuesFrom\,\mathcal{C})$
+\begin_layout Enumerate
+\begin_inset Formula $\Psi(\mathcal{R}\,\mathbf{allValuesFrom}\,\mathcal{C})\doteq[\mathcal{R}]\Psi(\mathcal{C}):$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $[\mathcal{R}]\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-De forma análoga, aquí se expresa 
+ De forma análoga, aquí se expresa 
 \begin_inset Quotes eld
 \end_inset
 
@@ -2576,82 +2490,17 @@ C
 \end_inset
 
  está dado por el operador 
-\begin_inset Formula $[R^{m}]$
+\begin_inset Formula $[R]$
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $3.\,\Psi(complementOf\,(\mathcal{C}))$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(complementOf\,(\mathcal{C}))\doteq\neg\Psi(\mathcal{C}):}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\neg\Psi(\mathcal{C})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-El complemento de conjuntos, 
+ El complemento de conjuntos, 
 \begin_inset Formula $\lnot C$
 \end_inset
 
@@ -2664,73 +2513,20 @@ El complemento de conjuntos,
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $4.\,\Psi(SubClassOf(\mathcal{C}_{1}\mathcal{C}_{2}))$
+ 
+\series bold
+fasdfa 
+\begin_inset Formula $\mathbf{\mathcal{R}}$
 \end_inset
 
 
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(SubClassOf(\mathcal{C}_{1}\mathcal{C}_{2}))\doteq A(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2})):}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $A(\Psi(\mathcal{C}_{1})\implies\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Formula $\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2}$
 \end_inset
 
@@ -2749,139 +2545,18 @@ status open
  también.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $5.\,\Psi(EquivalentClasses(\mathcal{C}_{1}\mathcal{C}_{2}))$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(EquivalentClasses(\mathcal{C}_{1}\mathcal{C}_{2}))\doteq\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1}):}$
 \end_inset
 
-
+ La equivalencia de conjuntos no es nada menos que una doble inclusión.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(unionOf(\mathcal{C}_{1}\mathcal{C}_{2}))\doteq\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2}):}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-La equivalencia de conjuntos no es nada menos que una doble inclusión.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $6.\,\Psi(unionOf(\mathcal{C}_{1}\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\lor\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+ 
 \begin_inset Formula $\mathcal{C}_{1}\sqcup\mathcal{C}_{2}$
 \end_inset
 
@@ -2903,148 +2578,18 @@ status open
  se cumpla sobre algunos de los dos.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $7.\,\Psi(intersectionOf(\mathcal{C}_{\text{1}}\mathcal{C}_{2}))$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(intersectionOf(\mathcal{C}_{\text{1}}\mathcal{C}_{2}))\doteq\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2}):}$
 \end_inset
 
-
+ Análogo al caso anterior.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
+\begin_layout Enumerate
+\begin_inset Formula $\mathbf{\Psi(DisjointClasses(\mathcal{C}_{1\,}\mathcal{C}_{2}))\doteq A(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2})):}$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $\Psi(\mathcal{C}_{1})\land\Psi(\mathcal{C}_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Análogo al anterior.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="3">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $8.\,\Psi(DisjointClasses(\mathcal{C}_{1\,}\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\doteq$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\family sans
-\series bold
-\size large
-\begin_inset Formula $A(\Psi(\mathcal{C}_{1})\Leftrightarrow\lnot\Psi(\mathcal{C}_{2}))$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-En el caso de conjuntos disjuntos, solo una de las dos vale.
+ En el caso de conjuntos disjuntos, solo una de las dos vale.
 \end_layout
 
 \end_body

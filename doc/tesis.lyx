@@ -9,6 +9,7 @@
 \usepackage[spanish, es-lcroman]{babel}
 \addbibresource{biblio.bib}
 \end_preamble
+\options "authoryear"
 \use_default_options true
 \begin_modules
 theorems-ams-bytype
@@ -49,8 +50,8 @@ theorems-chap-bytype
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine natbib
-\cite_engine_type authoryear
+\cite_engine basic
+\cite_engine_type default
 \biblio_style plainnat
 \use_bibtopic false
 \use_indices false

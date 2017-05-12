@@ -105,43 +105,20 @@ Lógicas de descripción
 
 \begin_layout Standard
 Las lógicas de descripción son una familia de lógicas que se utilizan para
- representar conocimiento de manera formal.
+ representar conocimiento de manera formal 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DLHandBook"
+
+\end_inset
+
+.
  Una de las características principales de las lógicas de descripción, es
  que pueden verse como fragmentos decidibles de la lógica de primer orden
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "FOL"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-La investigación en el área de la representación y razonamiento de conocimiento,
- está enfocada en el desarrollo de métodos que sean capaces de proveer descripci
-ones de alto nivel del mundo, que puedan ser usadas eficazmente para construir
- aplicaciones inteligentes.
- En este contexto, nos referimos a un sistema 
-\begin_inset Quotes eld
-\end_inset
-
-inteligente
-\begin_inset Quotes erd
-\end_inset
-
- como aquel que tiene la capacidad de encontrar consecuencias implícitas
- en base a su conocimiento representado de forma explícita.
- Tales sistemas son caracterizados como sistemas basados en conocimiento,
- tal como vimos en el 
-\begin_inset Flex CT - auto cross-reference
-status open
-
-\begin_layout Plain Layout
-
-chap:introduccion
-\end_layout
+key "DLHandBook"
 
 \end_inset
 
@@ -150,7 +127,7 @@ chap:introduccion
 
 \begin_layout Standard
 Las lógicas de descripción resultan muy útiles a la hora de representar
- bases de conocimiento; donde el objetivo es poder representar y extraer
+ bases de conocimiento donde el objetivo es poder representar y extraer
  información.
  Las bases de conocimiento expresadas por las lógicas de descripción diferencian
  entre el conocimiento 
@@ -171,7 +148,10 @@ y la
 ABox
 \emph default
 .
- La TBox contiene conocimiento intencional en forma de una 
+\end_layout
+
+\begin_layout Standard
+La TBox contiene conocimiento intencional en forma de una 
 \emph on
 terminología
 \emph default
@@ -181,14 +161,17 @@ Terminological Box
 \emph default
 ), y es construida a través de declaraciones que describen propiedades generales
  sobre los conceptos.
- La ABox, es la encargada del conocimiento extensional, o aserciones (de
+\end_layout
+
+\begin_layout Standard
+La ABox, es la encargada del conocimiento extensional, o aserciones (de
  ahí 
 \emph on
 Assertional Box
 \emph default
 ).
  Este conocimiento es específico para individuos del dominio.
- O sea, una base de conocimiento es una tupla 
+ De ahora en más, consideraremos a una base de conocimiento como una tupla
 \begin_inset Formula $\langle TBox,ABox\rangle$
 \end_inset
 
@@ -197,23 +180,23 @@ Assertional Box
 
 \begin_layout Standard
 Definiremos luego la sintaxis y semántica de estas lógicas de manera precisa,
- por ahora introduciremos algunos conceptos básicos.
+ primero comencemos con algunos conceptos básicos.
 \end_layout
 
 \begin_layout Standard
-Cada lenguaje para una lógica de descripción se define en dos niveles.
- Primero se definen los operadores que pueden utilizarse para la definición
- de conceptos (lo que se llama el lenguaje de conceptos, 
+Cada lenguaje de una lógica de descripción se define en dos niveles.
+ En el primer nivel, se definen los operadores que pueden utilizarse para
+ la definición de conceptos (lo que se llama el lenguaje de conceptos, 
 \begin_inset Formula $\mathsf{CON}$
 \end_inset
 
 ).
- Estos conceptos pueden luego utilizarse para definir las fórmulas utilizadas
- en la TBox y la ABox.
+ En el segundo nivel se definen los operadores que se pueden utilizar para
+ la creación de las fórmulas que corresponden a la TBox y a la ABox.
 \end_layout
 
 \begin_layout Standard
-Usualmente, los operadores que se permiten utilizar en las TBox yABox son
+Usualmente, los operadores que se pueden utilizar en las TBox yABox son
  comunes a todas las lógicas de descripción, las cuales se diferencian solo
  en qué operadores se permiten en sus lenguajes de conceptos.
 \end_layout
@@ -236,20 +219,28 @@ name "def:ConcLangALC"
 
 \end_inset
 
-Sea A un 
+Sea 
+\begin_inset Formula $\mathcal{\mathsf{ATOM}}$
+\end_inset
+
+ un conjunto de 
 \emph default
-concepto atómico
+conceptos atómicos
 \emph on
-, C y D 
+,
 \emph default
-conceptos 
-\emph on
-y R un 
-\emph default
-rol atómico.
  
 \emph on
-El lenguaje de conceptos de 
+
+\begin_inset Formula $\mathsf{ROL}$
+\end_inset
+
+ un conjunto de 
+\emph default
+roles atómicos.
+
+\emph on
+ El lenguaje de conceptos de 
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
@@ -264,10 +255,32 @@ El lenguaje de conceptos de
 \align center
 
 \emph on
-\begin_inset Formula $\mathsf{CON}{}_{\mathcal{ALC}}::=A\mid\top\mid\bot\mid\neg A\mid C\sqcap D\mid C\sqcup D\mid\forall R.C\mid\exists R.C$
+\begin_inset Formula 
+\[
+\mathsf{CON}{}_{\mathcal{ALC}}::=A\mid\top\mid\bot\mid\neg A\mid C\sqcap D\mid C\sqcup D\mid\forall R.C\mid\exists R.C,
+\]
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Con 
+\begin_inset Formula $A\in\mathsf{ATOM}$
+\end_inset
+
+, 
+\begin_inset Formula $R\in\mathsf{ROL}$
+\end_inset
+
+ y 
+\begin_inset Formula $C,D\in\mathsf{CON}_{\mathcal{ALC}}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -304,7 +317,7 @@ name "def:(TBox-y-ABox)"
 \emph default
 TBox
 \emph on
- de una 
+ de 
 \begin_inset Formula $\mathcal{L}$
 \end_inset
 
@@ -403,6 +416,15 @@ Donde
 \begin_layout Standard
 
 \emph on
+Sea 
+\begin_inset Formula $\mathsf{IND}$
+\end_inset
+
+ un conjunto de 
+\emph default
+individuos.
+ 
+\emph on
 Una 
 \emph default
 ABox
@@ -470,29 +492,15 @@ status open
 \begin_layout Standard
 
 \emph on
-La primer fórmula define que el individuo a es un elemento particular del
+donde 
+\begin_inset Formula $a,b\in\mathsf{IND}$
+\end_inset
+
+.
+ La primer fórmula define que el individuo a es un elemento particular del
  concepto C.
  Y la segunda fórmula indica que los individuos a y b están relacionados
  mediante la relación R.
-\end_layout
-
-\begin_layout Standard
-El conjunto 
-\begin_inset Formula $\mathsf{CONSTRUCT}_{\mathcal{BOX}}$
-\end_inset
-
- estará compuesto por estas cuatro construcciones de la Definición 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-def:(TBox-y-ABox)
-\end_layout
-
-\end_inset
-
- .
 \end_layout
 
 \begin_layout Standard
@@ -518,11 +526,7 @@ def:(TBox-y-ABox)
 .
 \end_layout
 
-\begin_layout Subsubsection*
-TBox
-\end_layout
-
-\begin_layout Standard
+\begin_layout Example
 La forma más básica de declaración en una TBox es la 
 \emph on
 definición
@@ -534,25 +538,10 @@ definición
 
 \begin_layout Standard
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="1">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $Mujer\equiv Persona\sqcap\lnot Hombre$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Formula 
+\[
+Mujer\equiv Persona\sqcap\lnot Hombre
+\]
 
 \end_inset
 
@@ -575,29 +564,10 @@ clasificación
  La clasificación puede lograrse verificando las relaciones de inclusión
  entre todos los conceptos junto con la nueva expresión de conceptos.
  Las expresiones de tipo
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="1">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $Hombre\sqsubseteq Persona$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_inset Formula 
+\[
+Hombre\sqsubseteq Persona
+\]
 
 \end_inset
 
@@ -618,13 +588,7 @@ todos los hombres, son personas
 .
 \end_layout
 
-\begin_layout Subsubsection*
-\paragraph_spacing single
-\noindent
-ABox
-\end_layout
-
-\begin_layout Standard
+\begin_layout Example
 \paragraph_spacing single
 Como mencionamos, la ABox contiene conocimiento extensional acerca del dominio
  de interés, i.e., aserciones acerca de los individuos.
@@ -721,8 +685,8 @@ Batman
 \emph on
 comprobación de instancias
 \emph default
-, la cual verifica si algún usuario en particular es una instancia (o pertenece)
- a cierto concepto.
+, la cual verifica si algún individuo en particular es una instancia (o
+ pertenece) a cierto concepto.
 \end_layout
 
 \begin_layout Standard
@@ -756,7 +720,7 @@ def:ConcLangALC
 
 \end_inset
 
-, y a las construcciones de la TBox y Abox, expresadas en la Definición
+, y a las construcciones de la TBox y ABox, expresadas en la Definición
  
 \begin_inset Flex CT - auto cross-reference
 status collapsed
@@ -779,37 +743,43 @@ def:(TBox-y-ABox)
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
- un modelo.
- Donde 
+ un modelo, donde 
 \begin_inset Formula $\Delta$
 \end_inset
 
  es un conjunto no vacío e 
-\begin_inset Formula $\mathcal{I}:\mathsf{CON_{\mathcal{ALC}}}\rightarrow\mathcal{P}(\Delta)\cup\{\top,\bot\}$
+\begin_inset Formula $\mathcal{I}$
 \end_inset
 
-.
- Sean 
+ es una 
 \emph default
-
-\begin_inset Formula $\mathcal{I}(A)\in\mathcal{P}(\Delta)$
-\end_inset
-
+función
+\emph on
  
-\emph on
-e 
 \emph default
-
-\begin_inset Formula $\mathcal{I}(R)\in\mathcal{P}(\Delta\times\Delta)$
+de
+\emph on
+ 
+\emph default
+interpretación
+\emph on
+ tal que 
+\begin_inset Formula $\mathcal{I}(A)\in\Delta$
 \end_inset
 
+ para 
+\begin_inset Formula $A\in\mathsf{ATOM}$
+\end_inset
 
-\emph on
-, para cada concepto atómico y relación atómica respectivamente
-\emph default
+ y 
+\begin_inset Formula $\mathcal{I}(R)\in\Delta\times\Delta$
+\end_inset
+
+ para 
+\begin_inset Formula $R\in\mathsf{ROL}$
+\end_inset
+
 .
-
-\emph on
  Definamos recursivamente en términos de conjuntos qué representa cada uno
  de los constructores restantes de 
 \begin_inset Formula $\mathsf{CON}{}_{\mathcal{ALC}}$
@@ -1126,28 +1096,35 @@ e
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
- un modelo.
- Donde 
+ un modelo, donde 
 \begin_inset Formula $\Delta$
 \end_inset
 
- es un conjunto no vacío e 
-\begin_inset Formula $\mathcal{I}:\text{\mathsf{CONSTRUCT}}_{\mathcal{BOX}}\cup\mathsf{CON_{\mathcal{ALC}}}\rightarrow\{\top,\bot\}$
+ es un conjunto no vacío, y donde 
+\begin_inset Formula $\mathcal{I}$
+\end_inset
+
+ también interpreta los elementos de 
+\begin_inset Formula $\mathsf{IND}$
+\end_inset
+
+: 
+\begin_inset Formula $\mathcal{I}(a)\in\Delta$
+\end_inset
+
+, 
+\begin_inset Formula $a\in\mathsf{IND}$
 \end_inset
 
 .
- Sean C y D conceptos, R una relación e 
-\begin_inset Formula $\mathcal{I}(a),\,\mathcal{I}(b)\in\Delta$
-\end_inset
-
- individuos.
+ Sean C y D conceptos, R una relación.
  Entonces tenemos que
 \end_layout
 
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
 <column alignment="right" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
@@ -1223,13 +1200,7 @@ sii
 \begin_inset Formula $\mathcal{I}(a)\in\mathcal{I}(C)$
 \end_inset
 
-, 
-\begin_inset Formula $\bot$
-\end_inset
 
- 
-\emph on
-en caso contrario
 \end_layout
 
 \end_inset
@@ -1273,11 +1244,7 @@ sii
 \begin_inset Formula $(\mathcal{I}(a),\mathcal{I}(b))\in\mathcal{I}(R)$
 \end_inset
 
-, 
-\begin_inset Formula $\bot$
-\end_inset
 
- en caso contrario
 \end_layout
 
 \end_inset
@@ -1325,13 +1292,7 @@ sii
 \begin_inset Formula $\mathcal{I}(C)\subseteq\mathcal{I}(D)$
 \end_inset
 
-, 
-\begin_inset Formula $\bot$
-\end_inset
 
- 
-\emph on
-en caso contrario
 \end_layout
 
 \end_inset
@@ -1379,41 +1340,6 @@ sii
 \begin_inset Formula $\mathcal{I}(C)=\mathcal{I}(D)$
 \end_inset
 
-, 
-\begin_inset Formula $\bot$
-\end_inset
-
- 
-\emph on
-en caso contrario
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1427,7 +1353,7 @@ en caso contrario
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Extrayendo información
 \end_layout
 
@@ -1472,6 +1398,10 @@ C (subsumido)
 \emph on
 D
 \emph default
+, en todo modelo de 
+\begin_inset Formula $\mathcal{KB}$
+\end_inset
+
 .
  Por ejemplo, uno podría querer saber si para alguna base de datos 
 \begin_inset Formula $\mathcal{KB}$
@@ -1482,7 +1412,10 @@ D
 \end_inset
 
 .
- Otro tipo de inferencia sobre expresiones de conceptos es la de 
+\end_layout
+
+\begin_layout Standard
+Otro tipo de inferencia sobre expresiones de conceptos es la de 
 \emph on
 satisfacibilidad
 \emph default
@@ -1494,96 +1427,20 @@ satisfacibilidad
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-OBSERVACIÓN DE EZEQUIEL QUE NO SE ENTIENDE
-\end_layout
-
-\end_inset
-
-Aunque la semántica lógica de los conceptos está dada en de conjuntos, los
- diseños de procedimientos de inferencia sobre lógicas de descripción fueron
- influenciados por mucho tiempo por las redes semánticas, donde los conceptos
- eran vistos como nodos y los roles como aristas en una red.
- La inclusión entre expresiones de conceptos fue reconocida como la inferencia
- clave y la idea básica de los primeros algoritmos de inclusión fue transformar
- dos conceptos, tomados como entrada, a grafos etiquetados y ver si alguno
- podía ser embebido en el otro, el grafo embebido correspondería al concepto
- más general (el subsumidor) 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "lipkis"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Este método es llamado 
-\emph on
-comparación estructural
-\emph default
-, y la relación que se computa entre conceptos es llamada 
-\emph on
-inclusión estructural
-\emph default
-.
- Sin embargo, un análisis minucioso sobre el algoritmo de inclusión estructural
- muestra que es correcto, pero no siempre completo en término de la semántica
- lógica: el algoritmo podía retornar 
-\begin_inset Quotes eld
-\end_inset
-
-sí
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-no
-\begin_inset Quotes erd
-\end_inset
-
- pero también 
-\begin_inset Quotes eld
-\end_inset
-
-no sé
-\begin_inset Quotes erd
-\end_inset
-
-.
- O sea que no era completo bajo 
-\begin_inset Quotes eld
-\end_inset
-
-sí/no
-\begin_inset Quotes erd
-\end_inset
-
-, pero sí completo puesto que siempre retornaba una respuesta.
-\end_layout
-
-\begin_layout Standard
 La motivación para contar con algoritmos de inclusión que sean completos
  vienen de la mano de que en el uso de sistemas de representación de conocimient
 o es por lo general necesario contar con la garantía que el sistema no ha
  fallado en verificar inclusiones.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Satisfacibilidad
 \end_layout
 
 \begin_layout Standard
 Definamos a continuación cuándo consideraremos que una base de conocimiento
- es consecuencia lógica de un modelo, y cuándo las fórmulas de una TBox
- y una ABox son consecuencias lógicas de alguna base de conocimiento.
+ es verdadera en un modelo, y cuándo las fórmulas de una TBox y una ABox
+ son consecuencias lógicas de alguna base de conocimiento.
 \end_layout
 
 \begin_layout Definition
@@ -1602,18 +1459,10 @@ Sean,
 \end_inset
 
  una función de interpretación, 
-\begin_inset Formula $\mathcal{KB}=\langle\mathcal{T},\mathcal{A}\rangle$
+\begin_inset Formula $\mathcal{KB}=\langle TBox,ABox\rangle$
 \end_inset
 
- una base de conocomiento, con 
-\begin_inset Formula $\mathcal{T}$
-\end_inset
-
- una TBox y 
-\begin_inset Formula $\mathcal{A}$
-\end_inset
-
- una ABox, diremos que 
+ una base de conocimiento, diremos que 
 \begin_inset Formula $\mathcal{M}\models\mathcal{KB}$
 \end_inset
 
@@ -1661,7 +1510,7 @@ Sean,
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C_{i}\sqsubseteq C_{j}\in\mathcal{T}$
+\begin_inset Formula $\forall\,C_{i}\sqsubseteq C_{j}\in TBox$
 \end_inset
 
 
@@ -1684,7 +1533,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(C_{i}\sqsubseteq C_{j})$
+\begin_inset Formula $\mathcal{I}(C_{i}\sqsubseteq C_{j})=\top$
 \end_inset
 
 
@@ -1698,7 +1547,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C\equiv D\mathcal{\in T}$
+\begin_inset Formula $\forall\,C\equiv D\in TBox$
 \end_inset
 
 
@@ -1721,7 +1570,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(C\equiv D)$
+\begin_inset Formula $\mathcal{I}(C\equiv D)=\top$
 \end_inset
 
 
@@ -1735,7 +1584,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C(a)\in\mathcal{A}$
+\begin_inset Formula $\forall\,C(a)\in ABox$
 \end_inset
 
 
@@ -1758,7 +1607,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(C(a))$
+\begin_inset Formula $\mathcal{I}(C(a))=\top$
 \end_inset
 
 
@@ -1772,7 +1621,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,R(a,b)\in\mathcal{A}$
+\begin_inset Formula $\forall\,R(a,b)\in ABox$
 \end_inset
 
 
@@ -1795,7 +1644,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mathcal{I}(R(a,b))$
+\begin_inset Formula $\mathcal{I}(R(a,b))=\top$
 \end_inset
 
 
@@ -1847,7 +1696,7 @@ En tal caso diremos que
 \begin_inset Formula $\mathcal{M}$
 \end_inset
 
- es modelo de 
+ un es modelo de 
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
@@ -1893,14 +1742,10 @@ Sea
 \end_inset
 
  una base conocimiento, 
-\begin_inset Formula $C_{i},C_{j}$
+\begin_inset Formula $C,C_{i},C_{j}$
 \end_inset
 
- conceptos, 
-\begin_inset Formula $C$
-\end_inset
-
- un concepto atómico, a y b individuos y R una relación.
+ conceptos, a y b individuos y R una relación.
  Entonces tenemos que
 \end_layout
 
@@ -1973,7 +1818,7 @@ Sea
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\sqsubseteq C_{j})).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\sqsubseteq C_{j}))=\top$
 \end_inset
 
 
@@ -2015,7 +1860,7 @@ Sea
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\equiv C_{j})).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C_{i}\equiv C_{j}))=\top$
 \end_inset
 
 
@@ -2057,7 +1902,7 @@ Sea
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C(a))).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(C(a)))=\top$
 \end_inset
 
 
@@ -2099,7 +1944,7 @@ Sea
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(R(a,b))).$
+\begin_inset Formula $\forall\mathcal{M}.(\mathcal{M}\models\mathcal{KB}\implies\mathcal{I}(R(a,b)))=\top$
 \end_inset
 
 
@@ -2124,15 +1969,6 @@ Complejidad de
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Plain Layout
-COMENTARIO DE EZEQUIEL QUE NO SE ENTIENDE
-\end_layout
-
-\end_inset
-
 En 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2151,28 +1987,18 @@ tradeoff
 , en inglés) entre la expresividad de un lenguaje de representación y la
  dificultad de hacer razonamientos sobre las representaciones construidas
  usando dicho lenguaje.
- 
+ En particular, se muestra que diferentes combinaciones de constructores
+ pueden dar lugar a lenguajes con diferentes propiedades computacionales.
 \end_layout
 
 \begin_layout Standard
-El mismo paper introduce, entre otras, la siguiente idea:
-\end_layout
+Dado que los constructores usados en la TBox y la ABox son usualmente los
+ mismos en las distintas 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
 
-\begin_layout Itemize
-diferentes combinaciones de constructores pueden dar lugar a lenguajes con
- diferentes propiedades computacionales.
-\end_layout
-
-\begin_layout Standard
-Una consecuencia inmediata que se desprende de dicho trabajo es que el tradeoff
- entre la complejidad computacional y la expresividad del lenguaje (que
- el mismo está definido en término de los constructores que están admitidos
- en el lenguaje) puede ser estudiada de manera formal y metódica.
-\end_layout
-
-\begin_layout Standard
-La complejidad de razonar en una lógica de descripción viene dada por la
- expresividad del lenguaje de concepto de la misma.
+, la complejidad de razonar en una lógica de descripción particular viene
+ dada por la expresividad del lenguaje de conceptos.
  En la Definición 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
@@ -2184,10 +2010,14 @@ def:ConcLangALC
 
 \end_inset
 
- vimos con cuánta expresividad pueden llegar a ser definidos nuestros conceptos.
+ vimos el lenguaje de conceptos de 
+\begin_inset Formula $\mathcal{ALC}$
+\end_inset
+
+.
  Otras lógicas de descripción permiten otras construcciones a la hora de
- definir un concepto, brindando más expresividad y otra complejidad a la
- hora de razonar sobre éste.
+ definir un concepto, brindando mayor o menor expresividad y, por consiguiente,
+ otra complejidad a la hora de razonar.
 \end_layout
 
 \begin_layout Standard
@@ -2217,7 +2047,7 @@ Como ejemplo, podemos definir la lógica
 \begin_inset Formula $\mathsf{CON}{}_{\mathcal{ALCQ}}::=\mathsf{CON}{}_{\mathcal{ALC}}\mid\leq nR.C\mid\geq nR.C$
 \end_inset
 
-
+,
 \end_layout
 
 \begin_layout Standard
@@ -2292,7 +2122,7 @@ con su semántica definida como:
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\geq n\}$
+\begin_inset Formula $\{x\in\Delta\mid{\mid}\{y\in\Delta\mid(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\geq n\}$
 \end_inset
 
 
@@ -2332,7 +2162,7 @@ con su semántica definida como:
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\{x\in\Delta\mid{\mid}\{\exists y\in\Delta,(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\leq n\}$
+\begin_inset Formula $\{x\in\Delta\mid{\mid}\{y\in\Delta\mid(x,y)\in\mathcal{I}(R),\,\,y\in\mathcal{I}(C)\}{\mid}\leq n\}$
 \end_inset
 
 
@@ -2439,6 +2269,17 @@ anguage
 \end_layout
 
 \begin_layout Standard
+Estos lenguajes se definen en detalle en, e.g., 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SHIFSHOIN"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Separator plain
 \end_inset
 
@@ -2448,9 +2289,9 @@ anguage
 \begin_layout Standard
 Ahora que contamos con una noción sobre qué cosas puede expresar en cada
  lógica de descripción, veamos cuánto cuesta razonar sobre cada una de éstas,
- teniendo en cuenta que a mayor poder de expresividad mayor será el costo
- de razonamiento.
- La complejidad, en estos casos, está dada por la inclusión de conceptos,
+ teniendo en cuenta que a mayor poder expresivo, mayor será el costo de
+ razonamiento.
+ La complejidad, en estos casos está dada por la inclusión de conceptos,
  i.e., por preguntar si 
 \begin_inset Formula $\mathcal{KB}\models C\sqsubseteq D$
 \end_inset
@@ -2459,7 +2300,11 @@ Ahora que contamos con una noción sobre qué cosas puede expresar en cada
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
-.
+ (notar que puede darse el caso en que 
+\begin_inset Formula $\mathcal{KB}=\emptyset$
+\end_inset
+
+).
  En el Cuadro 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2490,17 +2335,14 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="2">
+<lyxtabular version="3" rows="7" columns="3">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="10cm">
+<column alignment="center" valignment="top" width="5cm">
+<column alignment="center" valignment="top" width="5cm">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Flex CT - Table Headline
-status open
 
 \begin_layout Plain Layout
 \begin_inset Formula $\mathcal{DL}$
@@ -2510,23 +2352,68 @@ status open
 \end_layout
 
 \end_inset
-
-
-\end_layout
-
-\end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Flex CT - Table Headline
+\begin_inset Flex CT - Spaced Low Small Caps
 status open
 
 \begin_layout Plain Layout
 Complejidad Computacional de Inclusiones
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Caso 
+\begin_inset Formula $\mathcal{KB=\emptyset}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+Caso 
+\begin_inset Formula $\mathcal{KB\not=\emptyset}$
 \end_inset
 
 
@@ -2560,6 +2447,17 @@ Complejidad Computacional de Inclusiones
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+???
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2582,6 +2480,17 @@ Complejidad Computacional de Inclusiones
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ExpTime
 \end_layout
 
 \end_inset
@@ -2612,6 +2521,17 @@ Complejidad Computacional de Inclusiones
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ExpTime
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
@@ -2638,6 +2558,17 @@ Complejidad Computacional de Inclusiones
 
 \end_inset
 </cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+ExpTime
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -2660,6 +2591,17 @@ Complejidad Computacional de Inclusiones
 \end_inset
 
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\emph on
+NExpTime
 \end_layout
 
 \end_inset

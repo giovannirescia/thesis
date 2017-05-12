@@ -1011,10 +1011,14 @@ reference "teo4.1"
 \end_layout
 
 \begin_layout Standard
-Gracias a la traducción del Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+Gracias a la traducción del 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
 
 \end_inset
 
@@ -1061,10 +1065,14 @@ reference "satisfDL"
 \begin_inset Formula $\Psi$
 \end_inset
 
- definida en el Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+ definida en el 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
 
 \end_inset
 
@@ -1791,18 +1799,6 @@ Sea s:
 \end_inset
 
  una función parcial definida como
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-FALTA LA FUNCIÓN s
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Definition
@@ -1826,7 +1822,11 @@ s(m,1) & si\,\psi=\neg[m]C
 \begin_layout Standard
 
 \emph on
-La función de tipado t asigna un tipo numérico a toda cláusula (top o modal).
+La función de tipado 
+\emph default
+t
+\emph on
+ asigna un tipo numérico a toda cláusula (top o modal).
  Para las cláusulas modales, el tipo está basado en la modalidad y la polaridad
  del literal modal en la cual ocurre.
 \end_layout
@@ -2124,7 +2124,7 @@ reference "algo-sim-glob"
 \begin_layout Theorem
 \begin_inset CommandInset label
 LatexCommand label
-name "teo4.2"
+name "teo4.3"
 
 \end_inset
 
@@ -2185,7 +2185,7 @@ key "Orbe:2014aa"
 El Teorema 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "teo4.2"
+reference "teo4.3"
 
 \end_inset
 
@@ -2207,10 +2207,14 @@ Ahora bien, ¿cómo podemos detectar simetrías en
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
-? Gracias a la traducción del Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+? Gracias a la traducción del 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
 
 \end_inset
 
@@ -2226,10 +2230,14 @@ reference "algo-sim-glob"
 
 \begin_layout Standard
 Para ello, dada una ontología primero debemos traducirla a una fórmula modal
- usando las traducciones del Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+ usando las traducciones del 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
 
 \end_inset
 
@@ -2248,10 +2256,14 @@ Por lo tanto, si
 \begin_inset Formula $\Psi$
 \end_inset
 
- nuestra función de traducción definida en el Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+ nuestra función de traducción definida en el 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+chap:dl2ml
+\end_layout
 
 \end_inset
 
@@ -2263,34 +2275,74 @@ reference "chap:dl2ml"
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset Formula $\varGamma=\bigwedge\limits _{\alpha\in TBox(\vartheta)}\Psi(\alpha)$
+\begin_inset Formula 
+\[
+\varGamma=\bigwedge\limits _{\alpha\in TBox(\vartheta)}\Psi(\alpha)
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
+\begin_inset Formula $\boxdot$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Resumen
+\end_layout
+
+\begin_layout Standard
+Este capítulo hizo foco en la detección de simetrías en lógicas modales,
+ como también, en la obtención de resultados teóricos para lógicas de descripció
+n que nos permiten poder aplicar los algoritmos de búsqueda de simetrías
+ para el caso de lógica modal básica, al caso de las lógicas de descripción.
+\end_layout
+
+\begin_layout Standard
+Primero dimos una definción formal de lo que es una simetría.
+ Luego, definimos el algoritmo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "algo-sim-glob"
+
+\end_inset
+
+ para construir un grafo a partir de una fórmula en CNF modal.
+ Gracias al Teorema 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "teo4.3"
+
+\end_inset
+
+, vemos que hay una equivalencia entre buscar simetrías en la fórmula, a
+ buscar automorfismos en el grafo generado por dicha fórmula.
+\end_layout
+
+\begin_layout Standard
+Por último, para la detección de simetrías en el contexto de las lógicas
+ de descripción, nos valimos de la función 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ definida en el 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
 
 \begin_layout Plain Layout
-a man needs a closure
+
+chap:dl2ml
 \end_layout
 
 \end_inset
 
-
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-a man needs a closure
-\end_layout
-
-\end_inset
-
-
+, para pasar fórmulas de lógicas de descripción a fórmulas modales, y luego
+ aplicar los procedimientos para la detección de simetrías ya descritos.
 \end_layout
 
 \end_body

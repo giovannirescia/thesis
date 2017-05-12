@@ -47,8 +47,8 @@ theorems-ams-bytype
 \use_package stackrel 1
 \use_package stmaryrd 1
 \use_package undertilde 1
-\cite_engine basic
-\cite_engine_type default
+\cite_engine natbib
+\cite_engine_type numerical
 \biblio_style plain
 \use_bibtopic false
 \use_indices false
@@ -94,7 +94,7 @@ Qué vamos a hacer en esta tesis
 \begin_layout Standard
 Supongamos que estamos frente a una computadora que contiene una base de
  datos a la cual podemos hacer consultas.
- Ahora supongamos que la computadora conoce la repuesta para alguna consulta
+ Ahora supongamos que la computadora conoce la respuesta para alguna consulta
  de tipo 
 \emph on
 A
@@ -108,18 +108,18 @@ B
 \emph on
  
 \emph default
-Finalmente supongamos que contamos con algún algoritmo que puede decidir
- si dos consultas tomadas en cuenta bajo ciertos aspectos, son 
+Finalmente, supongamos que contamos con un algoritmo que puede decidir si
+ dos consultas son 
 \emph on
 similares
 \emph default
-.
- Entonces nuestra computadora podría valerse de esta información y reutilizar
+ cuando se toman en cuenta ciertos aspectos.
+ Entonces, nuestra computadora podría valerse de esta información y reutilizar
  una respuesta similar a la de a 
 \emph on
 A
 \emph default
- al contestar 
+ para contestar 
 \emph on
 B
 \emph default
@@ -131,44 +131,26 @@ Intuitivamente, ese será el foco de trabajo de esta tesis: detectar
 \emph on
 similitudes
 \emph default
- en consultas para ciertas bases de datos; donde estas similitudes serán
- introducidas formalmente bajo el nombre de 
+ en consultas que se realizan sobre bases de datos; donde estas similitudes
+ serán introducidas formalmente bajo el nombre de 
 \emph on
 simetrías
 \emph default
 .
- Las bases de datos particulares con las que trabajeremos son conocidas
+ Las bases de datos particulares con las que trabajaremos son conocidas
  como 
 \emph on
 bases de conocimiento
 \emph default
- o 
+ (
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
-, por 
-\emph on
-Knowledge Base
-\emph default
- (utilizaremos los términos 
-\emph on
-bases de conocimiento 
-\emph default
-y 
-\emph on
-
-\begin_inset Formula $\mathcal{KB}$
-\end_inset
-
- 
-\emph default
-intercambiablemente durante el resto de esta tesis).
- Las bases de conocimiento con las que trabajaremos son especificadas formalment
-e utilizando el lenguaje que proveen las 
+), y estarán especificadas formalmente en el lenguaje que proveen las 
 \emph on
 Lógicas de Descripción
 \emph default
- o 
+ (
 \emph on
 
 \begin_inset Formula $\mathcal{DL}$
@@ -176,42 +158,8 @@ Lógicas de Descripción
 
 
 \emph default
-,
-\emph on
- 
-\emph default
-por 
-\emph on
-Description Logics
-\emph default
- (utilizaremos los términos 
-\emph on
-Lógicas de Descripción 
-\emph default
-y 
-\emph on
-
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- 
-\emph default
-intercambiablemente durante el resto de esta tesis).
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-COLGADO Y MAL LA GRAMÁTICA
-\end_layout
-
-\end_inset
-
-El lenguaje para implementar estas bases de conocimiento en una computadora,
- y puedan ser procesadas por ésta, es por defecto el lenguaje 
+), mientras que el lenguaje para implementar estas bases de conocimiento
+ en una computadora, será el lenguaje 
 \emph on
 OWL
 \emph default
@@ -223,18 +171,21 @@ Capturando conocimiento
 \end_layout
 
 \begin_layout Standard
-La historia de la inteligencia artificial ha mostrado que el 
+La historia de la Inteligencia Artificial (IA) ha mostrado que el 
 \emph on
 conocimiento
 \emph default
- es crítico a la hora de desarrollar sistemas de inteligencia artificial.
+ es crítico a la hora de desarrollar sistemas de IA.
  En muchos casos, a la hora de resolver una tarea, contar con 
 \emph on
 mejor
 \emph default
  conocimiento puede ser más importante que contar con mejores algoritmos.
- Para poder tener sistemas verdaderamente inteligentes, el conocimiento
- necesita ser capturado, procesado, reusado y comunicado.
+\end_layout
+
+\begin_layout Standard
+Para poder tener sistemas verdaderamente inteligentes, el conocimiento necesita
+ ser capturado, procesado, reusado y comunicado.
  Las ontologías dan soporte a todas estas tareas.
 \end_layout
 
@@ -247,10 +198,13 @@ El término
 \emph on
 ontología
 \emph default
- tiene sus raíces en la parte de la filosofía que está enfocada en el estudio
+ tiene sus raíces en la rama de la filosofía que está enfocada en el estudio
  del ser o la existencia.
- En términos de ciencias de la computación, ontología refiere a un término
- técnico que denota un artefacto que es 
+\end_layout
+
+\begin_layout Standard
+En el contexto de las ciencias de la computación, ontología refiere a un
+ término técnico que denota un artefacto que es 
 \emph on
 diseñado
 \emph default
@@ -259,10 +213,10 @@ diseñado
 \end_layout
 
 \begin_layout Standard
-Este término ha sido adoptado por investigadores en el área de Inteligencia
- Artificial (IA), quienes argumentaron que se podrían crear nuevas ontologías
- vistas como modelos computacionales que permitirían cierto tipo de razonamiento
- automático 
+Este término ha sido adoptado por investigadores en el área de IA, quienes
+ argumentaron que se podrían crear nuevas ontologías vistas como modelos
+ computacionales que permitirían cierto tipo de razonamiento automático
+ 
 \begin_inset CommandInset citation
 LatexCommand citealt
 key "AI2"
@@ -279,7 +233,7 @@ key "AI2"
 
 \end_inset
 
-), como un componente de los sistemas de conocimiento.
+), como a un componente de los sistemas de conocimiento.
 \end_layout
 
 \begin_layout Standard
@@ -317,7 +271,7 @@ y
 \emph on
 conceptualización
 \emph default
- puedan prestarse para diferentes interpretaciones, los puntos esenciales
+ pueden prestarse para diferentes interpretaciones, los puntos esenciales
  en la definición de ontología son
 \end_layout
 
@@ -327,15 +281,9 @@ s que son relevantes para modelar el dominio.
 \end_layout
 
 \begin_layout Itemize
-The specification takes the form of the definitions of representational
- vocabulary (classes, relations, and so forth), which provide meanings for
- the vocabulary and formal constraints on its coherent use.
-\end_layout
-
-\begin_layout Itemize
 La especificación toma la forma de las definiciones del vocabulario (clases,
- relaciones, etc.), que proveen un significado para dicho vocabulario junto
- con restricciones formales para su uso coherente.
+ relaciones, etc.), que proveen un significado para el mismo junto con restriccio
+nes formales para su uso coherente.
 \end_layout
 
 \begin_layout Standard
@@ -351,11 +299,8 @@ Representando ontologías
 
 \begin_layout Standard
 Distintos abordajes para la representación de las ontologías se desarrollaron
- en los años setenta, y pueden ser clasificados en dos categorías: formalismos
- basados en lógica (que asumen que el cálculo de predicados puede usarse
- de forma objetiva para capturar hechos del mundo), y representaciones no
- basadas en lógica.
- 
+ en los años setenta, los cuales pueden ser clasificados en dos categorías:
+ representaciones no basadas en lógica y formalismos basados en lógica.
 \end_layout
 
 \begin_layout Subsubsection
@@ -374,7 +319,6 @@ redes semánticas
 las estructuras (frames)
 \emph default
 .
- Discutiremos brevemente cada uno de ellos en las siguientes secciones.
 \end_layout
 
 \begin_layout Standard
@@ -389,27 +333,27 @@ key "Quillian"
  el conocimiento se representa en la forma de un grafo dirigido con etiquetas:
  cada nodo es asociado con un concepto y los arcos representan relaciones
  de algún tipo entre conceptos.
- Fueron creadas en un intento para expresar 
+ Las redes semánticas fueron creadas en un intento para expresar 
 \emph on
 interlingua
 \emph default
 , un lenguaje común que sería usado para traducir entre varios lenguajes.
- Un ejemplo típico es 
+\end_layout
+
+\begin_layout Standard
+Un ejemplo típico es 
 \emph on
 WordNet
 \emph default
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://wordnet.princeton.edu/
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "WORDNET"
 
 \end_inset
 
-, que describe relaciones entre palabras del inglés, usando lenguaje natural;
- puede relacionar, por ejemplo, la palabra 
+, que describe relaciones entre palabras del inglés, que usando lenguaje
+ natural, puede relacionar, por ejemplo, la palabra 
 \emph on
 alimento
 \emph default
@@ -440,13 +384,10 @@ strings
 \emph on
 OKBC
 \emph default
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://www.ai.sri.com/~okbc/
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "OKBCurl"
 
 \end_inset
 
@@ -461,15 +402,29 @@ nto.
 Si bien las redes semánticas y las estructuras contienen diferencias muy
  marcadas, tanto en las motivaciones que llevaron a su desarrollo como en
  sus prestaciones, comparten una base común.
- De hecho, nos podemos referir a ambas como estructuras de red, donde la
- estructura de cada red apunta a representar conjuntos de individuos y cómo
- éstos se relacionan entre sí.
+ De hecho, nos podemos referir a ambas como 
+\emph on
+estructuras
+\emph default
+ 
+\emph on
+de
+\emph default
+ 
+\emph on
+red
+\emph default
+, donde la estructura de cada red apunta a representar conjuntos de individuos
+ y cómo éstos se relacionan entre sí.
 \end_layout
 
-\begin_layout Example*
-La 
+\begin_layout Example
+Para dar un poco de intuición acerca de las ideas claves en los sistemas
+ de representación basados en redes, hablaremos en términos de una red genérica,
+ sin hacer referencia a algún sistema en concreto.
+ La 
 \begin_inset Flex CT - auto cross-reference
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -478,19 +433,24 @@ fig:redSimple
 
 \end_inset
 
- representa conocimiento modelando una pequeña parte del mundo animal; la
- estructura utilizada también es referida como una 
+ representa conocimiento modelando una pequeña parte del mundo animal utilizando
+ una red genérica.
+ La estructura utilizada también es referida como una 
 \emph on
 terminología
 \emph default
 , y representa la generalización/especificación de los conceptos involucrados.
  Por ejemplo, el vínculo entre 
+\series bold
 \emph on
 Félidos
+\series default
 \emph default
  y 
+\series bold
 \emph on
 Carnívoros
+\series default
 \emph default
  indica que todos los félidos son carnívoros; este tipo de relación también
  es llamada una relación 
@@ -529,7 +489,7 @@ B
  con dichos órganos.
  Siguiendo con el ejemplo de la 
 \begin_inset Flex CT - auto cross-reference
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -539,15 +499,17 @@ fig:redSimple
 \end_inset
 
 , vemos que el concepto Carnívoro está conectado con el nodo 
+\series bold
 \emph on
 seAlimentaDe
+\series default
 \emph default
-, el cual es una propiedad también llamada, 
+, el cual es una propiedad también llamada 
 \emph on
 rol
 \emph default
 .
- Éste cuenta con una 
+ Este rol cuenta con una 
 \emph on
 restrición de valor
 \emph default
@@ -562,19 +524,19 @@ restrición de valor
  el límite superior (NIL representa infinito).
  Entonces, podría leerse como 
 \emph on
-
-\begin_inset Quotes eld
-\end_inset
-
-un carnívoro es un animal que come (
+un carnívoro es un animal que se alimenta de (
 \begin_inset Formula $0$
 \end_inset
 
- o más) animales
-\begin_inset Quotes erd
-\end_inset
+ o más) animales.
 
-.
+\emph default
+ Un detalle importante en estas estructuras son las relaciones implícitas
+ que se encuentran entre los conceptos.
+ Por ejemplo, como todos los carnívoros son animales, y un félido es un
+ carnívoro, entonces un félido es un animal.
+ Encontrar este tipo de relaciones implícitas es el objetivo de un sistema
+ de representación de conocimiento.
 \end_layout
 
 \begin_layout Standard
@@ -604,7 +566,7 @@ name "fig:redSimple"
 
 \end_inset
 
-Red simple
+Representación de relaciones entre ciertos animales con una red genérica
 \end_layout
 
 \end_inset
@@ -615,21 +577,12 @@ Red simple
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Un detalle importante en estas estructuras son las relaciones implícitas
- que se encuentran entre los conceptos.
- Por ejemplo, como todos los carnívoros son animales, y un félido es un
- carnívoro, por lo tanto un félido es un animal.
- Encontrar este tipo de relaciones implícitas es el objetivo de un sistema
- de representación de conocimiento.
 \end_layout
 
 \begin_layout Standard
 A medida que las relaciones entre los conceptos se vuelven más complejas,
  aumenta la dificultad para dar caracterizaciones precisas sobre qué tipos
- de relaciones pueden ser computadas, y para garantizar la correctitud y
+ de relaciones pueden ser computadas y para garantizar la correctitud y
  completitud del sistema que razona sobre estas estructuras.
 \end_layout
 
@@ -639,13 +592,17 @@ Sistemas basados en lógica
 
 \begin_layout Standard
 Usando las ideas que hemos visto hasta el momento, varios sistemas fueron
- implementados y utilizados en aplicaciones.
+ implementados y utilizados en diversas aplicaciones.
  Como resultado, surgió la necesidad de una caracterización precisa del
  significado de las estructuras usadas en las representaciones y del conjunto
  de inferencias que podían obtenerse de dichas estructuras.
- Esta caracterización precisa del significado de una red puede obtenerse
- definiendo un lenguaje para los elementos de la estructura (sintaxis) y
- proveyendo una interpretación para estos símbolos (semántica).
+ 
+\end_layout
+
+\begin_layout Standard
+Una caracterización precisa del significado de una estructura de red puede
+ obtenerse definiendo un lenguaje para los elementos de la misma (sintaxis)
+ y proveyendo una interpretación para estos símbolos (semántica).
  Si bien la sintaxis puede variar bajo ciertos aspectos (e.g., dominio del
  problema), la semántica suele estar dada en términos de modelos.
  En 
@@ -656,11 +613,12 @@ key "Brachman77,Brachman79"
 \end_inset
 
  se encuentran algunas de las primeras referencias que abordan sobre el
- tema de contar con una semántica formal en estas redes semánticas.
+ tema de contar con una semántica formal para estas redes semánticas.
 \end_layout
 
 \begin_layout Standard
-El trabajo realizado por Brachman, llevó al desarrollo de KL-ONE 
+En particular, el trabajo realizado por Brachman llevó al desarrollo de
+ KL-ONE 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BrachmanSchmolze1985"
@@ -669,7 +627,7 @@ key "BrachmanSchmolze1985"
 
 , uno de los primeros sistemas de conocimiento, el cual contaba con cierto
  tipo de semántica lógica.
- Muchos sistemas evoluciaron a partir de KL-ONE, como KRYPTON 
+ Muchos sistemas evolucionaron a partir de KL-ONE, como KRYPTON 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BrachmanEtal1985"
@@ -724,15 +682,20 @@ Lógicas de descripción
 \end_layout
 
 \begin_layout Standard
-Para la sintaxis se introdujo 
+Las lógicas de descripción son una familia de lógicas que proveen de una
+ sintaxis y semántica formal para la representación de conocimiento.
+\end_layout
+
+\begin_layout Standard
+Para la sintaxis se introdujo un lenguaje abstracto 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "DLHandBook"
 
 \end_inset
 
- un lenguaje abstracto, definido a partir de dos alfabetos disjuntos que
- son utilizados para denotar 
+, definido a partir de dos alfabetos disjuntos que son utilizados para denotar
+ 
 \emph on
 conceptos atómicos
 \emph default
@@ -740,9 +703,11 @@ conceptos atómicos
 \emph on
 roles atómicos
 \emph default
- de predicado (símbolos binarios) utilizados para expresar relaciones entre
- los conceptos.
- Las fórmulas se construyen a partir de los símbolos básicos usando distintos
+ (símbolos binarios de predicado) para expresar relaciones entre los conceptos.
+\end_layout
+
+\begin_layout Standard
+Las fórmulas se construyen a partir de los símbolos básicos usando distintos
  operadores.
  Por ejemplo, si 
 \emph on
@@ -804,7 +769,7 @@ C
 \emph on
 D
 \emph default
-, respectivamente, o sea que se podría definir al operador 
+, respectivamente, o sea que se podría interpretar al operador 
 \begin_inset Formula $\sqcup$
 \end_inset
 
@@ -826,7 +791,7 @@ D
 \begin_inset Formula $\sqcap$
 \end_inset
 
- se comporta como el operador intersección de conjuntos, pero sobre conceptos.
+ se interpreta como el operador intersección de conjuntos, pero sobre conceptos.
  Por último, las relaciones son conjuntos de pares de
 \emph on
  individuos
@@ -843,8 +808,8 @@ Músico
 ).
 \end_layout
 
-\begin_layout Standard
-A modo de ejemplo, supongamos que 
+\begin_layout Example
+Supongamos que 
 \emph on
 Persona, Hombre 
 \emph default
@@ -874,40 +839,14 @@ intersección, unión
 complemento
 \emph default
  de conceptos, interpretados como operaciones entre conjuntos, podemos describir
- 
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-unificar comillas
-\end_layout
-
-\end_inset
-
-nuevos conceptos, como por ejemplo 
-\begin_inset Quotes eld
-\end_inset
-
-las personas que no son mujeres
-\begin_inset Quotes erd
-\end_inset
-
-, 
-\begin_inset Quotes eld
-\end_inset
-
-los individuos que son mujeres u hombres
-\begin_inset Quotes erd
-\end_inset
-
+ nuevos conceptos, como por ejemplo 
+\emph on
+las personas que no son mujeres, los individuos que son mujeres u hombres
+\emph default
  o incluso que 
-\begin_inset Quotes fld
-\end_inset
-
+\emph on
 Alcmena es madre de Hércules
-\begin_inset Quotes frd
-\end_inset
-
+\emph default
 , denotados por las siguientes expresiones:
 \end_layout
 
@@ -979,14 +918,19 @@ status open
 \end_layout
 
 \begin_layout Standard
-Ya hicimos una introducción de sistemas que tienen una semántica formal
- y bien definida en los cuales se puede razonar, ahora bien, ¿cómo explotamos
- esta capacidad para inferir relaciones implícitas a partir de poder razonar
- sobre éstos? De esto se encarga la web semántica, que ahora introduciremos.
+Ya dimos una introducción de sistemas que tienen una semántica formal y
+ bien definida en los cuales se puede razonar, ahora bien, ¿cómo explotamos
+ y automatizamos esta capacidad para inferir relaciones implícitas a partir
+ de poder razonar sobre dichos sistemas? La web semántica nos proveerá de
+ las herramientas necesarias para poder trabajar en 
+\emph on
+razonadores
+\emph default
+, o sea, programas que buscan inferir relaciones a partir de una ontología.
 \end_layout
 
 \begin_layout Subsection
-Expresando ontologías en computadoras
+La Web Semántica
 \end_layout
 
 \begin_layout Standard
@@ -1010,7 +954,7 @@ WWW
 \begin_layout Standard
 La 
 \emph on
-Web Semántica
+web semántica
 \emph default
  
 \begin_inset CommandInset citation
@@ -1019,28 +963,28 @@ key "OWLAPI"
 
 \end_inset
 
+, es
+\emph on
+ un esfuerzo en colaboración liderado por el Consorcio de la WWW (W3C)
+\emph default
 , tiene como objetivo mejorar la actual web para que las computadoras sean
  capaces de procesar la información presentada en la WWW, interpretarla
  y conectarla, para ayudar a las personas a encontrar el conocimiento requerido.
  De la misma manera que la WWW, la web semántica es un sistema distribuido
- de hipertexto, que está pensada para formar un gran sistema de conocimiento
+ de hipertexto, que está pensado para formar un gran sistema de conocimiento
  distribuido.
  El foco de la web semántica es compartir datos, en vez de documentos.
  En otras palabras, es un proyecto que debería proveer 
 \emph on
-una estructura, común que permita a la información ser compartida y reusada
+una estructura común que permita a la información ser compartida y reusada
  a través de los límites de la aplicación, el trabajo y la comunidad.
- Es un esfuerzo en colaboración liderado por el Consorcio de la WWW (W3C)
-\emph default
-.
  
 \end_layout
 
 \begin_layout Standard
-La arquictura sobre la cual la la web semántica está construida cuenta con
- varias capas, pero dado el foco de esta tesis, no analizaremos las capas
- por encima de las ontologías, por lo cual las capas relevantes están dadas
- por la 
+La arquitectura sobre la cual la web semántica está construida cuenta con
+ varias capas, pero dado el foco de esta tesis, no analizaremos todas ellas
+ y solo presentaremos las capas relevantes que están dadas por la 
 \begin_inset Flex CT - auto cross-reference
 status open
 
@@ -1076,9 +1020,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang english
-Web Semántica
+Algunas capas que componen la web semántica
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:w3cstack"
@@ -1117,7 +1059,7 @@ key "Unicode"
 
  es un estándar para la codificación de conjuntos internacionales de caractéres
  y permite usar cualquier lenguaje humano (para escritura y lectura) en
- la web usando una forma estandar.
+ la web.
  URI 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1133,7 +1075,7 @@ Uniform Resource Identifier
 \emph on
 string
 \emph default
- (conjunto de caractéres) de forma estandarizada que permite identificar
+ (conjunto de caractéres) con un formato estandarizado que permite identificar
  recursos de forma única (e.g., documentos).
 \end_layout
 
@@ -1170,13 +1112,13 @@ Resource Description Framework
 Sistema de Descripción de Recursos
 \emph default
 , en español).
- Es un sistema para representar información acerca de los recursos en forma
- de grafo.
+ Este es un sistema para representar información acerca de los recursos
+ en forma de grafo.
  Está basado en triplas 
 \emph on
 sujeto-predicado-objeto 
 \emph default
-que conforma el grafo de datos.
+que conforman el grafo de datos.
  Todos los datos en la web semántica usan RDF como el principal lenguaje
  de representación.
  Debido a que RDF estaba pensando principalmente para representar metadatos
@@ -1220,9 +1162,8 @@ Ontology Web Language
  construcciones sobre RDFS.
  Está sintácticamente embebido dentro de RDF, así que como RDFS, provee
  vocabulario estandarizado adicional.
- Un punto importante, quizá el más importante, es que el lenguaje OWL para
- ontologías, está basado en las lógicas de descripción (de hecho, al sublenguaje
- de OWL que está basado en 
+ Como dijimos, el lenguaje OWL para ontologías, está basado en las lógicas
+ de descripción (de hecho, al sublenguaje de OWL que está basado en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -1235,8 +1176,13 @@ OWL DL
  formal; y segundo, le aporta poder de razonamiento a la web semántica.
 \end_layout
 
+\begin_layout Standard
+En esta tesis, OWL es de suma importancia, ya que es el lenguaje en el cual
+ están expresadas todas las ontologías que utilizaremos.
+\end_layout
+
 \begin_layout Section
-Sobre simetrías
+Simetrías en razonamiento automático
 \end_layout
 
 \begin_layout Standard
@@ -1324,10 +1270,22 @@ argumentos basados en simetría
 \end_layout
 
 \begin_layout Standard
-Por lo tanto, si podemos identificar las simetrías de un problema, podríamos
- utilizarlas para reducir la dificultad del razonamiento analizando en detalle
- sólo uno de los casos simétricos y luego generalizar el resultado a los
- demás.
+La intuición que subyace a los argumentos basados en simetría es que en
+ el curso de una prueba matemática, a menudo se utiliza un elemento arbitrario
+ de un conjunto como representante de este conjunto, siempre que sus elementos
+ sean simétricos, de modo que los argumentos subsiguientes se aplican en
+ forma similar a los demás elementos del conjunto.
+ Este principio nos permite reconocer que una tautología (o sea, una fórmula
+ que es siempre verdadera) permanece invariante bajo ciertas permutaciones
+ de nombres de variables y se vale de esta información para evitar repetir
+ derivaciones de fórmulas intermedias que son meramente variantes permutacionale
+s la una de la otra.
+\end_layout
+
+\begin_layout Standard
+Si podemos identificar las simetrías de un problema, podríamos utilizarlas
+ para reducir la dificultad del razonamiento analizando en detalle sólo
+ uno de los casos simétricos y luego generalizar el resultado a los demás.
  Esto es exactamente lo que tratamos de hacer cuando utilizamos las simetrías
  de un problema en el contexto de razonamiento automático.
 \end_layout
@@ -1344,7 +1302,7 @@ RESCRIBIR
 
 
 \begin_inset Marginal
-status collapsed
+status open
 
 \begin_layout Plain Layout
 RESCRIBIR
@@ -1357,12 +1315,12 @@ En dicho contexto, la presencia de simetrías en el espacio de búsqueda de
  forzar al algoritmo de búsqueda a explorar subespacios simétricos que no
  contiene soluciones.
  Si somos capaces de demostrar que una fórmula tiene simetrías, podemos
- guiar al algoritmo de búsqueda para que solo busque soluciones en las partes
- no simétricas del espacio de búsqueda.
+ guiar al algoritmo para que solo busque soluciones en las partes no simétricas
+ del espacio de búsqueda.
 \end_layout
 
 \begin_layout Standard
-Dentro del contexto de razonamiento automático, definiremos 
+Dentro del contexto de razonamiento automático, definiremos como 
 \emph on
 simetría
 \emph default
@@ -1371,15 +1329,8 @@ simetría
 \end_layout
 
 \begin_layout Standard
-La intuición que subyace al principio de simetría es que en el curso de
- una prueba matemática, a menudo se utiliza un elemento arbitrario de un
- conjunto como representante de este conjunto, siempre que el conjunto sea
- simétrico, de modo que los argumentos subsiguientes se aplican en forma
- similar a los demás elementos del conjunto.
- De manera similar, este principio nos permite reconocer que una tautología
- permanece invariante bajo ciertas permutaciones de nombres de variables
- y se vale de esta información para evitar repetir derivaciones de fórmulas
- intermedias que son meramente variantes permutacionales la una de la otra.
+El uso de simetrías en el contexto de razonamiento automático fue ampliamente
+ estudiado.
 \end_layout
 
 \begin_layout Standard
@@ -1426,7 +1377,7 @@ C
 \end_inset
 
 .
- Mientras que la regla de simetría local nos permitirá inferir 
+ Por otra parte, la regla de simetría local nos permitirá inferir 
 \begin_inset Formula $\sigma(C)$
 \end_inset
 
@@ -1450,39 +1401,29 @@ C
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-RESCRIBIR
-\end_layout
-
-\end_inset
-
-
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-REVISAR
-\end_layout
-
-\end_inset
-
-A pesar de mostrar la utilidad de las reglas de simetría para algunos problemas
- 
+El trabajo de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy"
 
 \end_inset
 
- no presenta algoritmo alguno para realizar la detección de simetrías, y
- tampoco se discute en detalle cómo los procedimientos de resolución deben
+ muestra la utilidad de las reglas de simetría para algunos problemas pero
+ no presenta un algoritmo para realizar la detección de simetrías.
+ Tampoco se discute en detalle cómo los procedimientos de resolución deben
  utilizar las reglas de simetría.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Marginal
+status collapsed
+
+\begin_layout Plain Layout
+PREGUNTARLE A EZEQUIEL POR LAS REFERENCIAS Y VER SI ESTE PÁRRAFO SE VA
+\end_layout
+
+\end_inset
+
 Un caso particular de aplicación de simetrías es en el problema de satisfacibili
 dad booleana (SAT) 
 \begin_inset CommandInset citation
@@ -1509,8 +1450,8 @@ key "Benhamou1992,Benhamou1994"
 
  un algoritmo de detección de simetrías y un algoritmo de búsqueda para
  explotar simetrías, son presentados.
- La detección de las simetrías es realizada directamente sobre la fórmula
- de entrada.
+ La detección de simetrías es realizada directamente sobre la fórmula de
+ entrada.
  Una vez que las simetrías son detectadas, se utilizan en dos algoritmos
  de búsqueda: el algoritmo SLRI 
 \begin_inset CommandInset citation
@@ -1530,103 +1471,6 @@ key "Oxusoff"
 \end_layout
 
 \begin_layout Standard
-Para ambos algoritmos, el punto clave para poder aprovecharse de las simetrías
- durante la etapa de deducción es una propiedad que establece que un literal
- 
-\emph on
-l
-\emph default
- tiene un modelo en un conjunto de cláusulas 
-\emph on
-S
-\emph default
- (i.e., existe una valuación 
-\emph on
-V
-\emph default
- que satisface 
-\emph on
-S
-\emph default
- tal que 
-\emph on
-
-\begin_inset Formula $V(l)=verdadero$
-\end_inset
-
-
-\emph default
-)
-\emph on
- 
-\emph default
-si y solo si para todo literal simétrico 
-\emph on
-
-\begin_inset Formula $l'$
-\end_inset
-
- 
-\emph default
-(i.e., para cada literal 
-\begin_inset Formula $\sigma(l)=l'$
-\end_inset
-
-, para una simetría 
-\begin_inset Formula $\sigma$
-\end_inset
-
-) existe un modelo 
-\begin_inset Formula $V'$
-\end_inset
-
- de 
-\begin_inset Formula $S$
-\end_inset
-
- 
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-EN LA TESIS DICE v(l')=true, pero no hace uso de v'
-\end_layout
-
-\end_inset
-
-tal que 
-\begin_inset Formula $V'(l)=verdadero$
-\end_inset
-
-.
- Por ejemplo, en el caso de SRLI, en vez de refutar cada literal por separado,
- podemos usar simetrías para rechazar literal de manera simultánea, e.g.,
- sea 
-\begin_inset Formula $C=\{l_{1},l_{2},\dots,l_{i-1},l_{i},\dots,l_{n}\}$
-\end_inset
-
- una cláusula y supongamos que los literales 
-\begin_inset Formula $l_{j}$
-\end_inset
-
-, para 
-\begin_inset Formula $j=1,\dots,i-1$
-\end_inset
-
- ya fueron refutados, y 
-\begin_inset Formula $l_{i}$
-\end_inset
-
- es el literal que estamos intentando refutar.
- Si 
-\begin_inset Formula $l_{i}$
-\end_inset
-
- es simétrico a alguno de los literales previos, entonces será refutado
- automáticamente por la propiedad de simetría.
-\end_layout
-
-\begin_layout Standard
 En 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1639,37 +1483,23 @@ key "Crawford"
 les se puede reducir polinomialmente al problema de detección de automorfismos
  en grafos coloreados y se presenta un algoritmo para crear un grafo coloreado
  a partir de una fórmula proposicional en forma normal conjuntiva (CNF).
- Luego, un subgrupo del grupo de simetrías de la fórmula es detectado mediante
+ 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+REVISAR
+\end_layout
+
+\end_inset
+
+Luego, un subgrupo del grupo de simetrías de la fórmula es detectado mediante
  la detección del grupo de automorfismos del grafo resultante.
 \end_layout
 
 \begin_layout Standard
-El trabajo de 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Orbe:2014aa"
-
-\end_inset
-
- está basado en el enfoque de 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Crawford"
-
-\end_inset
-
- para la búsqueda de simetrías.
- En 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Orbe:2014aa"
-
-\end_inset
-
- se trabaja con simetrías sobre lógicas modales y satisfacibilidad módulo
- teorías.
- Las lógicas modales son una extensión de la lógica de predicados, que incluye
- operadores que expresan una 
+En el contexto de las lógicas modales (las cuales son una extensión de la
+ lógica proposicional, que incluye operadores que expresan una 
 \emph on
 modalidad
 \emph default
@@ -1677,47 +1507,19 @@ modalidad
 \emph on
 califican
 \emph default
- las sentencias (e.g., en 
-\begin_inset Quotes fld
-\end_inset
-
-es necesario que 
-\begin_inset Formula $1>0$
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
-, la expresión 
-\begin_inset Quotes fld
-\end_inset
-
-es necesario que
-\begin_inset Quotes frd
-\end_inset
-
- es el operador modal).
-\end_layout
-
-\begin_layout Standard
-Ya existen trabajos previos en la investigación sobre la explotación de
- simetrías en lógica modal en el área de 
+ las sentencias), el estudiode simetrías fue abordado en el área de verificación
+ de modelos (o 
 \emph on
-verificación de modelos 
+model checking
 \emph default
-(o, 
-\emph on
-model checking 
-\emph default
-en inglés), para la lógica temporal LTL
+) para la lógica LTL 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Miller2006,Donaldson2007,Donaldson2005,Clarke1996"
 
 \end_inset
 
-, y en la lógica temporal-epistémica
+ y la lógica temporal-epistémica 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Cohen2009"
@@ -1728,16 +1530,46 @@ key "Cohen2009"
 \end_layout
 
 \begin_layout Standard
-El trabajo realizado en 
+De gran importancia para esta tesis, es el trabajo realizado en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Orbe:2014aa"
 
 \end_inset
 
- es de mucha importancia para lo que realizaremos en esta tesis: trasladaremos
- gran cantidad de resultados teóricos y herramientas utilizadas en lógica
- modal hacia lógicas de descripción, sin un gran esfuerzo.
+ sobre simetrías en lógicas modales y satisfacibilidad módulo teorías (SMT).
+\end_layout
+
+\begin_layout Standard
+En particular, en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+ se da un marco teórico para el uso de simetrías en diversas lógicas modales
+ y se propone un algoritmo de detección basado en el enfoque propuesto en
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crawford"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En esta tesis trasladaremos resultados teóricos y herramientas desarrolladas
+ en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+ hacia las lógicas de descripción.
  Ahora bien, ¿cómo es posible trasladar tales resultados de una lógica a
  otra? La conexión entre las dos lógicas es presentada en 
 \begin_inset CommandInset citation
@@ -1760,9 +1592,9 @@ key "Orbe:2014aa"
 
 \end_inset
 
- y los tipos de lógicas de descripción con los que trabajeremos aquí, la
- traducción sintáctica es prácticamente directa, ya que los modelos son
- los mismos.
+ y los tipos de lógicas de descripción con los que trabajeremos aquí, veremos
+ que la traducción sintáctica es prácticamente directa ya que los modelos
+ son los mismos.
 \end_layout
 
 \begin_layout Section
@@ -1798,8 +1630,8 @@ chap:dl2ml
 \end_inset
 
  junto a su sintaxis y semántica.
- El primer resultado teórico importante es presentado en aquí también: la
- función de traducción 
+ El primer resultado teórico importante es presentado aquí también: la función
+ de traducción 
 \begin_inset Formula $\Psi$
 \end_inset
 
@@ -1886,8 +1718,7 @@ chap:conclusiones
 
 \end_inset
 
- da las conclusiones de trabajo realizado en esta tesis, sus límites y se
- discuten propuestas sobre trabajo futuro.
+, sus límites y se discuten propuestas sobre trabajo futuro.
 \end_layout
 
 \end_body
