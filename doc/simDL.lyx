@@ -90,14 +90,7 @@ Simetrías en Lógicas de Descripción
 \begin_layout Standard
 En este capítulo hablaremos de simetrías en lógicas de descripción.
  Primero daremos una noción de simetrías en el contexto de lógicas modales,
- luego utilizando el nexo entre 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- y 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
+ luego utilizando el nexo entre lógicas de descripción y lógicas modales
  dado en el capítulo anterior mostraremos que los resultados sobre simetrías
  en 
 \begin_inset Formula $\mathcal{ML}$
@@ -120,19 +113,11 @@ En este capítulo hablaremos de simetrías en lógicas de descripción.
 \end_layout
 
 \begin_layout Section
-Simetrías en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-
+Simetrías en lógicas modales
 \end_layout
 
 \begin_layout Standard
-Las simetrías en 
-\begin_inset Formula $\mathsf{\mathcal{ML}}$
-\end_inset
-
- fueron extensamente estudiadas en 
+Las simetrías en lógicas modales fueron extensamente estudiadas en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Orbe:2014aa"
@@ -141,6 +126,83 @@ key "Orbe:2014aa"
 
 .
  A continuación introduciremos los conceptos principales.
+\end_layout
+
+\begin_layout Definition
+(Permutación).
+ 
+\emph on
+Una 
+\emph default
+permutación 
+\emph on
+de un conjunto A es una biyección 
+\begin_inset Formula $\sigma:A\shortrightarrow A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las permutaciones definidas sobre conjuntos finitos puede ser representada
+ utilizando 
+\emph on
+notación cíclica
+\emph default
+.
+\end_layout
+
+\begin_layout Definition
+(Notación cíclica).
+ 
+\emph on
+Sea A un conjunto finito y sean 
+\begin_inset Formula $a_{1},...,a_{n}$
+\end_inset
+
+ elementos distintos de A.
+ La expresión 
+\emph default
+(
+\emph on
+
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+ ...
+ 
+\begin_inset Formula $a_{n}$
+\end_inset
+
+
+\emph default
+)
+\emph on
+ es un 
+\emph default
+ciclo
+\emph on
+ y denota la acción de mapear 
+\begin_inset Formula $a_{1}\shortrightarrow a_{2},a_{2}\shortrightarrow a_{3},...,a_{n-1}\shortrightarrow a_{n},a_{n}\shortrightarrow a_{1}$
+\end_inset
+
+.
+ Un elemento que no aparece en el ciclo se considera como dejado fijo por
+ el ciclo.
+ Un ciclo que contiene solo dos elementos se denomina una 
+\emph default
+transposición.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -182,12 +244,7 @@ Dado un conjunto de literales proposicionales L,
 \end_layout
 
 \begin_layout Standard
-
-\emph on
-Nota.
-
-\emph default
- La definición que acabamos de dar define permutaciones sobre el conjunto
+La definición que acabamos de dar define permutaciones sobre el conjunto
  infinito 
 \family sans
 PLIT
@@ -344,20 +401,86 @@ les, es decir, si tenemos un conjunto consistente de literales proposicionales,
 Desde el punto de vista de la teoría de grupos 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "TeoriaGrupos"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "TeoGrupos2"
+key "TeoriaGrupos,TeoGrupos2"
 
 \end_inset
 
 , las permutaciones consistentes forman un subgrupo del grupo de todas las
  permutaciones sobre un determinado conjunto, ya que la composición de permutaci
 ones consistentes da como resultado una permutación consistente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\emph on
+(Literales y CNF modal).
+ Un 
+\emph default
+literal proposicional 
+\emph on
+l es una variable proposicional p o su negación 
+\begin_inset Formula $\lnot p$
+\end_inset
+
+.
+ El conjunto de literales sobre 
+\begin_inset Formula $\mathsf{PROP}$
+\end_inset
+
+ es 
+\begin_inset Formula $\mathsf{PLIT=PROP}\cup\{\lnot p\mid p\in\mathsf{PROP}\}$
+\end_inset
+
+.
+ Una fórmula modal está en 
+\emph default
+forma normal conjuntiva modal (CNF modal) 
+\emph on
+si es una conjunción de cláusulas en CNF modal.
+ Una cláusula 
+\emph default
+en CNF modal
+\emph on
+ es una disyunción de literales proposicionales y modales.
+ Un 
+\emph default
+literal modal
+\emph on
+ es una fórmula de la forma 
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C o 
+\begin_inset Formula $\lnot$
+\end_inset
+
+
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C, donde C es una cláusula en CNF modal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Definition
@@ -877,15 +1000,13 @@ reference "cor4.1"
 
 \end_inset
 
- nos indica que, en la lógica modal básica, las simetrías tienen el mismo
- efecto que en la lógica proposicional.
- El grupo de simetrías de una fórmula 
+ nos indica que, en la lógica modal básica, el grupo de simetrías de una
+ fórmula 
 \begin_inset Formula $\varphi$
 \end_inset
 
  actuando sobre el conjunto de modelos lo particiona de forma tal que las
- clases de equivalencia (órbitas) contienen sólo modelos que satisfacen
- 
+ clases de equivalencia contienen sólo modelos que satisfacen 
 \begin_inset Formula $\varphi$
 \end_inset
 
@@ -976,7 +1097,17 @@ reference "teo4.1"
  situación donde exista algún tipo de consecuencia lógica involucrada durante
  el razonamiento modal automático.
  Sin lugar a dudas, aplicar una permutación es computacionalmente mas “barato”
- que aplicar una expansión en un tableaux o un paso de resolución.
+ que aplicar una expansión en un tableaux o un paso de resolución
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+CITA A LA TESIS DE EZEQUIEL?
+\end_layout
+
+\end_inset
+
+.
  Por lo tanto, las nuevas fórmulas obtenidas de esta forma pueden reducir
  el tiempo total de ejecución de un algoritmo de inferencia.
  En el caso de la lógica proposicional este mecanismo de inferencia ha probado
@@ -1011,22 +1142,18 @@ reference "teo4.1"
 \end_layout
 
 \begin_layout Standard
-Gracias a la traducción del 
+Gracias a la función de traducción de la Definición 
 \begin_inset Flex CT - auto cross-reference
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-chap:dl2ml
+defPsi
 \end_layout
 
 \end_inset
 
- estos Teoremas se pueden transferir a 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-.
+ estos Teoremas se pueden transferir a las lógicas de descripción.
  Es decir, podemos obtener una contraparte del Corolario 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1041,313 +1168,68 @@ reference "teo4.1"
 
 \end_inset
 
- para las lógicas de descripción.
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
 \end_layout
 
 \begin_layout Theorem
-Sean 
+Sea 
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
- una base de conocimiento y 
+ una base de conocimiento, 
 \begin_inset Formula $\varphi$
 \end_inset
 
- una fórmula como en la Definición 
+ una fórmula como en la definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "satisfDL"
 
 \end_inset
 
-.
- La función de traducción 
+, 
 \begin_inset Formula $\Psi$
 \end_inset
 
- definida en el 
+ la función de traducción de la Definición 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
 \begin_layout Plain Layout
 
-chap:dl2ml
+defPsi
 \end_layout
 
 \end_inset
 
- tiene la siguiente propiedad: sea 
+ y 
 \begin_inset Formula $\sigma$
 \end_inset
 
  una simetría de 
-\begin_inset Formula $\Psi(\mathcal{KB})$
+\begin_inset Formula $\Psi(\text{\mathcal{KB})}$
 \end_inset
 
-, entonces
-\end_layout
+, luego se cumple que
+\begin_inset Formula 
+\[
+\mathcal{KB}\models\varphi\iff\mathcal{KB}\models\sigma(\varphi)
+\]
 
-\begin_layout Theorem
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="13">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\begin{aligned}\mathcal{KB}\models\varphi\iff\mathcal{KB}\models\sigma(\varphi)\end{aligned}
-$
 \end_inset
 
 
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1361,7 +1243,7 @@ Detectando simetrías
 El primer paso para utilizar las simetrías en cualquier lógica es detectarlas.
  En esta sección nos enfocaremos en detectar simetrías en ontologías.
  Para ello veremos cómo reutilizar técnicas de detección basadas en grafos
- que son utilizadas para detectar simetrías en fórmulas modales.
+ utilizadas para detectar simetrías en fórmulas modales.
  Nuevamente la traducción del Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1417,65 +1299,6 @@ key "Orbe:2014aa"
 .
 \end_layout
 
-\begin_layout Definition
-
-\emph on
-(Literales y CNF modal).
- Un 
-\emph default
-literal proposicional 
-\emph on
-l es una variable proposicional p o su negación 
-\begin_inset Formula $\lnot p$
-\end_inset
-
-.
- El conjunto de literales sobre 
-\begin_inset Formula $\mathsf{PROP}$
-\end_inset
-
- es 
-\begin_inset Formula $\mathsf{PLIT=PROP}\cup\{\lnot p\mid p\in\mathsf{PROP}\}$
-\end_inset
-
-.
- Una fórmula modal está en 
-\emph default
-forma normal conjuntiva modal (CNF modal) 
-\emph on
-si es una conjunción de cláusulas en CNF modal.
- Una cláusula 
-\emph default
-en CNF modal
-\emph on
- es una disyunción de literales proposicionales y modales.
- Un 
-\emph default
-literal modal
-\emph on
- es una fórmula de la forma 
-\emph default
-[
-\emph on
-m
-\emph default
-]
-\emph on
-C o 
-\begin_inset Formula $\lnot$
-\end_inset
-
-
-\emph default
-[
-\emph on
-m
-\emph default
-]
-\emph on
-C, donde C es una cláusula en CNF modal.
-\end_layout
-
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1506,7 +1329,7 @@ profundidad modal
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
@@ -1661,6 +1484,41 @@ máx
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $md(A\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+=
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1+md(\varphi)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -1697,7 +1555,7 @@ máx
 \end_layout
 
 \begin_layout Standard
-A menos que se indique lo contrario, trabajeremos con fórmulas en CNF modal,
+A menos que se indique lo contrario, trabajaremos con fórmulas en CNF modal,
  aunque las escribiremos de la forma usual para mantener la claridad en
  la notación.
  Con 
@@ -1857,7 +1715,7 @@ Sea
 
 \emph on
 Para cada variable proposicional de 
-\begin_inset Formula $a\in Prop(\varphi):$
+\begin_inset Formula $p\in Prop(\varphi):$
 \end_inset
 
 
@@ -1871,8 +1729,8 @@ Agregar dos nodos de color (tipo)
 \begin_inset Formula $0$
 \end_inset
 
-: uno para el literal positivo a y otro para el literal negativo 
-\begin_inset Formula $\neg a$
+: uno para el literal positivo p y otro para el literal negativo 
+\begin_inset Formula $\neg p$
 \end_inset
 
 .
@@ -2030,7 +1888,7 @@ reference "fig:ejemplo-grafo-4-1"
 \begin_inset Formula $G(\varphi)$
 \end_inset
 
- asociado construido usando el algoritmo definido por 
+ asociado construido usando el algoritmo de la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"
@@ -2061,7 +1919,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Ejemplo del algoritmo para simetrías globales
+Grafo obtenido usando el algoritmo de construcción de grafos
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ejemplo-grafo-4-1"
@@ -2111,7 +1969,7 @@ key "Orbe:2014aa"
 
 \end_inset
 
- se prueba que el algoritmo 
+ se prueba que el algoritmo de la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"
@@ -2189,31 +2047,24 @@ reference "teo4.3"
 
 \end_inset
 
- nos asegura que el algoritmo es correcto y por ende, que no se detectarán
- simetrías espúreas, es decir, automorfismos del grafo que no son simetrías
- de la fórmula.
+ nos asegura que el algoritmo es correcto es decir, que no se detectarán
+ simetrías espúreas (o sea, automorfismos del grafo que no son simetrías
+ de la fórmula).
 \end_layout
 
 \begin_layout Subsection
-Detección de simetrías en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
+Detección de simetrías en lógicas de descripción
 \end_layout
 
 \begin_layout Standard
-Ahora bien, ¿cómo podemos detectar simetrías en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-? Gracias a la traducción del 
+Ahora bien, ¿cómo podemos detectar simetrías en lógicas de descripción?
+ Gracias a la función de traducción de la Definición 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
 \begin_layout Plain Layout
 
-chap:dl2ml
+defPsi
 \end_layout
 
 \end_inset
@@ -2230,20 +2081,9 @@ reference "algo-sim-glob"
 
 \begin_layout Standard
 Para ello, dada una ontología primero debemos traducirla a una fórmula modal
- usando las traducciones del 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-chap:dl2ml
-\end_layout
-
-\end_inset
-
-.
+ usando la función de traducción.
  Luego podemos aplicar la construcción descrita anteriormente, para detectar
- simetrías en dicha fórmula modal y luego debemos traducir esas simetrías
+ simetrías en dicha fórmula modal y finalmente debemos traducir esas simetrías
  a simetrías de nuestra ontología.
 \end_layout
 
@@ -2277,7 +2117,7 @@ chap:dl2ml
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\varGamma=\bigwedge\limits _{\alpha\in TBox(\vartheta)}\Psi(\alpha)
+\varGamma=\bigwedge\limits _{\alpha\in TBox(\vartheta)}\Psi(\alpha).
 \]
 
 \end_inset
@@ -2285,22 +2125,34 @@ chap:dl2ml
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula $\boxdot$
+\begin_layout Section*
+Resumen
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+CAMBIAR TÍTULO DE SECCIÓN
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section*
-Resumen
-\end_layout
-
 \begin_layout Standard
 Este capítulo hizo foco en la detección de simetrías en lógicas modales,
- como también, en la obtención de resultados teóricos para lógicas de descripció
-n que nos permiten poder aplicar los algoritmos de búsqueda de simetrías
- para el caso de lógica modal básica, al caso de las lógicas de descripción.
+ y en la transferencia de resultados teóricos de lógicas modales a lógicas
+ de descripción.
+ Estos resultados facilitaron el uso de los algoritmos de detección de simetrías
+ para lógicas de descripción (como mencionamos, dichos algoritmos fueron
+ desarrollados en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Orbe:2014aa"
+
+\end_inset
+
+ en el contexto de lógicas modales).
 \end_layout
 
 \begin_layout Standard

@@ -2300,11 +2300,7 @@ Ahora que contamos con una noción sobre qué cosas puede expresar en cada
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
- (notar que puede darse el caso en que 
-\begin_inset Formula $\mathcal{KB}=\emptyset$
-\end_inset
-
-).
+.
  En el Cuadro 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2322,7 +2318,15 @@ http://www.cs.man.ac.uk/~ezolin/dl/
 
 \end_inset
 
-.
+, analizando por separado el caso en que 
+\begin_inset Formula $\mathcal{KB}=\emptyset$
+\end_inset
+
+ y el caso en que 
+\begin_inset Formula $\mathcal{KB}\not=\emptyset$
+\end_inset
+
+, ya que la complejidad en cada uno de los casos difiere.
 \end_layout
 
 \begin_layout Standard
@@ -2330,7 +2334,7 @@ http://www.cs.man.ac.uk/~ezolin/dl/
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -2657,7 +2661,7 @@ OWL
 
 \begin_layout Standard
 Repasemos un poco ahora sobre ontologías, OWL, y su relación sintáctica
- y semántica con lógicas de descripción.
+ y semántica con las lógicas de descripción.
 \end_layout
 
 \begin_layout Subsection
@@ -2676,8 +2680,14 @@ chap:introduccion
 
 \end_inset
 
- mencionamos que OWL es lenguaje en el cual se definen las ontologías para
- la Web Semántica.
+ mencionamos que OWL 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OWLAPI"
+
+\end_inset
+
+ es lenguaje en el cual se definen las ontologías para la Web Semántica.
  Más precisamente, OWL 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2689,22 +2699,42 @@ key "owlw3c"
 \emph on
 W3C Web Ontology Working Group
 \emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "OWLAPI"
-
-\end_inset
-
-.
- OWL fue diseñado principalmente para representar categorías de objetos
- y cómo los objetos están relacionados.
+, que fue diseñado para representar categorías de objetos y cómo éstos están
+ relacionados.
 \end_layout
 
 \begin_layout Standard
 Es importante resaltar que OWL no fue diseñado de manera aislada, sino que
  contó con muchas influencias.
  Analicemos un poco la historia de OWL.
+\end_layout
+
+\begin_layout Subsection
+Por qué usamos OWL
+\end_layout
+
+\begin_layout Standard
+La Web Semántica es una visión para el futuro de la Web, en la cual la informaci
+ón contará con un significado explícito, facilitando la tarea de las computadora
+s para procesar e integrar automáticamente la información que se encuentra
+ en la Web.
+ La Web semántica se basará en la capacidad de XML para definir esquemas
+ de etiquetas personalizados y en el enfoque flexible de RDF para representar
+ datos.
+\end_layout
+
+\begin_layout Standard
+El primer nivel por encima de RDF requerido por la Web Semántica es un lenguaje
+ de ontologías que puede describir formalmente el significado de terminología
+ usado en documentos Web.
+ Si uno espera que las computadoras realicen tareas de razonamiento útiles
+ en estos documentos, entonces el lenguaje debe ir más allá de la semántica
+ básica de RDFS.
+\end_layout
+
+\begin_layout Standard
+OWL ha sido diseñado para cumplir con tales requisitos de un lenguaje de
+ ontologías para la Web.
 \end_layout
 
 \begin_layout Subsection
@@ -2718,7 +2748,49 @@ El diseño de OWL fue el resultado de una variedad de influencias: paradigmas
 \end_layout
 
 \begin_layout Standard
-Algunas de las influencias más importantes para OWL llegaron, vía su predecesor
+OWL no fue el primer lenguaje para ontologías habilitado para la web, y
+ su diseño fue influenciado por otros lenguajes existentes, tales como:
+ RDFS, 
+\emph on
+SHOE
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SHOE"
+
+\end_inset
+
+, OIL, 
+\emph on
+DAML-ONT
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DAMLONT"
+
+\end_inset
+
+y DAML+OIL.
+ En particular, DAML+OIL fue una gran influencia para OWL, y la carta de
+ la W3C
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.w3.org/2001/sw/WebOnt/charter
+\end_layout
+
+\end_inset
+
+ dicta explícitamente que el diseño de OWL debe estar basado en DAM+OIL.
+ A su vez, DAM+OIL fue muy influenciado por el lenguaje OIL, con influencias
+ adicionales de DAML-ONT y RDFS.
+\end_layout
+
+\begin_layout Standard
+Algunas de las influencias más importantes para OWL llegaron vía su predecesor
  
 \emph on
 DAM+OIL
@@ -2743,10 +2815,10 @@ chap:introduccion
 \end_inset
 
 ) y de RDF.
- En particular, la especificación formal de OWL fue influenciada por las
- lógicas de descripción, mientras que su estructura fue influenciada por
- el paradigmas de estructuras, y la sintaxis RDF/XML fue influenciada por
- un requerimiento de compatibilidad con respecto a RDF (pues en la 
+ En particular, las lógicas de descripción tuvieron mucho impacto en la
+ especificación formal de OWL, mientras que su estructura fue basada por
+ el paradigmas de estructuras, y la sintaxis RDF/XML estuvo dada por un
+ requerimiento de compatibilidad con respecto a RDF (pues en la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -2762,46 +2834,29 @@ fig:w3cstack
  se ha basado.
 \end_layout
 
-\begin_layout Subsubsection*
-Lógicas de descripción
-\end_layout
-
 \begin_layout Standard
-Las lógicas de descripción fueron ampliamente en la 
-\begin_inset Flex CT - auto cross-reference
-status open
-
-\begin_layout Plain Layout
-
-sec:DL
-\end_layout
-
-\end_inset
-
-.
- Las tanto las lógicas de descripción como ideas de la investigación sobre
- éstas, han tenido un fuerte impacto en el diseño de OWL; en particular
- sobre el formalismo de la semántica, la elección de los constructores del
- lenguaje y la integración de tipos de datos y valores de datos.
- De hecho, 
-\begin_inset Formula $OWL_{DL}$
-\end_inset
-
- y 
+Las lógicas de descripción han tenido un fuerte impacto en el diseño de
+ OWL; en particular sobre el formalismo de la semántica, la elección de
+ los constructores del lenguaje y la integración de tipos de datos y valores
+ de datos.
+ Casos concretos como 
 \begin_inset Formula $OWL_{Lite}$
 \end_inset
 
- (dos de tres 
-\emph on
-especies
-\emph default
- de OWL) pueden ser vistas como lógicas de descripción, con una ontología
- como equivalente a las bases de conocimiento expresadas con lógicas de
- descripción.
-\end_layout
+ y 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
 
-\begin_layout Subsubsection*
-El paradigma de las estructuras
+ (ambos sublenguajes de OWL), están basados en las lógicas de descripción
+ 
+\begin_inset Formula $\mathcal{SHIF}$
+\end_inset
+
+ y 
+\begin_inset Formula $\mathcal{SHOIN}$
+\end_inset
+
+, respectivamente.
 \end_layout
 
 \begin_layout Standard
@@ -2819,8 +2874,8 @@ key "OIL"
 
 
 \emph default
-, uno de los lenguajes en los cuales OWL está basado, estos requerimientos
- fueron cumplidos proveyendo una sintaxis basada en el paradigma de estructuras.
+, un predecesor de OWL, estos requerimientos fueron cumplidos proveyendo
+ una sintaxis basada en el paradigma de estructuras.
  Las estructuras (mencionadas en el 
 \begin_inset Flex CT - auto cross-reference
 status open
@@ -2861,16 +2916,13 @@ key "OKBC"
 .
 \end_layout
 
-\begin_layout Subsubsection*
-La sintaxis RDF
-\end_layout
-
 \begin_layout Standard
 La tercer mayor influencia en el diseño de OWL fue el requisito de mantener
  la mayor compatibilidad posible con los lenguajes Web existentes, en particular
  con RDF.
- Este requerimiento estaba bien fundado, dado que RDF (y en particular RDFS)
- ya incluía varias de las características básicas para el diseño de ontologías.
+ Este requerimiento estaba bien fundado dado que RDF (y en particular RDFS)
+ ya incluía varias de las características básicas requeridas para el diseño
+ de ontologías.
 \end_layout
 
 \begin_layout Standard
@@ -2881,52 +2933,52 @@ A simple vista, este requerimiento podría ser satisfecho fácilmente: se
  con la semántica de RDF.
  Esto no fue una tarea fácil de lograr, ya que OWL provee una expresividad
  mucho mayor que RDF.
+ Como resultado, se implementaron tres soluciones para abordar el problema:
 \end_layout
 
-\begin_layout Subsubsection
-Predecesores de OWL
+\begin_layout Itemize
+\begin_inset Formula $OWL_{Full}$
+\end_inset
+
+: si se considera como más importante a la compatibilidad con RDF y RDFS,
+ entonces 
+\begin_inset Formula $OWL_{Full}$
+\end_inset
+
+ (una extensión sintáctica y semántica de RDFS), es la solución apropiada.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+: si se busca, en cambio, una sintaxis más afable o que la inferencia sea
+ decibible, 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+ es apropiado.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+: por último, 
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+ (un subconjunto sintáctico de 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+) es adecuado cuando se busca una sintaxis más simple y una inferencia aún
+ más manejable.
 \end_layout
 
 \begin_layout Standard
-OWL no fue el primer lenguaje para ontologías habilitado para la web, y
- su diseño fue influenciado por otros lenguajes que ya existían al momento
- de diseñar OWL, algunos de estos son: RDFS, 
-\emph on
-SHOE
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "SHOE"
-
-\end_inset
-
-, OIL, 
-\emph on
-DAML-ONT
-\emph default
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "DAMLONT"
-
-\end_inset
-
-y DAML+OIL.
- En particular, DAML+OIL fue una gran influencia para OWL, y la carta de
- la W3C
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://www.w3.org/2001/sw/WebOnt/charter
-\end_layout
-
-\end_inset
-
- dicta explícitamente que el diseño de OWL debe estar basado en DAM+OIL.
- A su vez, DAM+OIL fue muy influenciado por el lenguaje OIL, con influencias
- adicionales de DAML-ONT y RDFS.
+Veamos a continuación algunos detalles de cada uno de estos sublenguajes
+ de OWL.
 \end_layout
 
 \begin_layout Subsection
@@ -2934,30 +2986,18 @@ Variantes
 \end_layout
 
 \begin_layout Standard
-Encontrar el balance justo entre la expresividad del lenguaje como también
- la eficacia a la hora de razonar (i.e., escalabilidad), fue central para
- el diseño de OWL.
- Esto fue en base para lidiar con el hecho que construcciones complejas
- de lenguajes para representar conocimiento implícito por lo general cuentan
- con un gran costo computacional o incluso indecibilidad sobre cierto razonamien
-to, y por lo tanto problemas de escalabilidad.
+Encontrar el balance justo entre la expresividad del lenguaje y la eficacia
+ a la hora de razonar (i.e., escalabilidad) fue central para el diseño de
+ OWL.
+ Pues contar con construcciones complejas para representar conocimiento
+ implícito por lo general cuentan con un gran costo computacional o incluso
+ indecibilidad, y por lo tanto problemas de escalabilidad.
 \end_layout
 
 \begin_layout Standard
-Con el fin de darle opciones al usuario en cuanto a diferentes niveles de
- expresividad, tres sublenguajes de OWL han sido diseñados: 
-\begin_inset Formula $OWL_{Lite}$
-\end_inset
-
-, 
-\begin_inset Formula $OWL_{DL}$
-\end_inset
-
- y 
-\begin_inset Formula $OWL_{Full}$
-\end_inset
-
-.
+Como mencionamos anteriormente, tres sublenguajes de OWL han sido diseñados
+ con el fin de darle opciones al usuario en cuanto a diferentes niveles
+ de expresividad y usabilidad:
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2972,7 +3012,36 @@ Utilizado principalmente por usuarios que necesitan una clasificación jerárqui
  y restricciones simples.
  Por ejemplo, aunque da soporte a restricciones de cardinalidad, solo permite
  los valores 0 y 1.
- Es decidible y cuenta con complejidad ExpTime.
+ Dado que 
+\begin_inset Formula $OWL_{Lite}$
+\end_inset
+
+ está basado en la lógica de descripción 
+\begin_inset Formula $\mathcal{SHIF}$
+\end_inset
+
+, es decidible y tiene complejidad ExpTime en cuanto a la inferencia (si
+ quisiéramos ser más precicos, en el contexto de OWL se utiliza el término
+ 
+\emph on
+implicación
+\emph default
+
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+AGREGAR DEFINICIÓN DE ENTAILMENT?
+\end_layout
+
+\end_inset
+
+, en vez de 
+\emph on
+inferencia
+\emph default
+).
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2983,12 +3052,19 @@ Utilizado principalmente por usuarios que necesitan una clasificación jerárqui
 \end_layout
 
 \begin_layout Standard
-Da soporte a usuarios que quieren la mayor expresividad posible, aún manteniendo
- completitud (está garantizado que todas las expresiones son computables)
- y decibilidad (todas las computaciones terminan en un tiempo finito).
- Es soportado por la gran mayoría de los razonadores (software para crear
- y manipular ontologías).
- Su complejidad es NExpTime.
+Da soporte a usuarios que quieren mayor expresividad, manteniendo completitud
+ (está garantizado que todas las inferencias son computables) y decibilidad
+ (todas las computaciones terminan en un tiempo finito).
+ Es soportado por la gran mayoría de los razonadores.
+ Su complejidad en cuanto a la inferencia NExpTime, ya que 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+ está basado en en 
+\begin_inset Formula $\mathcal{SHOIN}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2999,9 +3075,9 @@ Da soporte a usuarios que quieren la mayor expresividad posible, aún manteniend
 \end_layout
 
 \begin_layout Standard
-Diseñado para usuarios que quieren la mayor expresividad y la libertad sintáctic
-a que provee RDF, pero no da ninguna garantía computacional.
- No hay razonadores que pueda ser capaz de dar soporte a cada característica
+Diseñado para usuarios que quieren mayor expresividad y la libertad sintáctica
+ que provee RDF, pero no da ninguna garantía computacional.
+ No hay razonadores que puedan ser capaces de dar soporte a cada característica
  de 
 \begin_inset Formula $OWL_{Full}$
 \end_inset
@@ -3027,34 +3103,6 @@ key "owlw3c2"
 \end_layout
 
 \begin_layout Subsection
-Por qué usamos OWL
-\end_layout
-
-\begin_layout Standard
-La Web Semántica es una visión para el futuro de la Web, en la cual la informaci
-ón contará con un significado explícito, facilitando la tarea de las computadora
-s para procesar e integrar automáticamente la información que se encuentra
- en la Web.
- La Web semántica se basará en la capacidad de XML para definir esquemas
- de etiquetas personalizados y en el enfoque flexible de RDF para representar
- datos.
-\end_layout
-
-\begin_layout Standard
-El primer nivel por encima de RDF requerido por la Web Semántica es un lenguaje
- de ontologías que puede describir formalmente el significado de terminología
- usado en documentos Web.
- Si uno espera que las computadoras realicen tareas de razonamiento útiles
- en estos documentos, entonces el lenguaje debe ir más allá de la semántica
- básica de RDFS.
-\end_layout
-
-\begin_layout Standard
-OWL ha sido diseñado para cumplir con tales requisitos de un lenguaje de
- ontologías para la Web.
-\end_layout
-
-\begin_layout Subsection
 Sintaxis de OWL
 \end_layout
 
@@ -3066,22 +3114,26 @@ reference "tab:DL-OWL"
 
 \end_inset
 
- introducimos parte de la sintaxis de OWL DL y su equivalente en 
-\begin_inset Formula $\mathcal{ALC}$
+ introducimos parte de la sintaxis de 
+\begin_inset Formula $OWL_{DL}$
 \end_inset
 
- (una versión extendida, de hecho).
- Hay algunas construcciones extras en el Cuadro 
+ y su equivalente en 
+\begin_inset Formula $\mathcal{DL}$
+\end_inset
+
+.
+ En el Cuadro 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:DL-OWL-extra"
 
 \end_inset
 
-.
+ se presentan algunas construcciones más que pueden realizarse con OWL.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Example
 A modo de ejemplo, en la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
@@ -3115,12 +3167,12 @@ fig:owlver
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="20" columns="2">
+<lyxtabular version="3" rows="17" columns="2">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="center" valignment="top" width="6cm">
 <column alignment="center" valignment="top">
@@ -3165,30 +3217,6 @@ Sintaxis en
 \end_inset
 
 
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Descripciones (
-\emph on
-C
-\emph default
-)
 \end_layout
 
 \end_inset
@@ -3267,7 +3295,7 @@ R
 \emph default
  hasValue(
 \emph on
-C
+o
 \emph default
 )
 \end_layout
@@ -3306,37 +3334,6 @@ C
 
 \begin_layout Plain Layout
 \begin_inset Formula $\lnot C$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-inverseOf(
-\emph on
-R
-\emph default
- someValuesFrom(
-\emph on
-C
-\emph default
-))
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $R\equiv(R_{0}^{-})$
 \end_inset
 
 
@@ -3471,34 +3468,7 @@ DisjointClasses(
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $C_{1}\sqcap C_{2}=\bot$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Complement(
-\emph on
-C
-\emph default
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\neg C$
+\begin_inset Formula $C_{1}\sqcap C_{2}\equiv\bot$
 \end_inset
 
 
@@ -3529,7 +3499,7 @@ C
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\geq R\sqsubseteq C$
+\begin_inset Formula $\geq1R\sqsubseteq C$
 \end_inset
 
 
@@ -3717,7 +3687,11 @@ n R C
 \begin_layout Plain Layout
 
 \lang english
-Una parte de la sintaxis de OWL DL y su equivalente en 
+Una parte de la sintaxis de 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+ y su equivalente en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
@@ -3873,12 +3847,12 @@ name "fig:owlver"
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="15" columns="2">
+<lyxtabular version="3" rows="11" columns="2">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
@@ -3929,26 +3903,6 @@ Sintaxis en
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Clases
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -3970,7 +3924,7 @@ A
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $A\sqsubseteq C_{1}...C_{n}$
+\begin_inset Formula $A\sqsubseteq C_{1}\sqcap...\sqcap C_{n}$
 \end_inset
 
 
@@ -4001,7 +3955,7 @@ A
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $A\equiv C_{1}...C_{n}$
+\begin_inset Formula $A\equiv C_{1}\sqcap...\sqcap C_{n}$
 \end_inset
 
 
@@ -4015,15 +3969,11 @@ A
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-R
-\emph default
- minCardinality(
+minCardinality(
 \emph on
 n
 \emph default
-)
+ R)
 \end_layout
 
 \end_inset
@@ -4046,15 +3996,11 @@ n
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\emph on
-R
-\emph default
- maxCardinality(
+maxCardinality(
 \emph on
 n
 \emph default
-)
+ R)
 \end_layout
 
 \end_inset
@@ -4146,7 +4092,7 @@ SameIndvidual(
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $o_{1}=...=o_{n}$
+\begin_inset Formula $o_{1}\equiv...\equiv o_{n}$
 \end_inset
 
 
@@ -4188,41 +4134,6 @@ DifferentIndividual(
 
 \begin_layout Plain Layout
 Individual(
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
 \emph on
 o
 \emph default
@@ -4234,7 +4145,7 @@ type(
 \begin_inset Formula $C_{n})$
 \end_inset
 
-
+)
 \end_layout
 
 \end_inset
@@ -4246,6 +4157,10 @@ type(
 \begin_inset Formula $o\in C_{i}$
 \end_inset
 
+,
+\begin_inset Formula $i=1,...,n$
+\end_inset
+
 
 \end_layout
 
@@ -4253,26 +4168,15 @@ type(
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-value(
+Individual(
+\emph on
+o
+\emph default
+ value(
 \begin_inset Formula $R_{1}o_{1})$
 \end_inset
 
@@ -4280,89 +4184,16 @@ value(
 \begin_inset Formula $(R_{n}o_{n})$
 \end_inset
 
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\{o,o_{i}\}\in R_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset space ~
-\end_inset
-
-value(
-\begin_inset Formula $U_{1}v_{1})$
-\end_inset
-
-...value
-\begin_inset Formula $(U_{n}v_{n})$
-\end_inset
-
 )
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\{o,v_{i}\}\in U_{i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-SubPropertyOf(
-\begin_inset Formula $U_{1}U_{2})$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $U_{1}\sqsubseteq U_{2}$
+\begin_inset Formula $(o,o_{i})\in R_{i}$
 \end_inset
 
 

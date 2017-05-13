@@ -103,39 +103,31 @@ Resumen de lo hecho
 \end_layout
 
 \begin_layout Standard
-Como el título de esta obra indica, la principal tarea aquí fue el estudio
- de las simetrías en lógicas de descripción, como caso de estudio particular
- trabajamos directamente buscando simetrías en ontologías, ya que su aplicación
- (de las simetrías) puede tener un impacto muy importante, haciendo más
- eficientes a los razonadores que trabajan con dichas ontologías.
+La principal tarea de esta tesis fue el estudio de las simetrías en lógicas
+ de descripción.
+ Como caso de estudio particular trabajamos directamente buscando simetrías
+ en ontologías.
 \end_layout
 
 \begin_layout Standard
 Como es natural, en este trabajo comenzamos por los cimientos teóricos de
  las lógicas de descripción y la naturaleza de las ontologías.
- Dimos definiciones precisas de sintaxis y semántica tanto de las lógicas
- de descripción como para las lógicas modales, como los nexos entre las
- mismas (tanto en sintaxis como en semántica).
+ Dimos definiciones precisas de sintaxis y semántica de las lógicas de descripci
+ón, de las lógicas modales, y definimos los nexos entre las mismas (tanto
+ en sintaxis como en semántica).
  Estos preliminares fueron para introducir una función de traducción 
 \begin_inset Formula $\Psi$
 \end_inset
 
- usada en la traducción fórmulas de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- a fórmulas de 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-, ya que la gran mayoría de los resultados estaban probados para ésta (solo
- hubo que adaptar algunas herramientas, y muy poco).
+ usada en la traducción de fórmulas de lógicas de descripción a fórmulas
+ de lógicas modales, para poder transferir resultados sobre simetrías en
+ lógicas modales.
 \end_layout
 
 \begin_layout Standard
-También dimos nociones de simetrías en fórmulas, que son vistas como automorfism
-os de un grafo, por lo cual definimos un algoritmo, correcto, para describir
- una fórmula como un grafo.
+También dimos nociones de simetrías en fórmulas, que pueden ser vistas como
+ automorfismos de un grafo, por lo cual definimos un algoritmo, correcto,
+ para describir una fórmula como un grafo.
  Entonces el problema de buscar simetrías en una fórmula se redujo a buscar
  automorfismos en un grafo, el correspondiente a dicha fórmula.
 \end_layout
@@ -145,11 +137,20 @@ Qué más se puede hacer a partir de acá
 \end_layout
 
 \begin_layout Standard
-Si bien haber encontrado simetrías fue un resultado muy bueno, hay que recordar
- dos cosas: primero, que solo se trabajó con la TBox de cada ontología,
- entonces seguramente si también se hubiera trabajado con las ABox la cantidad
- de simetrías encontradas hubiera sido diferente.
- Y segundo, dado que en 
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+RESCRIBIR
+\end_layout
+
+\end_inset
+
+Si bien haber encontrado simetrías es un resultado remarcable, hay que tener
+ presente dos cosas: primero, solo se trabajó con la TBox de cada ontología,
+ si también se hubiera trabajado con las ABox la cantidad de simetrías encontrad
+as hubiera sido diferente.
+ Y dado que en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SymmBlk"

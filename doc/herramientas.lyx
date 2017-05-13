@@ -9,6 +9,10 @@
 \usepackage[spanish,es-lcroman,es-tabla]{babel}
 \end_preamble
 \use_default_options true
+\begin_modules
+theorems-ams-bytype
+theorems-chap-bytype
+\end_modules
 \maintain_unincluded_children false
 \language spanish
 \language_package default
@@ -90,16 +94,12 @@ name "chap:herramientas"
 
 \end_inset
 
-Herramientas
+Descripción de las herramientas utilizadas
 \end_layout
 
 \begin_layout Standard
-Ya contamos con todas las bases teóricas para poder empezar a buscar (y
- con suerte, encontrar) simetrías en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-, o lo que es lo mismo, en ontologías.
+Ya contamos con todas las bases teóricas para poder buscar simetrías en
+ ontologías expresadas en el lenguaje OWL.
  En este capítulo presentamos el conjunto de herramientas utilizadas para
  dicha tarea.
 \end_layout
@@ -110,7 +110,17 @@ Arquitectura General
 
 \begin_layout Standard
 El siguiente diagrama describe los principales componentes así como el flujo
- de la herramienta de detección desarrollada.
+ de la herramienta de detección desarrollada
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+https://github.com/giovannirescia/thesis
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -118,12 +128,12 @@ El siguiente diagrama describe los principales componentes así como el flujo
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename gfx/ArquitecturaGeneral.png
+	filename gfx/ArquitecturaGeneral_2.png
 	scale 60
 
 \end_inset
@@ -135,7 +145,7 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Arquitectura General
+Arquitectura general para la detección de simetrías
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Arquitectura-General"
@@ -158,30 +168,35 @@ name "fig:Arquitectura-General"
 \begin_layout Standard
 Como dato de entrada, nuestra herramienta recibe una ontología en formato
  OWL.
- El módulo dl2ml, implementado en 
+ El módulo 
+\series bold
+\emph on
+DL2ML
+\series default
+\emph default
+, implementado en 
 \emph on
 Scala
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-
-\emph on
-https://www.scala-lang.org/
+https://www.scala-lang.org
 \end_layout
 
 \end_inset
 
 
 \emph default
-, se encarga de manipular esta ontología.
+, se encarga de manipular esta ontología, cargándola en memoria y realizando
+ una serie de operaciones que describiremos a continuación.
  Para ello se utiliza 
 \emph on
 Scowl
 \emph default
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 https://github.com/phenoscape/scowl
@@ -205,10 +220,10 @@ key "OWLAPI"
 \end_layout
 
 \begin_layout Standard
-La funcionalidad de dl2ml puede dividirse en tres tareas: primero toma la
+La funcionalidad de DL2ML puede dividirse en dos tareas: primero toma la
  ontología de entrada y extrae todos los axiomas de la TBox.
  Luego, a cada axioma de la TBox se lo examina recursivamente usando la
- función de traducción vista en Capítulo 
+ función de traducción vista en el Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "chap:dl2ml"
@@ -219,7 +234,7 @@ reference "chap:dl2ml"
 \emph on
 intohylo
 \emph default
-
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "intohylo"
@@ -231,42 +246,48 @@ key "intohylo"
 
 \begin_layout Standard
 El módulo 
+\series bold
 \emph on
 KCNF
+\series default
 \emph default
- toma la fórmula generada por dl2ml y devuelve una fórmula, semánticamente
- igual, en forma conjuntiva normal.
+ toma la fórmula modal generada por DL2ML y devuelve una fórmula, semánticamente
+ igual, en forma CNF modal.
 \end_layout
 
 \begin_layout Standard
 Una vez que contamos con nuestra fórmula en CNF modal, el módulo 
+\series bold
 \emph on
 SY4NCL
+\series default
 \emph default
-, desarrollado en Haskell, construye el grafo de detección de simetrías
- globales, siguiendo el algoritmo descrito en 
+, desarrollado en Haskell, construye el grafo de detección de simetrías,
+ siguiendo el algoritmo descrito en la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"
 
 \end_inset
 
- y lo disponibiliza en formato Bliss
+ y lo disponibiliza en formato Bliss 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Bliss"
 
 \end_inset
 
-, junto con un mapeo entre nodos y literales y estadísticas sobre el grafo.
- Cabe destacar que este último módulo fue desarrollado para lógicas mono
- modales; en esta tesis se lo extendió para lógicas multi modales.
+ junto con un mapeo entre nodos y literales y estadísticas sobre el grafo.
+ Este último módulo fue desarrollado originalmente para lógicas mono modales;
+ en esta tesis se lo extendió para lógicas multi modales.
 \end_layout
 
 \begin_layout Standard
 El módulo 
+\series bold
 \emph on
 BLISS
+\series default
 \emph default
  toma la especificación de un grafo y realiza la búsqueda de automorfismos
  en éste.
@@ -276,15 +297,37 @@ generadores
 \emph default
 .
  Éstos son aquellos automorfismos que permiten generar todos los automorfismos
- del grupo, en términos de que cualquier otro automorfismo puede construirse
- componiendo automorfismos generadores.
+ del grupo.
 \end_layout
 
 \begin_layout Standard
-Si el grafo tiene automorfismos no triviales, entonces el módulo mapper
- reconstruye las simetrías de la ontología utilizando el mapeo entre nodos
- y literales generado por SY4NCL.
- Por último realiza un mapeo 
+El componente DL2ML fue desarrollado específicamente para el trabajo de
+ esta tesis, mientras que los módulos KCNF y SY4NCL fueron adaptados para
+ que funcionen en el caso de lógicas multi modales.
+ La herramienta BLISS no requirió de ninguna modificación.
+\end_layout
+
+\begin_layout Standard
+Si el grafo tiene automorfismos no triviales, entonces el módulo 
+\series bold
+\emph on
+MAPPER
+\series default
+\emph default
+ (no mencionado en la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:Arquitectura-General
+\end_layout
+
+\end_inset
+
+, ya que el mismo no forma parte en la detección de simetrías) reconstruye
+ las simetrías de la ontología primero utilizando el mapeo entre nodos y
+ literales generado por SY4NCL, y luego realizaremos un mapeo 
 \emph on
 de vuelta
 \emph default
@@ -292,48 +335,16 @@ de vuelta
 \emph on
 strings
 \emph default
- utilizadas para representar conceptos dentro de nuestra ontología para
- una lectura de los resultados más amena.
- Por ejemplo, si en la traducción a lógica modal los conceptos 
-\emph on
-perro
-\emph default
- y 
-\emph on
-cachorro 
-\emph default
-fueron mapeados a los símbolos proposicionales 
-\emph on
-p2231
-\emph default
- y 
-\emph on
-p99101
-\emph default
-, respectivamente, y nuestra herramienta detecta la simetría 
-\emph on
-
-\begin_inset Formula $p99101\leftrightarrow p2231$
-\end_inset
-
-
-\emph default
-, sería más fácil comprender dicho dato con un formato del tipo 
-\emph on
-
-\begin_inset Formula $cachorro\leftrightarrow perro$
-\end_inset
-
-.
+ utilizadas para representar conceptos dentro de nuestra ontología.
 \end_layout
 
 \begin_layout Standard
-También es importante resaltar que todas estas herramientas pueden ser ejecutada
-s en modo 
-\emph on
-offline
-\emph default
-, o sea, sin la necesidad de internet.
+Es importante resaltar que estas simetrías pueden ser ejecutadas de manera
+ independiente a las tareas de inferencia, i.e., se pueden computar las simetrías
+ y utilizarlas para cada consulta de inferencia (esto es de gran importancia
+ ya que no resultaría muy práctico tener que computar las simetrías cada
+ vez que se le hace una consulta a la base de conocimiento, dado que obtener
+ las simetrías es una tarea relativamente costosa).
 \end_layout
 
 \begin_layout Section
@@ -345,35 +356,23 @@ Para ilustrar el funcionamiento de nuestra herramienta veamos cómo es una
  ejecución de principio a fin de la misma.
 \end_layout
 
-\begin_layout Standard
-Primero describiremos una ontología en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-.
- Luego especificaremos la misma ontología en OWL, para poder correr las
- herramientas sobre ésta.
-\end_layout
-
-\begin_layout Subsection
-Ejemplo de una ontología en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para ilustrar el funcionamiento de la herramienta, consideremos la siguiente
- 
+\begin_layout Example
+Consideremos la siguiente base de conocimiento 
 \begin_inset Formula $\mathcal{KB}=\langle TBox,ABox\rangle$
 \end_inset
 
-:
+ donde la ABox es vacía y la TBox está dada por las definiciones de la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:ontologiaDL
 \end_layout
 
-\begin_layout Standard
-Donde la ABox será vacía y la Tbox contará con las siguiente definiciones:
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -381,20 +380,46 @@ Donde la ABox será vacía y la Tbox contará con las siguiente definiciones:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="1">
+<lyxtabular version="3" rows="12" columns="3">
 <features tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="left" valignment="top">
 <column alignment="left" valignment="top">
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $gato\sqsubseteq mamífero$
+\begin_inset Formula $gato$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero$
 \end_inset
 
 
@@ -404,11 +429,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $perro\sqsubseteq mamífero$
+\begin_inset Formula $perro$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero$
 \end_inset
 
 
@@ -418,7 +467,7 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -434,7 +483,31 @@ status collapsed
 \uwave off
 \noun off
 \color none
-\begin_inset Formula $caballo\sqsubseteq mam\acute{\imath}fero$
+\begin_inset Formula $caballo$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero$
 \end_inset
 
 
@@ -444,7 +517,7 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -460,7 +533,31 @@ status collapsed
 \uwave off
 \noun off
 \color none
-\begin_inset Formula $loro\sqsubseteq ave$
+\begin_inset Formula $loro$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $ave$
 \end_inset
 
 
@@ -470,11 +567,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\neg(mamífero\equiv ave)$
+\begin_inset Formula $\neg(mamífero$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $ave)$
 \end_inset
 
 
@@ -484,11 +605,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $pichón\equiv loro\sqcap\exists críaDe.loro$
+\begin_inset Formula $pichón$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $loro\sqcap\exists críaDe.loro$
 \end_inset
 
 
@@ -498,11 +643,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $gatito\equiv gato\sqcap\exists críaDe.gato$
+\begin_inset Formula $gatito$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $gato\sqcap\exists críaDe.gato$
 \end_inset
 
 
@@ -512,11 +681,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $cachorro\equiv perro\sqcap\exists críaDe.perro$
+\begin_inset Formula $cachorro$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $perro\sqcap\exists críaDe.perro$
 \end_inset
 
 
@@ -526,11 +719,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $potrillo\equiv caballo\sqcap\exists críaDe.caballo$
+\begin_inset Formula $potrillo$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $caballo\sqcap\exists críaDe.caballo$
 \end_inset
 
 
@@ -540,11 +757,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $caballo\equiv mamífero\sqcap\exists cuadrúpedo.mamífero$
+\begin_inset Formula $caballo$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero\sqcap\exists cuadrúpedo.mamífero$
 \end_inset
 
 
@@ -554,11 +795,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $gato\equiv mamífero\sqcap\exists cuadrúpedo.mamífero$
+\begin_inset Formula $gato$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero\sqcap\exists cuadrúpedo.mamífero$
 \end_inset
 
 
@@ -568,11 +833,35 @@ status collapsed
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $perro\equiv mamífero\sqcap\exists cuadrúpedo.mamífero$
+\begin_inset Formula $perro$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\equiv$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero\sqcap\exists cuadrúpedo.mamífero$
 \end_inset
 
 
@@ -640,12 +929,8 @@ cuadrúpedos
 .
 \end_layout
 
-\begin_layout Subsection
-Construyendo la ontología en OWL
-\end_layout
-
 \begin_layout Standard
-Basándonos en la ontología construida en la 
+Ahora representaremos la ontología de la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -656,14 +941,38 @@ fig:ontologiaDL
 
 \end_inset
 
-, armemos la misma ontología pero en lenguaje OWL.
+ en lenguaje OWL.
 \end_layout
 
 \begin_layout Standard
-Nuestro pseudo código utiliza un poco de lenguage OWL y Scowl para la definición.
+A modo ilustrativo, primero mostraremos cómo se puede definir una ontología
+ en OWL programáticamente.
 \end_layout
 
 \begin_layout Standard
+La 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:defOnt
+\end_layout
+
+\end_inset
+
+ muestra el código en Scala que construye la ontología utilizando la herramienta
+ Scowl.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
@@ -794,118 +1103,136 @@ status open
 \begin_layout Plain Layout
 
 22.
-\end_layout
-
-\begin_layout Plain Layout
-
-23.
  var xs = ListBuffer[OWLAxiom]
 \end_layout
 
 \begin_layout Plain Layout
 
-24.
+23.
 \end_layout
 
 \begin_layout Plain Layout
 
-25.
+24.
  // Relaciones entre las clases
 \end_layout
 
 \begin_layout Plain Layout
 
-26.
+25.
  xs += gato SubClassOf mamífero 
 \end_layout
 
 \begin_layout Plain Layout
 
-27.
+26.
  xs += perro SubClassOf mamífero 
 \end_layout
 
 \begin_layout Plain Layout
 
-28.
+27.
  xs += caballo SubClassOf mamífero
 \end_layout
 
 \begin_layout Plain Layout
 
-29.
+28.
  xs += loro SubClassOf ave 
 \end_layout
 
 \begin_layout Plain Layout
 
-30.
+29.
  xs += ave DisjointWith mamífero
 \end_layout
 
 \begin_layout Plain Layout
 
-31.
+30.
  xs += pichón EquivalentTo (loro and (críaDe some loro))
 \end_layout
 
 \begin_layout Plain Layout
 
-32.
+31.
  xs += gatito EquivalentTo (gato and (críaDe some gato))
 \end_layout
 
 \begin_layout Plain Layout
 
-33.
+32.
  xs += cachorro EquivalentTo (perro and (críaDe some perro))
 \end_layout
 
 \begin_layout Plain Layout
 
-34.
+33.
  xs += potrillo EquivalentTo (caballo and (críaDe some caballo)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-35.
+34.
  xs += caballo EquivalentTo (mamífero and (cuadrúpedo some mamífero)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-36.
+35.
  xs += gato EquivalentTo (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
-37.
+36.
  xs += perro EquivalentTo (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
-38.
+37.
 \end_layout
 
 \begin_layout Plain Layout
 
-39.
+38.
  // Guardamos los cambios en la ontología
 \end_layout
 
 \begin_layout Plain Layout
 
-40.
+39.
  xs.foreach(axiom => manager.addAxiom(ontology, axiom)) 
 \end_layout
 
 \begin_layout Plain Layout
 
-41.
+40.
  manager.saveOntology(ontology, file)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:defOnt"
+
+\end_inset
+
+Definición de la ontología
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -926,11 +1253,11 @@ adminitrador de ontologías
 \end_layout
 
 \begin_layout Itemize
-Creamos una ontología en la línea 3.
+En la línea 3 creamos una ontología.
 \end_layout
 
 \begin_layout Itemize
-Entre las líneas 6 y 16 creaamos las clases de interés como 
+Entre las líneas 6 y 16 creamos las clases de interés como 
 \emph on
 perro, gato, caballo 
 \emph default
@@ -955,19 +1282,58 @@ Las líneas 19 y 20 definen propiedades que aplicaremos a las clases definidas.
 \end_layout
 
 \begin_layout Itemize
-Luego definimos los axiomas de interés entre las líneas 25 y 37: cómo se
- relacionan las clases entre sí y qué propiedad afecta a cuál clase.
+Entre las líneas 25 y 36 definimos los axiomas de interés: cómo se relacionan
+ las clases entre sí y qué propiedad afecta a cuál clase.
 \end_layout
 
 \begin_layout Itemize
-En la línea 40 utilizamos el administrador de ontologías para cargar todas
+En la línea 39 utilizamos el administrador de ontologías para cargar todas
  los axiomas definidos.
 \end_layout
 
 \begin_layout Itemize
-Guardaremos la ontología en disco, en la línea 41.
+En la línea 40 guardaremos la ontología en disco.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Resumamos los datos más relevantes obtenidos con respecto a la ontología:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\emph on
+Expresividad: 
+\begin_inset Formula $\mathcal{AL}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Cantidad de axiomas en nuestra ontolgía: 
+\begin_inset Formula $12$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\emph on
+Tipos de axiomas: SubClassOf, EquivalentClasses, DisjointClasses
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 
 \emph on
@@ -977,10 +1343,27 @@ Nota: la creación de esta ontología es a modo ilustrativo.
 \end_layout
 
 \begin_layout Standard
-El código XML que se generó para nuestra ontología es el siguiente:
+El código XML que se generó para nuestra ontología está descrito en la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:XLMcode
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
@@ -1032,45 +1415,6 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-	<!--      
-\end_layout
-
-\begin_layout Plain Layout
-
-	//////////////////////
-\end_layout
-
-\begin_layout Plain Layout
-
-    //
-\end_layout
-
-\begin_layout Plain Layout
-
-    // Object Properties    
-\end_layout
-
-\begin_layout Plain Layout
-
-	//     
-\end_layout
-
-\begin_layout Plain Layout
-
-	//////////////////////
-\end_layout
-
-\begin_layout Plain Layout
-
-	-->
-\end_layout
-
-\begin_layout Plain Layout
-
     
 \end_layout
 
@@ -1099,46 +1443,6 @@ status open
 
 	<ObjectProperty rdf:about="http://www.famaf.unc.edu.ar/giovanni/test.owl#críaDe"/>
      
-\end_layout
-
-\begin_layout Plain Layout
-
-   
-\end_layout
-
-\begin_layout Plain Layout
-
-	<!--
-\end_layout
-
-\begin_layout Plain Layout
-
-	/////////////////     
-\end_layout
-
-\begin_layout Plain Layout
-
-	//     
-\end_layout
-
-\begin_layout Plain Layout
-
-	// Classes  
-\end_layout
-
-\begin_layout Plain Layout
-
-	//    
-\end_layout
-
-\begin_layout Plain Layout
-
-	/////////////////     
-\end_layout
-
-\begin_layout Plain Layout
-
-	-->
 \end_layout
 
 \begin_layout Plain Layout
@@ -1274,26 +1578,58 @@ anni/test.owl#loro"/>
 
 \end_layout
 
-\begin_layout Standard
-Ahora corramos nuestras herramientas sobre esta ontología y veamos qué obtenemos
-:
-\end_layout
+\begin_layout Plain Layout
+\begin_inset Caption Standard
 
-\begin_layout Subsection*
-dl2ml
-\end_layout
-
-\begin_layout Standard
-Esta es la fórmula modal que nuestra herramienta genera a partir de nuestra
- ontología, utilizando la función de traducción definida en el Capítulo
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:XMLcode"
 
 \end_inset
 
-:
+Código XML generado para la ontología definida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora que tenemos nuestra ontología en forma OWL, corramos nuestra herramienta
+ y veamos qué obtenemos.
+\end_layout
+
+\begin_layout Standard
+El módulo DL2ML toma la ontología de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:XLMcode
+\end_layout
+
+\end_inset
+
+ y genera la fórmula modal de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:dl2ml
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1301,7 +1637,7 @@ reference "chap:dl2ml"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1348,6 +1684,12 @@ end
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dl2ml"
+
+\end_inset
+
 Fómula modal de nuestra ontología
 \end_layout
 
@@ -1361,13 +1703,30 @@ Fómula modal de nuestra ontología
 
 \end_layout
 
-\begin_layout Subsection*
-KCNF
+\begin_layout Standard
+El módulo KCNF toma la fórmula modal de la figura 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:dl2ml
 \end_layout
 
-\begin_layout Standard
-Ahora hacemos uso del módulo KCNF para transformar la fórmula modal a CNF
- modal, obtenemos:
+\end_inset
+
+ y la transforma en la fórmula modal de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:KCNF
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1375,7 +1734,7 @@ Ahora hacemos uso del módulo KCNF para transformar la fórmula modal a CNF
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1426,6 +1785,12 @@ end
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:KCNF"
+
+\end_inset
+
 Versión CNF modal de la fómula
 \end_layout
 
@@ -1439,12 +1804,41 @@ Versión CNF modal de la fómula
 
 \end_layout
 
-\begin_layout Subsubsection*
-SY4NCL
+\begin_layout Standard
+El módulo SY4NCL toma la fórmula CNF modal de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:KCNF
 \end_layout
 
-\begin_layout Standard
-Con la fórmula en CNF modal, generamos el grafo en formato BLISS:
+\end_inset
+
+ y genera el grafo de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:sy4ncl
+\end_layout
+
+\end_inset
+
+ en formato bliss, junto con el mapeo de literales a nodos de la 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:nodemap
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1452,7 +1846,7 @@ Con la fórmula en CNF modal, generamos el grafo en formato BLISS:
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1513,6 +1907,12 @@ e 128 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:sy4ncl"
+
+\end_inset
+
 Grafo de la fórmula
 \end_layout
 
@@ -1527,15 +1927,11 @@ Grafo de la fórmula
 \end_layout
 
 \begin_layout Standard
-Además, SY4NCL genera un mapeo de nodos a literales:
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1601,6 +1997,12 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:nodemap"
+
+\end_inset
+
 Mapeo de nodos a literales generado por SY4NCL
 \end_layout
 
@@ -1615,67 +2017,31 @@ Mapeo de nodos a literales generado por SY4NCL
 \end_layout
 
 \begin_layout Standard
-Y por último unas estadísticas sobre el grafo generado:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset listings
-inline false
+La especificación del grafo de la 
+\begin_inset Flex CT - auto cross-reference
 status open
 
 \begin_layout Plain Layout
 
-Computation time: 0.00908 sec
-\end_layout
-
-\begin_layout Plain Layout
-
-Color count:[34,34,34,4,4,0,0,3,3,0,0] // ?
-\end_layout
-
-\begin_layout Plain Layout
-
-|Nodes|: 116 // cantidad de nodos del grafo generado
-\end_layout
-
-\begin_layout Plain Layout
-
-|Edges|: 140 // cantidad de aristas del grafo generado
+fig:nodemap
 \end_layout
 
 \end_inset
 
-
-\end_layout
+ es tomada por el módulo BLISS, el cual realizará la detección de automorfismos
+ en el grafo y genera como salida estadísticas junto con con la información
+ de los generadores (si los hubiese): tal como se presenta en la 
+\begin_inset Flex CT - auto cross-reference
+status open
 
 \begin_layout Plain Layout
-\begin_inset Caption Standard
 
-\begin_layout Plain Layout
-Estadísticas generadas por SY4NCL
+fig:bliss
 \end_layout
 
 \end_inset
 
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Luego se ejecuta BLISS el grafo creado por SY4NCL.
- Como salida BLISS genera algunas estadísticas junto con la información
- de los generados (si los hubiese):
+.
 \end_layout
 
 \begin_layout Standard
@@ -1751,6 +2117,12 @@ Total time:	0.00 seconds
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:bliss"
+
+\end_inset
+
 Output de Bliss
 \end_layout
 
@@ -1772,99 +2144,26 @@ Output de Bliss
 \end_layout
 
 \begin_layout Standard
-Resumamos los datos más relevantes obtenidos:
-\end_layout
-
-\begin_layout Itemize
-Con respecto a la ontología:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
+Observando las estadísticas generadas por BLISS podemos conocer que el grafo
+ explorado tiene 123 nodos (
 \emph on
-Expresividad: 
-\begin_inset Formula $\mathcal{AL}$
+nodes
+\emph default
+) y 156 aristas (
+\emph on
+edges
+\emph default
+), que el grafo cuenta con un automorfismo generador (
+\emph on
+generators
+\emph default
+), que el tamaño del grupo de automorfismos es 2 (
+\begin_inset Formula $\text{|A|})$
 \end_inset
 
-
+ y que el tiempo que llevó computar el generador fue de 0.00705 segundos.
 \end_layout
 
-\begin_layout Itemize
-
-\emph on
-Cantidad de axiomas en nuestra ontolgía: 
-\begin_inset Formula $12$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Tipos de axiomas: SubClassOf, EquivalentClasses, DisjointClasses
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Cláusulas generadas por KCNF
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Formula $33$
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-El grafo generado por SY4NCL
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\emph on
-Nodes
-\emph default
- : 128, es la cantidad de nodos que tiene nuestro grafo generado por sy4ncl
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-Edges
-\emph default
- : 156, la cantidad de aristas entre los nodos del grafo
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-BLISS encuentra
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\emph on
-Generators
-\emph default
- : 1, la cantidad de autoformismos básicos para generar nuevos automorfismos
-\end_layout
-
-\begin_layout Itemize
-
-\emph on
-|Aut| 
-\emph default
-: 2, pues contamos con un automorfismo trivial (i.e., la función identidad),
- y otro no trivial.
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 Como vemos, BLISS fue capaz de encontrar autoformismos en el grafo.
  El siguiente paso es traducir los automorfismos a simetrías de nuestra
@@ -1876,28 +2175,29 @@ Como vemos, BLISS fue capaz de encontrar autoformismos en el grafo.
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \space{}
+El módulo MAPPER toma las simetrías encontradas por BLISS y realiza el mapeo
+ a simetrías de la ontología de entrada.
+ La 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:map1
+\end_layout
+
 \end_inset
 
-
+ muestra la simetría resultante.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
-
-\end_layout
-
-\begin_layout Subsection*
-Mapper
-\end_layout
-
-\begin_layout Standard
-Finalmente, las simetrías que encontramos son las siguientes
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
@@ -1912,8 +2212,31 @@ status open
 
 \end_layout
 
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:map1"
+
+\end_inset
+
+Simetría entre los conceptos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Como era de esperarse, encontramos que tanto 
+Como era de esperarse, encontramos que 
 \emph on
 gato
 \emph default
@@ -1925,7 +2248,7 @@ perro
 \emph on
 caballo
 \emph default
- son equivalentes, en el sentido que cumplen con las mismas propiedades.
+ son simétricos, en el sentido que cumplen con las mismas propiedades.
  Lo mismo pasa con 
 \emph on
 gatito
@@ -1950,6 +2273,12 @@ Ahora bien, ¿qué pasa si agregamos una propiedad nueva a nuestra
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
@@ -1973,11 +2302,51 @@ xs += gato EquivalentTo (mamífero and (nueveVidas some  mamífero))
 
 \end_layout
 
-\begin_layout Standard
-Si volvemos a ejecutar las herramientas encontramos las siguientes simetrías:
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:simbreak"
+
+\end_inset
+
+Axioma para romper algunas simetrías
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Si volvemos a ejecutar las herramientas encontramos la simetría de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:map2
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
@@ -1985,6 +2354,29 @@ status open
 \begin_layout Plain Layout
 
 (perro caballo)(cachorro potrillo)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:map2"
+
+\end_inset
+
+Nueva simetría obtenida
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2006,7 +2398,7 @@ perro
 \emph on
 caballo
 \emph default
-, porque ésta tiene una propiedad que las otras clases no.
+, porque ésta tiene una propiedad que las otras clases no tienen.
  También es importante recalcar que la clase 
 \emph on
 gatito
