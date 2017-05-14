@@ -237,7 +237,7 @@ Dado un conjunto de literales proposicionales L,
 \end_layout
 
 \begin_layout Standard
-\begin_inset space ~
+\begin_inset Separator plain
 \end_inset
 
 
@@ -349,6 +349,13 @@ S (notación
 \end_layout
 
 \begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Dado un conjunto de literales proposicionales, estamos interesados en aquellas
  permutaciones del conjunto que son 
 \emph on
@@ -384,6 +391,13 @@ consistente
 
  y 
 \begin_inset Formula $\sim\!\neg p=p.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -505,50 +519,12 @@ Sea
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="4">
+<lyxtabular version="3" rows="5" columns="4">
 <features tabularvalignment="middle">
 <column alignment="right" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row>
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
@@ -1102,7 +1078,7 @@ reference "teo4.1"
 status open
 
 \begin_layout Plain Layout
-CITA A LA TESIS DE EZEQUIEL?
+CITA A LA TESIS DE EZEQUIEL PARA TABLEAUX?
 \end_layout
 
 \end_inset
@@ -2126,17 +2102,7 @@ chap:dl2ml
 \end_layout
 
 \begin_layout Section*
-Resumen
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-CAMBIAR TÍTULO DE SECCIÓN
-\end_layout
-
-\end_inset
-
-
+Uniendo las piezas
 \end_layout
 
 \begin_layout Standard

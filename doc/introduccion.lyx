@@ -930,7 +930,7 @@ razonadores
 \end_layout
 
 \begin_layout Subsection
-La Web Semántica
+La web semántica
 \end_layout
 
 \begin_layout Standard
@@ -1305,18 +1305,14 @@ RESCRIBIR
 status open
 
 \begin_layout Plain Layout
-RESCRIBIR
+RESCRITO / REVISAR
 \end_layout
 
 \end_inset
 
-En dicho contexto, la presencia de simetrías en el espacio de búsqueda de
- un problema puede aumentar la dificultad para encontrar una solución al
- forzar al algoritmo de búsqueda a explorar subespacios simétricos que no
- contiene soluciones.
- Si somos capaces de demostrar que una fórmula tiene simetrías, podemos
- guiar al algoritmo para que solo busque soluciones en las partes no simétricas
- del espacio de búsqueda.
+En dicho contexto, la presencia de simetrías en subespacios que no contienen
+ soluciones pueden ser de utilidad para nuestro algoritmo, podemos guiarlo
+ para que busque soluciones en otros espacios de búsqueda.
 \end_layout
 
 \begin_layout Standard
@@ -1416,10 +1412,11 @@ key "Krishnamurthy"
 
 \begin_layout Standard
 \begin_inset Marginal
-status collapsed
+status open
 
 \begin_layout Plain Layout
-PREGUNTARLE A EZEQUIEL POR LAS REFERENCIAS Y VER SI ESTE PÁRRAFO SE VA
+PREGUNTARLE A EZEQUIEL POR LAS REFERENCIAS (CHECK) Y VER SI ESTE PÁRRAFO
+ SE VA AL FINAL
 \end_layout
 
 \end_inset
@@ -1427,8 +1424,8 @@ PREGUNTARLE A EZEQUIEL POR LAS REFERENCIAS Y VER SI ESTE PÁRRAFO SE VA
 Un caso particular de aplicación de simetrías es en el problema de satisfacibili
 dad booleana (SAT) 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Crawford1996"
+LatexCommand citep
+key "Crawford,Brown:1989uw"
 
 \end_inset
 
@@ -1473,27 +1470,17 @@ key "Oxusoff"
 \begin_layout Standard
 En 
 \begin_inset CommandInset citation
-LatexCommand cite
-key "Crawford"
+LatexCommand citep
+key "Aloul"
 
 \end_inset
 
- se presenta un enfoque diferente para la detección de simetrías.
+se presenta un enfoque diferente para la detección de simetrías.
  Se demuestra que el problema de detección de simetrías en fórmulas proposiciona
 les se puede reducir polinomialmente al problema de detección de automorfismos
  en grafos coloreados y se presenta un algoritmo para crear un grafo coloreado
  a partir de una fórmula proposicional en forma normal conjuntiva (CNF).
- 
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-REVISAR
-\end_layout
-
-\end_inset
-
-Luego, un subgrupo del grupo de simetrías de la fórmula es detectado mediante
+ Luego, un subgrupo del grupo de simetrías de la fórmula es detectado mediante
  la detección del grupo de automorfismos del grafo resultante.
 \end_layout
 
@@ -1640,11 +1627,8 @@ chap:dl2ml
 \end_layout
 
 \begin_layout Standard
-Damos un algoritmo para detectar simetrías en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- en el 
+Damos un algoritmo para detectar simetrías en lógicas de descripción en
+ el 
 \begin_inset Flex CT - auto cross-reference
 status open
 
@@ -1672,11 +1656,7 @@ chap:herramientas
 \end_inset
 
  describiremos las herramientas implementadas para la detección de simetrías
- en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-.
+ en lógicas de descripción.
  
 \end_layout
 

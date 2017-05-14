@@ -7,7 +7,11 @@
 \textclass classicthesis
 \begin_preamble
 \usepackage[spanish, es-lcroman]{babel}
+\microtypesetup{protrusion=false}
+
 \addbibresource{biblio.bib}
+
+\usepackage{microtype}
 \end_preamble
 \options "authoryear"
 \use_default_options true
@@ -84,6 +88,16 @@ theorems-chap-bytype
 \begin_inset CommandInset include
 LatexCommand include
 filename "caratula.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Dedication.lyx"
 
 \end_inset
 

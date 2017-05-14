@@ -105,7 +105,7 @@ Ya contamos con todas las bases teóricas para poder buscar simetrías en
 \end_layout
 
 \begin_layout Section
-Arquitectura General
+Arquitectura general
 \end_layout
 
 \begin_layout Standard
@@ -950,6 +950,13 @@ A modo ilustrativo, primero mostraremos cómo se puede definir una ontología
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 La 
 \begin_inset Flex CT - auto cross-reference
 status open
@@ -1254,6 +1261,13 @@ adminitrador de ontologías
 
 \begin_layout Itemize
 En la línea 3 creamos una ontología.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2123,7 +2137,7 @@ name "fig:bliss"
 
 \end_inset
 
-Output de Bliss
+Output de BLISS
 \end_layout
 
 \end_inset
@@ -2276,7 +2290,7 @@ Ahora bien, ¿qué pasa si agregamos una propiedad nueva a nuestra
 \begin_inset Float figure
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -2342,6 +2356,7 @@ fig:map2
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status open

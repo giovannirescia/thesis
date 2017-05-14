@@ -95,7 +95,7 @@ mos la conexión entre éstas y las lógicas de descripción.
 \end_layout
 
 \begin_layout Section
-Lógicas Modales
+Lógicas modales
 \end_layout
 
 \begin_layout Standard
@@ -576,40 +576,11 @@ name "dlModml"
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="3">
+<lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -884,35 +855,6 @@ name "dlModml"
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -921,7 +863,7 @@ name "dlModml"
 \end_layout
 
 \begin_layout Section
-Hacia DL
+Hacia lógicas de descripción
 \end_layout
 
 \begin_layout Standard
@@ -1347,17 +1289,8 @@ key "Schild"
 \end_inset
 
 .
- Para obtener una 
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Plain Layout
-COMENTARIO DE EZEQUIEL QUE NO SE ENTIENDE (5-5)
-\end_layout
-
-\end_inset
-
-conexión que también incluya la TBox, hace falta el operador 
+ Para obtener una conexión que también incluya la TBox, hace falta el operador
+ 
 \emph on
 A
 \emph default
@@ -1465,40 +1398,11 @@ name "defPsi"
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="19" columns="3">
-<features tabularvalignment="middle">
+<lyxtabular version="3" rows="17" columns="3">
+<features islongtable="true" longtabularalignment="center">
 <column alignment="right" valignment="top">
 <column alignment="center" valignment="top">
-<column alignment="left" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
+<column alignment="left" valignment="top" width="0pt">
 <row>
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
@@ -1662,7 +1566,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1860,7 +1764,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2112,7 +2016,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2150,7 +2054,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2182,36 +2086,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -2273,7 +2148,7 @@ Sea
 \end_layout
 
 \begin_layout Subsection
-Entendiendo la traducción
+Análisis sobre la función de traducción
 \end_layout
 
 \begin_layout Standard

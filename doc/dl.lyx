@@ -210,7 +210,15 @@ Como ejemplo, definamos el lenguaje de concepto de la lógica de descripción
 , una de las más utilizadas.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Definition
+\paragraph_spacing single
 
 \emph on
 \begin_inset CommandInset label
@@ -249,12 +257,6 @@ roles atómicos.
 \end_inset
 
 , se define como
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\emph on
 \begin_inset Formula 
 \[
 \mathsf{CON}{}_{\mathcal{ALC}}::=A\mid\top\mid\bot\mid\neg A\mid C\sqcap D\mid C\sqcup D\mid\forall R.C\mid\exists R.C,
@@ -262,12 +264,6 @@ roles atómicos.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
 Con 
 \begin_inset Formula $A\in\mathsf{ATOM}$
 \end_inset
@@ -321,17 +317,10 @@ TBox
 \begin_inset Formula $\mathcal{L}$
 \end_inset
 
- es un conjunto finito de fórmulas de la forma 
+ es un conjunto finito de fórmulas de la forma
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="1">
@@ -366,11 +355,6 @@ status open
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -414,6 +398,7 @@ Donde
 \end_layout
 
 \begin_layout Standard
+\paragraph_spacing single
 
 \emph on
 Sea 
@@ -437,13 +422,6 @@ ABox
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="2" columns="1">
@@ -478,11 +456,6 @@ status open
 </cell>
 </row>
 </lyxtabular>
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -534,13 +507,9 @@ definición
  de concepto.
  Por ejemplo, podríamos definir el concepto de mujer como las personas que
  no son hombres
-\end_layout
-
-\begin_layout Standard
-\align center
 \begin_inset Formula 
 \[
-Mujer\equiv Persona\sqcap\lnot Hombre
+Mujer\equiv Persona\sqcap\neg Hombre
 \]
 
 \end_inset
@@ -583,7 +552,7 @@ axiomas de inclusión generales.
 \emph default
  Y en este caso, expresa que 
 \emph on
-todos los hombres, son personas
+todos los hombres son personas
 \emph default
 .
 \end_layout
@@ -1124,40 +1093,11 @@ interpretación
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="5" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
 <column alignment="right" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row>
 <cell alignment="right" valignment="top" usebox="none">
 \begin_inset Text
@@ -1471,40 +1411,11 @@ Sean,
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="5" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -1961,11 +1872,7 @@ Sea
 \end_layout
 
 \begin_layout Subsection
-Complejidad de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-
+Complejidad de lógicas de descripción
 \end_layout
 
 \begin_layout Standard
@@ -3157,17 +3064,10 @@ fig:owlver
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -3716,6 +3616,13 @@ name "tab:DL-OWL"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -3847,7 +3754,7 @@ name "fig:owlver"
 \begin_inset Float table
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center

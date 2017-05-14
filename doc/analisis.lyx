@@ -101,7 +101,7 @@ http://owl.cs.manchester.ac.uk/publications/supporting-material/owlcorpus/
  Lamentablemente solo de algunas de las ontologías se pudo obtener información
  sobre su naturaleza; por ejemplo, dónde es utilizada, quiénes la mantienen,
  etc.
- Cabe destacar, nuevamente, que dichos experimentos se corrieron solo sobre
+ Cabe destacar, nuevamente, que dichos experimentos se corrieron solo en
  la TBox de cada ontología, dejando fuera la ABox y el resto de axiomas.
 \end_layout
 
@@ -126,8 +126,7 @@ tab:resumen-1
 
 \end_inset
 
- cuenta con el tamaño de la TBox de cada una de estas ontologías, como también
- su expresividad.
+ muestra el tamaño de la TBox de cada una de estas ontologías, y su expresividad.
 \end_layout
 
 \begin_layout Itemize
@@ -165,7 +164,7 @@ Gene
 Ontology
 \emph default
  provee vocabularios controlados sobre términos definidos representando
- propiedades sobre productos de genes.
+ propiedades sobre material bioquímico.
 \end_layout
 
 \begin_layout Itemize
@@ -193,9 +192,13 @@ http://www.obofoundry.org
 
 \end_inset
 
-: Es una ontología que representa la anatomía bruta del 
+: Es una ontología que representa la anatomía del 
 \emph on
-Drosophila melanogaster.
+Drosophila melanogaster
+\emph default
+ (o como se la conoce comúnmente, mosca de la fruta)
+\emph on
+.
 \end_layout
 
 \begin_layout Itemize
@@ -287,7 +290,19 @@ Descriptive Ontology for Linguistic and Cognitive Engineering
 \emph default
 ) es el primer módulo de la 
 \emph on
-WFOL.
+WonderWeb Foundational Ontology Library
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+http://cordis.europa.eu/project/rcn/60325_en.html
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
@@ -869,6 +884,13 @@ tab:resumen-2
 \end_inset
 
  presenta algunas características de las mismas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3826,7 +3848,7 @@ Las abreviaciones
 \begin_inset Formula $N_{GEN}$
 \end_inset
 
- 
+ y 
 \begin_inset Formula $\mid A\mid$
 \end_inset
 
@@ -5193,6 +5215,32 @@ name "tab:tabla-de-datos-extra"
 
 \end_layout
 
+\begin_layout Standard
+Como podemos observar en las tablas 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla-de-datos"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla-de-datos-extra"
+
+\end_inset
+
+, todas las ontologías utilizadas en el marco de esta tesis tienen simetrías
+ y los tiempos necesarios para obtenerlas son pequeños.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Análisis de los resultados
 \end_layout
@@ -5253,7 +5301,7 @@ Sobre el tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-Otra vez la 
+La 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
