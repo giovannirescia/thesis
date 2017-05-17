@@ -94,7 +94,7 @@ name "chap:herramientas"
 
 \end_inset
 
-Descripción de las herramientas utilizadas
+Detalles de implementación
 \end_layout
 
 \begin_layout Standard
@@ -252,7 +252,7 @@ KCNF
 \series default
 \emph default
  toma la fórmula modal generada por DL2ML y devuelve una fórmula, semánticamente
- igual, en forma CNF modal.
+ igual, en CNF modal.
 \end_layout
 
 \begin_layout Standard
@@ -278,8 +278,6 @@ key "Bliss"
 \end_inset
 
  junto con un mapeo entre nodos y literales y estadísticas sobre el grafo.
- Este último módulo fue desarrollado originalmente para lógicas mono modales;
- en esta tesis se lo extendió para lógicas multi modales.
 \end_layout
 
 \begin_layout Standard
@@ -291,7 +289,7 @@ BLISS
 \emph default
  toma la especificación de un grafo y realiza la búsqueda de automorfismos
  en éste.
- Un detalle importante es que BLISS solo devuelve los autoformismos 
+ Un detalle importante es que BLISS solo devuelve los automorfismos 
 \emph on
 generadores
 \emph default
@@ -301,50 +299,35 @@ generadores
 \end_layout
 
 \begin_layout Standard
-El componente DL2ML fue desarrollado específicamente para el trabajo de
- esta tesis, mientras que los módulos KCNF y SY4NCL fueron adaptados para
- que funcionen en el caso de lógicas multi modales.
- La herramienta BLISS no requirió de ninguna modificación.
-\end_layout
-
-\begin_layout Standard
 Si el grafo tiene automorfismos no triviales, entonces el módulo 
 \series bold
 \emph on
 MAPPER
 \series default
 \emph default
- (no mencionado en la 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-fig:Arquitectura-General
-\end_layout
-
-\end_inset
-
-, ya que el mismo no forma parte en la detección de simetrías) reconstruye
- las simetrías de la ontología primero utilizando el mapeo entre nodos y
- literales generado por SY4NCL, y luego realizaremos un mapeo 
+ reconstruye las simetrías de la ontología primero utilizando el mapeo entre
+ nodos y literales generado por SY4NCL, y luego realizando un mapeo 
 \emph on
 de vuelta
 \emph default
- entre símbolos proposicionales a 
-\emph on
-strings
-\emph default
- utilizadas para representar conceptos dentro de nuestra ontología.
+ entre símbolos proposicionales a conceptos dentro de nuestra ontología.
 \end_layout
 
 \begin_layout Standard
-Es importante resaltar que estas simetrías pueden ser ejecutadas de manera
- independiente a las tareas de inferencia, i.e., se pueden computar las simetrías
- y utilizarlas para cada consulta de inferencia (esto es de gran importancia
- ya que no resultaría muy práctico tener que computar las simetrías cada
- vez que se le hace una consulta a la base de conocimiento, dado que obtener
- las simetrías es una tarea relativamente costosa).
+Cabe mencionar que el componente DL2ML fue desarrollado específicamente
+ para el trabajo de esta tesis, mientras que los módulos KCNF y SY4NCL fueron
+ adaptados para que funcionen en el caso de lógicas multi modales.
+ La herramienta BLISS no requirió de ninguna modificación.
+\end_layout
+
+\begin_layout Standard
+Por último, es importante resaltar que las simetrías pueden ser detectadas
+ de manera independiente a las tareas de inferencia, i.e., se pueden detectar
+ las simetrías previamente y utilizarlas luego para cada consulta de inferencia.
+ Esto es de gran importancia ya que no resultaría muy práctico tener que
+ realizar la detección de simetrías cada vez que se le hace una consulta
+ a la base de conocimiento, dado que obtener las simetrías puede ser una
+ tarea relativamente costosa.
 \end_layout
 
 \begin_layout Section
@@ -917,7 +900,7 @@ y
 \emph on
 gato
 \emph default
- comparten la mismas propiedades, o sea, todas éstas son subclase de los
+ comparten la mismas propiedades, o sea, todas éstas son subclases de los
  
 \emph on
 mamíferos
@@ -930,7 +913,7 @@ cuadrúpedos
 \end_layout
 
 \begin_layout Standard
-Ahora representaremos la ontología de la 
+Ahora representamos la ontología de la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -968,8 +951,7 @@ fig:defOnt
 
 \end_inset
 
- muestra el código en Scala que construye la ontología utilizando la herramienta
- Scowl.
+ muestra el código en Scala que construye la ontología utilizando Scowl.
 \end_layout
 
 \begin_layout Standard
@@ -1234,7 +1216,7 @@ name "fig:defOnt"
 
 \end_inset
 
-Definición de la ontología
+Definición de la ontología en Scala
 \end_layout
 
 \end_inset
@@ -1254,13 +1236,13 @@ Hasta ahora lo que hicimos fue:
 \begin_layout Itemize
 En la línea 2, crear un 
 \emph on
-adminitrador de ontologías
+administrador de ontologías
 \emph default
 , que nos permitirá crear y manipular ontologías.
 \end_layout
 
 \begin_layout Itemize
-En la línea 3 creamos una ontología.
+En la línea 3, creamos una ontología.
 \end_layout
 
 \begin_layout Standard
@@ -1271,7 +1253,7 @@ En la línea 3 creamos una ontología.
 \end_layout
 
 \begin_layout Itemize
-Entre las líneas 6 y 16 creamos las clases de interés como 
+Entre las líneas 6 y 16, creamos las clases de interés como 
 \emph on
 perro, gato, caballo 
 \emph default
@@ -1292,7 +1274,7 @@ ave
 \end_layout
 
 \begin_layout Itemize
-Las líneas 19 y 20 definen propiedades que aplicaremos a las clases definidas.
+Las líneas 19 y 20, definen propiedades que aplicaremos a las clases definidas.
 \end_layout
 
 \begin_layout Itemize
@@ -1301,12 +1283,12 @@ Entre las líneas 25 y 36 definimos los axiomas de interés: cómo se relacionan
 \end_layout
 
 \begin_layout Itemize
-En la línea 39 utilizamos el administrador de ontologías para cargar todas
+En la línea 39 utilizamos el administrador de ontologías para cargar todos
  los axiomas definidos.
 \end_layout
 
 \begin_layout Itemize
-En la línea 40 guardaremos la ontología en disco.
+En la línea 40 guardamos la ontología en disco.
 \end_layout
 
 \begin_layout Standard
@@ -1357,13 +1339,14 @@ Nota: la creación de esta ontología es a modo ilustrativo.
 \end_layout
 
 \begin_layout Standard
-El código XML que se generó para nuestra ontología está descrito en la 
+Parte del código XML que se generó para nuestra ontología está descrito
+ en la 
 \begin_inset Flex CT - auto cross-reference
 status open
 
 \begin_layout Plain Layout
 
-fig:XLMcode
+fig:XMLcode
 \end_layout
 
 \end_inset
@@ -1375,7 +1358,7 @@ fig:XLMcode
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -1616,7 +1599,7 @@ Código XML generado para la ontología definida
 \end_layout
 
 \begin_layout Standard
-Ahora que tenemos nuestra ontología en forma OWL, corramos nuestra herramienta
+Ahora que tenemos nuestra ontología en formato OWL, corramos nuestra herramienta
  y veamos qué obtenemos.
 \end_layout
 
@@ -1627,7 +1610,7 @@ status open
 
 \begin_layout Plain Layout
 
-fig:XLMcode
+fig:XMLcode
 \end_layout
 
 \end_inset
@@ -1704,7 +1687,7 @@ name "fig:dl2ml"
 
 \end_inset
 
-Fómula modal de nuestra ontología
+Fórmula modal generada por DL2ML
 \end_layout
 
 \end_inset
@@ -1805,7 +1788,7 @@ name "fig:KCNF"
 
 \end_inset
 
-Versión CNF modal de la fómula
+Versión CNF modal de la fórmula generada por KCNF
 \end_layout
 
 \end_inset
@@ -1927,7 +1910,7 @@ name "fig:sy4ncl"
 
 \end_inset
 
-Grafo de la fórmula
+Grafo (en formato BLISS) generado por SY4NCL
 \end_layout
 
 \end_inset
@@ -2042,9 +2025,9 @@ fig:nodemap
 
 \end_inset
 
- es tomada por el módulo BLISS, el cual realizará la detección de automorfismos
- en el grafo y genera como salida estadísticas junto con con la información
- de los generadores (si los hubiese): tal como se presenta en la 
+ es tomada por el módulo BLISS, el cual realiza la detección de automorfismos
+ en el grafo y genera como salida estadísticas junto con la información
+ de los generadores (si los hubiese) tal como se presenta en la 
 \begin_inset Flex CT - auto cross-reference
 status open
 
@@ -2171,11 +2154,11 @@ edges
 \emph on
 generators
 \emph default
-), que el tamaño del grupo de automorfismos es 2 (
-\begin_inset Formula $\text{|A|})$
+), que el tamaño del grupo de automorfismos, 
+\begin_inset Formula $\text{|A|}$
 \end_inset
 
- y que el tiempo que llevó computar el generador fue de 0.00705 segundos.
+, es 2 y que el tiempo que llevó computar el generador fue de 0.00705 segundos.
 \end_layout
 
 \begin_layout Standard
@@ -2207,9 +2190,10 @@ fig:map1
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -2283,11 +2267,23 @@ Ahora bien, ¿qué pasa si agregamos una propiedad nueva a nuestra
 \begin_inset Formula $\mathcal{KB}$
 \end_inset
 
-? Por ejemplo:
+? Por ejemplo, agreguemos el axioma de la 
+\begin_inset Flex CT - auto cross-reference
+status open
+
+\begin_layout Plain Layout
+
+fig:simbreak
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -2359,7 +2355,7 @@ fig:map2
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \begin_inset listings
@@ -2400,8 +2396,8 @@ Nueva simetría obtenida
 \end_layout
 
 \begin_layout Standard
-Como era de esperar ahora ya no encuentra como simétricas a la clase de
- 
+Como era de esperar ahora nuestra herramienta ya no encuentra como simétricas
+ a la clase de 
 \emph on
 gato
 \emph default

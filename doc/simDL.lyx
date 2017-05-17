@@ -92,24 +92,9 @@ En este capítulo hablaremos de simetrías en lógicas de descripción.
  Primero daremos una noción de simetrías en el contexto de lógicas modales,
  luego utilizando el nexo entre lógicas de descripción y lógicas modales
  dado en el capítulo anterior mostraremos que los resultados sobre simetrías
- en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
- se pueden transferir a 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
-.
- Esto nos permitirá realizar la detección de simetrías en fórmulas de 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- usando las técnicas disponibles en 
-\begin_inset Formula $\mathcal{ML}$
-\end_inset
-
-.
+ en lógicas modales se pueden transferir a lógicas de descripción.
+ Esto nos permitirá realizar la detección de simetrías en fórmulas de lógicas
+ de descripción usando las técnicas disponibles en lógicas modales.
 \end_layout
 
 \begin_layout Section
@@ -831,34 +816,26 @@ Sea
 \begin_layout Standard
 
 \emph on
-\begin_inset Formula $\mathcal{I}'(w)=\sigma(L_{\mathcal{I}(w)})\cap$
+\begin_inset Formula $\mathcal{I}'(p)=\mathcal{I}(\sigma^{-1}(p))$
 \end_inset
 
 
 \family sans
 \emph default
-PROP 
+ 
 \family default
 \emph on
 para todo 
-\begin_inset Formula $w\in\Delta.$
+\begin_inset Formula $p\in\mathsf{PROP}.$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $L_{\mathcal{I}(w)}$
-\end_inset
 
- 
 \emph on
-es el conjunto de literales completo y consistente generado por 
-\begin_inset Formula $\mathcal{I}(w)$
-\end_inset
-
-.
- Dado M un conjunto de modelos, 
+Dado M un conjunto de modelos, 
 \begin_inset Formula $\sigma(M)=\{\sigma(\mathcal{M})\mid\mathcal{M}\in M\}.$
 \end_inset
 
@@ -1073,13 +1050,17 @@ reference "teo4.1"
  situación donde exista algún tipo de consecuencia lógica involucrada durante
  el razonamiento modal automático.
  Sin lugar a dudas, aplicar una permutación es computacionalmente mas “barato”
- que aplicar una expansión en un tableaux o un paso de resolución
-\begin_inset Marginal
-status open
+ que aplicar una expansión en un tableaux 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MLHandBook"
 
-\begin_layout Plain Layout
-CITA A LA TESIS DE EZEQUIEL PARA TABLEAUX?
-\end_layout
+\end_inset
+
+ o un paso de resolución 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "arec:reso08"
 
 \end_inset
 
@@ -1163,14 +1144,18 @@ Sea
 \begin_inset Formula $\varphi$
 \end_inset
 
- una fórmula como en la definición 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "satisfDL"
+ una fórmula como en la Definición 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+def:(TBox-y-ABox)
+\end_layout
 
 \end_inset
 
-, 
+ , 
 \begin_inset Formula $\Psi$
 \end_inset
 
@@ -1243,7 +1228,7 @@ La detección de simetrías basada en grafos es la técnica más común para
  dominios 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Sakallah"
+key "Aloul,Crawford,Sakallah"
 
 \end_inset
 
@@ -1256,7 +1241,14 @@ Su éxito se puede explicar en función de dos aspectos.
  de una fórmula, de forma tal, que el grupo de automorfismos del grafo sea
  isomorfo al grupo de simetrías de la fórmula.
  Y segundo, la disponibilidad de herramientas de detección de automorfismos
- de grafos muy eficientes.
+ de grafos muy eficientes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bliss,saucy"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1690,7 +1682,7 @@ Sea
 \begin_layout Enumerate
 
 \emph on
-Para cada variable proposicional de 
+Para cada variable proposicional 
 \begin_inset Formula $p\in Prop(\varphi):$
 \end_inset
 
@@ -1810,7 +1802,7 @@ reference "enu:2-b"
 
 \end_inset
 
- por cada literal (propsicional o modal) que ocurre en C'.
+ por cada literal (proposicional o modal) que ocurre en C'.
 \end_layout
 
 \end_deeper
@@ -1841,9 +1833,8 @@ Para una fórmula con P variables proposicionles, C cláusulas top, M cláusulas
 
 \emph on
 Considere la fórmula modal
-\end_layout
-
-\begin_layout Example
+\emph default
+ 
 \begin_inset Formula $\varphi=(a\lor[m](b\lor\neg[m]c))\land(b\lor[m](a\lor\neg[m]c))$
 \end_inset
 
@@ -2045,7 +2036,7 @@ defPsi
 
 \end_inset
 
- podemos utilizar el algoritmo 
+ podemos utilizar el algoritmo de la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"
@@ -2058,7 +2049,7 @@ reference "algo-sim-glob"
 \begin_layout Standard
 Para ello, dada una ontología primero debemos traducirla a una fórmula modal
  usando la función de traducción.
- Luego podemos aplicar la construcción descrita anteriormente, para detectar
+ Luego podemos aplicar la construcción descrita anteriormente para detectar
  simetrías en dicha fórmula modal y finalmente debemos traducir esas simetrías
  a simetrías de nuestra ontología.
 \end_layout
@@ -2109,20 +2100,12 @@ Uniendo las piezas
 Este capítulo hizo foco en la detección de simetrías en lógicas modales,
  y en la transferencia de resultados teóricos de lógicas modales a lógicas
  de descripción.
- Estos resultados facilitaron el uso de los algoritmos de detección de simetrías
- para lógicas de descripción (como mencionamos, dichos algoritmos fueron
- desarrollados en 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Orbe:2014aa"
-
-\end_inset
-
- en el contexto de lógicas modales).
+ Estos resultados permiten el uso de algoritmos de detección de simetrías
+ en lógicas modales en lógicas de descripción.
 \end_layout
 
 \begin_layout Standard
-Primero dimos una definción formal de lo que es una simetría.
+Primero dimos una definición formal de lo que es una simetría.
  Luego, definimos el algoritmo 
 \begin_inset CommandInset ref
 LatexCommand ref

@@ -6,11 +6,11 @@
 \origin unavailable
 \textclass classicthesis
 \begin_preamble
-\usepackage[spanish, es-lcroman]{babel}
+\usepackage[spanish,es-lcroman,es-tabla]{babel}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children false
-\language english
+\language spanish
 \language_package default
 \inputencoding utf8
 \fontencoding global
@@ -61,7 +61,7 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\quotes_language french
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -81,13 +81,13 @@ name "chap:analisis"
 
 \end_inset
 
-Análisis de Simetrias en Ontologias Existentes
+Análisis de Simetrías en Ontologías Existentes
 \end_layout
 
 \begin_layout Standard
 En este capítulo presentamos los resultados experimentales obtenidos luego
  de ejecutar la herramienta presentada en el capítulo anterior, sobre ontologías
- existentes y en uso, obtenidas de la web 
+ existentes y en uso, obtenidas de la web
 \begin_inset Foot
 status collapsed
 
@@ -98,11 +98,6 @@ http://owl.cs.manchester.ac.uk/publications/supporting-material/owlcorpus/
 \end_inset
 
 .
- Lamentablemente solo de algunas de las ontologías se pudo obtener información
- sobre su naturaleza; por ejemplo, dónde es utilizada, quiénes la mantienen,
- etc.
- Cabe destacar, nuevamente, que dichos experimentos se corrieron solo en
- la TBox de cada ontología, dejando fuera la ABox y el resto de axiomas.
 \end_layout
 
 \begin_layout Section
@@ -113,9 +108,14 @@ Descripción de las ontologías utilizadas
 Comenzaremos por presentar el conjunto de ontologías utilizadas para evaluar
  nuestra herramienta.
  Todas las ontologías fueron obtenidas de la Web y abarcan diferentes dominios.
- A continuación, una breve descripción de las ontologías sobre las cuales
- se pudo encontrar información.
- La 
+ Lamentablemente, no todas las ontologías presentan información sobre su
+ naturaleza (dónde son utilizadas, quiénes las mantienen, etcétera).
+\end_layout
+
+\begin_layout Standard
+A continuación, se presenta una breve descripción de las ontologías sobre
+ las cuales se pudo encontrar información.
+ El 
 \begin_inset Flex CT - auto cross-reference
 status open
 
@@ -130,32 +130,29 @@ tab:resumen-1
 \end_layout
 
 \begin_layout Itemize
-NCIT
-\begin_inset Foot
-status open
+NCIT: Es un vocabulario para la atención clínica, actividades administrativas,
+ información pública e investigación básica.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
+
 http://bioportal.bioontology.org/ontologies/NCIT
 \end_layout
 
 \end_inset
 
-: Es un vocabulario para la atención clínica, actividades administrativas,
- información pública e investigación básica.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Go
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.geneontology.org/
-\end_layout
-
-\end_inset
-
-: El proyecto 
+Go: El proyecto 
 \emph on
 Gene
 \emph default
@@ -167,32 +164,46 @@ Ontology
  propiedades sobre material bioquímico.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-CTON
-\begin_inset Foot
-status open
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
+
+http://www.geneontology.org/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+CTON: Es una ontología de tipos de células.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
 http://www.gong.manchester.ac.uk/CTON.html
 \end_layout
 
 \end_inset
 
-: Es una ontología de tipos de células.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-FBbt XP
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.obofoundry.org
-\end_layout
-
-\end_inset
-
-: Es una ontología que representa la anatomía del 
+FBbt XP: Es una ontología que representa la anatomía del 
 \emph on
 Drosophila melanogaster
 \emph default
@@ -201,90 +212,133 @@ Drosophila melanogaster
 .
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Uberon
-\begin_inset Foot
-status open
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
-http://uberon.github.io 
+
+http://www.obofoundry.org
 \end_layout
 
 \end_inset
 
-: Es una ontología de anatomía para representar partes del cuerpo, órganos
- y tejidos de varias especies de animales.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Galen
-\begin_inset Foot
-status open
+Uberon: Es una ontología de anatomía para representar partes del cuerpo,
+ órganos y tejidos de varias especies de animales.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
+
+http://uberon.github.io
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Galen: Es una base de conocimiento de tipo biomédico.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
 http://bioportal.bioontology.org/ontologies/GALEN
 \end_layout
 
 \end_inset
 
-: Es una base de conocimiento de tipo biomédico.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Vicodi
-\begin_inset Foot
-status open
+Vicodi: Ontología creada para mejorar la comprensión del contenido digital
+ de Internet.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
+
 http://www.vicodi.org/about.htm
 \end_layout
 
 \end_inset
 
-: Ontología creada para mejorar la comprensión del contenido digital de
- Internet.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Lubm
-\begin_inset Foot
-status open
+Lubm: Es una ontología artificial para medir el desempeño de razonadores
+ OWL.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
+
 http://ceur-ws.org/Vol-1014/paper_59.pdf
 \end_layout
 
 \end_inset
 
-: Es una ontología artificial para medir el desempeño de razonadores OWL.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Modlubm
-\begin_inset Foot
-status open
+Modlubm: Una versión modificada de la ontología LUBM.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status collapsed
 
 \begin_layout Plain Layout
-http://www.ghxiao.org/publications/2014-phd-thesis-Xiao-inline-evaluation.pdf
+
+http://cgi.csc.liv.ac.uk/~frank/publ/filters.pdf
 \end_layout
 
 \end_inset
 
-: Una versión modificada de la ontología LUBM.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Dolce
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://www.loa.istc.cnr.it/old/DOLCE.html
-\end_layout
-
-\end_inset
-
-: (
+Dolce: (
 \emph on
 Descriptive Ontology for Linguistic and Cognitive Engineering
 \emph default
@@ -292,11 +346,9 @@ Descriptive Ontology for Linguistic and Cognitive Engineering
 \emph on
 WonderWeb Foundational Ontology Library
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-
-\emph on
 http://cordis.europa.eu/project/rcn/60325_en.html
 \end_layout
 
@@ -305,54 +357,92 @@ http://cordis.europa.eu/project/rcn/60325_en.html
 .
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Wine
-\begin_inset Foot
+URL: 
+\begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
+
+http://www.loa.istc.cnr.it/old/DOLCE.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Wine: Una ontología para describir tipos y dominios de vinos, utilizada
+ también para ejemplos y tutoriales.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
 http://slidewiki.org/slide/24832
 \end_layout
 
 \end_inset
 
-: Una ontología para describir tipos y dominios de vinos, utilizada también
- para ejemplos y tutoriales.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Family
-\begin_inset Foot
+Family: Es una ontología utilizada para varios tutoriales, ya que cuenta
+ con una estructura intuitiva.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
 status open
 
 \begin_layout Plain Layout
+
 http://wiki.csc.calpoly.edu/OntologyTutorial/
 \end_layout
 
 \end_inset
 
-: Es una ontología utilizada para varios tutoriales, ya que cuenta con una
- estructura intuitiva.
+
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Pizza
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-http://protegewiki.stanford.edu/wiki/Pr4_UG_ex_Pizza
-\end_layout
-
-\end_inset
-
-: Otra ontología de 
+Pizza: Otra ontología de 
 \emph on
 juguete
 \emph default
  que se utiliza mucho en tutoriales.
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+URL: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://protegewiki.stanford.edu/wiki/Pr4_UG_ex_Pizza
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -362,7 +452,6 @@ juguete
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
 status collapsed
@@ -416,7 +505,7 @@ Expresividad
 \begin_inset Text
 
 \begin_layout Plain Layout
-ncit.owl
+ncit
 \end_layout
 
 \end_inset
@@ -448,7 +537,7 @@ ncit.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-go.owl
+go
 \end_layout
 
 \end_inset
@@ -480,7 +569,7 @@ go.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-cton.owl
+cton
 \end_layout
 
 \end_inset
@@ -512,7 +601,7 @@ cton.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-fbbt_xp.owl
+fbbt_xp
 \end_layout
 
 \end_inset
@@ -544,7 +633,7 @@ fbbt_xp.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-uberon.owl
+uberon
 \end_layout
 
 \end_inset
@@ -576,7 +665,7 @@ uberon.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-galen.owl
+galen
 \end_layout
 
 \end_inset
@@ -608,7 +697,7 @@ galen.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-vicodi.owl
+vicodi
 \end_layout
 
 \end_inset
@@ -640,7 +729,7 @@ vicodi.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-lubm.owl
+lubm
 \end_layout
 
 \end_inset
@@ -672,7 +761,7 @@ lubm.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-modlubm.owl
+modlubm
 \end_layout
 
 \end_inset
@@ -704,7 +793,7 @@ modlubm.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-dolce.owl
+dolce
 \end_layout
 
 \end_inset
@@ -736,7 +825,7 @@ dolce.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-wine.owl
+wine
 \end_layout
 
 \end_inset
@@ -768,7 +857,7 @@ wine.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-family_example.owl
+family_example
 \end_layout
 
 \end_inset
@@ -800,7 +889,7 @@ family_example.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-pizza.owl
+pizza
 \end_layout
 
 \end_inset
@@ -874,7 +963,7 @@ tab:resumen-1
  información.
  La 
 \begin_inset Flex CT - auto cross-reference
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -887,18 +976,10 @@ tab:resumen-2
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage clearpage
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -949,7 +1030,7 @@ Expresividad
 \begin_inset Text
 
 \begin_layout Plain Layout
-ged_p2.owl
+ged_p2
 \end_layout
 
 \end_inset
@@ -981,7 +1062,7 @@ ged_p2.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-termdb.owl
+termdb
 \end_layout
 
 \end_inset
@@ -1013,7 +1094,7 @@ termdb.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-protege.owl
+protege
 \end_layout
 
 \end_inset
@@ -1045,7 +1126,7 @@ protege.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-module.owl
+module
 \end_layout
 
 \end_inset
@@ -1077,7 +1158,7 @@ module.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-1401.owl
+1401
 \end_layout
 
 \end_inset
@@ -1109,7 +1190,7 @@ module.owl
 \begin_inset Text
 
 \begin_layout Plain Layout
-semintec.owl
+semintec
 \end_layout
 
 \end_inset
@@ -1178,7 +1259,7 @@ Para correr los experimentos se utilizó una notebook con disco de estado
 \end_layout
 
 \begin_layout Standard
-Las tablas 
+Los cuadros 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:tabla-de-datos"
@@ -1202,14 +1283,13 @@ reference "tab:tabla-de-datos-extra"
 \begin_inset Formula $T_{TOT}$
 \end_inset
 
- representan los tiempos de carga de la ontología, de procesamiento en el
- módulo dl2ml, SY4NCL, BLISS y la suma de estos tiempos, respectivamente,
+ representan los tiempos de carga de la ontología, de procesamiento en los
+ módulos DL2ML, SY4NCL, BLISS y la suma de estos tiempos, respectivamente,
  medidos en segundos.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways true
 status collapsed
@@ -3838,13 +3918,13 @@ name "tab:tabla-de-datos"
 \end_layout
 
 \begin_layout Standard
-Cabe destacar que hay un par de etapas más de post procesamiento de datos,
- pero los tiempos de esas etapas no fueron tenidos en cuenta dado que dichas
- etapas son realizadas por scripts no optimizados.
+Cabe destacar que hay una de etapa más de post-procesamiento de datos (el
+ MAPPER), pero los tiempos de esta etapa no fueron tenidos en cuenta dado
+ que dicha etapa es realizada por scripts no optimizados.
 \end_layout
 
 \begin_layout Standard
-Las abreviaciones 
+Las columnas 
 \begin_inset Formula $N_{GEN}$
 \end_inset
 
@@ -3858,7 +3938,6 @@ Las abreviaciones
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
 wide false
 sideways true
 status collapsed
@@ -5216,7 +5295,7 @@ name "tab:tabla-de-datos-extra"
 \end_layout
 
 \begin_layout Standard
-Como podemos observar en las tablas 
+Como podemos observar en los Cuadros 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:tabla-de-datos"
@@ -5231,14 +5310,8 @@ reference "tab:tabla-de-datos-extra"
 \end_inset
 
 , todas las ontologías utilizadas en el marco de esta tesis tienen simetrías
- y los tiempos necesarios para obtenerlas son pequeños.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
+ y los tiempos necesarios para detectarlas son pequeños, teniendo en cuenta
+ el tamaño de las mismas.
 \end_layout
 
 \begin_layout Section
@@ -5246,7 +5319,7 @@ Análisis de los resultados
 \end_layout
 
 \begin_layout Standard
-Podríamos resumir los resultados de la 
+Podríamos resumir los resultados del 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -5275,8 +5348,8 @@ Sobre el número de generadores
 \end_layout
 
 \begin_layout Standard
-Fuimos capaces de encontrar generadores, en cantidades descomunales, en
- ontologías que son utilizadas actualmente por razonadores.
+Fuimos capaces de encontrar generadores, en gran cantidad, en ontologías
+ que son utilizadas actualmente por razonadores.
  No hay registro de que estas herramientas de inferencia (los demostradores)
  existentes exploten estos resultados para mejorar sus servicios.
 \end_layout
@@ -5293,7 +5366,7 @@ Si bien es cierto que el número total de simetrías en las ontologías está
 \begin_layout Standard
 Pero las pruebas empíricas realizadas hasta el momento parecen demostrar
  que en las ontologías existentes en la actualidad hay una alta posibilidad
- que encontremos una cantidad considerable simetrías.
+ que encontremos una cantidad considerable de simetrías.
 \end_layout
 
 \begin_layout Subsection*
@@ -5301,7 +5374,7 @@ Sobre el tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-La 
+El 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -5318,7 +5391,7 @@ tab:tabla-de-datos
 \end_inset
 
  reales con cientos de miles de axiomas sin mayores dificultades en cuanto
- al tiempo de ejecución ni de memoria.
+ al tiempo de ejecución ni consumo de memoria.
 \end_layout
 
 \begin_layout Standard
@@ -5345,20 +5418,7 @@ Otros análisis
 \end_layout
 
 \begin_layout Standard
-Veamos ahora algunos resultados de la 
-\begin_inset Flex CT - auto cross-reference
-status open
-
-\begin_layout Plain Layout
-
-tab:tabla-de-datos
-\end_layout
-
-\end_inset
-
-, la cual está ordenada en orden descendiente teniendo en cuenta la cantidad
- de generadores hallados en cada ontología.
- En particular, concentrémonos en los resultados sobre las ontologías 
+Concentrémonos ahora en los resultados de vv las ontologías 
 \emph on
 ncit
 \emph default
@@ -5375,7 +5435,7 @@ go.
 A simple vista no hay ninguna regla que pueda relacionar los valores que
  se observan entre sus columnas.
  Por ejemplo, podríamos pensar que mientras más axiomas tenga nuestra TBox,
- más generadores nuestra herramienta encontraría (pues nuestra fómula modal
+ más generadores nuestra herramienta encontraría (pues nuestra fórmula modal
  contaría con más claúsulas y más símbolos proposicionales o relaciones);
  pero no es el caso, pues la ontología 
 \emph on

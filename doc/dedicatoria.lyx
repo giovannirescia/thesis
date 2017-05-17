@@ -93,7 +93,7 @@ refstepcounter{dummy}
 
 
 \backslash
-pdfbookmark[1]{Dedicación}{Dedicación}
+pdfbookmark[1]{Dedicatoria}{Dedicatoria}
 \end_layout
 
 \end_inset
@@ -118,6 +118,14 @@ decisión que he tomado.
 \begin_inset Newline newline
 \end_inset
 
+A mis amigos y profesores, por estar siempre
+\begin_inset Newline newline
+\end_inset
+
+presentes.
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

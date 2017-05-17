@@ -8,9 +8,7 @@
 \begin_preamble
 \usepackage[spanish, es-lcroman]{babel}
 \microtypesetup{protrusion=false}
-
 \addbibresource{biblio.bib}
-
 \usepackage{microtype}
 \end_preamble
 \options "authoryear"
@@ -95,10 +93,11 @@ filename "caratula.lyx"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Dedication.lyx"
+\begin_inset Newpage cleardoublepage
+\end_inset
 
+
+\begin_inset Newpage newpage
 \end_inset
 
 
@@ -107,7 +106,49 @@ filename "Dedication.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Contents.lyx"
+filename "dedicatoria.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "agradecimientos.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage cleardoublepage
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "contenido.lyx"
 
 \end_inset
 
@@ -278,7 +319,7 @@ filename "conclusiones.lyx"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Bibliography.lyx"
+filename "bibliografia.lyx"
 
 \end_inset
 

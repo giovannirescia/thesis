@@ -198,6 +198,16 @@ El término
 \emph on
 ontología
 \emph default
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://dle.rae.es/?w=ontología
+\end_layout
+
+\end_inset
+
  tiene sus raíces en la rama de la filosofía que está enfocada en el estudio
  del ser o la existencia.
 \end_layout
@@ -272,7 +282,7 @@ y
 conceptualización
 \emph default
  pueden prestarse para diferentes interpretaciones, los puntos esenciales
- en la definición de ontología son
+ en la definición de ontología son:
 \end_layout
 
 \begin_layout Itemize
@@ -298,7 +308,7 @@ Representando ontologías
 \end_layout
 
 \begin_layout Standard
-Distintos abordajes para la representación de las ontologías se desarrollaron
+Distintos abordajes para la representación de ontologías se desarrollaron
  en los años setenta, los cuales pueden ser clasificados en dos categorías:
  representaciones no basadas en lógica y formalismos basados en lógica.
 \end_layout
@@ -352,8 +362,8 @@ key "WORDNET"
 
 \end_inset
 
-, que describe relaciones entre palabras del inglés, que usando lenguaje
- natural, puede relacionar, por ejemplo, la palabra 
+, el cual describe relaciones entre palabras del inglés, que usando lenguaje
+ natural puede relacionar, por ejemplo, la palabra 
 \emph on
 alimento
 \emph default
@@ -374,8 +384,8 @@ key "Minsky"
 , el objetivo se centra en lograr conocimiento estructurado basándose en
  la capacidad de expresar relaciones entre estructuras.
  Una estructura representa cierto concepto y es caracterizada por un número
- de atributos; donde los valores de los atributos pueden ser elementos de
- algún dominio concreto (e.g., enteros, 
+ de atributos, donde los valores de los éstos pueden ser elementos de algún
+ dominio concreto (e.g., enteros, 
 \emph on
 strings
 \emph default
@@ -391,8 +401,8 @@ key "OKBCurl"
 
 \end_inset
 
-, que define una interfaz para acceder a sistemas de representación de conocimie
-nto.
+, el cual define una interfaz para acceder a sistemas de representación
+ de conocimiento.
  OKBC define la mayoría de los conceptos que son propios en los sistemas
  de estructuras y bases de datos relacionales.
 \end_layout
@@ -580,10 +590,11 @@ Representación de relaciones entre ciertos animales con una red genérica
 \end_layout
 
 \begin_layout Standard
-A medida que las relaciones entre los conceptos se vuelven más complejas,
- aumenta la dificultad para dar caracterizaciones precisas sobre qué tipos
- de relaciones pueden ser computadas y para garantizar la correctitud y
- completitud del sistema que razona sobre estas estructuras.
+Una limitación de este tipo de representación es que, a medida que las relacione
+s entre los conceptos se vuelven más complejas, aumenta la dificultad para
+ dar caracterizaciones precisas sobre qué tipos de relaciones pueden ser
+ computadas y para garantizar la correctitud y completitud del sistema que
+ razona sobre estas estructuras.
 \end_layout
 
 \begin_layout Subsubsection
@@ -627,7 +638,7 @@ key "BrachmanSchmolze1985"
 
 , uno de los primeros sistemas de conocimiento, el cual contaba con cierto
  tipo de semántica lógica.
- Muchos sistemas evolucionaron a partir de KL-ONE, como KRYPTON 
+ Muchos sistemas evolucionaron a partir de KL-ONE, como ser KRYPTON 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "BrachmanEtal1985"
@@ -675,10 +686,6 @@ terminológico
 , y que hoy se conoce como 
 \emph on
 lógicas de descripción.
-\end_layout
-
-\begin_layout Subsection*
-Lógicas de descripción
 \end_layout
 
 \begin_layout Standard
@@ -920,13 +927,15 @@ status open
 \begin_layout Standard
 Ya dimos una introducción de sistemas que tienen una semántica formal y
  bien definida en los cuales se puede razonar, ahora bien, ¿cómo explotamos
- y automatizamos esta capacidad para inferir relaciones implícitas a partir
- de poder razonar sobre dichos sistemas? La web semántica nos proveerá de
- las herramientas necesarias para poder trabajar en 
+ esta capacidad para inferir información implícita? Para poder realizar
+ inferencias necesitamos primero representar la información de un determinado
+ dominio en el formato adecuado.
+ Una de las fuentes de información principales hoy en día es la web.
+ La 
 \emph on
-razonadores
+web semántica
 \emph default
-, o sea, programas que buscan inferir relaciones a partir de una ontología.
+ es una propuesta de formalización de la información existente en la web.
 \end_layout
 
 \begin_layout Subsection
@@ -952,29 +961,26 @@ WWW
 \end_layout
 
 \begin_layout Standard
-La 
+La web
 \emph on
-web semántica
-\emph default
  
+\emph default
+semántica 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "OWLAPI"
 
 \end_inset
 
-, es
-\emph on
- un esfuerzo en colaboración liderado por el Consorcio de la WWW (W3C)
-\emph default
-, tiene como objetivo mejorar la actual web para que las computadoras sean
+, un esfuerzo en colaboración liderado por el Consorcio de la WWW (W3C),
+ tiene como objetivo mejorar la actual web para que las computadoras sean
  capaces de procesar la información presentada en la WWW, interpretarla
  y conectarla, para ayudar a las personas a encontrar el conocimiento requerido.
  De la misma manera que la WWW, la web semántica es un sistema distribuido
  de hipertexto, que está pensado para formar un gran sistema de conocimiento
  distribuido.
  El foco de la web semántica es compartir datos, en vez de documentos.
- En otras palabras, es un proyecto que debería proveer 
+ En otras palabras, es un proyecto que busca proveer 
 \emph on
 una estructura común que permita a la información ser compartida y reusada
  a través de los límites de la aplicación, el trabajo y la comunidad.
@@ -1041,7 +1047,7 @@ name "fig:w3cstack"
 \end_layout
 
 \begin_layout Standard
-
+Las capas 
 \emph on
 Unicode
 \emph default
@@ -1067,11 +1073,11 @@ key "URI"
 
 \end_inset
 
-, o 
+ (
 \emph on
 Uniform Resource Identifier
 \emph default
- (Identificador de recurso uniforme, en español) es un 
+) es un 
 \emph on
 string
 \emph default
@@ -1082,9 +1088,20 @@ string
 \begin_layout Standard
 La capa 
 \emph on
-Extensible Markup Language 
+XML
 \emph default
-(XML) junto con las definiciones de 
+ (
+\emph on
+Extensible Markup Language
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "XML"
+
+\end_inset
+
+ junto con las definiciones de 
 \emph on
 XML namespace
 \emph default
@@ -1098,21 +1115,24 @@ XML schema
 \end_layout
 
 \begin_layout Standard
-Un formato básico de representación de la información para la web semántica
- es 
+La capa 
 \emph on
 RDF
 \emph default
- (por 
+ (
 \emph on
 Resource Description Framework
 \emph default
-, o 
-\emph on
-Sistema de Descripción de Recursos
-\emph default
-, en español).
- Este es un sistema para representar información acerca de los recursos
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RDF"
+
+\end_inset
+
+ provee un formato básico de representación de la información para la web
+ semántica.
+ Este es un sistema para representar información, acerca de los recursos,
  en forma de grafo.
  Está basado en triplas 
 \emph on
@@ -1126,42 +1146,52 @@ que conforman el grafo de datos.
 \end_layout
 
 \begin_layout Standard
-Para permitir descripciones estandarizadas de taxonomías y otros constructores
+La capa RDF 
+\emph on
+Schema 
+\emph default
+(
+\emph on
+RDFS
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "RDFS"
+
+\end_inset
+
+ permite descripciones estandarizadas de taxonomías y otros constructores
  
 \emph on
 ontológicos
 \emph default
-, un 
-\emph on
-Esquema RDF
-\emph default
- (
-\emph on
-RDFS
-\emph default
-) fue creado junto a su semántica formal dentro de RDF.
- Los RDFS pueden ser utilizados para describir taxonomías de clases y propiedade
-s y así crear ontologías pequeñas.
+, dentro de RDF.
+ RDFS puede ser utilizado para describir taxonomías de clases y propiedades
+ y así crear ontologías pequeñas.
 \end_layout
 
 \begin_layout Standard
-Para crear ontologías más detalladas se puede utilizar el 
+Finalmente, la capa 
 \emph on
-Lenguaje Ontológico Web
+OWL
 \emph default
  (
 \emph on
-OWL, 
-\emph default
-por 
-\emph on
 Ontology Web Language
 \emph default
-).
+) 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "owlw3c"
+
+\end_inset
+
+ permite crear ontologías más detalladas.
  OWL es un lenguaje derivado de las lógicas de descripción y ofrece más
  construcciones sobre RDFS.
  Está sintácticamente embebido dentro de RDF, así que como RDFS, provee
- vocabulario estandarizado adicional.
+ un vocabulario estandarizado adicional.
  Como dijimos, el lenguaje OWL para ontologías, está basado en las lógicas
  de descripción (de hecho, al sublenguaje de OWL que está basado en 
 \begin_inset Formula $\mathcal{DL}$
@@ -1283,36 +1313,18 @@ s la una de la otra.
 \end_layout
 
 \begin_layout Standard
-Si podemos identificar las simetrías de un problema, podríamos utilizarlas
- para reducir la dificultad del razonamiento analizando en detalle sólo
- uno de los casos simétricos y luego generalizar el resultado a los demás.
+Entonces, si podemos identificar las simetrías de un problema, podríamos
+ utilizarlas para reducir la dificultad del razonamiento analizando en detalle
+ sólo uno de los casos simétricos y luego generalizar el resultado a los
+ demás.
  Esto es exactamente lo que tratamos de hacer cuando utilizamos las simetrías
  de un problema en el contexto de razonamiento automático.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-RESCRIBIR
-\end_layout
-
-\end_inset
-
-
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-RESCRITO / REVISAR
-\end_layout
-
-\end_inset
-
 En dicho contexto, la presencia de simetrías en subespacios que no contienen
- soluciones pueden ser de utilidad para nuestro algoritmo, podemos guiarlo
- para que busque soluciones en otros espacios de búsqueda.
+ soluciones pueden ser de utilidad para nuestro algoritmo ya que podemos
+ guiarlo para que busque soluciones en otras partes del espacio de búsqueda.
 \end_layout
 
 \begin_layout Standard
@@ -1337,7 +1349,8 @@ key "Krishnamurthy"
 
 \end_inset
 
- se presentan dos reglas de inferencia: la regla de 
+ se presentan dos reglas de inferencia para un cálculo de resolución: la
+ regla de 
 \emph on
 simetría global
 \emph default
@@ -1350,8 +1363,7 @@ simetría local
 \begin_inset Formula $\Gamma$
 \end_inset
 
- es un conjunto de cláusulas proposicionales (un conjunto de conjuntos de
- literales proposicionales) y 
+ es un conjunto de cláusulas proposicionales y 
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -1397,7 +1409,7 @@ C
 \end_layout
 
 \begin_layout Standard
-El trabajo de 
+En 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Krishnamurthy"
@@ -1405,36 +1417,18 @@ key "Krishnamurthy"
 \end_inset
 
  muestra la utilidad de las reglas de simetría para algunos problemas pero
- no presenta un algoritmo para realizar la detección de simetrías.
+ no se presenta un algoritmo para realizar la detección de simetrías.
  Tampoco se discute en detalle cómo los procedimientos de resolución deben
  utilizar las reglas de simetría.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-PREGUNTARLE A EZEQUIEL POR LAS REFERENCIAS (CHECK) Y VER SI ESTE PÁRRAFO
- SE VA AL FINAL
-\end_layout
-
-\end_inset
-
-Un caso particular de aplicación de simetrías es en el problema de satisfacibili
-dad booleana (SAT) 
+ El primer intento para explotar la presencia de simetrías en un algoritmo
+ de búsqueda se discute en 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Crawford,Brown:1989uw"
+key "Brown:1989uw"
 
 \end_inset
 
-, en el cual se intenta saber si existe alguna valuación 
-\emph on
-V
-\emph default
- para las variables proposicionales de una fórmula proposicional tal que
- haga verdadera a la fórmula.
+.
 \end_layout
 
 \begin_layout Standard
@@ -1471,11 +1465,11 @@ key "Oxusoff"
 En 
 \begin_inset CommandInset citation
 LatexCommand citep
-key "Aloul"
+key "Crawford,Aloul"
 
 \end_inset
 
-se presenta un enfoque diferente para la detección de simetrías.
+ se presenta un enfoque diferente para la detección de simetrías.
  Se demuestra que el problema de detección de simetrías en fórmulas proposiciona
 les se puede reducir polinomialmente al problema de detección de automorfismos
  en grafos coloreados y se presenta un algoritmo para crear un grafo coloreado
@@ -1494,8 +1488,8 @@ modalidad
 \emph on
 califican
 \emph default
- las sentencias), el estudiode simetrías fue abordado en el área de verificación
- de modelos (o 
+ las sentencias), el estudio de simetrías fue abordado en el área de verificació
+n de modelos (o 
 \emph on
 model checking
 \emph default
@@ -1655,7 +1649,7 @@ chap:herramientas
 
 \end_inset
 
- describiremos las herramientas implementadas para la detección de simetrías
+ describimos las herramientas implementadas para la detección de simetrías
  en lógicas de descripción.
  
 \end_layout
@@ -1687,6 +1681,15 @@ chap:analisis
 \end_layout
 
 \begin_layout Standard
+\begin_inset Marginal
+status open
+
+\begin_layout Plain Layout
+completar
+\end_layout
+
+\end_inset
+
 Por último, el 
 \begin_inset Flex CT - auto cross-reference
 status open

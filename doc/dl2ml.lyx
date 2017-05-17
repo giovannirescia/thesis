@@ -139,10 +139,6 @@ El conjunto de las fórmulas modales básicas
 FORM
 \family default
 \emph on
- sobre la signatura 
-\begin_inset Formula $\mathcal{S}$
-\end_inset
-
  se define como
 \end_layout
 
@@ -339,7 +335,7 @@ tiene asociado un modelo equivalente (en la semántica de lógicas de descripci�
 \end_inset
 
 , donde 
-\begin_inset Formula $\Delta\not=\emptyset$
+\begin_inset Formula $\Delta=W$
 \end_inset
 
  e 
@@ -352,50 +348,11 @@ tiene asociado un modelo equivalente (en la semántica de lógicas de descripci�
 \begin_layout Standard
 \paragraph_spacing onehalf
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
+<lyxtabular version="3" rows="3" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top" width="0pt">
 <column alignment="center" valignment="top">
 <column alignment="left" valignment="top" width="0pt">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\Delta$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-\begin_inset Formula $\doteq$
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\emph on
-W
-\end_layout
-
-\end_inset
-</cell>
-</row>
 <row>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -427,13 +384,15 @@ W
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $V(p)$
+\begin_inset Formula $\{w\mid p\in V(w)\}$
 \end_inset
 
- 
+, 
 \emph on
-para 
-\begin_inset Formula $p\in\mathsf{PROP}$
+para
+\emph default
+ 
+\begin_inset Formula $p\in\text{\mathsf{PROP}}$
 \end_inset
 
 
@@ -880,7 +839,7 @@ dlModml
 
  nos permite aplicar modelos de lógicas de descripción a fórmulas de lógicas
  modales.
- A continuación, veremos cómo podemos rescribir fórmulas modales en notación
+ A continuación, veremos cómo podemos rescribir fórmulas modales cómo fórmulas
  de lógicas de descripción.
 \end_layout
 
@@ -889,18 +848,9 @@ El puente de Schild
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status collapsed
-
-\begin_layout Plain Layout
-VER QUÉ MÁS PONER
-\end_layout
-
-\end_inset
-
 El lenguaje para definir conceptos en lógicas de descripción es muy similar
  al de las lógicas modales.
- Esta similitud fue observada por 
+ Esta similitud fue observada por Schild en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schild"
@@ -920,12 +870,6 @@ satisfacibilidad de concepto
 .
  La lógica modal básica no es tan expresiva como el razonamiento sobre ABox
  o inferencia sobre definiciones de una TBox.
-\end_layout
-
-\begin_layout Standard
-Además, algunos lenguajes de descripción muy expresivos incluían construcciones
- para la creación de roles complejos como intersección, clausura transitiva,
- etc.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1277,11 +1221,11 @@ reference "tab: dl2ml"
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
- y las fórmulas del lenguaje modal básico (i.e., sin el operador 
+ y el lenguaje modal básico (i.e., sin el operador 
 \emph on
 A
 \emph default
-), presentado originalmente en 
+), presentada originalmente en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schild"
@@ -2148,7 +2092,7 @@ Sea
 \end_layout
 
 \begin_layout Subsection
-Análisis sobre la función de traducción
+Análisis de la función de traducción
 \end_layout
 
 \begin_layout Standard
@@ -2347,29 +2291,23 @@ C
 \begin_inset Formula $\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2}$
 \end_inset
 
- si lo quisiéramos expresar 
+ si lo quisiéramos expresar en 
 \begin_inset Formula $\mathcal{DL}$
 \end_inset
 
-, siempre es el caso en que si el conjunto 
-\begin_inset Formula $\mathcal{C}_{1}$
+.
+ Se debe verificar que en todo el modelo siempre que un elemento pertenece
+ a 
+\begin_inset Formula $C_{1}$
 \end_inset
 
- cumple con alguna propiedad, entonces 
-\begin_inset Formula $\mathcal{C}_{2}$
+, también pertenece a 
+\begin_inset Formula $C_{2}$
 \end_inset
 
- también.
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-EXPLICAR EL CUANTIFICADOR UNIVERSAL
-\end_layout
-
-\end_inset
-
-
+.
+ Para asegurar que la inclusión se verifica en todo el modelo, es necesario
+ utilizar el operador universal A.
 \end_layout
 
 \begin_layout Enumerate
