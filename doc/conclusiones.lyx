@@ -106,30 +106,43 @@ Resumen de lo hecho
 La principal tarea de esta tesis fue el estudio de las simetrías en lógicas
  de descripción.
  Como caso de estudio particular trabajamos directamente buscando simetrías
- en ontologías.
+ en ontologías existentes y en uso en la web.
 \end_layout
 
 \begin_layout Standard
 Como es natural, en este trabajo comenzamos por los cimientos teóricos de
  las lógicas de descripción y la naturaleza de las ontologías.
  Dimos definiciones precisas de sintaxis y semántica de las lógicas de descripci
-ón, de las lógicas modales, y definimos los nexos entre las mismas (tanto
- en sintaxis como en semántica).
- Estos preliminares fueron para introducir una función de traducción 
-\begin_inset Formula $\Psi$
-\end_inset
-
- usada en la traducción de fórmulas de lógicas de descripción a fórmulas
- de lógicas modales, para poder transferir resultados sobre simetrías en
- lógicas modales.
+ón, el porqué de OWL y cómo se pueden implementar bases de conocimientos
+ expresadas en lógicas de descripción, en formato OWL.
 \end_layout
 
 \begin_layout Standard
-También dimos nociones de simetrías en fórmulas, que pueden ser vistas como
- automorfismos de un grafo, por lo cual definimos un algoritmo, correcto,
- para describir una fórmula como un grafo.
- Entonces el problema de buscar simetrías en una fórmula se redujo a buscar
- automorfismos en un grafo, el correspondiente a dicha fórmula.
+Luego, dimos una introducción a las lógicas modales con su correspondiente
+ sintaxis y semántica, unificamos la semántica de las lógicas de descripción
+ y las lógicas modales y definimos una función de traducción 
+\begin_inset Formula $\Psi$
+\end_inset
+
+ para rescribir fórmulas de lógicas de descripción a fórmulas modales.
+ El hecho de poder contar con una sola semántica para ambas lógicas y una
+ función de traducción, nos permitió transferir todos los resultados teóricos
+ obtenidos en el contexto de lógicas modales a lógicas de descripción necesarios
+ para la detección de simetrías.
+\end_layout
+
+\begin_layout Standard
+Vimos, bajo ciertas restricciones, que el problema de detección de simetrías
+ era equivalente al de detección de automorfismos, por lo que definimos
+ un algoritmo para construir un grafo a partir de una fórmula en CNF modal,
+ y luego así explotar los automorfismos de dicha grafo.
+\end_layout
+
+\begin_layout Standard
+Por último desarrollamos herramientas para la detección de simetrías en
+ ontologías con resultados totalmente positivos: nuestra herramienta detectó
+ simetrías en todas las ontologías con las que trabajamos, un resultado
+ verdaderamente alentador.
 \end_layout
 
 \begin_layout Section
@@ -137,20 +150,9 @@ Qué más se puede hacer a partir de acá
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-RESCRIBIR
-\end_layout
-
-\end_inset
-
-Si bien haber encontrado simetrías es un resultado remarcable, hay que tener
- presente dos cosas: primero, solo se trabajó con la TBox de cada ontología,
- si también se hubiera trabajado con las ABox la cantidad de simetrías encontrad
-as hubiera sido diferente.
- Y dado que en 
+Sin lugar a dudas, haber detectado simetrías en las ontologías sobre las
+ que trabajamos es un resultado remarcable.
+ Dado que en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SymmBlk"
@@ -158,20 +160,24 @@ key "SymmBlk"
 \end_inset
 
  se demuestra que hacer uso de las simetrías encontradas tiene un impacto
- positivo en los sistemas implementados, ya que los razonadores que trabajan
- con ontologías están basados en 
-\emph on
-tableaux
-\emph default
- (como los sistemas mencionados en 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "SymmBlk"
+ positivo en los sistemas implementados mejorando su rendimiento, y teniendo
+ en cuenta que tanto estos sistemas como los razonadores que trabajan con
+ ontologías están basados es tableaux, contamos con motivación suficiente
+ para creer que hay una posibilidad de mejorar los tiempos de ejecución
+ de estos razonadores al incorporar las simetrías que se encuentren.
+\end_layout
 
+\begin_layout Standard
+Sin embargo, todavía queda trabajo por hacer: solo se trabajó con la TBox
+ de cada ontología, el siguiente paso es extender el dominio la función
+ de traducción 
+\begin_inset Formula $\Psi$
 \end_inset
 
-), hay una posibilidad de mejorar los tiempos de ejecución de estos razonadores
- al incorporar las simetrías que se encuentren.
+ para que pueda trabajar con axiomas de la ABox.
+ Es importante tener presente que traducir más axiomas puede tener un impacto
+ en la cantidad de simetrías que encontramos, dado que podemos que podemos
+ introducir axiomas que rompan simetrías.
 \end_layout
 
 \end_body

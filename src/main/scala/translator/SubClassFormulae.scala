@@ -47,9 +47,9 @@ object SubClassFormulae {
           And(Diam(R(prop.asOWLObjectProperty().getIRI.getShortForm), Prop(filler.asInstanceOf[OWLNamedIndividual].getIRI.getShortForm)),
             Box(R(prop.asOWLObjectProperty().getIRI.getShortForm), Prop(filler.asInstanceOf[OWLNamedIndividual].getIRI.getShortForm)))
         }
-        case ObjectExactCardinality(n, p, f) => IDiam(R("="+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
-        case ObjectMaxCardinality(n, p, f) => IDiam(R("MAX"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
-        case ObjectMinCardinality(n, p, f) => IDiam(R("MIN"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectExactCardinality(n, p, f) => Diam(R("="+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectMaxCardinality(n, p, f) => Diam(R("MAX"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
+        case ObjectMinCardinality(n, p, f) => Diam(R("MIN"+n.toString+p.asOWLObjectProperty().getIRI.getShortForm),inspect(f.asInstanceOf[OWLClassExpression], axiom))
         case ObjectComplementOf(op) => Neg(inspect(op.asInstanceOf[OWLClassExpression], axiom))
         /** Unhandled cases */
         case _ => throw new MissingTranslationException(axiom.toString)
