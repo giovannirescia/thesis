@@ -324,9 +324,9 @@ Entre los sistemas más populares no basados en lógica encontramos dos: las
 \emph on
 redes semánticas
 \emph default
- y 
+ y las
 \emph on
-las estructuras (frames)
+ estructuras (frames)
 \emph default
 .
 \end_layout
@@ -384,12 +384,12 @@ key "Minsky"
 , el objetivo se centra en lograr conocimiento estructurado basándose en
  la capacidad de expresar relaciones entre estructuras.
  Una estructura representa cierto concepto y es caracterizada por un número
- de atributos, donde los valores de los éstos pueden ser elementos de algún
+ de atributos, donde los valores de éstos pueden ser elementos de algún
  dominio concreto (e.g., enteros, 
 \emph on
 strings
 \emph default
-) o identificadores de otras estructuras.
+ [conjunto de caractéres]) o identificadores de otras estructuras.
  Un ejemplo del uso de modelos basados en estructuras es 
 \emph on
 OKBC
@@ -397,7 +397,7 @@ OKBC
  
 \begin_inset CommandInset citation
 LatexCommand citep
-key "OKBCurl"
+key "OKBC"
 
 \end_inset
 
@@ -426,6 +426,13 @@ red
 \emph default
 , donde la estructura de cada red apunta a representar conjuntos de individuos
  y cómo éstos se relacionan entre sí.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Example
@@ -471,7 +478,7 @@ IS-A
 \begin_inset Quotes eld
 \end_inset
 
-es-un/una
+es-un/es-una
 \begin_inset Quotes erd
 \end_inset
 
@@ -523,15 +530,27 @@ rol
 \emph on
 restrición de valor
 \emph default
-, denotado por la etiqueta RV, que expresa una limitación en el rango de
- tipos de objetos que pueden relacionarse con el rol.
+, denotado por la etiqueta 
+\emph on
+RV
+\emph default
+, que expresa una limitación en el rango de tipos de objetos que pueden
+ relacionarse con el rol.
  En nuestro ejemplo, el rol tiene una restricción en cuanto a la cardinalidad,
  expresada como (
 \begin_inset Formula $0$
 \end_inset
 
-, NIL), donde el primer número es el límite inferior y el segundo número
- el límite superior (NIL representa infinito).
+, 
+\emph on
+nil
+\emph default
+), donde el primer número es el límite inferior y el segundo número el límite
+ superior (
+\emph on
+nil
+\emph default
+ representa infinito).
  Entonces, podría leerse como 
 \emph on
 un carnívoro es un animal que se alimenta de (
@@ -590,8 +609,8 @@ Representación de relaciones entre ciertos animales con una red genérica
 \end_layout
 
 \begin_layout Standard
-Una limitación de este tipo de representación es que, a medida que las relacione
-s entre los conceptos se vuelven más complejas, aumenta la dificultad para
+Una limitación de este tipo de representación es que a medida que las relaciones
+ entre los conceptos se vuelven más complejas, aumenta la dificultad para
  dar caracterizaciones precisas sobre qué tipos de relaciones pueden ser
  computadas y para garantizar la correctitud y completitud del sistema que
  razona sobre estas estructuras.
@@ -761,8 +780,24 @@ Con respecto a la semántica, un concepto es interpretado como un conjunto
  binarias.
  Los conceptos atómicos son interpretados como subconjuntos del dominio
  de interpretación, mientras que la semántica de los otros constructores
- es especificada definiendo el conjunto de individuos denotado por cada
- constructor.
+ es especificada definiendo el conjunto de 
+\emph on
+individuos
+\emph default
+ (donde un 
+\emph on
+individuo
+\emph default
+ es un elemento particular de un concepto, e.g., 
+\emph on
+W.A.
+ Mozart 
+\emph default
+podría ser un individuo de la clase 
+\emph on
+Músico
+\emph default
+) denotado por cada constructor.
  Por ejemplo, el concepto 
 \begin_inset Formula $C\sqcup D$
 \end_inset
@@ -801,18 +836,10 @@ D
  se interpreta como el operador intersección de conjuntos, pero sobre conceptos.
  Por último, las relaciones son conjuntos de pares de
 \emph on
- individuos
+ 
 \emph default
-, un individuo es un elemento particular de un concepto (e.g., 
-\emph on
-W.A.
- Mozart 
-\emph default
-podría ser un individuo de la clase 
-\emph on
-Músico
-\emph default
-).
+individuos.
+ 
 \end_layout
 
 \begin_layout Example
@@ -1077,12 +1104,8 @@ key "URI"
 \emph on
 Uniform Resource Identifier
 \emph default
-) es un 
-\emph on
-string
-\emph default
- (conjunto de caractéres) con un formato estandarizado que permite identificar
- recursos de forma única (e.g., documentos).
+) es un string con un formato estandarizado que permite identificar recursos
+ de forma única (e.g., documentos).
 \end_layout
 
 \begin_layout Standard
@@ -1193,13 +1216,14 @@ key "owlw3c"
  Está sintácticamente embebido dentro de RDF, así que como RDFS, provee
  un vocabulario estandarizado adicional.
  Como dijimos, el lenguaje OWL para ontologías, está basado en las lógicas
- de descripción (de hecho, al sublenguaje de OWL que está basado en 
-\begin_inset Formula $\mathcal{DL}$
+ de descripción (de hecho, al sublenguaje de OWL que está basado en lógicas
+ de descripción se lo refiere como 
+\emph on
+
+\begin_inset Formula $OWL_{DL}$
 \end_inset
 
- se lo refiere como 
-\emph on
-OWL DL
+
 \emph default
 ).
  Esto tiene dos consecuencias inmediatas: primero, OWL cuenta con una semántica
@@ -1209,6 +1233,10 @@ OWL DL
 \begin_layout Standard
 En esta tesis, OWL es de suma importancia, ya que es el lenguaje en el cual
  están expresadas todas las ontologías que utilizaremos.
+\end_layout
+
+\begin_layout Standard
+
 \end_layout
 
 \begin_layout Section
@@ -1234,10 +1262,9 @@ fig:rorschach
 
 \begin_layout Standard
 \begin_inset Float figure
-placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1551,8 +1578,8 @@ key "Orbe:2014aa"
 \end_inset
 
  hacia las lógicas de descripción.
- Ahora bien, ¿cómo es posible trasladar tales resultados de una lógica a
- otra? La conexión entre las dos lógicas es presentada en 
+ Es natural preguntarse, ¿cómo es posible trasladar tales resultados de
+ una lógica a otra? La conexión entre las dos lógicas es presentada en 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Schild"
@@ -1595,7 +1622,8 @@ chap:dl
 \end_inset
 
  damos una definición formal de la sintaxis y semántica para las lógicas
- de descripción y su relación con OWL.
+ de descripción, introducimos las nociones básicas de la web semántica y
+ mostramos la conexión entre las lógicas de descripción y OWL.
 \end_layout
 
 \begin_layout Standard
@@ -1611,7 +1639,7 @@ chap:dl2ml
 \end_inset
 
  junto a su sintaxis y semántica.
- El primer resultado teórico importante es presentado aquí también: la función
+ Un resultado teórico importante es presentado aquí también: la función
  de traducción 
 \begin_inset Formula $\Psi$
 \end_inset
@@ -1681,16 +1709,7 @@ chap:analisis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Marginal
-status open
-
-\begin_layout Plain Layout
-completar
-\end_layout
-
-\end_inset
-
-Por último, el 
+Por último, en el 
 \begin_inset Flex CT - auto cross-reference
 status open
 
@@ -1701,7 +1720,8 @@ chap:conclusiones
 
 \end_inset
 
-, sus límites y se discuten propuestas sobre trabajo futuro.
+ damos un resumen de lo hecho, junto con sus limitaciones y propuestas de
+ trabajo futuro.
 \end_layout
 
 \end_body

@@ -87,7 +87,7 @@ Análisis de Simetrías en Ontologías Existentes
 \begin_layout Standard
 En este capítulo presentamos los resultados experimentales obtenidos luego
  de ejecutar la herramienta presentada en el capítulo anterior, sobre ontologías
- existentes y en uso, obtenidas de la web
+ existentes y en uso, obtenidas de la Web
 \begin_inset Foot
 status collapsed
 
@@ -115,14 +115,10 @@ Comenzaremos por presentar el conjunto de ontologías utilizadas para evaluar
 \begin_layout Standard
 A continuación, se presenta una breve descripción de las ontologías sobre
  las cuales se pudo encontrar información.
- El 
-\begin_inset Flex CT - auto cross-reference
-status open
-
-\begin_layout Plain Layout
-
-tab:resumen-1
-\end_layout
+ El Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:resumen-1"
 
 \end_inset
 
@@ -207,7 +203,11 @@ FBbt XP: Es una ontología que representa la anatomía del
 \emph on
 Drosophila melanogaster
 \emph default
- (o como se la conoce comúnmente, mosca de la fruta)
+ (o como se la conoce comúnmente, 
+\emph on
+mosca de la fruta
+\emph default
+)
 \emph on
 .
 \end_layout
@@ -454,7 +454,7 @@ http://protegewiki.stanford.edu/wiki/Pr4_UG_ex_Pizza
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -601,7 +601,7 @@ cton
 \begin_inset Text
 
 \begin_layout Plain Layout
-fbbt_xp
+fbbt xp
 \end_layout
 
 \end_inset
@@ -857,7 +857,7 @@ wine
 \begin_inset Text
 
 \begin_layout Plain Layout
-family_example
+family
 \end_layout
 
 \end_inset
@@ -927,7 +927,7 @@ pizza
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resúmen sobre las ontologías 
+Resumen sobre las ontologías 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:resumen-1"
@@ -948,27 +948,19 @@ name "tab:resumen-1"
 \end_layout
 
 \begin_layout Standard
-Además de las ontologías presentadas en la 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-tab:resumen-1
-\end_layout
+Además de las ontologías presentadas en el Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:resumen-1"
 
 \end_inset
 
 , también utilizamos otras ontologías para las cuales no pudimos obtener
  información.
- La 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-tab:resumen-2
-\end_layout
+ El Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:resumen-2"
 
 \end_inset
 
@@ -979,7 +971,7 @@ tab:resumen-2
 \begin_inset Float table
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1228,7 +1220,7 @@ semintec
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resúmen sobre las otras ontologías 
+Resumen sobre las otras ontologías 
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:resumen-2"
@@ -1259,7 +1251,7 @@ Para correr los experimentos se utilizó una notebook con disco de estado
 \end_layout
 
 \begin_layout Standard
-Los cuadros 
+Los Cuadros 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:tabla-de-datos"
@@ -1276,7 +1268,7 @@ reference "tab:tabla-de-datos-extra"
  muestran los resultados obtenidos luego de correr las herramientas sobre
  las ontologías.
  Las columnas 
-\begin_inset Formula $T_{C},\,T_{dl2ml},\,T_{SY4NCL},\,T_{BLISS}$
+\begin_inset Formula $T_{C},\,T_{DL2ML},\,T_{SY4NCL},\,T_{BLISS}$
 \end_inset
 
  y 
@@ -1292,7 +1284,7 @@ reference "tab:tabla-de-datos-extra"
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -1398,7 +1390,7 @@ Tamaño del Grafo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mid A\mid$
+\begin_inset Formula $|A|$
 \end_inset
 
 
@@ -1433,7 +1425,7 @@ Tamaño del Grafo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $T_{dl2ml}$
+\begin_inset Formula $T_{DL2ML}$
 \end_inset
 
 
@@ -2083,7 +2075,7 @@ cton
 \uwave off
 \noun off
 \color none
-fbbt_xp
+fbbt xp
 \end_layout
 
 \end_inset
@@ -3929,7 +3921,7 @@ Las columnas
 \end_inset
 
  y 
-\begin_inset Formula $\mid A\mid$
+\begin_inset Formula $|A|$
 \end_inset
 
  representan el número de generadores y el tamaño del grupo de automorfismos,
@@ -3940,7 +3932,7 @@ Las columnas
 \begin_inset Float table
 wide false
 sideways true
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \align center
@@ -4046,7 +4038,7 @@ Tamaño del Grafo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\mid A\mid$
+\begin_inset Formula $|A|$
 \end_inset
 
 
@@ -4081,7 +4073,7 @@ Tamaño del Grafo
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $T_{dl2ml}$
+\begin_inset Formula $T_{DL2ML}$
 \end_inset
 
 
@@ -5319,14 +5311,10 @@ Análisis de los resultados
 \end_layout
 
 \begin_layout Standard
-Podríamos resumir los resultados del 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-tab:tabla-de-datos
-\end_layout
+Podríamos resumir los resultados del Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla-de-datos"
 
 \end_inset
 
@@ -5374,14 +5362,10 @@ Sobre el tiempo de ejecución
 \end_layout
 
 \begin_layout Standard
-El 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-tab:tabla-de-datos
-\end_layout
+El Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:tabla-de-datos"
 
 \end_inset
 
@@ -5418,7 +5402,7 @@ Otros análisis
 \end_layout
 
 \begin_layout Standard
-Concentrémonos ahora en los resultados de vv las ontologías 
+Concentrémonos ahora en los resultados de las ontologías 
 \emph on
 ncit
 \emph default
@@ -5465,7 +5449,7 @@ Otra observación importante a tener en cuenta es el tiempo de ejecución
 \end_inset
 
  con respecto al tamaño del grafo.
- El tamaño de grafo de la ontología 
+ El tamaño del grafo de la ontología 
 \emph on
 go
 \emph default

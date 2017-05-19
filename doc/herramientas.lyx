@@ -110,13 +110,10 @@ Arquitectura general
 
 \begin_layout Standard
 El siguiente diagrama describe los principales componentes así como el flujo
- de la herramienta de detección desarrollada
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://github.com/giovannirescia/thesis
-\end_layout
+ de la herramienta de detección desarrollada, disponible en 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "dl2ml"
 
 \end_inset
 
@@ -177,36 +174,30 @@ DL2ML
 , implementado en 
 \emph on
 Scala
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://www.scala-lang.org
-\end_layout
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scala"
 
 \end_inset
 
-
-\emph default
 , se encarga de manipular esta ontología, cargándola en memoria y realizando
  una serie de operaciones que describiremos a continuación.
  Para ello se utiliza 
 \emph on
 Scowl
 \emph default
-
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
-https://github.com/phenoscape/scowl
-\end_layout
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scowl"
 
 \end_inset
 
  una implementación de la 
 \emph on
-OWL API
+OWL API 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "OWLAPI"
@@ -222,11 +213,15 @@ key "OWLAPI"
 \begin_layout Standard
 La funcionalidad de DL2ML puede dividirse en dos tareas: primero toma la
  ontología de entrada y extrae todos los axiomas de la TBox.
- Luego, a cada axioma de la TBox se lo examina recursivamente usando la
- función de traducción vista en el Capítulo 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:dl2ml"
+ Luego, a cada axioma de la TBox se lo examina recursivamente utilizando
+ la función de traducción de la Definición 
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+defPsi
+\end_layout
 
 \end_inset
 
@@ -262,8 +257,15 @@ Una vez que contamos con nuestra fórmula en CNF modal, el módulo
 SY4NCL
 \series default
 \emph default
-, desarrollado en Haskell, construye el grafo de detección de simetrías,
- siguiendo el algoritmo descrito en la Definición 
+, desarrollado en Haskell 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "haskell"
+
+\end_inset
+
+, construye el grafo de detección de simetrías, siguiendo el algoritmo descrito
+ en la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"
@@ -1335,7 +1337,7 @@ Tipos de axiomas: SubClassOf, EquivalentClasses, DisjointClasses
 \emph on
 Nota: la creación de esta ontología es a modo ilustrativo.
  Para fines prácticos las ontologías están ya especificadas en OWL y las
- mismas son parseadas por el módulo dl2ml.
+ mismas son parseadas por el módulo DL2ML.
 \end_layout
 
 \begin_layout Standard

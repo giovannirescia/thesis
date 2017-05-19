@@ -85,7 +85,7 @@ Conclusiones y Trabajo Futuro
 \end_layout
 
 \begin_layout Standard
-El trabajo de esta Tesis fue principalmente la investigación de simetrías
+El trabajo de esta tesis fue principalmente la investigación de simetrías
  en lógicas de descripción.
  Pero en el camino recorrido para llegar a tales resultados se han obtenido
  algunos otros resultados secundarios.
@@ -106,7 +106,7 @@ Resumen de lo hecho
 La principal tarea de esta tesis fue el estudio de las simetrías en lógicas
  de descripción.
  Como caso de estudio particular trabajamos directamente buscando simetrías
- en ontologías existentes y en uso en la web.
+ en ontologías existentes y en uso en la Web.
 \end_layout
 
 \begin_layout Standard
@@ -135,14 +135,19 @@ Luego, dimos una introducción a las lógicas modales con su correspondiente
 Vimos, bajo ciertas restricciones, que el problema de detección de simetrías
  era equivalente al de detección de automorfismos, por lo que definimos
  un algoritmo para construir un grafo a partir de una fórmula en CNF modal,
- y luego así explotar los automorfismos de dicha grafo.
+ y luego así explotar los automorfismos de dicho grafo.
 \end_layout
 
 \begin_layout Standard
-Por último desarrollamos herramientas para la detección de simetrías en
- ontologías con resultados totalmente positivos: nuestra herramienta detectó
- simetrías en todas las ontologías con las que trabajamos, un resultado
- verdaderamente alentador.
+También analizamos en detalle los módulos desarrollados para la detección
+ de simetrías en ontologías, y dimos un ejemplo de uso muy simple para mostrar
+ intuitivamente su funcionamiento.
+\end_layout
+
+\begin_layout Standard
+Por último, probamos nuestra herramienta para detectar simetrías sobre ontología
+s existentes y en uso, obteniendo resultados totalmente positivos y alentadores:
+ se encontraron simetrías en todas las ontologías con las que trabajamos.
 \end_layout
 
 \begin_layout Section
@@ -169,15 +174,15 @@ key "SymmBlk"
 
 \begin_layout Standard
 Sin embargo, todavía queda trabajo por hacer: solo se trabajó con la TBox
- de cada ontología, el siguiente paso es extender el dominio la función
- de traducción 
+ de cada ontología, por lo que el siguiente paso es extender el dominio
+ la función de traducción 
 \begin_inset Formula $\Psi$
 \end_inset
 
  para que pueda trabajar con axiomas de la ABox.
  Es importante tener presente que traducir más axiomas puede tener un impacto
  en la cantidad de simetrías que encontramos, dado que podemos que podemos
- introducir axiomas que rompan simetrías.
+ introducir axiomas que rompan ciertas simetrías.
 \end_layout
 
 \end_body

@@ -113,9 +113,8 @@ key "DLHandBook"
 \end_inset
 
 .
- Una de las características principales de las lógicas de descripción, es
- que pueden verse como fragmentos decidibles de la lógica de primer orden
- 
+ Una de sus características principales, es que pueden verse como fragmentos
+ decidibles de la lógica de primer orden 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "DLHandBook"
@@ -126,9 +125,8 @@ key "DLHandBook"
 \end_layout
 
 \begin_layout Standard
-Las lógicas de descripción resultan muy útiles a la hora de representar
- bases de conocimiento donde el objetivo es poder representar y extraer
- información.
+A su vez, resultan muy útiles a la hora de representar bases de conocimiento
+ donde el objetivo es poder representar y extraer información.
  Las bases de conocimiento expresadas por las lógicas de descripción diferencian
  entre el conocimiento 
 \emph on
@@ -175,6 +173,7 @@ Assertional Box
 
 \begin_layout Standard
 De ahora en más, consideraremos a una base de conocimiento como una tupla
+ 
 \begin_inset Formula $\langle TBox,ABox\rangle$
 \end_inset
 
@@ -194,8 +193,8 @@ El lenguaje de una lógica de descripción se define en dos niveles.
 \end_inset
 
 ).
- En el segundo nivel se definen los operadores que se pueden utilizar para
- la creación de las fórmulas que corresponden a la TBox y a la ABox.
+ Y en el segundo nivel se definen los operadores que se pueden utilizar
+ para la creación de las fórmulas que corresponden a la TBox y a la ABox.
 \end_layout
 
 \begin_layout Standard
@@ -214,7 +213,7 @@ Como ejemplo, definamos el lenguaje de concepto de la lógica de descripción
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
+\begin_inset Newpage clearpage
 \end_inset
 
 
@@ -230,7 +229,12 @@ name "def:ConcLangALC"
 
 \end_inset
 
-Sea 
+(Sintaxis de 
+\begin_inset Formula $\mathsf{CON}_{\mathcal{ALC}}$
+\end_inset
+
+).
+ Sea 
 \begin_inset Formula $\mathcal{\mathsf{ATOM}}$
 \end_inset
 
@@ -515,8 +519,15 @@ La forma más básica de declaración en una TBox es la
 definición
 \emph default
  de concepto.
- Por ejemplo, podríamos definir el concepto de mujer como las personas que
- no son hombres
+ Por ejemplo, podríamos definir el concepto de 
+\emph on
+mujer
+\emph default
+ como 
+\emph on
+las personas que no son hombres
+\emph default
+
 \begin_inset Formula 
 \[
 Mujer\equiv Persona\sqcap\neg Hombre
@@ -565,6 +576,13 @@ axiomas de inclusión generales.
 todos los hombres son personas
 \emph default
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
 \end_layout
 
 \begin_layout Example
@@ -650,7 +668,14 @@ Julieta
 \emph on
 aserciones sobre conceptos
 \emph default
-), mientras que la segunda expresa que la capital de Islandia es Reikiavik
+), mientras que la segunda expresa que la capital de 
+\emph on
+Islandia
+\emph default
+ es 
+\emph on
+Reikiavik
+\emph default
  (a este tipo de aserciones también se las conoce como 
 \emph on
 aserciones sobre roles
@@ -659,7 +684,11 @@ aserciones sobre roles
 \emph on
 Batman
 \emph default
- es un Superhéroe.
+ es un 
+\emph on
+Superhéroe
+\emph default
+.
  La tarea de razonamiento básica en una ABox es 
 \emph on
 comprobación de instancias
@@ -1333,16 +1362,24 @@ subsunción
  Determinar la inclusión refiere al problema de comprobar si el concepto
  denotado por 
 \emph on
-D (subsumidor)
+D 
 \emph default
- es considerado más general que el concepto denotado por 
+(
 \emph on
-C
+subsumidor
 \emph default
-.
+) es considerado más general que el concepto denotado por 
+\emph on
+C 
+\emph default
+(
+\emph on
+subsumido
+\emph default
+).
  En otras palabras, comprueba si el concepto 
 \emph on
-C (subsumido)
+C
 \emph default
  siempre denota un subconjunto del conjunto denotado por 
 \emph on
@@ -1888,9 +1925,9 @@ key "brachman-lavesque"
 
 , se argumenta que hay un
 \emph on
- balance
+ 
 \emph default
- (o, 
+balance (
 \emph on
 tradeoff
 \emph default
@@ -2199,8 +2236,8 @@ key "SHIFSHOIN"
 \begin_layout Standard
 Ahora que contamos con una noción sobre qué cosas puede expresar en cada
  lógica de descripción, veamos cuánto cuesta razonar sobre cada una de éstas,
- teniendo en cuenta que a mayor poder expresivo, mayor será el costo de
- razonamiento.
+ teniendo en cuenta que por lo general a mayor poder expresivo, mayor será
+ el costo de razonamiento.
  La complejidad, en estos casos está dada por la inclusión de conceptos,
  i.e., por preguntar si 
 \begin_inset Formula $\mathcal{KB}\models C\sqsubseteq D$
@@ -2575,7 +2612,7 @@ Repasemos un poco ahora sobre ontologías, OWL, y su relación sintáctica
 \end_layout
 
 \begin_layout Subsection
-Qué es OWL
+¿Qué es OWL?
 \end_layout
 
 \begin_layout Standard
@@ -2597,7 +2634,7 @@ key "owlw3c"
 
 \end_inset
 
- es lenguaje en el cual se definen las ontologías para la Web Semántica.
+ es lenguaje en el cual se definen las ontologías para la web semántica.
  Más precisamente, OWL es un lenguaje de ontologías, producido por el 
 \emph on
 W3C Web Ontology Working Group
@@ -2613,13 +2650,13 @@ Es importante resaltar que OWL no fue diseñado de manera aislada, sino que
 \end_layout
 
 \begin_layout Subsection
-Por qué usamos OWL
+¿Por qué usamos OWL?
 \end_layout
 
 \begin_layout Standard
-En la web semántica cuenta con un significado explícito, facilitando la
- tarea de las computadoras para procesar e integrar automáticamente la informaci
-ón que se encuentra en la Web.
+La web semántica cuenta con un significado explícito, facilitando la tarea
+ de las computadoras para procesar e integrar automáticamente la información
+ que se encuentra en la Web.
  La web semántica se basa en la capacidad de XML para definir esquemas de
  etiquetas personalizados y en el enfoque flexible de RDF para representar
  datos.
@@ -2639,6 +2676,13 @@ OWL ha sido diseñado para cumplir con tales requisitos de un lenguaje de
  ontologías para la Web.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Orígenes
 \end_layout
@@ -2646,11 +2690,11 @@ Orígenes
 \begin_layout Standard
 El diseño de OWL fue el resultado de una variedad de influencias: paradigmas
  para la representación de conocimiento, lenguajes para ontologías existentes
- y lenguajes de la Web Semántica existentes.
+ y lenguajes de la web semántica existentes.
 \end_layout
 
 \begin_layout Standard
-OWL no fue el primer lenguaje para ontologías usadas en la web, y su diseño
+OWL no fue el primer lenguaje para ontologías usadas en la Web, y su diseño
  fue influenciado por otros lenguajes existentes, tales como: RDFS, 
 \emph on
 SHOE
@@ -2688,7 +2732,7 @@ key "DAMLONT"
 
 \end_inset
 
-y 
+ y 
 \emph on
 DAML+OIL
 \emph default
@@ -2736,10 +2780,10 @@ fig:w3cstack
 \end_layout
 
 \begin_layout Standard
-Las lógicas de descripción han tenido un fuerte impacto en el diseño de
- OWL; en particular sobre el formalismo de la semántica, la elección de
- los constructores del lenguaje y la integración de tipos de datos y valores
- de datos.
+Como mencionamos, las lógicas de descripción han tenido un fuerte impacto
+ en el diseño de OWL; en particular sobre el formalismo de la semántica,
+ la elección de los constructores del lenguaje y la integración de tipos
+ de datos y valores de datos.
  Casos concretos como 
 \begin_inset Formula $OWL_{Lite}$
 \end_inset
@@ -2761,7 +2805,7 @@ Las lógicas de descripción han tenido un fuerte impacto en el diseño de
 \end_layout
 
 \begin_layout Standard
-En el contexto de la Web Semántica, donde los usuarios experimentados desearían
+En el contexto de la web semántica, donde los usuarios experimentados desearían
  crear o modificar ontologías, la legibilidad y la facilidad de uso son
  consideraciones importantes a la hora de diseñar un lenguaje de ontologías.
  En el diseño de OIL, estos requerimientos fueron cumplidos proveyendo una
@@ -2781,18 +2825,7 @@ key "Protege"
 
 \end_inset
 
- y 
-\emph on
-OKBC 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "OKBC"
-
-\end_inset
-
-
-\emph default
-.
+ y OKBC.
 \end_layout
 
 \begin_layout Standard
@@ -2808,8 +2841,8 @@ La tercer mayor influencia en el diseño de OWL fue el requisito de mantener
 A simple vista, este requerimiento podría ser satisfecho fácilmente: se
  le podría dar a OWL una sintaxis basada en RDF.
  Sin embargo, para poder proveer una máxima compatibilidad, era también
- necesario asegurar que la semántica de las ontologías en OWL eran consistentes
- con la semántica de RDF.
+ necesario asegurar que la semántica de las ontologías en OWL fueran consistente
+s con la semántica de RDF.
  Esto no fue una tarea fácil de lograr, ya que OWL provee una expresividad
  mucho mayor que RDF.
  Como resultado, se implementaron tres soluciones para abordar el problema:
@@ -2819,15 +2852,11 @@ A simple vista, este requerimiento podría ser satisfecho fácilmente: se
 \begin_inset Formula $OWL_{Lite}$
 \end_inset
 
-: por último, 
-\begin_inset Formula $OWL_{Lite}$
-\end_inset
-
- (un subconjunto sintáctico de 
+: es un subconjunto sintáctico de 
 \begin_inset Formula $OWL_{DL}$
 \end_inset
 
-) es adecuado cuando se busca una sintaxis más simple y una inferencia aún
+, adecuado cuando se busca una sintaxis más simple y una inferencia aún
  más manejable.
 \end_layout
 
@@ -2847,8 +2876,8 @@ A simple vista, este requerimiento podría ser satisfecho fácilmente: se
 \begin_inset Formula $OWL_{Full}$
 \end_inset
 
-: si se considera como más importante a la compatibilidad con RDF y RDFS,
- entonces 
+: por último, si se considera como más importante a la compatibilidad con
+ RDF y RDFS, entonces 
 \begin_inset Formula $OWL_{Full}$
 \end_inset
 
@@ -2879,7 +2908,7 @@ Como mencionamos anteriormente, tres sublenguajes de OWL han sido diseñados
  de expresividad y usabilidad:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 \begin_inset Formula $\mathbf{OWL_{Lite}}$
 \end_inset
 
@@ -2898,7 +2927,7 @@ Como mencionamos anteriormente, tres sublenguajes de OWL han sido diseñados
 , es decidible y tiene complejidad ExpTime en cuanto a la inferencia.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 \begin_inset Formula $\mathbf{OWL_{DL}}$
 \end_inset
 
@@ -2917,7 +2946,7 @@ d (está garantizado que todas las inferencias son computables) y decibilidad
 .
 \end_layout
 
-\begin_layout Standard
+\begin_layout Enumerate
 \begin_inset Formula $\mathbf{OWL_{Full}}$
 \end_inset
 
@@ -2991,15 +3020,19 @@ fig:owlver
 
 \end_inset
 
-, vemos cómo la siguiente fórmula en 
-\begin_inset Formula $\mathcal{DL}$
+, vemos cómo la siguiente fórmula expresada en 
+\begin_inset Formula $\mathcal{ALC}$
 \end_inset
 
  
-\begin_inset Formula $Persona\sqcap\forall tieneHijo(Doctor\sqcup\exists tieneHijo.Doctor)$
+\begin_inset Formula $\chi=Persona\sqcap\forall tieneHijo(Doctor\sqcup\exists tieneHijo.Doctor)$
 \end_inset
 
- puede ser escrita en lenguaje OWL DL.
+, puede ser escrita en lenguaje 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3535,8 +3568,6 @@ n R C
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang english
 Una parte de la sintaxis de 
 \begin_inset Formula $OWL_{DL}$
 \end_inset
@@ -3680,7 +3711,11 @@ status open
 \begin_layout Plain Layout
 
 \lang english
-Fórmula escrita en OWL-DL
+Fórmula escrita en 
+\begin_inset Formula $OWL_{DL}$
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:owlver"
@@ -4081,8 +4116,6 @@ o
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\lang english
 Algunas construcciones extras
 \begin_inset CommandInset label
 LatexCommand label

@@ -114,7 +114,11 @@ key "Orbe:2014aa"
 \end_layout
 
 \begin_layout Definition
-(Permutación).
+
+\emph on
+(Permutación)
+\emph default
+.
  
 \emph on
 Una 
@@ -138,10 +142,10 @@ notación cíclica
 \end_layout
 
 \begin_layout Definition
-(Notación cíclica).
- 
+
 \emph on
-Sea A un conjunto finito y sean 
+(Notación cíclica).
+ Sea A un conjunto finito y sean 
 \begin_inset Formula $a_{1},...,a_{n}$
 \end_inset
 
@@ -191,10 +195,10 @@ transposición.
 \end_layout
 
 \begin_layout Definition
-(Permutación de literales proposicionales).
- 
+
 \emph on
-Una
+(Permutación de literales proposicionales).
+ Una
 \emph default
  permutación de literales proposicionales
 \emph on
@@ -262,10 +266,10 @@ permutación
 \end_layout
 
 \begin_layout Definition
-(Conjunto Completo, Consistente y Generado de literales proposicionales).
- 
+
 \emph on
-Un conjunto de literales proposicionales L es 
+(Conjunto Completo, Consistente y Generado de literales proposicionales).
+ Un conjunto de literales proposicionales L es 
 \emph default
 completo
 \emph on
@@ -305,7 +309,7 @@ consistente
 \end_inset
 
  y 
-\begin_inset Formula $p\notin L$
+\begin_inset Formula $p\notin v$
 \end_inset
 
  si 
@@ -350,10 +354,10 @@ consistentes
 \end_layout
 
 \begin_layout Definition
-(Permutación Consistente).
- 
+
 \emph on
-Una permutación 
+(Permutación Consistente).
+ Una permutación 
 \begin_inset Formula $\sigma$
 \end_inset
 
@@ -483,10 +487,10 @@ C, donde C es una cláusula en CNF modal.
 \end_layout
 
 \begin_layout Definition
-(Permutación de una fórmula).
- 
+
 \emph on
-Sea 
+(Permutación de una fórmula).
+ Sea 
 \begin_inset Formula $\varphi$
 \end_inset
 
@@ -740,10 +744,10 @@ para C una cláusula en CNF modal
 \end_layout
 
 \begin_layout Definition
-(Simetría).
- 
+
 \emph on
-Sea 
+(Simetría).
+ Sea 
 \begin_inset Formula $\varphi$
 \end_inset
 
@@ -794,7 +798,11 @@ También necesitamos considerar el efecto de aplicar permutaciones a los
 \end_layout
 
 \begin_layout Definition
+
+\emph on
 (Permutación de un modelo).
+
+\emph default
  
 \emph on
 Sea 
@@ -881,11 +889,15 @@ key "Orbe:2014aa"
 \end_layout
 
 \begin_layout Definition
+
+\emph on
 (Conjunto de Modelos de 
 \begin_inset Formula $\varphi$
 \end_inset
 
 ).
+
+\emph default
  
 \emph on
 Sea 
@@ -1275,7 +1287,11 @@ key "Orbe:2014aa"
 \end_layout
 
 \begin_layout Definition
-(Profundidad Modal).
+
+\emph on
+(Profundidad Modal)
+\emph default
+.
  
 \emph on
 La 
@@ -1538,7 +1554,11 @@ A menos que se indique lo contrario, trabajaremos con fórmulas en CNF modal,
 \end_layout
 
 \begin_layout Definition
+
+\emph on
 (Variables proposicionales de una fórmula).
+
+\emph default
  
 \emph on
 Sea 
@@ -1565,10 +1585,10 @@ Sea
 \end_layout
 
 \begin_layout Definition
-(Cláusulas top y cláusulas modales).
- 
+
 \emph on
-Sea 
+(Cláusulas top y cláusulas modales).
+ Sea 
 \begin_inset Formula $\varphi$
 \end_inset
 
@@ -1613,7 +1633,11 @@ función de tipado:
 \end_layout
 
 \begin_layout Definition
-(Función de Tipado).
+
+\emph on
+(Función de tipado)
+\emph default
+.
  
 \emph on
 Sea s: 
@@ -1664,7 +1688,11 @@ name "algo-sim-glob"
 
 \end_inset
 
-(Algoritmo de construcción de grafos).
+
+\emph on
+(Algoritmo de construcción de grafos)
+\emph default
+.
  
 \emph on
 Sea 
@@ -1832,7 +1860,7 @@ Para una fórmula con P variables proposicionles, C cláusulas top, M cláusulas
 \begin_layout Example
 
 \emph on
-Considere la fórmula modal
+Consideremos la fórmula modal
 \emph default
  
 \begin_inset Formula $\varphi=(a\lor[m](b\lor\neg[m]c))\land(b\lor[m](a\lor\neg[m]c))$
@@ -1844,13 +1872,21 @@ Considere la fórmula modal
 \begin_layout Example
 
 \emph on
-La figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:ejemplo-grafo-4-1"
+La 
+\emph default
+
+\begin_inset Flex CT - auto cross-reference
+status collapsed
+
+\begin_layout Plain Layout
+
+fig:ejemplo-grafo-4-1
+\end_layout
 
 \end_inset
 
+
+\emph on
  muestra su grafo 
 \begin_inset Formula $G(\varphi)$
 \end_inset
@@ -2014,7 +2050,7 @@ reference "teo4.3"
 
 \end_inset
 
- nos asegura que el algoritmo es correcto es decir, que no se detectarán
+ nos asegura que el algoritmo es correcto, es decir, que no se detectarán
  simetrías espúreas (o sea, automorfismos del grafo que no son simetrías
  de la fórmula).
 \end_layout
@@ -2106,7 +2142,7 @@ Este capítulo hizo foco en la detección de simetrías en lógicas modales,
 
 \begin_layout Standard
 Primero dimos una definición formal de lo que es una simetría.
- Luego, definimos el algoritmo 
+ Luego, utilizamos el algoritmo de la Definición 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "algo-sim-glob"

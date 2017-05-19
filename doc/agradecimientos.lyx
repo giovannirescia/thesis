@@ -149,30 +149,42 @@ Agradecimientos
 \end_layout
 
 \begin_layout Standard
-Agradezco principalmente al Dr.
- Ezequiel Orbe por haber depositado su confianza en mí para realizar este
- trabajo y haber estado siempre presente durante el desarrollo del mismo,
- corrigiendo, sugiriendo e incluso estudiando nuevo material para ir mejorando
- el trabajo en cada iteración.
+Agradezco principalmente a mi director, el Dr.
+\begin_inset Formula $\,\,$
+\end_inset
+
+Ezequiel Orbe, por haber depositado su confianza en mí para realizar este
+ trabajo, por haberme ayudado a mejorarlo en cada iteración y por hacerse
+ siempre un tiempo para despejar mis dudas.
 \end_layout
 
 \begin_layout Standard
 Al Dr.
- Carlos Areces, quien ha estado siempre dispuesto a colaborar durante el
- desarrollo de esta Tesis aportando su vasta experiencia en los temas tratados
- aquí.
+\begin_inset Formula $\,\,$
+\end_inset
+
+Carlos Areces, quien ha colaborado durante el desarrollo de esta tesis aportando
+ su vasta experiencia en los temas tratados aquí.
+ Su contribución ha sido fundamental para este trabajo.
 \end_layout
 
 \begin_layout Standard
 Al Dr.
- Miguel Pagano, porque sus las palabras de aliento hicieron posible que
- este trabajo de Tesis lleve mi nombre.
+\begin_inset Formula $\,\,$
+\end_inset
+
+Miguel Pagano, porque sus palabras de aliento hicieron posible que este
+ trabajo de tesis lleve mi nombre.
 \end_layout
 
 \begin_layout Standard
-A mis amigos que me han acompañado en estos años de mi vida académica con
- quienes compartí incontables horas de estudio, litros de mate, líneas de
- código y vueltas al Paseo del Buen Pastor.
+A mis amigos con quienes compartí mi vida académica a través de incontables
+ horas de estudio, litros de mate, líneas de código y vueltas al Paseo del
+ Buen Pastor.
+\end_layout
+
+\begin_layout Standard
+A Alejandro, por siempre motivarme e inspirarme a apuntar alto.
 \end_layout
 
 \begin_layout Standard
@@ -181,7 +193,7 @@ A Facundo y Ernesto, porque en cada juntada se celebra la amistad.
 
 \begin_layout Standard
 \align right
-Córdoba, 17/05/2017
+Córdoba, 19/05/2017
 \end_layout
 
 \begin_layout Standard
@@ -197,10 +209,6 @@ endgroup
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 

@@ -106,7 +106,8 @@ Comencemos presentando los conceptos principales de lógicas modales que
 \begin_layout Definition
 
 \emph on
-(Sintaxis) Sea 
+(Sintaxis).
+ Sea 
 \family sans
 \emph default
 PROP
@@ -231,7 +232,8 @@ Modelos de Kripke.
 \begin_layout Definition
 
 \emph on
-(Modelos) Un modelo (o modelo de Kripke)
+(Modelos).
+ Un modelo (o modelo de Kripke)
 \emph default
  
 \begin_inset Formula $\mathcal{M}$
@@ -499,7 +501,8 @@ name "dlModml"
 
 \end_inset
 
-(Semántica) Sea 
+(Semántica).
+ Sea 
 \begin_inset Formula $\mathcal{M=}\langle\mathcal{I},\Delta\rangle$
 \end_inset
 
@@ -507,7 +510,7 @@ name "dlModml"
 \begin_inset Formula $\Delta$
 \end_inset
 
- es un conjunto no vació e 
+ es un conjunto no vacío e 
 \begin_inset Formula $\mathcal{I}:\mathsf{FORM}\rightarrow\mathcal{P}(\Delta)$
 \end_inset
 
@@ -879,11 +882,9 @@ Lógicas modales en términos de lógicas de descripción
 \begin_layout Standard
 Ahora trazaremos el nexo sintáctico entre las lógicas modales y las lógicas
  de descripción.
- Como mencionamos anteriormente, distintas clases de lenguajes en 
-\begin_inset Formula $\mathcal{DL}$
-\end_inset
-
- cuentan con diferente expresividad, y por lo tanto, complejidad computacional.
+ Como mencionamos anteriormente, distintas clases de lenguajes en lógicas
+ de descripción cuentan con diferente expresividad, y por lo tanto, complejidad
+ computacional.
  Por ahora nos concentraremos solo en 
 \begin_inset Formula $\mathcal{ALC}$
 \end_inset
@@ -1279,7 +1280,7 @@ A
 s reales que estén implementadas y sean utilizadas por los razonadores de
  lógicas de descripción, y las mismas están escritas con el lenguaje OWL
  (
-\begin_inset Formula $OWL_{\text{\mathcal{DL}}},$
+\begin_inset Formula $OWL_{DL},$
 \end_inset
 
  para ser precisos).
@@ -2103,16 +2104,12 @@ reference "equivF"
 
 \end_inset
 
- se puede deducir la correctitud de la traducción de forma intuitiva analizando
+, se puede deducir la correctitud de la traducción de forma intuitiva analizando
  algunas de las diferentes reglas que la componen.
- Para ello utilizaremos también el 
-\begin_inset Flex CT - auto cross-reference
-status collapsed
-
-\begin_layout Plain Layout
-
-tab:DL-OWL
-\end_layout
+ Para ello utilizaremos también el Cuadro 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:DL-OWL"
 
 \end_inset
 
