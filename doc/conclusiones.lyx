@@ -181,8 +181,8 @@ Sin embargo, todavía queda trabajo por hacer: solo se trabajó con la TBox
 
  para que pueda trabajar con axiomas de la ABox.
  Es importante tener presente que traducir más axiomas puede tener un impacto
- en la cantidad de simetrías que encontramos, dado que podemos que podemos
- introducir axiomas que rompan ciertas simetrías.
+ en la cantidad de simetrías que encontramos, dado que podemos  introducir
+ axiomas que rompan ciertas simetrías.
 \end_layout
 
 \end_body
