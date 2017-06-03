@@ -842,7 +842,7 @@ dlModml
 
  nos permite aplicar modelos de lógicas de descripción a fórmulas de lógicas
  modales.
- A continuación, veremos cómo podemos rescribir fórmulas modales cómo fórmulas
+ A continuación, veremos cómo podemos reescribir fórmulas modales cómo fórmulas
  de lógicas de descripción.
 \end_layout
 
@@ -870,7 +870,7 @@ Schild también notó que el nexo entre lógicas modales y lógicas de descripci
 \emph on
 satisfacibilidad de concepto
 \emph default
-.
+s.
  La lógica modal básica no es tan expresiva como el razonamiento sobre ABox
  o inferencia sobre definiciones de una TBox.
 \end_layout
@@ -1243,8 +1243,8 @@ A
 \end_layout
 
 \begin_layout Standard
-Para dar cuenta de la ABox hacen falta los operadores modales que tienen
- las lógicas híbridas 
+Para representar la ABox es necesario contar con los operadores modales
+ que tienen las lógicas híbridas 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Areces"
@@ -1305,7 +1305,7 @@ name "defPsi"
 \end_inset
 
  el conjunto de fórmulas de lógicas de descripción expresadas en OWL, 
-\begin_inset Formula $\mathcal{F_{ML}}$
+\begin_inset Formula $\mathsf{FORM}$
 \end_inset
 
  el conjunto de fórmulas modales y sea 
@@ -1335,7 +1335,7 @@ name "defPsi"
 
 .
  Entonces 
-\begin_inset Formula $\Psi:D_{\Psi}\rightarrow\mathcal{F_{ML}}$
+\begin_inset Formula $\Psi:D_{\Psi}\rightarrow\mathcal{\mathsf{FORM}}$
 \end_inset
 
  queda definida de la siguiente manera:
@@ -1343,7 +1343,7 @@ name "defPsi"
 
 \begin_layout Standard
 \begin_inset Tabular
-<lyxtabular version="3" rows="17" columns="3">
+<lyxtabular version="3" rows="18" columns="3">
 <features islongtable="true" longtabularalignment="center">
 <column alignment="right" valignment="top">
 <column alignment="center" valignment="top">
@@ -1567,11 +1567,11 @@ name "defPsi"
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" usebox="none">
+<cell multirow="3" alignment="right" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Psi(EquivalentClasses(\mathcal{C}_{1}\equiv\mathcal{C}))$
+\begin_inset Formula $\Psi(EquivalentClasses(\mathcal{C}_{1}\equiv\mathcal{C}_{2}))$
 \end_inset
 
 
@@ -1579,7 +1579,7 @@ name "defPsi"
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" usebox="none">
+<cell multirow="3" alignment="center" valignment="middle" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1595,7 +1595,39 @@ name "defPsi"
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1})$
+\begin_inset Formula $\Psi(SubClassOf(\mathcal{C}_{1}\,\mathcal{C}_{2}))\,\land$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\Psi(SubClassOf(\mathcal{C}_{2}\,\mathcal{C}_{1}))$
 \end_inset
 
 
@@ -2308,7 +2340,15 @@ C
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $\mathbf{\Psi(EquivalentClasses(\mathcal{C}_{1}\mathcal{C}_{2}))\doteq\Psi(\mathcal{C}_{1}\sqsubseteq\mathcal{C}_{2})\land\Psi(\mathcal{C}_{2}\sqsubseteq\mathcal{C}_{1}):}$
+\begin_inset Formula $\mathbf{\Psi(EquivalentClasses(\mathcal{C}_{1}\mathcal{C}_{2}))\doteq\Psi(SubClassOf(\mathcal{C}_{1}\,\mathcal{C}_{2}))\land}$
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $\mathbf{\Psi(SubClassOf(\mathcal{C}_{2}\,\mathcal{C}_{1})):}$
 \end_inset
 
  La equivalencia de conjuntos no es nada menos que una doble inclusión.

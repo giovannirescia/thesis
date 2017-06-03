@@ -167,7 +167,7 @@ key "SymmBlk"
  se demuestra que hacer uso de las simetrías encontradas tiene un impacto
  positivo en los sistemas implementados mejorando su rendimiento, y teniendo
  en cuenta que tanto estos sistemas como los razonadores que trabajan con
- ontologías están basados es tableaux, contamos con motivación suficiente
+ ontologías están basados en tableaux, contamos con motivación suficiente
  para creer que hay una posibilidad de mejorar los tiempos de ejecución
  de estos razonadores al incorporar las simetrías que se encuentren.
 \end_layout
@@ -181,7 +181,7 @@ Sin embargo, todavía queda trabajo por hacer: solo se trabajó con la TBox
 
  para que pueda trabajar con axiomas de la ABox.
  Es importante tener presente que traducir más axiomas puede tener un impacto
- en la cantidad de simetrías que encontramos, dado que podemos  introducir
+ en la cantidad de simetrías que encontramos, dado que podemos introducir
  axiomas que rompan ciertas simetrías.
 \end_layout
 

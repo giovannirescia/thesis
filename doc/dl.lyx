@@ -1446,7 +1446,7 @@ Sean,
 \begin_inset Formula $\mathcal{M}\models\mathcal{KB}$
 \end_inset
 
- si y solo si
+ si y solo si para todo
 \end_layout
 
 \begin_layout Standard
@@ -1461,7 +1461,7 @@ Sean,
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C_{i}\sqsubseteq C_{j}\in TBox$
+\begin_inset Formula $C_{i}\sqsubseteq C_{j}\in TBox$
 \end_inset
 
 
@@ -1498,7 +1498,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C\equiv D\in TBox$
+\begin_inset Formula $C\equiv D\in TBox$
 \end_inset
 
 
@@ -1535,7 +1535,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,C(a)\in ABox$
+\begin_inset Formula $C(a)\in ABox$
 \end_inset
 
 
@@ -1572,7 +1572,7 @@ vale
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\forall\,R(a,b)\in ABox$
+\begin_inset Formula $R(a,b)\in ABox$
 \end_inset
 
 
@@ -2762,8 +2762,8 @@ http://www.w3.org/2001/sw/WebOnt/charter
 \begin_layout Standard
 En particular, las lógicas de descripción tuvieron mucho impacto en la especific
 ación formal de OWL, mientras que su estructura fue influenciada por el
- paradigmas de estructuras, y la sintaxis RDF/XML estuvo dada por un requerimien
-to de compatibilidad con respecto a RDF (pues en la 
+ paradigma de estructuras, y la sintaxis RDF/XML estuvo dada por un requerimient
+o de compatibilidad con respecto a RDF (pues en la 
 \begin_inset Flex CT - auto cross-reference
 status collapsed
 
@@ -2894,7 +2894,7 @@ Variantes de OWL
 \end_layout
 
 \begin_layout Standard
-Encontrar el balance justo entre la expresividad del lenguaje y la eficacia
+Encontrar el balance justo entre la expresividad del lenguaje y la eficiencia
  a la hora de razonar (i.e., escalabilidad) fue central para el diseño de
  OWL.
  Pues contar con construcciones complejas para representar conocimiento

@@ -197,6 +197,72 @@ transposición.
 \begin_layout Definition
 
 \emph on
+(Literales y CNF modal).
+ Un 
+\emph default
+literal proposicional 
+\emph on
+l es una variable proposicional p o su negación 
+\begin_inset Formula $\lnot p$
+\end_inset
+
+.
+ El conjunto de literales sobre 
+\begin_inset Formula $\mathsf{PROP}$
+\end_inset
+
+ es 
+\begin_inset Formula $\mathsf{PLIT=PROP}\cup\{\lnot p\mid p\in\mathsf{PROP}\}$
+\end_inset
+
+.
+ Una fórmula modal está en 
+\emph default
+forma normal conjuntiva modal (CNF modal) 
+\emph on
+si es una conjunción de cláusulas en CNF modal.
+ Una cláusula 
+\emph default
+en CNF modal
+\emph on
+ es una disyunción de literales proposicionales y modales.
+ Un 
+\emph default
+literal modal
+\emph on
+ es una fórmula de la forma 
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C o 
+\begin_inset Formula $\lnot$
+\end_inset
+
+
+\emph default
+[
+\emph on
+m
+\emph default
+]
+\emph on
+C, donde C es una cláusula en CNF modal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Definition
+
+\emph on
 (Permutación de literales proposicionales).
  Una
 \emph default
@@ -411,72 +477,6 @@ key "TeoriaGrupos,TeoGrupos2"
 , las permutaciones consistentes forman un subgrupo del grupo de todas las
  permutaciones sobre un determinado conjunto, ya que la composición de permutaci
 ones consistentes da como resultado una permutación consistente.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\end_layout
-
-\begin_layout Definition
-
-\emph on
-(Literales y CNF modal).
- Un 
-\emph default
-literal proposicional 
-\emph on
-l es una variable proposicional p o su negación 
-\begin_inset Formula $\lnot p$
-\end_inset
-
-.
- El conjunto de literales sobre 
-\begin_inset Formula $\mathsf{PROP}$
-\end_inset
-
- es 
-\begin_inset Formula $\mathsf{PLIT=PROP}\cup\{\lnot p\mid p\in\mathsf{PROP}\}$
-\end_inset
-
-.
- Una fórmula modal está en 
-\emph default
-forma normal conjuntiva modal (CNF modal) 
-\emph on
-si es una conjunción de cláusulas en CNF modal.
- Una cláusula 
-\emph default
-en CNF modal
-\emph on
- es una disyunción de literales proposicionales y modales.
- Un 
-\emph default
-literal modal
-\emph on
- es una fórmula de la forma 
-\emph default
-[
-\emph on
-m
-\emph default
-]
-\emph on
-C o 
-\begin_inset Formula $\lnot$
-\end_inset
-
-
-\emph default
-[
-\emph on
-m
-\emph default
-]
-\emph on
-C, donde C es una cláusula en CNF modal.
 \end_layout
 
 \begin_layout Standard
@@ -1058,9 +1058,9 @@ reference "teo4.1"
 
 \end_inset
 
- nos provee de una mecanismo de inferencia que puede ser utilizado en toda
- situación donde exista algún tipo de consecuencia lógica involucrada durante
- el razonamiento modal automático.
+ nos provee un mecanismo de inferencia que puede ser utilizado en toda situación
+ donde exista algún tipo de consecuencia lógica involucrada durante el razonamie
+nto modal automático.
  Sin lugar a dudas, aplicar una permutación es computacionalmente mas “barato”
  que aplicar una expansión en un tableaux 
 \begin_inset CommandInset citation
@@ -1701,7 +1701,7 @@ Sea
 
  una fórmula en CNF modal y t una función de tipado.
  El grafo 
-\begin_inset Formula $G(\varphi)=(V,E_{1},E_{2})$
+\begin_inset Formula $G(\varphi)=(V,E)$
 \end_inset
 
  se construye de la siguiente forma:
@@ -1736,7 +1736,7 @@ Agregar dos nodos de color (tipo)
 
 \emph on
 Agregar un arco 
-\begin_inset Formula $E_{1}$
+\begin_inset Formula $E$
 \end_inset
 
  entre el literal positivo y el literal negativo para asegurar consistencia
@@ -1775,7 +1775,7 @@ name "enu:2-b"
 \end_inset
 
 Para cada literal proposicional l que ocurre en C, agregar un arco 
-\begin_inset Formula $E_{1}$
+\begin_inset Formula $E$
 \end_inset
 
  entre el nodo para C y el nodo para l.
@@ -1814,7 +1814,7 @@ Agregar un nodo cláusula de color
 
 \emph on
 Agregar un arco 
-\begin_inset Formula $E_{1}$
+\begin_inset Formula $E$
 \end_inset
 
  entre el nodo para C y el nodo para C'.
@@ -1851,7 +1851,7 @@ Para una fórmula con P variables proposicionles, C cláusulas top, M cláusulas
 \end_inset
 
  colores y 
-\begin_inset Formula $(2|P|+C+M)$
+\begin_inset Formula $(2P+C+M)$
 \end_inset
 
  nodos.
@@ -1994,7 +1994,7 @@ Sea
 \end_inset
 
  una fórmula en CNF modal y 
-\begin_inset Formula $G(\varphi)=(V,E_{\text{1}},E_{2})$
+\begin_inset Formula $G(\varphi)=(V,E)$
 \end_inset
 
  el grafo coloreado construido a partir de la Definición 

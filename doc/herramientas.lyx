@@ -365,7 +365,7 @@ fig:ontologiaDL
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -746,44 +746,6 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $caballo$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $\equiv$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-\begin_inset Formula $mamífero\sqcap\exists cuadrúpedo.mamífero$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Formula $gato$
 \end_inset
 
@@ -796,7 +758,7 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\equiv$
+\begin_inset Formula $\sqsubseteq$
 \end_inset
 
 
@@ -834,7 +796,45 @@ status open
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $\equiv$
+\begin_inset Formula $\sqsubseteq$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $mamífero\sqcap\exists cuadrúpedo.mamífero$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $caballo$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sqsubseteq$
 \end_inset
 
 
@@ -1165,19 +1165,23 @@ status open
 \begin_layout Plain Layout
 
 34.
- xs += caballo EquivalentTo (mamífero and (cuadrúpedo some mamífero)) 
+ xs += gato SubClassOf (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
 35.
- xs += gato EquivalentTo (mamífero and (cuadrúpedo some mamífero))
+ xs += perro SubClassOf (mamífero and (cuadrúpedo some mamífero))
 \end_layout
 
 \begin_layout Plain Layout
 
 36.
- xs += perro EquivalentTo (mamífero and (cuadrúpedo some mamífero))
+ xs += caballo SubClassOf (mamífero and (cuadrúpedo some mamífero)) 
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
