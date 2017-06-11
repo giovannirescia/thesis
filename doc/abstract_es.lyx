@@ -1,0 +1,221 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass classicthesis
+\use_default_options true
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+clearpage
+\backslash
+relax
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+cleardoublepage
+\backslash
+relax
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Resumen}{Resumen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Resumen
+\end_layout
+
+\begin_layout Standard
+El concepto o propiedad de simetría puede observarse en varios entornos:
+ en una imagen, en una construcción, etc.
+ En esta tesis trabajaremos con el concepto de simetría en el contexto del
+ razonamiento automático.
+ Si podemos identificar las simetrías de un problema, podríamos utilizarlas
+ para reducir la dificultad del razonamiento analizando en detalle sólo
+ uno de los casos simétricos y luego generalizar el resultado a los demás.
+ Esto es exactamente lo que tratamos de hacer cuando utilizamos las simetrías
+ de un problema en el contexto de razonamiento automático.
+ La presencia de simetrías en subespacios que no contienen soluciones pueden
+ ser de utilidad para nuestro algoritmo ya que podemos guiarlo para que
+ busque soluciones en otras partes del espacio de búsqueda.
+\end_layout
+
+\begin_layout Standard
+En particular, nos enfocaremos en la detección de simetrías en lógicas de
+ descripción.
+\end_layout
+
+\begin_layout Standard
+Primero desarrollaremos el marco teórico sobre los conceptos principales
+ tratados en este trabajo y cómo éstos se relacionan entre sí.
+ Utilizamos los resultados de 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Areces"
+
+\end_inset
+
+ para crear un nexo sintáctico y semántico entre lógicas de descripción
+ y lógicas modales, ya que en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Orbe:2014aa"
+
+\end_inset
+
+ se ha estudiado ampliamente la detección de simetrías en lógicas modales,
+ por lo que podremos trasladar todos los resultados teóricos necesarios
+ para la detección de simetrías en lógicas modales hacia lógicas de descripción.
+\end_layout
+
+\begin_layout Standard
+También definimos un algoritmo para construir un grafo coloreado a partir
+ de una fórmula CNF modal.
+ Se ha demostrado que dicho algoritmo genera un grafo tal que todos sus
+ automorfismos tienen una correspondencia uno-a-uno con las simetrías de
+ la fórmula, por lo que trasladaremos el problema de detección de simetrías
+ al de detección de automorfismos de grafos.
+\end_layout
+
+\begin_layout Standard
+Luego describimos los módulos de la herramienta implementada para la detección
+ de simetrías en lógicas de descripción y estudiamos cada uno de estos módulos
+ a través de un simple caso de uso.
+\end_layout
+
+\begin_layout Standard
+Por último probamos nuestra herramienta con ontologías obtenidas de la web
+ y utilizadas en razonadores, y analizamos de los resultados obtenidos:
+ tiempos de ejecución, tamaños de las ontologías, tamaños de los grafos
+ y cantidad de simetrías obtenidas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

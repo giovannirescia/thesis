@@ -79,55 +79,6 @@ status open
 
 
 \backslash
-thispagestyle{empty}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-refstepcounter{dummy}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-pdfbookmark[1]{Agradecimientos}{Agradecimientos}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align right
-\begin_inset VSpace medskip
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
 begingroup
 \end_layout
 
@@ -155,59 +106,94 @@ relax
 
 \end_inset
 
- 
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pdfbookmark[1]{Abstract}{Abstract}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter*
-Agradecimientos
+Abstract
 \end_layout
 
 \begin_layout Standard
-Agradezco principalmente a mi director, el Dr.
-\begin_inset Formula $\,\,$
+The concept or property of symmetry can be observed in a variety of contexts:
+ in an image, a construction, etc.
+ In this thesis we will restrict the domain of symmetry to automatic reasoning.
+ If you could identify the symmetries of a problem, one could use that informati
+on to reduce the difficulty analizing in detail only one of these simmetric
+ cases and generalitazing after.
+ This is exactly what we try to do when we use the simmetries of a problem
+ in automatic reasoning.
+ The presence of simmetries in subspaces that do not contain any solutions
+ can be used by our algorithm, guiding it to search for solutions somewhere
+ else.
+\end_layout
+
+\begin_layout Standard
+In particular, we will focus on detecting simmetries in description logics.
+\end_layout
+
+\begin_layout Standard
+First, we will elaborate the theorical basis for the main concepts and explain
+ how these concepts are related to each other.
+ We will create a sintactic and semantic bridge between description logics
+ and modal logic, basing it on the work from 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Areces"
+
 \end_inset
 
-Ezequiel Orbe, por haber depositado su confianza en mí para realizar este
- trabajo, por haberme ayudado a mejorarlo en cada iteración y por hacerse
- siempre un tiempo para despejar mis dudas.
-\end_layout
+.
+ Then, given that in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Orbe:2014aa"
 
-\begin_layout Standard
-Al Dr.
-\begin_inset Formula $\,\,$
 \end_inset
 
-Carlos Areces, quien ha colaborado durante el desarrollo de esta tesis aportando
- su vasta experiencia en los temas tratados aquí.
- Su contribución ha sido fundamental para este trabajo.
+ the simmetries detection problem was widly studied for modal logics, we
+ will use the mentioned bridge to transfer all the necessary theorical results
+ for detecting simmetries in modal logics to description logics.
 \end_layout
 
 \begin_layout Standard
-Al Dr.
-\begin_inset Formula $\,\,$
+We also define an algorithm for constructing a graph given a formula in
+ modal CNF.
+ It has been prooved that this algorithm generates a graph such that its
+ automorphism have a one-to-one mapping with the formula's simmetries.
+\end_layout
+
+\begin_layout Standard
+Later, we describe the modules implemented for detecting simmetries in descripti
+on logics and study each one of these modules through a simple example.
+\end_layout
+
+\begin_layout Standard
+Finally, we test our tool against ontologies obtained from the web that
+ are used in reasoners, and present an analisis about the results: execution
+ times, ontologies size, graphs size and number of simmetries detected.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
 \end_inset
 
-Miguel Pagano, porque sus palabras de aliento hicieron posible que este
- trabajo de tesis lleve mi nombre.
-\end_layout
 
-\begin_layout Standard
-A mis amigos con quienes compartí mi vida académica a través de incontables
- horas de estudio, litros de mate, líneas de código y vueltas al Paseo del
- Buen Pastor.
-\end_layout
-
-\begin_layout Standard
-A Alejandro, por siempre motivarme e inspirarme a apuntar alto.
-\end_layout
-
-\begin_layout Standard
-A Facundo y Ernesto, porque en cada juntada se celebra la amistad.
-\end_layout
-
-\begin_layout Standard
-\align right
-Córdoba, 19/05/2017
 \end_layout
 
 \begin_layout Standard
