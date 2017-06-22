@@ -130,50 +130,45 @@ Resumen
 \end_layout
 
 \begin_layout Standard
-El concepto o propiedad de simetría puede observarse en varios entornos:
- en una imagen, en una construcción, etc.
- En esta tesis trabajaremos con el concepto de simetría en el contexto del
+En esta tesis trabajaremos con el concepto de simetría en el contexto del
  razonamiento automático.
  Si podemos identificar las simetrías de un problema, podríamos utilizarlas
  para reducir la dificultad del razonamiento analizando en detalle sólo
  uno de los casos simétricos y luego generalizar el resultado a los demás.
  Esto es exactamente lo que tratamos de hacer cuando utilizamos las simetrías
- de un problema en el contexto de razonamiento automático.
- La presencia de simetrías en subespacios que no contienen soluciones pueden
- ser de utilidad para nuestro algoritmo ya que podemos guiarlo para que
- busque soluciones en otras partes del espacio de búsqueda.
+ de un problema en el contexto de razonamiento automático: la presencia
+ de simetrías en subespacios que no contienen soluciones pueden ser de utilidad
+ para nuestro algoritmo ya que podemos guiarlo para que busque soluciones
+ en otras partes del espacio de búsqueda.
+ En particular, nos enfocaremos en la detección de simetrías en lógicas
+ de descripción.
 \end_layout
 
 \begin_layout Standard
-En particular, nos enfocaremos en la detección de simetrías en lógicas de
- descripción.
-\end_layout
-
-\begin_layout Standard
-Primero desarrollaremos el marco teórico sobre los conceptos principales
- tratados en este trabajo y cómo éstos se relacionan entre sí.
- Utilizamos los resultados de 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Areces"
-
-\end_inset
-
- para crear un nexo sintáctico y semántico entre lógicas de descripción
- y lógicas modales, ya que en 
+En 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Orbe:2014aa"
 
 \end_inset
 
- se ha estudiado ampliamente la detección de simetrías en lógicas modales,
- por lo que podremos trasladar todos los resultados teóricos necesarios
- para la detección de simetrías en lógicas modales hacia lógicas de descripción.
+ se da un marco teórico para la detección y el uso de simetrías en diversas
+ lógicas modales y en 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Areces"
+
+\end_inset
+
+ se presenta una conexión entre lógicas modales y lógicas de descripción.
+ Aprovecharemos estos resultados para desarrollar un nexo sintáctico y semántico
+ entre ambas lógicas y así trasladar todos los resultados teóricos necesarios
+ para la detección de simetrías obtenidos para lógicas modales hacia el
+ caso de las lógicas de descripción.
 \end_layout
 
 \begin_layout Standard
-También definimos un algoritmo para construir un grafo coloreado a partir
+También definiremos un algoritmo para construir un grafo coloreado a partir
  de una fórmula CNF modal.
  Se ha demostrado que dicho algoritmo genera un grafo tal que todos sus
  automorfismos tienen una correspondencia uno-a-uno con las simetrías de
@@ -182,16 +177,16 @@ También definimos un algoritmo para construir un grafo coloreado a partir
 \end_layout
 
 \begin_layout Standard
-Luego describimos los módulos de la herramienta implementada para la detección
- de simetrías en lógicas de descripción y estudiamos cada uno de estos módulos
- a través de un simple caso de uso.
+Con respecto al marco práctico, describiremos la herramienta implementada
+ para la detección de simetrías en lógicas de descripción y estudiaremos
+ cada uno de sus módulos a través de un simple caso de uso.
 \end_layout
 
 \begin_layout Standard
-Por último probamos nuestra herramienta con ontologías obtenidas de la web
- y utilizadas en razonadores, y analizamos de los resultados obtenidos:
- tiempos de ejecución, tamaños de las ontologías, tamaños de los grafos
- y cantidad de simetrías obtenidas.
+Presentaremos también resultados de un estudio empírico al probar nuestra
+ herramienta con ontologías obtenidas de la web y utilizadas en razonadores,
+ y analizaremos dichos resultados: tiempos de ejecución, tamaños de las
+ ontologías, tamaños de los grafos y cantidad de simetrías obtenidas.
 \end_layout
 
 \begin_layout Standard

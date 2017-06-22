@@ -1443,8 +1443,8 @@ key "Krishnamurthy"
 
 \end_inset
 
- muestra la utilidad de las reglas de simetría para algunos problemas pero
- no se presenta un algoritmo para realizar la detección de simetrías.
+ se muestra la utilidad de las reglas de simetría para algunos problemas
+ pero no se presenta un algoritmo para realizar la detección de simetrías.
  Tampoco se discute en detalle cómo los procedimientos de resolución deben
  utilizar las reglas de simetría.
  El primer intento para explotar la presencia de simetrías en un algoritmo
