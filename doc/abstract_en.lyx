@@ -130,63 +130,58 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-The concept or property of symmetry can be observed in a variety of contexts:
- in an image, a construction, etc.
- In this thesis we will restrict the domain of symmetry to automatic reasoning.
- If you could identify the symmetries of a problem, one could use that informati
-on to reduce the difficulty analizing in detail only one of these simmetric
- cases and generalitazing after.
+In this thesis we will work with the concept of symmetry, in the domain
+ of automatic reasoning.
+ If one is able to identify the symmetries of a problem, then that information
+ could be used to reduce the difficulty of analyzing in detail only one
+ of these simmetric cases and generalizing after.
  This is exactly what we try to do when we use the simmetries of a problem
- in automatic reasoning.
- The presence of simmetries in subspaces that do not contain any solutions
- can be used by our algorithm, guiding it to search for solutions somewhere
- else.
+ in automatic reasoning: the presence of simmetries in subspaces that do
+ not contain any solutions can be used by our algorithm, guiding it to search
+ for solutions somewhere else.
+ In particular, we will focus on detecting simmetries in description logics.
 \end_layout
 
 \begin_layout Standard
-In particular, we will focus on detecting simmetries in description logics.
-\end_layout
-
-\begin_layout Standard
-First, we will elaborate the theorical basis for the main concepts and explain
- how these concepts are related to each other.
- We will create a sintactic and semantic bridge between description logics
- and modal logic, basing it on the work from 
-\begin_inset CommandInset citation
-LatexCommand citep
-key "Areces"
-
-\end_inset
-
-.
- Then, given that in 
+In 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Orbe:2014aa"
 
 \end_inset
 
- the simmetries detection problem was widly studied for modal logics, we
- will use the mentioned bridge to transfer all the necessary theorical results
- for detecting simmetries in modal logics to description logics.
+ the detection and application of simmetries in different types of modal
+ logics is broadly studied, also, in 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Areces"
+
+\end_inset
+
+ a link between modal logics and description logics is presented.
+ We will exploit this results to set a sintactic and semantic relation among
+ both logics and be able to transfer every theoretical result needed to
+ detect simmetries in modal logics towards the case of description logics.
 \end_layout
 
 \begin_layout Standard
-We also define an algorithm for constructing a graph given a formula in
- modal CNF.
- It has been prooved that this algorithm generates a graph such that its
+We will also define an algorithm for constructing a graph given a formula
+ in modal CNF.
+ It has been proved that this algorithm generates a graph such that its
  automorphism have a one-to-one mapping with the formula's simmetries.
 \end_layout
 
 \begin_layout Standard
-Later, we describe the modules implemented for detecting simmetries in descripti
-on logics and study each one of these modules through a simple example.
+With respect to the practical part, we will describe the system implemented
+ for detecting simmetries in description logics and we will analyze each
+ one of its modules through a simple use case.
 \end_layout
 
 \begin_layout Standard
-Finally, we test our tool against ontologies obtained from the web that
- are used in reasoners, and present an analisis about the results: execution
- times, ontologies size, graphs size and number of simmetries detected.
+Results obtained by an empirical study from testing our system on ontologies
+ acquired from the web and used in reasoners, are also presented and analized
+ in detail: computation times, ontologies size, graphs size and number of
+ simmetries obtained.
 \end_layout
 
 \begin_layout Standard
