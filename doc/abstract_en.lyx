@@ -135,11 +135,11 @@ In this thesis we will work with the concept of symmetry, in the domain
  If one is able to identify the symmetries of a problem, then that information
  could be used to reduce the difficulty of analyzing in detail only one
  of these simmetric cases and generalizing after.
- This is exactly what we try to do when we use the simmetries of a problem
- in automatic reasoning: the presence of simmetries in subspaces that do
+ This is exactly what we try to do when we use the symmetries of a problem
+ in automatic reasoning: the presence of symmetries in subspaces that do
  not contain any solutions can be used by our algorithm, guiding it to search
  for solutions somewhere else.
- In particular, we will focus on detecting simmetries in description logics.
+ In particular, we will focus on detecting symmetries in description logics.
 \end_layout
 
 \begin_layout Standard
@@ -150,7 +150,7 @@ key "Orbe:2014aa"
 
 \end_inset
 
- the detection and application of simmetries in different types of modal
+ the detection and application of symmetries in different types of modal
  logics is broadly studied, also, in 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -161,19 +161,19 @@ key "Areces"
  a link between modal logics and description logics is presented.
  We will exploit this results to set a sintactic and semantic relation among
  both logics and be able to transfer every theoretical result needed to
- detect simmetries in modal logics towards the case of description logics.
+ detect symmetries in modal logics towards the case of description logics.
 \end_layout
 
 \begin_layout Standard
 We will also define an algorithm for constructing a graph given a formula
  in modal CNF.
  It has been proved that this algorithm generates a graph such that its
- automorphism have a one-to-one mapping with the formula's simmetries.
+ automorphism have a one-to-one mapping with the formula's symmetries.
 \end_layout
 
 \begin_layout Standard
 With respect to the practical part, we will describe the system implemented
- for detecting simmetries in description logics and we will analyze each
+ for detecting symmetries in description logics and we will analyze each
  one of its modules through a simple use case.
 \end_layout
 
@@ -181,7 +181,7 @@ With respect to the practical part, we will describe the system implemented
 Results obtained by an empirical study from testing our system on ontologies
  acquired from the web and used in reasoners, are also presented and analized
  in detail: computation times, ontologies size, graphs size and number of
- simmetries obtained.
+ symmetries obtained.
 \end_layout
 
 \begin_layout Standard
