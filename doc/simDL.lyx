@@ -818,12 +818,7 @@ Sea
 \begin_inset Formula $\sigma(\mathcal{M})=\langle\Delta,\mathcal{I}'\rangle$
 \end_inset
 
-, donde,
-\end_layout
-
-\begin_layout Standard
-
-\emph on
+, donde, 
 \begin_inset Formula $\mathcal{I}'(p)=\mathcal{I}(\sigma^{-1}(p))$
 \end_inset
 
@@ -835,6 +830,13 @@ Sea
 \emph on
 para todo 
 \begin_inset Formula $p\in\mathsf{PROP}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
 \end_inset
 
 
@@ -1193,7 +1195,7 @@ defPsi
 , luego se cumple que
 \begin_inset Formula 
 \[
-\mathcal{KB}\models\varphi\iff\mathcal{KB}\models\sigma(\varphi)
+\mathcal{KB}\models\varphi\iff\mathcal{KB}\models\sigma(\varphi).
 \]
 
 \end_inset
@@ -1866,7 +1868,7 @@ Consideremos la fórmula modal
 \begin_inset Formula $\varphi=(a\lor[m](b\lor\neg[m]c))\land(b\lor[m](a\lor\neg[m]c))$
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Example
